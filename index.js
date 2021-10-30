@@ -11,9 +11,9 @@ app.use(express.json());
 
 
 app.get("/", (req, res)=> {
-    res.send("hello world!");
+    res.send("hello world!, stutea here!");
 })
 
-app.listen(process.env.PORT || 5000, ()=> {
-    console.log(`StuTea listening at https://localhost:5000/`);
+app.listen(process.env.PORT || port, ()=> {
+    console.log(`StuTea listening at http://localhost:5000/`);
 })

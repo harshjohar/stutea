@@ -4,7 +4,7 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const {body, validationResult} = require('express-validator');
 var jwt = require('jsonwebtoken');
-
+const fetchuser=require('../middleware/fetchuser');
 // to be added in a .env file
 const JWT_SECRET = "hihihihihihihihihi"
 

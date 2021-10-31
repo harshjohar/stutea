@@ -13,7 +13,8 @@ const QuestionSchema = new mongoose.Schema({
         default: Date.now
     },
     answered: {
-        type: Boolean
+        type: Boolean,
+        default: false
     },
     tags: {
         type: [String] 

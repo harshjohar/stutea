@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-
+import "../css/Login.css"
 const Login = () => {
     const host = "http://localhost:5000";
     let history = useHistory();

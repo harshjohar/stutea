@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
-    <div>
+    <>
       <nav>
         <div style={{ display: "flex", marginTop: '9px'}}>
           <Link className="navbar-brand" to="/">
@@ -16,7 +16,7 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
-              <li style={{marginLeft: '30px'}}>
+               <li style={{marginLeft: '30px'}}>
                 <Link to="/login">
                   Login
                 </Link>
@@ -30,7 +30,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-    </div>
+    </>
   );
 };
 

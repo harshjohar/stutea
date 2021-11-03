@@ -1,7 +1,12 @@
 import React from "react";
 // import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 const Navbar = () => {
+  let history = useHistory();
+  const logout = ()=> {
+    localStorage.removeItem('token')
+    history.push('/login')
+  }
   return (
     <>
       <nav>
@@ -9,13 +14,8 @@ const Navbar = () => {
           <Link className="navbar-brand" to="/">
             StuTea
           </Link>
-          <div >
+          {!localStorage.getItem('token')?<div>
             <ul style={{ display: "flex", marginTop: '9px'}}>
-              <li className="nav-item" style={{marginLeft: '30px'}}>
-                <Link to="/">
-                  Home
-                </Link>
-              </li>
                <li style={{marginLeft: '30px'}}>
                 <Link to="/login">
                   Login
@@ -27,7 +27,9 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div>:<button onClick={logout}>
+                  Logout
+                  </button>}
         </div>
       </nav>
     </>

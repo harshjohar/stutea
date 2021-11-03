@@ -10,24 +10,45 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        <div style={{ display: "flex", marginTop: '9px'}}>
+        <div className="logo">
           <Link className="navbar-brand" to="/">
             StuTea
           </Link>
+        </div>
+        <div className="links">
           {!localStorage.getItem('token')?<div>
-            <ul style={{ display: "flex", marginTop: '9px'}}>
-               <li style={{marginLeft: '30px'}}>
-                <Link to="/login">
-                  Login
+            <ul className="link-list">
+              <li className="link-list-item">
+                <Link to="/">
+                  Home
                 </Link>
               </li>
-              <li className="nav-item" style={{marginLeft: '30px'}}>
+              <li className="link-list-item">
+                <Link to="/">
+                  About
+                </Link>
+              </li>
+              <li className="link-list-item">
+                <Link to="/">
+                  Contact
+                </Link>
+              </li>
+              <li className="link-list-item">
+                <Link to="/login">
+                  <button className="btn-login">
+                    Login
+                  </button>
+                </Link>
+              </li>
+              <li className="link-list-item">
                 <Link to="/register">
-                  Register
+                  <button className="btn-login">
+                    Register
+                  </button>
                 </Link>
               </li>
             </ul>
-          </div>:<button onClick={logout}>
+          </div>:<button className="btn-login" onClick={logout}>
                   Logout
                   </button>}
         </div>

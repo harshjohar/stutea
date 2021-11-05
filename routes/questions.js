@@ -30,4 +30,24 @@ router.post('/add', fetchuser, [
     }
 });
 
+// ROUTE 2 : Fetch questions : GET "/api/questions/fetch"
+router.get("/fetch", fetchuser, async(req, res)=> {
+    try {
+
+        const {page} = req.body;
+
+        const questions = await Questions.find().limit(15).skip((page-1)*15);
+
+        questions.sort(function(a,b){
+            // Turn your strings into dates, and then subtract them
+            // to get a value that is either negative, positive, or zero.
+            return new Date(b.timestamp) - new Date(a.timestamp);
+        });
+        res.json(questions);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+})
+
 module.exports = router;

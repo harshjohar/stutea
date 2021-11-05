@@ -1,14 +1,17 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
+import { Navbar } from "./components/Navbar";
+import  { About } from "./components/About";
+import Contact from "./components/Contact";
+
 function App() {
   return (
     <div>
       <Router>
-        <Navbar />
+        <Navbar/>
         <Switch>
           <Route exact path="/">
             <Home/>
@@ -18,6 +21,12 @@ function App() {
           </Route>
           <Route exact path="/register">
             <Register />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/contact">
+            <Contact/>
           </Route>
         </Switch>
       </Router>

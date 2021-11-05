@@ -1,60 +1,56 @@
-import React from "react";
-// import PropTypes from "prop-types";
-import { Link, useHistory } from "react-router-dom";
-const Navbar = () => {
-  let history = useHistory();
-  const logout = ()=> {
-    localStorage.removeItem('token')
-    history.push('/login')
-  }
-  return (
-    <>
-      <nav>
-        <div className="logo">
-          <Link className="navbar-brand" to="/">
-            StuTea
-          </Link>
-        </div>
-        <div className="links">
-          {!localStorage.getItem('token')?<div>
-            <ul className="link-list">
-              <li className="link-list-item">
-                <Link to="/">
-                  Home
-                </Link>
-              </li>
-              <li className="link-list-item">
-                <Link to="/">
-                  About
-                </Link>
-              </li>
-              <li className="link-list-item">
-                <Link to="/">
-                  Contact
-                </Link>
-              </li>
-              <li className="link-list-item">
-                <Link to="/login">
-                  <button className="btn-login">
-                    Login
-                  </button>
-                </Link>
-              </li>
-              <li className="link-list-item">
-                <Link to="/register">
-                  <button className="btn-login">
-                    Register
-                  </button>
-                </Link>
-              </li>
-            </ul>
-          </div>:<button className="btn-login" onClick={logout}>
-                  Logout
-                  </button>}
-        </div>
-      </nav>
-    </>
-  );
-};
+import React from 'react'
+import { Link, useLocation, useHistory } from "react-router-dom";
+import "../css/Navbar.css";
 
-export default Navbar;
+export const Navbar = () => {
+    let location = useLocation();
+    let history = useHistory();
+    const handleLogout = ()=> {
+        localStorage.removeItem("token");
+        history.push("/login");
+    }
+  return (
+    <nav className="navbar-parent">
+            <div className="logo-wrapper">
+                <Link className="logo-link" to="/">
+                   STUTEA
+                </Link>
+            </div>
+            <div className="navbar-links">
+                <ul className="nav-item-list">
+                    <li className="nav-item">
+                        <Link className={`navbar-item ${location.pathname==='/'?"active":""}`} to="/">
+                            Home
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className={`navbar-item ${location.pathname==='/about'?"active":""}`} to="/about">
+                            About
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className={`navbar-item ${location.pathname==='/contact'?"active":""}`} to="/contact">
+                            Contact
+                        </Link>
+                    </li>
+                </ul>
+
+                {!localStorage.getItem("token")?
+                <div className="top-right">
+                    <Link className={"button"} to='/login'>
+                        <button className="btn-login">
+                            Login
+                        </button>
+                    </Link>
+                    <Link className={"button"} to='/register'>
+                        <button className="btn-login">
+                            Register
+                        </button>
+                    </Link>
+                </div>:
+                <button className="btn-login" onClick={handleLogout}>Logout</button>
+    }
+            </div>
+        </nav>
+  )
+}

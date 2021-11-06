@@ -18,6 +18,9 @@ app.use('/api/questions', require('./routes/questions'), (req, res)=> {
 });
 app.use('/api/user', require('./routes/user'), (req, res)=> {
     res.send("user endpoint ready!")
+});
+app.use('/api/answers', require('./routes/answers'), (req, res)=> {
+    res.send("answers endpoint ready")
 })
 
 app.get("/", (req, res)=> {

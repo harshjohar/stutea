@@ -30,7 +30,7 @@ router.post('/add', fetchuser, [
     }
 });
 
-// ROUTE 2 : Fetch questions : GET "/api/questions/fetch"
+// ROUTE 2 : Fetch questions : GET "/api/questions/fetch". Login Required
 router.get("/fetch", fetchuser, async(req, res)=> {
     try {
 
@@ -50,4 +50,20 @@ router.get("/fetch", fetchuser, async(req, res)=> {
     }
 })
 
+// ROUTE 3 : Fetch user's own questions GET "/api/questions/fetchuser". Login Required
+router.get("/fetchuser", fetchuser, async(req, res)=> {
+    try {
+        const {page}=req.body;
+        const user=req.user.id;
+        const myQuestions = await Questions.find({user}).limit(15).skip((page-1)*15);
+
+        myQuestions.sort(function(a,b){
+            return new Date(b.timestamp) - new Date(a.timestamp);
+        });
+        res.json(myQuestions);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+})
 module.exports = router;

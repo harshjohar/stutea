@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
-const mongoURI = process.env.MONGO_URI;
+// require('dotenv').config();
+// const mongoURI = process.env.MONGO_URI;
 
 // localhost for testing
-// const mongoURI = "mongodb://localhost:27017/stutea?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false" 
+const mongoURI = "mongodb://localhost:27017/stutea?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false" 
 
 const connectToMongo = () => {
     mongoose.connect(mongoURI, ()=> {

@@ -1,0 +1,243 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "StuTea",
+    "dateExported": "2021-11-06T15:23:52.348Z",
+    "version": "1.1",
+    "folders": [{
+        "containerId": "",
+        "sortNum": 10000,
+        "name": "auth",
+        "_id": "1e58736a-686c-4289-9f04-24e904edaa40",
+        "created": "2021-10-31T00:05:21.592Z"
+    }, {
+        "containerId": "",
+        "sortNum": 20000,
+        "name": "Questions",
+        "_id": "325333d3-2c7b-4374-a18e-e7950fb6eeb3",
+        "created": "2021-10-31T16:16:01.464Z"
+    }, {
+        "containerId": "",
+        "sortNum": 30000,
+        "name": "Answers",
+        "_id": "3b5cac62-e225-4d39-b574-bb01f01e31a7",
+        "created": "2021-11-06T07:10:47.884Z"
+    }],
+    "requests": [{
+        "containerId": "3b5cac62-e225-4d39-b574-bb01f01e31a7",
+        "sortNum": 10000,
+        "headers": [{
+            "name": "Accept",
+            "value": "*/*"
+        }, {
+            "name": "User-Agent",
+            "value": "Thunder Client (https://www.thunderclient.io)"
+        }, {
+            "name": "auth-token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE4NTVhN2EzZmRmZmFiOWI3YzcwNDExIn0sImlhdCI6MTYzNjE4MzI3MX0.dZpRCZOc-Bawc8QfctQ68gZiTw3s0Lqtxcnmr_m5VR0"
+        }],
+        "colId": "8a2a7362-0e3c-4695-99b0-da05a7e80003",
+        "name": "Post Answer",
+        "url": "http://localhost:5000/api/answers/add",
+        "method": "POST",
+        "modified": "2021-11-06T07:22:31.137Z",
+        "created": "2021-11-06T07:10:39.063Z",
+        "_id": "8cf9c689-6b6b-4d86-9815-6dcc729f4cc9",
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"question\": \"617ec1e95675966b474c9369\",\n  \"answer\": \"EXPLOSION\"\n}",
+            "form": []
+        },
+        "tests": []
+    }, {
+        "containerId": "1e58736a-686c-4289-9f04-24e904edaa40",
+        "sortNum": 10000,
+        "headers": [{
+            "name": "Accept",
+            "value": "*/*"
+        }, {
+            "name": "User-Agent",
+            "value": "Thunder Client (https://www.thunderclient.io)"
+        }, {
+            "name": "Content-Type",
+            "value": "application/json"
+        }],
+        "colId": "8a2a7362-0e3c-4695-99b0-da05a7e80003",
+        "name": "Create a new user",
+        "url": "http://localhost:5000/api/auth/register",
+        "method": "POST",
+        "modified": "2021-11-06T04:08:11.924Z",
+        "created": "2021-10-31T00:05:31.654Z",
+        "_id": "c686b3b3-6dcb-4005-bb55-dcc76df8491f",
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n    \"username\": \"harsh.johar\",\n    \"email\": \"hpsj3112@gmail.com\",\n    \"password\": \"harsh\",\n    \"firstname\": \"harsh\",\n    \"lastname\": \"johar\",\n    \"city\": \"Chandigarh\"\n}",
+            "form": []
+        },
+        "tests": []
+    }, {
+        "containerId": "1e58736a-686c-4289-9f04-24e904edaa40",
+        "sortNum": 20000,
+        "headers": [{
+            "name": "Accept",
+            "value": "*/*"
+        }, {
+            "name": "User-Agent",
+            "value": "Thunder Client (https://www.thunderclient.io)"
+        }, {
+            "name": "Content-Type",
+            "value": "application/json"
+        }],
+        "colId": "8a2a7362-0e3c-4695-99b0-da05a7e80003",
+        "name": "Login a user",
+        "url": "http://localhost:5000/api/auth/login",
+        "method": "POST",
+        "modified": "2021-11-06T07:21:11.867Z",
+        "created": "2021-10-31T00:14:57.280Z",
+        "_id": "97e82ef4-389d-413f-b433-547b20c14aac",
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n    \"username\": \"nikku\",\n    \"password\": \"123456\"\n}",
+            "form": []
+        },
+        "tests": []
+    }, {
+        "containerId": "1e58736a-686c-4289-9f04-24e904edaa40",
+        "sortNum": 30000,
+        "headers": [{
+            "name": "Accept",
+            "value": "*/*"
+        }, {
+            "name": "User-Agent",
+            "value": "Thunder Client (https://www.thunderclient.io)"
+        }, {
+            "name": "Content-Type",
+            "value": "application/json"
+        }, {
+            "name": "auth-token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE3ZGRmODZjZTFlN2E4YmI2NjBlNWYyIn0sImlhdCI6MTYzNTY0MDI1NH0.MdqX-imePw0xGS4e3lWfMcGdP4CiSD7a-phOWFchZww"
+        }],
+        "colId": "8a2a7362-0e3c-4695-99b0-da05a7e80003",
+        "name": "Get a user",
+        "url": "http://localhost:5000/api/auth/getuser",
+        "method": "POST",
+        "modified": "2021-10-31T00:31:26.724Z",
+        "created": "2021-10-31T00:29:01.297Z",
+        "_id": "a3b68cc3-6117-481b-ae12-39fce1d88c20",
+        "params": [],
+        "tests": []
+    }, {
+        "containerId": "325333d3-2c7b-4374-a18e-e7950fb6eeb3",
+        "sortNum": 40000,
+        "headers": [{
+            "name": "Accept",
+            "value": "*/*"
+        }, {
+            "name": "User-Agent",
+            "value": "Thunder Client (https://www.thunderclient.io)"
+        }, {
+            "name": "Content-Type",
+            "value": "application/json"
+        }, {
+            "name": "auth-token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE3ZGRmODZjZTFlN2E4YmI2NjBlNWYyIn0sImlhdCI6MTYzNTY0MDI1NH0.MdqX-imePw0xGS4e3lWfMcGdP4CiSD7a-phOWFchZww"
+        }],
+        "colId": "8a2a7362-0e3c-4695-99b0-da05a7e80003",
+        "name": "add Question",
+        "url": "http://localhost:5000/api/questions/add",
+        "method": "POST",
+        "modified": "2021-11-05T19:13:54.680Z",
+        "created": "2021-10-31T16:16:15.752Z",
+        "_id": "55516ae9-062c-4e49-8731-2305e6e2bcbb",
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"question\": \"what is the correct way of implementing merge sort?\",\n  \"tags\": [\n    \"sorting\",\n    \"DSA\"\n  ]\n}",
+            "form": []
+        },
+        "tests": []
+    }, {
+        "containerId": "325333d3-2c7b-4374-a18e-e7950fb6eeb3",
+        "sortNum": 50000,
+        "headers": [{
+            "name": "Accept",
+            "value": "*/*"
+        }, {
+            "name": "User-Agent",
+            "value": "Thunder Client (https://www.thunderclient.io)"
+        }, {
+            "name": "auth-token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE3ZGRmODZjZTFlN2E4YmI2NjBlNWYyIn0sImlhdCI6MTYzNTY0MDI1NH0.MdqX-imePw0xGS4e3lWfMcGdP4CiSD7a-phOWFchZww"
+        }],
+        "colId": "8a2a7362-0e3c-4695-99b0-da05a7e80003",
+        "name": "fetch 15 questions",
+        "url": "http://localhost:5000/api/questions/fetch",
+        "method": "GET",
+        "modified": "2021-11-05T19:22:04.288Z",
+        "created": "2021-11-05T19:12:34.634Z",
+        "_id": "b2c0e40f-5c82-4045-959d-cc5b7a0c6dbe",
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"page\": 1\n}",
+            "form": []
+        },
+        "tests": []
+    }, {
+        "containerId": "325333d3-2c7b-4374-a18e-e7950fb6eeb3",
+        "sortNum": 60000,
+        "headers": [{
+            "name": "Accept",
+            "value": "*/*"
+        }, {
+            "name": "User-Agent",
+            "value": "Thunder Client (https://www.thunderclient.io)"
+        }, {
+            "name": "auth-token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE3ZGRmODZjZTFlN2E4YmI2NjBlNWYyIn0sImlhdCI6MTYzNTY0MDI1NH0.MdqX-imePw0xGS4e3lWfMcGdP4CiSD7a-phOWFchZww"
+        }],
+        "colId": "8a2a7362-0e3c-4695-99b0-da05a7e80003",
+        "name": "fetch own questions",
+        "url": "http://localhost:5000/api/questions/fetchuser",
+        "method": "GET",
+        "modified": "2021-11-06T07:10:02.330Z",
+        "created": "2021-11-06T07:08:47.528Z",
+        "_id": "a8e01ffd-95b8-492b-8b37-34bffbfcbcd3",
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"page\": 1\n}",
+            "form": []
+        },
+        "tests": []
+    }, {
+        "containerId": "3b5cac62-e225-4d39-b574-bb01f01e31a7",
+        "sortNum": 80000,
+        "headers": [{
+            "name": "Accept",
+            "value": "*/*"
+        }, {
+            "name": "User-Agent",
+            "value": "Thunder Client (https://www.thunderclient.io)"
+        }, {
+            "name": "auth-token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE3ZGRmODZjZTFlN2E4YmI2NjBlNWYyIn0sImlhdCI6MTYzNTY0MDI1NH0.MdqX-imePw0xGS4e3lWfMcGdP4CiSD7a-phOWFchZww"
+        }],
+        "colId": "8a2a7362-0e3c-4695-99b0-da05a7e80003",
+        "name": "Fetch Answer",
+        "url": "http://localhost:5000/api/answers/fetch",
+        "method": "GET",
+        "modified": "2021-11-06T07:57:53.873Z",
+        "created": "2021-11-06T07:41:40.488Z",
+        "_id": "851c86ba-5c76-4ecd-8e32-220c607a2319",
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"question\": \"617ec1e95675966b474c9369\"\n}",
+            "form": []
+        },
+        "tests": []
+    }]
+}

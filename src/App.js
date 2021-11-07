@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import { Navbar } from "./components/Navbar";
 import  { About } from "./components/About";
 import Contact from "./components/Contact";
+import QuestionState from "./Context/Questions/questionState";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
         <Navbar/>
         <Switch>
           <Route exact path="/">
-            <Home/>
+            <QuestionState>
+              <Home/>
+            </QuestionState>
           </Route>
           <Route exact path="/login">
             <Login />

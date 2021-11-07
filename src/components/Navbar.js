@@ -38,12 +38,12 @@ export const Navbar = () => {
 
                 {!localStorage.getItem("token")?
                 <div className="top-right">
-                    <Link className={"button"} to='/login'>
+                    <Link className={"button"} to='/login' style={location.pathname==='/login'?{display: "none"}:{display: "inline"}}>
                         <button className="btn-login">
                             Login
                         </button>
                     </Link>
-                    <Link className={"button"} to='/register'>
+                    <Link className={"button"} to='/register' style={location.pathname==='/register'?{display: "none"}:{display: "inline"}}>
                         <button className="btn-login">
                             Register
                         </button>

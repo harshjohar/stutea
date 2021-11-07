@@ -36,7 +36,9 @@ router.get("/fetch", fetchuser, async(req, res)=> {
 
         const {page} = req.body;
 
-        const questions = await Questions.find().limit(15).skip((page-1)*15);
+        const questions = await Questions.find(
+            {user: {$ne : req.user.id}}
+        ).limit(15).skip((page-1)*15);
 
         questions.sort(function(a,b){
             // Turn your strings into dates, and then subtract them

@@ -38,8 +38,8 @@ const Login = () => {
         <div className="form-head">
             <h2>Log in to the world of knowledge</h2>
             <form onSubmit={handleSubmit}>
-                <div class="form">
-                    <label for="">Username</label>
+                <div className="form">
+                    <label htmlFor="">Username</label>
                     <input
                         type="text"
                         placeholder="Enter your username"
@@ -48,8 +48,8 @@ const Login = () => {
                         value={credentials.username}
                     />
                 </div>
-                <div class="form">
-                    <label for="">Password</label>
+                <div className="form">
+                    <label htmlFor="">Password</label>
                     <input
                         type="password"
                         placeholder="Enter your password"

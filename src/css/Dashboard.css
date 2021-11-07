@@ -1,0 +1,31 @@
+.dashboard-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.dashboard-head h2{
+    margin-top: 2rem;
+    border-bottom: 2px solid;
+}
+
+/* .questions{
+     width: 100%;
+} */
+
+.my-questions{
+    padding-top: 1rem;
+}
+
+.questions h2,.my-questions h2{
+    margin: 1rem;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.my-questions div,.questions div{
+    font-size: 19px;
+}

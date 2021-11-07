@@ -5,8 +5,10 @@ import { Questions } from './Questions';
 
 const Dashboard = () => {
     return (
-        <div>
-            DashBoard
+        <div className="dashboard-body">
+            <div className="dashboard-head">
+            <h2>DashBoard</h2>
+            </div>
             <Questions/>
             <MyQuestions/>
         </div>

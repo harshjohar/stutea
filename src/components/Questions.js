@@ -1,15 +1,31 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom';
-import questionContext from '../Context/Questions/questionContext'
 import { QuestionCard } from './QuestionCard';
 export const Questions = () => {
-    const context = useContext(questionContext);
-    const {questions, getQuestions} = context;
+    const host = process.env.REACT_APP_BACKEND_URL;
+    const [questions, setQuestions] = useState([])
     const [page, setPage] = useState(1);
     let history= useHistory();
+    // Get the questions
+    const getQuestions = async (pg) => {
+        // api call
+        const response = await fetch(`${host}/api/questions/fetch`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem("token")
+            },
+            body: JSON.stringify({
+                "page": pg
+            })
+        });
+        const json = await response.json();
+        setQuestions(json);
+    };
     useEffect(()=> {
         if(localStorage.getItem("token")) {
             getQuestions(page);
+            console.log(questions);
         }
         else {
             history.push('/login');

@@ -1,14 +1,15 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom';
 import questionContext from '../Context/Questions/questionContext'
 import { QuestionCard } from './QuestionCard';
 export const Questions = () => {
     const context = useContext(questionContext);
     const {questions, getQuestions} = context;
+    const [page, setPage] = useState(1);
     let history= useHistory();
     useEffect(()=> {
         if(localStorage.getItem("token")) {
-            getQuestions();
+            getQuestions(page);
         }
         else {
             history.push('/login');

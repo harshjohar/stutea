@@ -8,14 +8,17 @@ const QuestionState = (props) => {
     const [questions, setQuestions] = useState(initial);
 
     // Get the questions
-    const getQuestions = async () => {
+    const getQuestions = async (pg) => {
         // api call
         const response = await fetch(`${host}/api/questions/fetch`, {
-            method: "GET",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "auth-token": localStorage.getItem("token")
-            }
+            },
+            body: JSON.stringify({
+                "page": pg
+            })
         });
         const json = await response.json();
         setQuestions(json);
@@ -23,14 +26,17 @@ const QuestionState = (props) => {
 
     // Add Question
     // Get Own Questions
-    const getMyQuestions = async () => {
+    const getMyQuestions = async (pg) => {
         // api call
         const response = await fetch(`${host}/api/questions/fetchuser`, {
-            method: "GET",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "auth-token": localStorage.getItem("token")
-            }
+            },
+            body: JSON.stringify({
+                "page": pg
+            })
         });
         const json = await response.json();
         setQuestions(json);

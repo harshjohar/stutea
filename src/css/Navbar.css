@@ -1,0 +1,82 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.navbar-parent{
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    background-color: #e8ebfa;
+    position: sticky;
+    top: 0;
+    opacity: 0.9;
+    /* justify-content: center; */
+}
+.logo-wrapper{
+    width:50%;
+    padding: 1.2rem 3.7rem;
+    
+}
+.navbar-links{
+    width:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.nav-item-list{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    height: 100%;
+    
+}
+
+.nav-item{
+    padding: 1rem 1.8rem;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.nav-item a{
+    text-decoration: none;
+    /* color: black; */
+}
+
+.nav-item:hover{
+    border-bottom: 3px solid blue;
+    cursor: pointer;
+    font-weight: 600;
+    color: blue;
+}
+
+/* .link-list-button{
+    padding: 1rem 0.6rem;
+} */
+
+.top-right{
+    padding-left: 0.6rem;
+    width: 50%;
+}
+.btn-login{
+    width:5rem;
+    /* padding: 1rem 0rem; */
+    margin: 0rem 0.6rem;
+    border-radius: 16px;
+    height: 33px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    background-color: #efa933;
+}
+
+.btn-login:hover{
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #efa933;
+}

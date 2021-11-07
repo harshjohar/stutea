@@ -1,0 +1,31 @@
+
+
+.register-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 2px solid; */
+    /* background: url(../real-estate-education-800x533.jpg) center center/cover no-repeat; */
+}
+
+.register-form h2{
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.register-form .form label{
+    margin:0rem;
+}
+
+.register-form .form input{
+    width: 16rem;
+}
+
+.register-form .form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0.6rem;
+}
+

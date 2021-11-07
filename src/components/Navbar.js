@@ -1,14 +1,15 @@
-import React from 'react'
+import React from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
-import "../css/Navbar.css";
+// import PropTypes from "prop-types";
+import "../css/Navbar.css"
 
 export const Navbar = () => {
     let location = useLocation();
-    let history = useHistory();
-    const handleLogout = ()=> {
-        localStorage.removeItem("token");
-        history.push("/login");
-    }
+  let history = useHistory();
+  const handleLogout = ()=> {
+    localStorage.removeItem('token')
+    history.push('/login')
+  }
   return (
     <nav className="navbar-parent">
             <div className="logo-wrapper">

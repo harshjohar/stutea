@@ -1,5 +1,6 @@
 import React from 'react'
 import "../css/Dashboard.css"
+import { MyQuestions } from './MyQuestions';
 import { Questions } from './Questions';
 
 const Dashboard = () => {
@@ -7,7 +8,7 @@ const Dashboard = () => {
         <div>
             DashBoard
             <Questions/>
-            
+            <MyQuestions/>
         </div>
     )
 }

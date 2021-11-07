@@ -22,8 +22,21 @@ const QuestionState = (props) => {
     };
 
     // Add Question
+    // Get Own Questions
+    const getMyQuestions = async () => {
+        // api call
+        const response = await fetch(`${host}/api/questions/fetchuser`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem("token")
+            }
+        });
+        const json = await response.json();
+        setQuestions(json);
+    };
     return(
-        <questionContext.Provider value={{questions, getQuestions}}>
+        <questionContext.Provider value={{questions, getQuestions, getMyQuestions}}>
             {props.children}
         </questionContext.Provider>
     )

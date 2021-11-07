@@ -45,8 +45,8 @@ const onChange = (e)=> {
   setCredentials({...credentials, [e.target.name]: e.target.value})
 }
   return (
-    <div>
-      <h2>Come! Join StuTea</h2>
+    <div className="register-form">
+      <h2>Come Join StuTea</h2>
       <form onSubmit={handleSubmit}>
                 <div className="form">
                     <label htmlFor="username">Username</label>
@@ -72,9 +72,11 @@ const onChange = (e)=> {
                     <label htmlFor="city">City</label>
                     <input type="text" name="city" id="city" onChange={onChange} value={credentials.city}/>
                 </div>
+                <div className="form-button">
                 <button type="submit" className="submit-button">
                     Submit
                 </button>
+                </div>
             </form>
     </div>
   );

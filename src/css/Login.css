@@ -1,0 +1,57 @@
+.form-head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.form-head h2{
+    padding: 1rem;
+    text-align: center;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+/* .form{
+       
+} */
+
+.form label{
+    margin:0.7rem;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.form input{
+    /* font-family: 'Kumbh Sans', sans-serif; */
+    padding-left: 0.5rem;
+    /* border-radius: 0.5rem; */
+    /* border: ; */
+}
+
+.form-button{
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-button button{
+    border-radius: 16px;
+    height: 36px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    background-color: #4f86c0;
+    width:5rem;
+    color: white;
+    cursor: pointer;
+    /* align-self: center; */
+}
+
+.form-button button:hover{
+    border:1.7px solid #4f86c0;
+    background-color: #ffffff;
+    color: #4f86c0;
+    box-shadow: 6px 6px 10px #e8ebfa;
+    font-weight: 600;
+}

@@ -9,7 +9,7 @@ const Answers = require('../models/Answers');
 router.post('/feedback', fetchuser, [
     body('rating', 'Cannot be empty').exists(),
 ], async(req, res) => {
-    const {rating} = req.body;
+    const {rating,question} = req.body;
 
     // If there are errors, return bad request and the errors
     const errors = validationResult(req);
@@ -17,11 +17,16 @@ router.post('/feedback', fetchuser, [
         return res.status(400).json({errors: errors.array()});
     }
     try {
-        const query = new Answers({
-            rating,
-            user: req.user.id
-        });
-        const savedNote = await query.save();
+        const query = await Answers.find({question});
+        if (query)
+        {
+            const rate = await Answers.updateOne({query},{
+                $set : {
+                    rating: rating
+                }
+            }) 
+        }
+        const savedNote = await rate.save();
         res.json(savedNote);
     } catch (error) {
         console.error(error.message);

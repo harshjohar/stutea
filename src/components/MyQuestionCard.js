@@ -10,6 +10,10 @@ export const MyQuestionCard = (props) => {
             {question.tags.map((tag) => {
                 return (<>{tag}</>)
             })}
+            <div className="answer-question">
+                <button>Resolved</button>
+                <button>View Answer</button>
+            </div>
         </div>
     )
 }

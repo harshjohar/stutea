@@ -49,7 +49,9 @@ export const Navbar = () => {
                         </button>
                     </Link>
                 </div>:
+                <div className="top-right">
                 <button className="btn-login" onClick={handleLogout}>Logout</button>
+                <i className="fal fa-shopping-cart"></i></div>
     }
             </div>
         </nav>

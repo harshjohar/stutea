@@ -25,7 +25,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 6rem;
+    /* margin-left: 6rem; */
+    position: fixed;
+    right: 14rem;
 
 }
 
@@ -65,8 +67,11 @@
 } */
 
 .top-right{
+    display: flex;
     padding-left: 0.6rem;
     width: 50%;
+    position: fixed;
+    right: -26rem;
 }
 .btn-login{
     width:5rem;
@@ -95,3 +100,9 @@
     color: white;
     
 }
+
+/* i{
+    color: white;
+    height:100%;
+    width: 50%;
+} */

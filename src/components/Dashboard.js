@@ -1,6 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import "../css/Dashboard.css"
-import { AddQuestion } from './AddQuestion';
 import { MyQuestions } from './MyQuestions';
 import { Questions } from './Questions';
 
@@ -10,7 +10,9 @@ const Dashboard = () => {
             <div className="dashboard-head">
             <h2>DashBoard</h2>
             </div>
-            <AddQuestion/>
+            <Link className="add" to="/add">
+                <button>ADD</button>
+            </Link>
             <Questions/>
             <MyQuestions/>
         </div>

@@ -7,6 +7,8 @@ import { Navbar } from "./components/Navbar";
 import  { About } from "./components/About";
 import Contact from "./components/Contact";
 import QuestionState from "./Context/Questions/questionState";
+import { AddQuestion } from "./components/AddQuestion";
+import { ShopHome } from "./components/ShopHome";
 
 function App() {
   return (
@@ -30,6 +32,12 @@ function App() {
           </Route>
           <Route exact path="/contact">
             <Contact/>
+          </Route>
+          <Route exact path="/add">
+            <AddQuestion/>
+          </Route>
+          <Route exact path="/shop">
+            <ShopHome/>
           </Route>
         </Switch>
       </Router>

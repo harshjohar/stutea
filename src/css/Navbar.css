@@ -41,27 +41,34 @@
     
 }
 
-.nav-item{
+.navbar-item{
     /* padding: 1rem 1.8rem; */
-    padding: 1rem 2rem;
+    padding: 1.1rem 2rem;
     font-size: 17px;
     font-weight: 400;
     height: 100%;
+    color: white;
+    text-decoration: none;
+    margin:0rem 0.2rem;
 }
 
-.nav-item a{
+.navbar-item a{
     text-decoration: none;
     color: white;
     /* color: black; */
 }
 
-.nav-item:hover{
+.navbar-item:hover{
     border-bottom: 3px solid white;
     cursor: pointer;
     font-weight: 600;
     color: white;
 }
 
+.active{
+    font-weight: 600;
+    border-bottom: 3px solid white;
+}
 /* .link-list-button{
     padding: 1rem 0.6rem;
 } */
@@ -94,13 +101,13 @@
     color: #0d7d46;
 }
 
-.active {
+/* .active {
     padding: 1.15rem;
     border-bottom: 3px solid white; 
     font-weight: 600;
     color: white;
     
-}
+} */
 
 i{
     color: white;

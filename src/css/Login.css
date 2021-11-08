@@ -41,7 +41,7 @@
     border: none;
     outline: none;
     font-weight: 500;
-    background-color: #4f86c0;
+    background-color: #0d7d46;
     width:5rem;
     color: white;
     cursor: pointer;
@@ -49,9 +49,10 @@
 }
 
 .form-button button:hover{
-    border:1.7px solid #4f86c0;
+    /* border:1.7px solid #4f86c0; */
+    border:1.7px solid #0d7d46;
     background-color: #ffffff;
-    color: #4f86c0;
+    color: #0d7d46;
     box-shadow: 6px 6px 10px #e8ebfa;
     font-weight: 600;
 }

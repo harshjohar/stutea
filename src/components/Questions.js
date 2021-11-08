@@ -32,7 +32,7 @@ export const Questions = () => {
         // eslint-disable-next-line
     }, []);
     return (
-        <div>
+        <div className="questions">
             <h2>Questions</h2>
             {questions.map((question)=> {
                 return <QuestionCard key={question._id} question={question}/>

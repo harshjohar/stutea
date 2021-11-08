@@ -6,12 +6,13 @@
 
 .navbar-parent{
     display: flex;
-    width: 100vw;
+    width: 100%;
     align-items: center;
-    background-color: #e8ebfa;
+    /* background-color: #e8ebfa; */
+    background-color: black;
     position: sticky;
     top: 0;
-    opacity: 0.9;
+    /* opacity: 0.9; */
     /* justify-content: center; */
 }
 .logo-wrapper{
@@ -20,10 +21,11 @@
     
 }
 .navbar-links{
-    width:50%;
+    /* width:50%; */
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 6rem;
 
 }
 
@@ -38,21 +40,24 @@
 }
 
 .nav-item{
-    padding: 1rem 1.8rem;
+    /* padding: 1rem 1.8rem; */
+    padding: 1rem 2rem;
     font-size: 17px;
-    font-weight: 500;
+    font-weight: 400;
+    height: 100%;
 }
 
 .nav-item a{
     text-decoration: none;
+    color: white;
     /* color: black; */
 }
 
 .nav-item:hover{
-    border-bottom: 3px solid blue;
+    border-bottom: 3px solid white;
     cursor: pointer;
     font-weight: 600;
-    color: blue;
+    color: white;
 }
 
 /* .link-list-button{
@@ -72,11 +77,21 @@
     border: none;
     outline: none;
     font-weight: 500;
-    background-color: #efa933;
+    /* background-color: #efa933; */
+    background-color: #0d7d46;
+    color: white;
 }
 
 .btn-login:hover{
     cursor: pointer;
     background-color: #ffffff;
-    color: #efa933;
+    color: #0d7d46;
+}
+
+.active {
+    padding: 1.15rem;
+    border-bottom: 3px solid white; 
+    font-weight: 600;
+    color: white;
+    
 }

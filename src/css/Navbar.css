@@ -72,6 +72,7 @@
     width: 50%;
     position: fixed;
     right: -26rem;
+    align-items: center;
 }
 .btn-login{
     width:5rem;
@@ -101,8 +102,9 @@
     
 }
 
-/* i{
+i{
     color: white;
     height:100%;
-    width: 50%;
-} */
+    /* width: 50%; */
+    padding-left: 1.5rem;
+}

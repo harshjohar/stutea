@@ -1,28 +1,48 @@
-import React, { useContext, useState } from 'react'
-import questionContext from '../Context/Questions/questionContext'
+import React, {  useState } from 'react'
 
 export const AddQuestion = () => {
-    const context = useContext(questionContext);
-    const {addQuestion} = context;
+    const host = process.env.REACT_APP_BACKEND_URL;
     const init = {
-        question: "",
-        tags: ["sample", "testing"]
+        question: ""
     }
     const [question, setQuestion] = useState(init);
-    // TODO
-    // tags
+    const [tagString, setTagString] = useState("");
+    const addQuestion = async () => {
+        // api call
+        let arr =  tagString.split(',');
+        const response = await fetch(`${host}/api/questions/add`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem('token')
+            },
+            body: JSON.stringify({
+                "question": question.question, 
+                "tags": arr
+            })
+        });
+        response.json();
+        setQuestion(init);
+        setTagString("");
+    }
     const handleClick = (e) => {
         e.preventDefault();
-        addQuestion(question.question, question.tags);
+        addQuestion();
         setQuestion(init);
     }
     const onChange = (e)=> {
         setQuestion({...question, [e.target.name]: e.target.value});
     }
+    const onChangeTags = (e)=> {
+        setTagString(e.target.value);
+    }
     return (
         <div>
             <form>
-                <input type="text" name="question" id="question" className="question" onChange={onChange} />
+                <label htmlFor="question">Question</label>
+                <input type="text" name="question" id="question" className="question"value={question.question} onChange={onChange} />
+                <label htmlFor="tagString">Tags</label>
+                <input type="text" name="tagString" id="tagString" className="tagString" value={tagString} onChange={onChangeTags} />
             </form>
             <button type="submit" className="addQues" onClick={handleClick}>Upload</button>
         </div>

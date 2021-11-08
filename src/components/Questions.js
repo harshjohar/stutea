@@ -25,7 +25,6 @@ export const Questions = () => {
     useEffect(()=> {
         if(localStorage.getItem("token")) {
             getQuestions(page);
-            console.log(questions);
         }
         else {
             history.push('/login');

@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import QuestionState from "./Context/Questions/questionState";
 import { AddQuestion } from "./components/AddQuestion";
 import { ShopHome } from "./components/ShopHome";
+import { Answer } from "./components/Answer";
 
 function App() {
   return (
@@ -38,6 +39,9 @@ function App() {
           </Route>
           <Route exact path="/shop">
             <ShopHome/>
+          </Route>
+          <Route exact path="/answer/:quesid">
+            <Answer/>
           </Route>
         </Switch>
       </Router>

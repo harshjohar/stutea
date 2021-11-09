@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import "../css/Register.css"
 
 export const Register = () => {
-  const host = "http://localhost:5000"
+    const host = process.env.REACT_APP_BACKEND_URL;
   let history = useHistory();
   const [credentials, setCredentials] = useState({
       username : "",

@@ -7,9 +7,11 @@ export const MyQuestionCard = (props) => {
         <div>
             {question.question}
             {dateFormat(date, "dddd, mmmm dS, yyyy, h:MM:ss TT")}
-            {question.tags.map((tag) => {
-                return (<>{tag}</>)
-            })}
+            {question.tags.map((tag) => 
+                <div className="tag" key={tag}>
+                    {tag}
+                </div>
+            )}
             <div className="answer-question">
                 <button>Resolved</button>
                 <button>View Answer</button>

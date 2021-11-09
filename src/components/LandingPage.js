@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/LandingPage.css";
 import img from "../Assets/hihihi.jpg";
-import img1 from "../Assets/png.png";
+// import img1 from "../Assets/png.png";
 const LandingPage = () => {
   return (
     <div>
@@ -66,7 +66,7 @@ const LandingPage = () => {
       </div>
       <div className="about-content">
         <div className="about-img">
-          <img src={img1} />
+          <img src={img} alt="img"/>
         </div>
         <div className="about">
           <h1>About StuTea</h1>
@@ -80,7 +80,7 @@ const LandingPage = () => {
       <div className="impact-content">
         <div className="impact">
           <div className="impact-img">
-            <img src={img} />
+            <img src={img} alt="img"/>
           </div>
           <h2>High Impact Learning</h2>
           <p>
@@ -92,7 +92,7 @@ const LandingPage = () => {
       </div>
       <div className="credit-content">
         <div className="credit-img">
-          <img src={img} />
+          <img src={img} alt="img"/>
         </div>
         <div className="credit">
           <h2>Hello!</h2>
@@ -114,9 +114,9 @@ const LandingPage = () => {
               discussing new projects, creative ideas or oppurtunities to be
               part of your vision
             </p>
-            <i class="fas fa-envelope-open-text"></i>
+            <i className="fas fa-envelope-open-text"></i>
             <p>Mail Us info@gmail.com</p>
-            <i class="fas fa-phone-volume"></i>
+            <i className="fas fa-phone-volume"></i>
             <p>Call us at +91 9897198971</p>
           </div>
           <div className="contact-form">

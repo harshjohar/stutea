@@ -10,7 +10,8 @@
     align-items: center;
     /* background-color: #e8ebfa; */
     background-color: black;
-    position: sticky;
+    /* position: sticky; */
+    position: fixed;
     top: 0;
     /* opacity: 0.9; */
     /* justify-content: center; */
@@ -109,7 +110,7 @@
     
 } */
 
-i{
+.fa-shopping-cart{
     color: white;
     height:100%;
     /* width: 50%; */

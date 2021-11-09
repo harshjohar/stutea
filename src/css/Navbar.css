@@ -11,10 +11,11 @@
     /* background-color: #e8ebfa; */
     background-color: black;
     /* position: sticky; */
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     /* opacity: 0.9; */
     /* justify-content: center; */
+    /* margin: 1rem; */
 }
 .logo-wrapper{
     width:50%;
@@ -27,7 +28,7 @@
     align-items: center;
     justify-content: center;
     /* margin-left: 6rem; */
-    position: fixed;
+    /* position: fixed; */
     right: 14rem;
 
 }
@@ -78,7 +79,7 @@
     display: flex;
     padding-left: 0.6rem;
     width: 50%;
-    position: fixed;
+    /* position: fixed; */
     right: -26rem;
     align-items: center;
 }

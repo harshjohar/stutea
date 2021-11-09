@@ -1,6 +1,10 @@
 import React from "react";
 import "../css/LandingPage.css";
-import img from "../Assets/hihihi.jpg";
+// import img from "../Assets/hihihi.jpg";
+import img from "../Assets/help.jpg";
+import img1 from "../Assets/happyStudents.jpg";
+import img2 from "../Assets/1.jpg";
+import img3 from "../Assets/token.jpg";
 // import img1 from "../Assets/png.png";
 const LandingPage = () => {
   return (
@@ -35,7 +39,7 @@ const LandingPage = () => {
             </ul>
           </div>
           <div className="middle-side">
-            <img src={img} alt="Harshu" />
+            <img src={img1} alt="Harshu" />
           </div>
           <div className="right-side">
             <ul>
@@ -80,7 +84,7 @@ const LandingPage = () => {
       <div className="impact-content">
         <div className="impact">
           <div className="impact-img">
-            <img src={img} alt="img"/>
+            <img src={img2} alt="img"/>
           </div>
           <h2>High Impact Learning</h2>
           <p>
@@ -92,17 +96,18 @@ const LandingPage = () => {
       </div>
       <div className="credit-content">
         <div className="credit-img">
-          <img src={img} alt="img"/>
+          <img src={img3} alt="img"/>
         </div>
         <div className="credit">
           <h2>Hello!</h2>
           <p>
             Browse your credits exchange store
-            <strong>
+          </p>
+          <strong>
               Choose from hundreds of offers and schemes to redeem and purchase
               credits from our online store
-            </strong>
-          </p>
+          </strong>
+          
         </div>
       </div>
       <div className="contact-content">

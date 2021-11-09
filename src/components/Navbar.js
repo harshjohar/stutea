@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
-// import PropTypes from "prop-types";
+import logo from "../logo.svg"
 import "../css/Navbar.css"
 
 export const Navbar = () => {
@@ -14,7 +14,7 @@ export const Navbar = () => {
     <nav className="navbar-parent">
             <div className="logo-wrapper">
                 <Link className="logo-link" to="/">
-                   STUTEA
+                   <img src={logo} alt="STUTEA" />
                 </Link>
             </div>
             <div className="navbar-links">

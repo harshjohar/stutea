@@ -13,7 +13,7 @@
     /* align-items: center; */
     height: 500px;
     font-family: 'Ubuntu', sans-serif;
-    background-image: url("../Assets/hihihi.jpg") ;
+    background-image: url("../Assets/1.jpg") ;
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-size: cover;
@@ -29,10 +29,10 @@
     /* margin-top: 5px; */
     background-color: black;
     color: aliceblue;
-    height: 500px;
+    height: 550px;
 }
 .features-content h1{
-    margin-left: 525px;
+    margin-left: 375px;
     padding-top: 25px;
 
 }
@@ -50,6 +50,7 @@
 .about-content{
     /* border: 2px solid red; */
     /* margin-top: 5px; */
+    
     display: flex;
     flex-direction: row;
     padding: 70px 30px;
@@ -60,7 +61,7 @@
     /* background-image: url("../Assets/hihihi.jpg") ;
     background-repeat: no-repeat;
     background-size: cover; */
-    background-color: green;
+    background-image: linear-gradient(to left, black , rgb(185, 179, 179));
     background-blend-mode: color-dodge;
     /* background-attachment: fixed; */
     color: aliceblue;
@@ -89,12 +90,14 @@
     /* align-items: center; */
     height: 500px;
     font-family: 'Ubuntu', sans-serif;
-    background-image: url("../Assets/hihihi.jpg") ;
+    background-image:url("../Assets/class.jpg") ;
+    
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-size: cover;
     color: aliceblue;
 }
+
 
 .credit-content{
     /* border: 2px solid red; */
@@ -105,8 +108,9 @@
     /* justify-content: center; */
     /* align-items: center; */
     height: 500px;
+    font-size:x-large;
     font-family: 'Ubuntu', sans-serif;
-    background-image: url("../Assets/hihihi.jpg") ;
+    background-image: url("../Assets/tokenbg.jpg") ;
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-size: cover;

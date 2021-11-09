@@ -30,7 +30,7 @@ router.post('/add', fetchuser, [
     }
 });
 
-// ROUTE 2 : Fetch questions : GET "/api/questions/fetch". Login Required
+// ROUTE 2 : Fetch questions : POST "/api/questions/fetch". Login Required
 router.post("/fetch", fetchuser, async(req, res)=> {
     try {
 
@@ -52,7 +52,7 @@ router.post("/fetch", fetchuser, async(req, res)=> {
     }
 })
 
-// ROUTE 3 : Fetch user's own questions GET "/api/questions/fetchuser". Login Required
+// ROUTE 3 : Fetch user's own questions POST "/api/questions/fetchuser". Login Required
 router.post("/fetchuser", fetchuser, async(req, res)=> {
     try {
         const {page}=req.body;
@@ -68,4 +68,25 @@ router.post("/fetchuser", fetchuser, async(req, res)=> {
         res.status(500).send("Internal Server Error");
     }
 })
+
+// ROUTE 4 : Fetch the question by id POST "/api/questions/getquestion". Login Required
+router.post("/getquestion", fetchuser,[
+    body("quesid", "Cannot be empty").exists()
+] ,async(req, res)=> {
+    
+    // If there are errors, return bad request and the errors
+    const errors = validationResult(req);
+    if(!errors.isEmpty()) {
+        return res.status(400).json({errors: errors.array()});
+    }
+    try {
+        const {quesid} = req.body;
+        const question = await Questions.findById(quesid);
+        res.json(question);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+})
+
 module.exports = router;

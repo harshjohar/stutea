@@ -27,11 +27,11 @@ router.post('/add', fetchuser, [
     }
 })
 
-// ROUTE 2 : Fetch Answer of a question. GET '/api/answers/fetch'. Login Required
-router.get('/fetch', fetchuser, async(req, res)=> {
+// ROUTE 2 : Fetch Answer of a question. POST '/api/answers/fetch'. Login Required
+router.post('/fetch', fetchuser, async(req, res)=> {
     try {
         const {question} = req.body;
-        const answer = await Answers.find({question});
+        const answer = await Answers.findOne({question});
         if(answer) {
             res.json(answer);
         }

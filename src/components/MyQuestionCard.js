@@ -1,8 +1,17 @@
 import React from 'react'
 import dateFormat from 'dateformat';
+import { useHistory } from 'react-router-dom';
 export const MyQuestionCard = (props) => {
     const {question} = props;
     const date = question.timestamp;
+    let history = useHistory();
+    const resolvedClick = async () => {
+
+    }
+
+    const viewAnswerClick = async () => {
+        history.push(`/view/${question._id}`)
+    }
     return (
         <div>
             {question.question}
@@ -13,8 +22,8 @@ export const MyQuestionCard = (props) => {
                 </div>
             )}
             <div className="answer-question">
-                <button>Resolved</button>
-                <button>View Answer</button>
+                <button onClick={resolvedClick}>Resolved</button>
+                <button onClick={viewAnswerClick}>View Answer</button>
             </div>
         </div>
     )

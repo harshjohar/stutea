@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
-import { useHistory } from 'react-router-dom';
-export const Answer = () => {
-    const {quesid}=useParams();
-    const host = process.env.REACT_APP_BACKEND_URL;
+import { useHistory, useParams } from 'react-router-dom'
+
+export const ViewAnswer = () => {
+    const {quesid} = useParams();
     let history = useHistory();
+    const host = process.env.REACT_APP_BACKEND_URL;
     const init = {
-        answer: ""
+        "answer": "",
+        "question": ""
     }
     const initQ = {
         "_id": "",
@@ -14,8 +15,10 @@ export const Answer = () => {
         "question": "",
         "tags": []
     }
-    const [answer, setAnswer] = useState(init);
+
     const [question, setQuestion] = useState(initQ);
+    const [answer, setAnswer] = useState(init);
+
     const getQuestionDetails = async () => {
         const response = await fetch(`${host}/api/questions/getquestion`, {
             method: "POST",
@@ -31,38 +34,25 @@ export const Answer = () => {
         setQuestion(json);
     }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        // api call
-        const response = await fetch(`${host}/api/answers/add`, {
+    const getAnswer = async () => {
+        const response = await fetch(`${host}/api/answers/fetch`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "auth-token": localStorage.getItem('token')
             },
             body: JSON.stringify({
-                "question": quesid,
-                "answer": answer.answer
+                "question": quesid
             })
         });
-        response.json();
-        setAnswer(init);
-    }
-
-    const onChange = (e) => {
-        setAnswer({...answer, [e.target.name]: e.target.value});
+        const json = await response.json();
+        setAnswer(json);
     }
 
     useEffect(() => {
-        if(localStorage.getItem("token")) {
-            getQuestionDetails();
-        }
-        else {
-            history.push('/login');
-        }
-        // eslint-disable-next-line
+        getAnswer();
+        getQuestionDetails();
     }, [])
-
     return (
         <div>
             <h2>{question.question}</h2>
@@ -72,11 +62,8 @@ export const Answer = () => {
                     {tag}
                 </div>
             )}
-            <form>
-                <label htmlFor="answer">Write your answer here</label>
-                <input type="text" name="answer" id="answer" className="answer" value={answer.answer} onChange={onChange} />
-            </form>
-            <button type="submit"className="addAnswer" onClick={handleSubmit}>Submit</button>
+            <h3>Answer</h3>
+            {answer.answer ? answer.answer : "No one answered"}
         </div>
     )
 }

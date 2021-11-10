@@ -10,6 +10,7 @@ import QuestionState from "./Context/Questions/questionState";
 import { AddQuestion } from "./components/AddQuestion";
 import { ShopHome } from "./components/ShopHome";
 import { Answer } from "./components/Answer";
+import { ViewAnswer } from "./components/ViewAnswer";
 
 function App() {
   return (
@@ -42,6 +43,9 @@ function App() {
           </Route>
           <Route exact path="/answer/:quesid">
             <Answer/>
+          </Route>
+          <Route exact path="/view/:quesid">
+            <ViewAnswer/>
           </Route>
         </Switch>
       </Router>

@@ -12,6 +12,7 @@ import { ShopHome } from "./components/ShopHome";
 import { Answer } from "./components/Answer";
 import { ViewAnswer } from "./components/ViewAnswer";
 import { UserState } from "./Context/User/userState";
+import { Profile } from "./components/Profile";
 
 function App() {
   return (
@@ -49,6 +50,11 @@ function App() {
           </Route>
           <Route exact path="/view/:quesid">
             <ViewAnswer/>
+          </Route>
+          <Route exact path="/profile">
+            <UserState>
+              <Profile/>
+            </UserState>
           </Route>
         </Switch>
       </Router>

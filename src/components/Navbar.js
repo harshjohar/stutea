@@ -34,6 +34,11 @@ export const Navbar = () => {
                             Contact
                         </Link>
                     </li>
+                    <li className="nav-item">
+                        <Link className={`navbar-item ${location.pathname==='/profile'?"active":""}`} to="/profile">
+                            Profile
+                        </Link>
+                    </li>
                 </ul>
 
                 {!localStorage.getItem("token")?

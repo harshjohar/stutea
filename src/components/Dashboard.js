@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "../css/Dashboard.css"
 import { MyQuestions } from './MyQuestions';
 import { Questions } from './Questions';
+import { SidePane } from './SidePane';
 
 const Dashboard = () => {
     return (
@@ -13,6 +14,7 @@ const Dashboard = () => {
             <Link className="add" to="/add">
                 <button>ADD</button>
             </Link>
+            <SidePane/>
             <Questions/>
             <MyQuestions/>
         </div>

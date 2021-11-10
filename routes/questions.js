@@ -89,4 +89,24 @@ router.post("/getquestion", fetchuser,[
     }
 })
 
+// ROUTE 5 : Delete Question by id DELETE "/api/questions/deleteques". Login Required
+router.delete("/deleteques/:id", fetchuser, async (req, res)=> {
+    try {
+        var question = await Questions.findById(req.params.id);
+        if(!question) {
+            return res.status(400).send("Not Found!");
+        }
+
+        if(question.user.toString()!==req.user.id) {
+            return res.status(401).send("Not Allowed!");
+        }
+
+        await Questions.findByIdAndDelete(req.params.id);
+        res.json("DELETED!");
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+})
+
 module.exports = router;

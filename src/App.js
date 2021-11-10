@@ -11,6 +11,7 @@ import { AddQuestion } from "./components/AddQuestion";
 import { ShopHome } from "./components/ShopHome";
 import { Answer } from "./components/Answer";
 import { ViewAnswer } from "./components/ViewAnswer";
+import { UserState } from "./Context/User/userState";
 
 function App() {
   return (
@@ -19,9 +20,11 @@ function App() {
         <Navbar/>
         <Switch>
           <Route exact path="/">
-            <QuestionState>
-              <Home/>
-            </QuestionState>
+            <UserState>
+              <QuestionState>
+                <Home/>
+              </QuestionState>
+            </UserState>
           </Route>
           <Route exact path="/login">
             <Login />

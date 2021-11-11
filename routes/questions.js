@@ -40,12 +40,16 @@ router.post("/fetch", fetchuser, async(req, res)=> {
             {user: {$ne : req.user.id}}
         ).limit(15).skip((page-1)*15);
 
+        const count = await Questions.find(
+            {user: {$ne : req.user.id}}
+        ).count();
+
         questions.sort(function(a,b){
             // Turn your strings into dates, and then subtract them
             // to get a value that is either negative, positive, or zero.
             return new Date(b.timestamp) - new Date(a.timestamp);
         });
-        res.json(questions);
+        res.json({questions, count});
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Internal Server Error");

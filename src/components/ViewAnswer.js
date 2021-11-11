@@ -50,8 +50,14 @@ export const ViewAnswer = () => {
     }
 
     useEffect(() => {
-        getAnswer();
-        getQuestionDetails();
+        if(localStorage.getItem('token')) {
+            getAnswer();
+            getQuestionDetails();
+        }
+        else {
+            history.push('/login');
+        }
+        // eslint-disable-next-line
     }, [])
     return (
         <div>

@@ -14,11 +14,12 @@ export const Profile = () => {
     }, [])
     return (
         <div>
-            Profile
-            {user.first}
-            {user.last}
-            {user.username}
-            {user.city}
+            <h2>Profile</h2>
+            <h3>{user.username}</h3>
+            <div className="name">
+                {user.first+ " "+user.last}
+            </div>
+            <small>{user.city}</small>
         </div>
     )
 }

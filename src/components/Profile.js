@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import userContext from '../Context/User/userContext'
+import { MyQuestions } from './MyQuestions';
 
 export const Profile = () => {
     const uContext = useContext(userContext);
@@ -20,6 +21,7 @@ export const Profile = () => {
                 {user.first+ " "+user.last}
             </div>
             <small>{user.city}</small>
+            <MyQuestions/>
         </div>
     )
 }

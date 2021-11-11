@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import "../css/Dashboard.css"
-import { MyQuestions } from './MyQuestions';
+import { MyQuestionDashboard } from './MyQuestionDashboard';
 import { Questions } from './Questions';
 import { SidePane } from './SidePane';
 
@@ -16,7 +16,7 @@ const Dashboard = () => {
             </Link>
             <SidePane/>
             <Questions/>
-            <MyQuestions/>
+            <MyQuestionDashboard/>
         </div>
     )
 }

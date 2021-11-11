@@ -62,11 +62,13 @@ router.post("/fetchuser", fetchuser, async(req, res)=> {
         const {page}=req.body;
         const user=req.user.id;
         const myQuestions = await Questions.find({user}).limit(15).skip((page-1)*15);
+        const count = await Questions.find({user}).count();
 
         myQuestions.sort(function(a,b){
             return new Date(b.timestamp) - new Date(a.timestamp);
         });
-        res.json(myQuestions);
+        
+        res.json({myQuestions, count});
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Internal Server Error");

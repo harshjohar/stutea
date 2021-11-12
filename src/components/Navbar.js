@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import logo from "../logo.svg"
 import "../css/Navbar.css"
+import {FaBars} from "react-icons/fa";
 
 export const Navbar = () => {
     let location = useLocation();
@@ -10,15 +11,22 @@ export const Navbar = () => {
     localStorage.removeItem('token')
     history.push('/login')
   }
+  const [hamburger, setHamburger] = useState(false);
+  const toggleHam = () => {
+      setHamburger(!hamburger);
+  }
   return (
     <nav className="navbar-parent">
             <div className="logo-wrapper">
                 <Link className="logo-link" to="/">
-                   <img src={logo} alt="STUTEA" />
+                   <img src={logo} alt="STUTEA" className="logo-img" />
                 </Link>
             </div>
-            <div className="navbar-links">
-                <ul className="nav-item-list">
+            <div className="bars" onClick={toggleHam}>
+                <FaBars/>
+            </div>
+            <div className={`navbar-links`+((hamburger)?"-ham":"")}>
+                <ul className={`nav-item-list`+((hamburger)?"-ham":"")}>
                     <li className="nav-item">
                         <Link className={`navbar-item ${location.pathname==='/'?"active":""}`} to="/">
                             Home
@@ -34,11 +42,11 @@ export const Navbar = () => {
                             Contact
                         </Link>
                     </li>
-                    <li className="nav-item">
+                    {localStorage.getItem('token')&&<li className="nav-item">
                         <Link className={`navbar-item ${location.pathname==='/profile'?"active":""}`} to="/profile">
                             Profile
                         </Link>
-                    </li>
+                    </li>}
                 </ul>
 
                 {!localStorage.getItem("token")?
@@ -58,7 +66,7 @@ export const Navbar = () => {
                 <button className="btn-login" onClick={handleLogout}>Logout</button>
                 {/* <i className="fal fa-shopping-cart"></i> */}
                 <Link to="/shop">
-                <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-shopping-cart"></i>
                 </Link>
                 </div>
     }

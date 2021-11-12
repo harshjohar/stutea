@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import logo from "../logo.svg"
 import "../css/Navbar.css"
+import {FaBars,FaTimes} from "react-icons/fa"
+
 
 export const Navbar = () => {
     let location = useLocation();
@@ -10,15 +12,25 @@ export const Navbar = () => {
     localStorage.removeItem('token')
     history.push('/login')
   }
+
+  const [hamburger, setHamburger] = useState(false)
+  const toggle=()=>{
+      setHamburger(!hamburger)
+  }
+
   return (
+    <>
+    <div className="bars" onClick={toggle}>
+        {!hamburger?<FaBars/>:<FaTimes/>}
+    </div>
     <nav className="navbar-parent">
-            <div className="logo-wrapper">
+            <div className={`logo-wrapper`+ (hamburger ? "-ham" : "")} >
                 <Link className="logo-link" to="/">
-                   <img src={logo} alt="STUTEA" />
+                   <img src={logo} className="stutea-logo" alt="STUTEA" />
                 </Link>
             </div>
-            <div className="navbar-links">
-                <ul className="nav-item-list">
+            <div className={`navbar-links`+(hamburger?"-ham":"")}>
+                <ul className={`nav-item-list`+(hamburger?"-ham":"")}>
                     <li className="nav-item">
                         <Link className={`navbar-item ${location.pathname==='/'?"active":""}`} to="/">
                             Home
@@ -64,5 +76,6 @@ export const Navbar = () => {
     }
             </div>
         </nav>
+    </>
   )
 }

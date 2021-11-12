@@ -1,0 +1,74 @@
+.contact-cont{
+    /* border: 2px solid black; */
+    /* margin-top: 5px; */
+    padding-left: 30px;
+    height: 1000px;
+    background-color: white;
+    color: black;
+}
+
+.contact-cont h1{
+    padding-top: 30px;
+    padding-left: 50px;
+    font-size: 50px;
+}
+.cont {
+    margin: 34px;
+    display: flex;
+    font-family: 'Ubuntu', sans-serif;
+    /* font-size: 50px; */
+    
+}
+.other-cont {
+    width: 40%;
+    font-size: 20px;
+
+}
+
+.handles i {
+    margin-left: 10px;
+}
+.handles a {
+    color: black;
+    text-decoration: none;
+}
+
+.cont-form {
+    padding-left: 30px;
+    height: 525px;
+    width: 700px;
+    background-color: rgb(230, 220, 220);
+}
+
+.cont-form input {
+    padding: 2px 20px;
+}
+
+.first-last {
+    display: flex;
+}
+
+
+
+
+.forms input{
+    width: 650px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+
+.first-last input{
+    width: 310px;
+    height: 50px;
+    margin-top: 10px;
+    /* margin-left: 0px; */
+}
+
+.lastname input {
+    margin-left: 20px;
+
+}
+.message input{
+    height: 100px;
+}

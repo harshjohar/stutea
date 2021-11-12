@@ -44,7 +44,7 @@
     font-size: 18px;
 }
 
-.middle-side img{
+.class-img img{
     height: 300px;
 }
 .about-content{
@@ -157,9 +157,9 @@
     height: 100px;
 }
 
-img {
+/* img {
     height: 100px;
-}
+} */
 
 .checkbox{
     font-size: 20px;

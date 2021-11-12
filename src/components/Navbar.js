@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import logo from "../logo.svg";
 import "../css/Navbar.css";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export const Navbar = () => {
     let location = useLocation();
@@ -12,13 +12,15 @@ export const Navbar = () => {
         history.push("/login");
     };
     const [hamburger, setHamburger] = useState(false);
+    const [open, setOpen] = useState(false)
     const toggleHam = () => {
         setHamburger(!hamburger);
+        setOpen(!open);
     };
     return (
         <>
             <div className="bars" onClick={toggleHam}>
-                <FaBars />
+                {!open ? <FaBars /> : <FaTimes/>}
             </div>
             <nav className="navbar-parent">
                 <div className={`logo-wrapper` + (hamburger ? "-ham" : "")}>

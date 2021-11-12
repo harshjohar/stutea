@@ -1,187 +1,27 @@
 *{
     margin: 0;
     padding: 0;
-}
-
-.intro-content{
-    /* border: 2px solid red; */
-    /* margin-top: 5px; */
-    display: flex;
-    flex-direction: column;
-    padding: 18px 210px;
-    /* justify-content: center; */
-    /* align-items: center; */
-    height: 500px;
-    font-family: 'Ubuntu', sans-serif;
-    background-image: url("../Assets/1.jpg") ;
-    background-repeat: no-repeat;
-    /* background-attachment: fixed; */
-    background-size: cover;
-    color: aliceblue;
-}
-
-.intro-content h1{
-    margin-top: 100px;
-    font-size: 70px;
-}
-.features-content{
-    /* border: 2px solid black; */
-    /* margin-top: 5px; */
-    background-color: black;
-    color: aliceblue;
-    height: 550px;
-}
-.features-content h1{
-    margin-left: 375px;
-    padding-top: 25px;
-
-}
-
-.features {
-    margin: 34px;
-    display: flex;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 18px;
-}
-
-.middle-side img{
-    height: 300px;
-}
-.about-content{
-    /* border: 2px solid red; */
-    /* margin-top: 5px; */
-    
-    display: flex;
-    flex-direction: row;
-    padding: 70px 30px;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-    font-family: 'Ubuntu', sans-serif;
-    /* background-image: url("../Assets/hihihi.jpg") ;
-    background-repeat: no-repeat;
-    background-size: cover; */
-    background-image: linear-gradient(to left, black , rgb(185, 179, 179));
-    background-blend-mode: color-dodge;
-    /* background-attachment: fixed; */
-    color: aliceblue;
-}
-
-.about {
-    margin-left: 50px;
-    width: 20%;
-    font-size: 20px;
-}
-
-.about-img img{
-    height: 280px;
-    margin-top: 20px;
-    margin-left: 10px;
-}
-
-
-.impact-content{
-    /* border: 2px solid red; */
-    /* margin-top: 5px; */
-    display: flex;
-    flex-direction: column;
-    padding: 18px 210px;
-    /* justify-content: center; */
-    /* align-items: center; */
-    height: 500px;
-    font-family: 'Ubuntu', sans-serif;
-    background-image:url("../Assets/class.jpg") ;
-    
-    background-repeat: no-repeat;
-    /* background-attachment: fixed; */
-    background-size: cover;
-    color: aliceblue;
-}
-
-
-.credit-content{
-    /* border: 2px solid red; */
-    /* margin-top: 5px; */
-    display: flex;
-    flex-direction: column;
-    padding: 18px 210px;
-    /* justify-content: center; */
-    /* align-items: center; */
-    height: 500px;
-    font-size:x-large;
-    font-family: 'Ubuntu', sans-serif;
-    background-image: url("../Assets/tokenbg.jpg") ;
-    background-repeat: no-repeat;
-    /* background-attachment: fixed; */
-    background-size: cover;
-    color: aliceblue;
-}
-
-.contact-content{
-    /* border: 2px solid black; */
-    /* margin-top: 5px; */
-    padding-left: 30px;
-    height: 500px;
-    background-color: black;
-    color: aliceblue;
-}
-
-.contact-content h1{
-    padding-top: 30px;
-    padding-left: 50px;
-    font-size: 50px;
-}
-.contact {
-    margin: 34px;
-    display: flex;
-    font-family: 'Ubuntu', sans-serif;
-    /* font-size: 50px; */
-    
-}
-.other-contact {
-    width: 40%;
-    font-size: 20px;
-
-}
-.contact-form {
-    padding-left: 30px;
-}
-
-.form input{
-    width: 650px;
-    height: 50px;
-    margin-top: 10px;
-}
-
-.msg input{
-    height: 100px;
+    font-family: 'Kumbh Sans', sans-serif;
+    box-sizing: border-box;
 }
 
 img {
     height: 100px;
 }
 
-.checkbox{
-    font-size: 20px;
-    margin-top: 5px;
+.intro-content {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    padding: 5rem;
+    background: url("../Assets/intro-img.jpg") center center/cover no-repeat;
+    opacity: 0.9;
 }
 
-.submit-button{
-    width:6rem;
-    /* padding: 1rem 0rem; */
-    margin: 0.5rem 0rem;
-    border-radius: 16px;
-    height: 38px;
-    border: none;
-    outline: none;
-    font-weight: 560;
-    /* background-color: #efa933; */
-    background-color: #0d7d46;
-    color: white;
-    font-size: 16px;
+.intro-text {
+    font-size: 4rem;
+    color: rgb(1, 46, 1);
+    font-weight: 900;
 }
 
-.submit-button:hover {
-    background-color: #fff;
-    color: #0d7d46;
-}

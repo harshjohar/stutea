@@ -1,20 +1,19 @@
 import React from "react";
 import "../css/LandingPage.css";
-// import img from "../Assets/hihihi.jpg";
 import img from "../Assets/help.jpg";
 import img1 from "../Assets/happyStudents.jpg";
 import img2 from "../Assets/1.jpg";
 import img3 from "../Assets/token.jpg";
-// import img1 from "../Assets/png.png";
+
 const LandingPage = () => {
   return (
     <div>
       <div className="intro-content">
-        <h1>Hello folks</h1>
-        <h2>Welcome To StuTea</h2>
+        <div className="intro-text">Hello folks!</div>
+        <div className="intro-text">Welcome To StuTea.</div>
       </div>
       <div className="features-content">
-        <h1>Best Doubt Management Tool</h1>
+        <div className="feature-heading">Best Doubt Management Tool</div>
         <div className="features">
           <div className="left-side">
             <ul>

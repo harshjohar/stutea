@@ -5,115 +5,159 @@
 }
 
 .navbar-parent{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    /* background-color: #e8ebfa; */
     background-color: black;
-    /* position: sticky; */
-    /* position: fixed; */
-    top: 0;
-    /* opacity: 0.9; */
-    /* justify-content: center; */
-    /* margin: 1rem; */
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    /* justify-content: ; */
 }
+
 .logo-wrapper{
-    width:50%;
-    padding: 1.2rem 3.7rem;
-    
-}
-.navbar-links{
-    /* width:50%; */
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin-left: 6rem; */
-    /* position: fixed; */
-    right: 14rem;
+    height: 100%;
+    width: 20%;
+}
 
+.stutea-logo{
+    height: 50px;
+
+}
+
+.navbar-links{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .nav-item-list{
-    list-style: none;
     display: flex;
+    list-style: none;
     align-items: center;
     justify-content: center;
-    margin: 0px;
     height: 100%;
-    
+    margin-bottom: 0rem;
+    padding-left: 0rem;
+
+}
+
+.nav-item{
+    margin: 0rem;
+
 }
 
 .navbar-item{
-    /* padding: 1rem 1.8rem; */
-    padding: 1.1rem 2rem;
-    font-size: 17px;
-    font-weight: 400;
-    height: 100%;
-    color: white;
-    text-decoration: none;
-    margin:0rem 0.2rem;
-}
-
-.navbar-item a{
     text-decoration: none;
     color: white;
-    /* color: black; */
-}
-
-.navbar-item:hover{
-    border-bottom: 3px solid white;
     cursor: pointer;
-    font-weight: 600;
-    color: white;
+    padding: 1.7rem 0.5rem;
+    height: 100%;
+    font-weight: 400;
+    margin: 0rem 0.5rem;
 }
 
-.active{
+.navbar-item:hover,.active{
+    color: white;
     font-weight: 600;
     border-bottom: 3px solid white;
 }
-/* .link-list-button{
-    padding: 1rem 0.6rem;
-} */
+
 
 .top-right{
     display: flex;
-    padding-left: 0.6rem;
-    width: 50%;
-    /* position: fixed; */
-    right: -26rem;
     align-items: center;
+    justify-content: center;
+    padding: 0rem 2rem;
 }
+
 .btn-login{
-    width:5rem;
-    /* padding: 1rem 0rem; */
+    width: 5rem;
+    background-color: #0d7d46;
+    color: white;
+    cursor: pointer;
     margin: 0rem 0.6rem;
     border-radius: 16px;
     height: 33px;
-    border: none;
     outline: none;
+    border:none;
     font-weight: 500;
-    /* background-color: #efa933; */
-    background-color: #0d7d46;
-    color: white;
 }
 
 .btn-login:hover{
-    cursor: pointer;
     background-color: #ffffff;
     color: #0d7d46;
 }
 
-/* .active {
-    padding: 1.15rem;
-    border-bottom: 3px solid white; 
-    font-weight: 600;
-    color: white;
-    
-} */
-
 .fa-shopping-cart{
-    color: white;
-    height:100%;
-    /* width: 50%; */
+    color:white;
+    height: 100%;
     padding-left: 1.5rem;
 }
+
+.bars{
+    display: none;
+    color: white;
+}
+
+@media screen and (max-width:768px) {
+    .navbar-links{
+        display: none;
+    }
+
+    .bars{
+        display: block;
+        top: 0;
+        right: 0;
+        position: absolute;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 1rem 2rem;
+
+    }
+
+    .navbar-parent{
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .navbar-item:hover,.active{
+        color: white;
+        font-weight: 600;
+        border-bottom: none;
+    }
+
+    .top-right{
+        flex-direction: column;
+    }
+
+    .nav-item{
+        margin: 1rem;
+    }
+    .btn-login{
+        margin: 1rem;
+    }
+    
+}
+
+.logo-wrapper-ham{
+    display: none;
+}
+.navbar-links-ham{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+.nav-item-list-ham{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-bottom: 0rem;
+    padding-left: 0rem;
+    align-items: center;
+    
+}
+

@@ -20,7 +20,7 @@ export const MyQuestionDashboard = () => {
             })
         });
         const json = await response.json();
-        setQuestions(json);
+        setQuestions(json.myQuestions);
     };
     useEffect(() => {
         if(localStorage.getItem("token")) {

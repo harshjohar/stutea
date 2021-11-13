@@ -22,7 +22,12 @@ app.use('/api/user', require('./routes/user'), (req, res)=> {
 app.use('/api/answers', require('./routes/answers'), (req, res)=> {
     res.send("answers endpoint ready")
 })
-
+app.use('/api/feedback', require('./routes/feedback'), (req, res)=> {
+    res.send("feedback endpoint ready")
+});
+app.use('/api/credits', require('./routes/credits'), (req, res)=> {
+    res.send("credits endpoint ready")
+});
 app.get("/", (req, res)=> {
     res.send("hello world!, stutea here!");
 })

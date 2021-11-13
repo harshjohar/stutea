@@ -1,0 +1,45 @@
+.intro-img img {
+    height: 350px;
+}
+
+.about-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 20px;
+}
+
+.intro-right {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    font-size: 20px;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.founder-intro {
+    margin-left: 20px;
+}
+/* .founder-cards {
+    display: flex;
+    width: 100%;
+} */
+.founder-cards img {
+    height: 200px;
+}
+
+.card {
+    width: 24rem;
+    margin: 20px 50px;
+    padding: 2px 50px;
+}
+
+.handles-about i {
+    margin-left: 4px;
+    font-size: 25px;
+}
+.handles-about a {
+    color: black;
+    text-decoration: none;
+}

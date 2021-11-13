@@ -13,6 +13,7 @@ import { Answer } from "./components/Answer";
 import { ViewAnswer } from "./components/ViewAnswer";
 import { UserState } from "./Context/User/userState";
 import { Profile } from "./components/Profile";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
             </UserState>
           </Route>
         </Switch>
+        <Footer/>
       </Router>
     </div>
   );

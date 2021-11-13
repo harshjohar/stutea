@@ -66,6 +66,7 @@
 
 .class-img img{
     height: 300px;
+    border-radius: 30px;
 }
 .about-content{
     /* border: 2px solid red; */

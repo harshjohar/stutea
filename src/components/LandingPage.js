@@ -38,7 +38,7 @@ const LandingPage = () => {
               </li>
             </ul>
           </div>
-          <div className="middle-side">
+          <div className="middle-side class-img">
             <img src={img1} alt="Harshu" />
           </div>
           <div className="right-side">
@@ -69,8 +69,8 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="about-content">
-        <div className="about-img">
-          <img src={img} alt="img"/>
+        <div className="about-img class-img">
+          <img src={img} alt="img" />
         </div>
         <div className="about">
           <h1>About StuTea</h1>
@@ -83,8 +83,8 @@ const LandingPage = () => {
       </div>
       <div className="impact-content">
         <div className="impact">
-          <div className="impact-img">
-            <img src={img2} alt="img"/>
+          <div className="impact-img class-img">
+            <img src={img2} alt="img" />
           </div>
           <h2>High Impact Learning</h2>
           <p>
@@ -95,19 +95,15 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="credit-content">
-        <div className="credit-img">
-          <img src={img3} alt="img"/>
+        <div className="credit-img class-img">
+          <img src={img3} alt="img" />
         </div>
         <div className="credit">
           <h2>Hello!</h2>
           <p>
-            Browse your credits exchange store
+            Browse your credits exchange store and choose from hundreds of offers
+            and schemes to redeem and purchase credits from our online store
           </p>
-          <strong>
-              Choose from hundreds of offers and schemes to redeem and purchase
-              credits from our online store
-          </strong>
-          
         </div>
       </div>
       <div className="contact-content">

@@ -47,6 +47,7 @@ export const Answer = () => {
         });
         response.json();
         setAnswer(init);
+        history.push("/");
     }
 
     const onChange = (e) => {

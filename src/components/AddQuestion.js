@@ -1,4 +1,5 @@
 import React, {  useState } from 'react'
+import { useHistory } from 'react-router-dom';
 // import "../css/Dashboard.css"
 
 export const AddQuestion = () => {
@@ -6,6 +7,7 @@ export const AddQuestion = () => {
     const init = {
         question: ""
     }
+    let history=useHistory();
     const [question, setQuestion] = useState(init);
     const [tagString, setTagString] = useState("");
     const addQuestion = async () => {
@@ -30,6 +32,7 @@ export const AddQuestion = () => {
         e.preventDefault();
         addQuestion();
         setQuestion(init);
+        history.push("/");
     }
     const onChange = (e)=> {
         setQuestion({...question, [e.target.name]: e.target.value});

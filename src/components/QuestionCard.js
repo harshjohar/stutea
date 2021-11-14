@@ -41,6 +41,7 @@ export const QuestionCard = (props) => {
     }, [])
     return (
         <div>
+            <img src={userData.dp} alt="dp" />
             <h4>{userData.first + " " + userData.last}</h4>
             {question.question}
             {dateFormat(date, "dddd, mmmm dS, yyyy, h:MM:ss TT")}

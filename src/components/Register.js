@@ -34,7 +34,7 @@ export const Register = () => {
     const json = await response.json();
     if(json.success) {
         localStorage.setItem('token', json.authtoken);
-        history.push('/');
+        history.push('/wait');
     }
     else {
         alert("Invalid Credentials");

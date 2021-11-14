@@ -20,7 +20,7 @@
 
 .intro-content::before {
     content: '';
-    background: url("../Assets/1.jpg");
+    background: url("../Assets/bg1.jpg");
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-size: cover;
@@ -29,13 +29,15 @@
     width: 100%;
     top: 0px;
     left: 0px;
-    opacity: 0.85;
+    opacity: 0.5;
     z-index: -1;
 }
 
 .intro-content h1{
-    margin-top: 120px;
+    margin-top: 60px;
     font-size: 85px;
+    font-weight: bold;
+    
 }
 
 .intro-content h2{

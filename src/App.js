@@ -14,6 +14,8 @@ import { ViewAnswer } from "./components/ViewAnswer";
 import { UserState } from "./Context/User/userState";
 import { Profile } from "./components/Profile";
 import { Footer } from "./components/Footer";
+import { Confirmation } from "./components/Confirmation";
+import { Wait } from "./components/Wait";
 
 function App() {
   return (
@@ -56,6 +58,12 @@ function App() {
             <UserState>
               <Profile/>
             </UserState>
+          </Route>
+          <Route exact path="/confirmation/:email/:token">
+            <Confirmation/>
+          </Route>
+          <Route exact path="/wait">
+            <Wait/>
           </Route>
         </Switch>
         <Footer/>

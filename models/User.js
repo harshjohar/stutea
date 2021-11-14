@@ -27,6 +27,10 @@ const UserSchema = new mongoose.Schema({
     },
     city: {
         type: String
+    },
+    verified: {
+        type: Boolean,
+        default: false
     }
 })
 

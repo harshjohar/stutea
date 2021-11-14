@@ -47,7 +47,7 @@ export const MyQuestions = () => {
             {questions.map((question) => {
                 return <MyQuestionCard key={question._id} question={question} />;
             })}
-            <ReactPaginate
+            {questions && <ReactPaginate
                 previousLabel={"prev"}
                 nextLabel={"next"}
                 onPageChange={handlePageClick}
@@ -65,7 +65,7 @@ export const MyQuestions = () => {
                 breakClassName={"page-item"}
                 breakLinkClassName={"page-link"}
                 activeClassName={"active"}
-            />
+            />}
         </div>
     );
 };

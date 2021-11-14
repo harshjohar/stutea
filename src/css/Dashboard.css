@@ -1,31 +1,244 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 .dashboard-body{
+    background-color: rgb(224, 220, 220);
     display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    /* width: 100vw; */
+}
+
+.dleft,.dmid,.dright{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.dleft,.dright{
+    width: 20%;
+    padding: 1rem;
+}
+
+.dmid{
+    width: 60%;
+}
+
+
+/* for sidepane.js & credituser.js*/
+.sidepane,.credit-user{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.user-dp{
+    width: 30%;
+    height: 30%;
+    border-radius: 42px;
+    border: 1px solid black;
+}
+
+.user-data{
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.8rem;
+}
+
+.username{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.user-credits{
+    font-size: 15px;
+}
+/* for AddQuestion.js */
+/* .add-doubt{
+    display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
-}
-
-.dashboard-head h2{
-    margin-top: 2rem;
-    border-bottom: 2px solid;
-}
-
-/* .questions{
-     width: 100%;
+    height: 100%;
 } */
 
-.my-questions{
-    padding-top: 1rem;
+.add{
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    /* align-items: flex-start; */
+    justify-content: center;
+}
+.addQues{
+    text-align: start;
+    padding-left: 1.2rem;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    border:none;
+    outline: none;
+    height: 40px;
 }
 
-.questions h2,.my-questions h2{
-    margin: 1rem;
-    text-align: center;
-    font-size: 24px;
+/* for questions.js */
+
+.questions{
+    width: 90%;
+}
+
+.question-card{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    height: 15rem;
+    padding: 0.6rem 1rem;
+    width: 100%;
+    margin: 1rem 0rem;
+    overflow: hidden;
+    border-radius: 25px;
+    background-color: white;
+}
+
+.card-head{
+    /* border: 1px solid blue; */
+    display: flex;
+    height: 20%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-pp{
+    height: 100%;
+    width: 8%;
+}
+
+.pp{
+    /* height:35px; */
+    height: 100%;
+    /* width: 100%; */
+    border-radius: 60%;
+    border: 1px solid black;
+}
+
+.card-user{
+    width: 57%;
+    /* border: 2px solid black; */
+    height: 100%;
+    padding-left: 0.5rem;
+}
+
+.card-username{
+    height: 50%;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.card-date{
+    height: 50%;
+    font-size: 14px;
+}
+
+.answer-question{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.qcard-btn{
+    width: 100%;
+    background-color: #aeb1b0;
+    color: white;
+    cursor: pointer;
+    /* margin: 0rem 0.6rem; */
+    border-radius: 16px;
+    height: 33px;
+    outline: none;
+    border:none;
+    font-weight: 600;
+}
+
+.qcard-btn:hover{
+    background-color: #ffffff;
+    color: #aeb1b0;
+    border: 2px solid #aeb1b0;
+}
+
+.ques{
+    display: flex;
+    border: 2px solid #aeb1b0;
+    border-radius: 20px;
+    height: 67%;
+    width: 92%;
+    align-self: flex-end;
+    margin: 0.5rem 0rem;
+    padding: 0.5rem;
     font-weight: 500;
 }
 
-.my-questions div,.questions div{
-    font-size: 19px;
+.tag-footer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 13%;
+}
+
+.ques-card-tag{
+    background-color: violet;
+    margin: 0rem 0.4rem;
+    border-radius: 10px;
+    padding: 0.3rem;
+    
+}
+
+.my-ques{
+    margin: 1rem 0rem;
+    background-color: white;
+    border-radius: 15px;
+    padding: 0.5rem;
+
+}
+
+.question-click{
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+}
+
+.question-click:hover{
+    color: purple;
+    cursor: pointer;
+    font-weight: 550;
+}
+
+.see-all{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.see-all-btn{
+    background-color: rgb(224, 220, 220);
+    color: black;
+    cursor: pointer;
+    /* border-radius: 16px; */
+    height: 33px;
+    outline: none;
+    border:none;
+    font-weight: 600;
+    /* width: 50%; */
+    font-size: 17px;
+    
+}
+
+.see-all-btn:hover{
+    border-bottom: 2px solid black;
 }

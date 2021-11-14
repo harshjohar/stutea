@@ -40,18 +40,32 @@ export const QuestionCard = (props) => {
         // eslint-disable-next-line
     }, [])
     return (
-        <div>
-            <img src={userData.dp} alt="dp" />
-            <h4>{userData.first + " " + userData.last}</h4>
+        <div className="question-card">
+            <div className="card-head">
+                <div className="user-pp">
+                    <img src={userData.dp} alt="dp" className="pp"/>
+                </div>
+                <div className="card-user">
+                    <div className="card-username">
+                        {userData.first + " " + userData.last}
+                    </div>
+                    <div className="card-date">
+                        {dateFormat(date, "dddd, mmmm dS, yyyy, h:MM:ss TT")}
+                    </div>
+                </div>
+                <div className="answer-question">
+                    <button onClick={handleClick}className="qcard-btn">Answer this Question</button>
+                </div>
+            </div>
+            <div className="ques">
             {question.question}
-            {dateFormat(date, "dddd, mmmm dS, yyyy, h:MM:ss TT")}
+            </div>
+            <div className="tag-footer">
             {question.tags.map((tag) => (
-                <div className="tag" key={tag}>
+                <div className="ques-card-tag" key={tag}>
                     {tag}
                 </div>
             ))}
-            <div className="answer-question">
-                <button onClick={handleClick}>Answer this Question</button>
             </div>
         </div>
     );

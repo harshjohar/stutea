@@ -23,7 +23,7 @@ const UserSchema = new mongoose.Schema({
     },
     dp: {
         type: String,
-        default: ""
+        default: "https://res.cloudinary.com/stutea/image/upload/v1636875706/sample_nw8mlw.png"
     },
     city: {
         type: String

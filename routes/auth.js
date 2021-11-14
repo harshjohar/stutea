@@ -10,7 +10,7 @@ const nodemailer = require("nodemailer");
 const crypto = require('crypto');
 const sendgridTransport = require('nodemailer-sendgrid-transport');
 // to be added in a .env file
-const JWT_SECRET = "hihihihihihihihihi";
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // ROUTE 1 : create a User using : POST "/api/auth/register". No login required
 router.post(

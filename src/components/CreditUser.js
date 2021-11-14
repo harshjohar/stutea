@@ -20,6 +20,7 @@ export const CreditUser = () => {
     }, [])
     return (
         <div>
+            <img src={user.dp} alt="dp" />
             {user.first+ " "+ user.last}<br/>
             Credits 0 (hehe greeb)
         </div>

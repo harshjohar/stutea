@@ -5,25 +5,45 @@
 
 .intro-content{
     /* border: 2px solid red; */
-    /* margin-top: 5px; */
+    margin-top: 5px;
     display: flex;
     flex-direction: column;
     padding: 18px 210px;
-    /* justify-content: center; */
-    /* align-items: center; */
+    justify-content: center;
+    align-items: center;
     height: 500px;
     font-family: 'Ubuntu', sans-serif;
-    background-image: url("../Assets/1.jpg") ;
+    /* background-image: url("../Assets/1.jpg") ; */
+    
+    color: black;
+}
+
+.intro-content::before {
+    content: '';
+    background: url("../Assets/1.jpg");
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-size: cover;
-    color: aliceblue;
+    position: absolute;
+    height: 600px;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    opacity: 0.85;
+    z-index: -1;
 }
 
 .intro-content h1{
-    margin-top: 100px;
-    font-size: 70px;
+    margin-top: 120px;
+    font-size: 85px;
 }
+
+.intro-content h2{
+    margin-top: 70px;
+    font-size: 70px;
+
+}
+
 .features-content{
     /* border: 2px solid black; */
     /* margin-top: 5px; */
@@ -46,6 +66,7 @@
 
 .class-img img{
     height: 300px;
+    border-radius: 30px;
 }
 .about-content{
     /* border: 2px solid red; */
@@ -82,7 +103,7 @@
 
 .impact-content{
     /* border: 2px solid red; */
-    /* margin-top: 5px; */
+    /* margin-left: 50px; */
     display: flex;
     flex-direction: column;
     padding: 18px 210px;
@@ -90,31 +111,55 @@
     /* align-items: center; */
     height: 500px;
     font-family: 'Ubuntu', sans-serif;
-    background-image:url("../Assets/class.jpg") ;
-    
+    background-image:url("../Assets/impact.jpg") ;
+    /* background-color: brown; */
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-size: cover;
-    color: aliceblue;
+    color: black;
 }
 
+.impact {
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+    font-size: 22px;
+}
+
+.impact h2 {
+    font-size: 55px;
+}
 
 .credit-content{
     /* border: 2px solid red; */
     /* margin-top: 5px; */
     display: flex;
-    flex-direction: column;
-    padding: 18px 210px;
+    flex-direction: row;
+    padding: 35px 180px;
     /* justify-content: center; */
     /* align-items: center; */
     height: 500px;
     font-size:x-large;
     font-family: 'Ubuntu', sans-serif;
-    background-image: url("../Assets/tokenbg.jpg") ;
+    background-image: url("../Assets/credit.jpg") ;
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-size: cover;
-    color: aliceblue;
+    color: black;
+    font-size: 22px;
+}
+
+
+.credit {
+    margin: 50px 0px;
+    margin-left: 20px;
+}
+.credit h2 {
+    font-size: 55px;
+}
+
+.credit-img{
+    margin: 50px 0px;
 }
 
 .contact-content{

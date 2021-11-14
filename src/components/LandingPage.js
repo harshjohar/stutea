@@ -83,15 +83,17 @@ const LandingPage = () => {
       </div>
       <div className="impact-content">
         <div className="impact">
-          <div className="impact-img class-img">
-            <img src={img2} alt="img" />
-          </div>
+          <div>
           <h2>High Impact Learning</h2>
           <p>
             StuTea helps you in enriching your concepts with varied question
             ranging in all the topics known. This enables student to get access
             of the high quality learning and development among the peers.
           </p>
+          </div>
+          <div className="impact-img class-img">
+            <img src={img2} alt="img" />
+          </div>
         </div>
       </div>
       <div className="credit-content">

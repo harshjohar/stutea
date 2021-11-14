@@ -38,10 +38,14 @@ export const MyQuestionDashboard = () => {
     return (
         <div>
             <h3>Recently asked</h3>
+            <div className="my-recents">
             {questions.slice(0, 5).map((question)=> {
                 return <MyQuesCardDash key={question._id} question={question} />
             })}
-            <button onClick={handleClick}>See All</button>
+            </div>
+            <div className="see-all">
+            <button onClick={handleClick} className="see-all-btn">See All</button>
+            </div>
         </div>
     )
 }

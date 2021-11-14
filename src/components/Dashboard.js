@@ -15,10 +15,12 @@ const Dashboard = () => {
                 <SidePane/>
             </div>
             <div className="dmid">
-            <Link className="add" to="/add">
-                <button className="addQues">ADD</button>
-            </Link>
-            <Questions/>
+                {/* <div className="add-doubt"> */}
+                <Link className="add" to="/add">
+                    <button className="addQues">Ask your doubt</button>
+                </Link>
+                {/* </div> */}
+                <Questions/>
             </div>
             <div className="dright">
             <MyQuestionDashboard/>

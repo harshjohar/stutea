@@ -4,8 +4,8 @@ import "../css/Dashboard.css"
 
 export const SidePane = () => {
     return (
-        <div>
-            <h2>SidePane</h2>
+        <div className="sidepane">
+            {/* <h2>SidePane</h2> */}
             <CreditUser/>
         </div>
     )

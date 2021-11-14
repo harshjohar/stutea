@@ -33,7 +33,6 @@ export const Register = () => {
 
     const json = await response.json();
     if(json.success) {
-        localStorage.setItem('token', json.authtoken);
         history.push('/wait');
     }
     else {

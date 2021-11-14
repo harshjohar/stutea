@@ -16,6 +16,7 @@ export const Profile = () => {
     return (
         <div>
             <h2>Profile</h2>
+            <img src={user.dp} alt="dp" />
             <h3>{user.username}</h3>
             <div className="name">
                 {user.first+ " "+user.last}

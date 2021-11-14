@@ -8,15 +8,21 @@ import { SidePane } from './SidePane';
 const Dashboard = () => {
     return (
         <div className="dashboard-body">
-            <div className="dashboard-head">
+            {/* <div className="dashboard-head">
             <h2>DashBoard</h2>
+            </div> */}
+            <div className="dleft">
+                <SidePane/>
             </div>
+            <div className="dmid">
             <Link className="add" to="/add">
-                <button>ADD</button>
+                <button className="addQues">ADD</button>
             </Link>
-            <SidePane/>
             <Questions/>
+            </div>
+            <div className="dright">
             <MyQuestionDashboard/>
+            </div>
         </div>
     )
 }

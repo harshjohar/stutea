@@ -1,31 +1,31 @@
 .dashboard-body{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
+    /* width: 100vw; */
+}
+
+.dleft,.dmid,.dright{
+    display: flex;
     flex-direction: column;
-
+    align-items: center;
+    border: 1px solid black;
 }
 
-.dashboard-head h2{
-    margin-top: 2rem;
-    border-bottom: 2px solid;
+.dleft{
+    width: 20%;
 }
 
-/* .questions{
-     width: 100%;
-} */
-
-.my-questions{
-    padding-top: 1rem;
+.dmid{
+    width: 60%;
 }
 
-.questions h2,.my-questions h2{
-    margin: 1rem;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 500;
+.dright{
+    width: 20%;
 }
 
-.my-questions div,.questions div{
-    font-size: 19px;
+/* for AddQuestion.js */
+.addQues{
+    width: 10rem;
+    background-color: blueviolet;
 }

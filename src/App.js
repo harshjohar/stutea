@@ -16,6 +16,7 @@ import { Profile } from "./components/Profile";
 import { Footer } from "./components/Footer";
 import { Confirmation } from "./components/Confirmation";
 import { Wait } from "./components/Wait";
+import { Tags } from "./components/Tags";
 
 function App() {
   return (
@@ -64,6 +65,16 @@ function App() {
           </Route>
           <Route exact path="/wait/:email">
             <Wait/>
+          </Route>
+          <Route exact path="/tags-all">
+            <Tags/>
+          </Route>
+          <Route exact path='/query'>
+          <UserState>
+              <QuestionState>
+                <Home/>
+              </QuestionState>
+            </UserState>
           </Route>
         </Switch>
         <Footer/>

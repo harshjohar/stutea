@@ -18,13 +18,18 @@
     border: 1px solid black;
 }
 
-.dleft,.dright{
+.dleft{
     width: 20%;
     padding: 1rem;
 }
 
 .dmid{
-    width: 60%;
+    width: 58%;
+}
+
+.dright{
+    width: 22%;
+    padding: 1rem;
 }
 
 
@@ -40,7 +45,7 @@
 .user-dp{
     width: 30%;
     height: 30%;
-    border-radius: 42px;
+    border-radius: 50%;
     border: 1px solid black;
 }
 
@@ -58,15 +63,7 @@
 .user-credits{
     font-size: 15px;
 }
-/* for AddQuestion.js */
-/* .add-doubt{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100%;
-} */
+
 
 .add{
     padding: 1rem;
@@ -118,18 +115,21 @@
 .user-pp{
     height: 100%;
     width: 8%;
+    width: 10%;
 }
 
 .pp{
     /* height:35px; */
     height: 100%;
     /* width: 100%; */
-    border-radius: 60%;
+    border-radius: 50%;
     border: 1px solid black;
 }
 
 .card-user{
     width: 57%;
+    width: 63%;
+    width: 70%;
     /* border: 2px solid black; */
     height: 100%;
     padding-left: 0.5rem;
@@ -148,6 +148,7 @@
 
 .answer-question{
     width: 35%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -241,4 +242,80 @@
 
 .see-all-btn:hover{
     border-bottom: 2px solid black;
+}
+.fa-pen-square,.fas,.fa{
+    display: none;
+}
+
+.fa-pen-square::before {
+    content: "";
+    display: none;
+}
+
+@media screen and (max-width:750px){
+    .dashboard-body{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dleft,.dright,.dmid{
+        width: 100%;
+    }
+    
+    /* .fa-pen-square{
+        display: block;
+        font-size: 1.5rem;
+    }
+    .fa-pen-square::before{
+        display: block;
+    }
+
+    .qcard-btn{
+        display: none;
+    } */
+    .answer-question{
+        width: 20%;
+        font-size: 15px;
+    }
+    .card-date{
+        display: none;
+    }
+
+    .card-user{
+        width: 70%;
+    }
+    .ques{
+        width: 100%;
+    }
+
+    
+}
+@media screen and (max-width:400px) {
+    .card-user{
+        width: 75%;
+    }
+    .user-pp{
+        width: 0%;
+        display: none;
+    }
+    .answer-question{
+        width: 25%
+    }
+    .tag-footer{
+        display: none;
+    }
+    .qcard-btn{
+        display: none;
+    }
+    .fa-pen-square{
+        display: block;
+        font-size: 1.5rem;
+    }
+    .fa-pen-square::before{
+        display: block;
+    }
+
+    .qcard-btn{
+        display: none;
+    }
 }

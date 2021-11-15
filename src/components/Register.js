@@ -45,38 +45,40 @@ const onChange = (e)=> {
 }
   return (
     <div className="register-form">
-      <h2>Come Join StuTea</h2>
-      <form onSubmit={handleSubmit}>
-                <div className="form">
-                    <label htmlFor="username">Username</label>
-                    <input type="text" name="username" id="username" onChange={onChange} value={credentials.username}/>
+        <div className="rform-head">
+      <h2 className="register-form-head">Come Join StuTea</h2>
+      <form onSubmit={handleSubmit} className="rform">
+                <div className="rform-div">
+                    <label htmlFor="username" className="rform-label">Username</label>
+                    <input type="text" placeholder="Enter your username" className="rform-input" name="username" id="username" onChange={onChange} value={credentials.username}/>
                 </div>
-                <div className="form">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" name="email" id="email" onChange={onChange} value={credentials.email}/>
+                <div className="rform-div">
+                    <label htmlFor="email" className="rform-label">Email</label>
+                    <input type="email" placeholder="Enter your email id" className="rform-input" name="email" id="email" onChange={onChange} value={credentials.email}/>
                 </div>
-                <div className="form">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" name="password" id="password" onChange={onChange} value={credentials.password}/>
+                <div className="rform-div">
+                    <label htmlFor="password" className="rform-label">Password</label>
+                    <input type="password" placeholder="Enter your password" className="rform-input" name="password" id="password" onChange={onChange} value={credentials.password}/>
                 </div>
-                <div className="form">
-                    <label htmlFor="firstname">First Name</label>
-                    <input type="text" name="firstname" id="firstname" onChange={onChange} value={credentials.firstname}/>
+                <div className="rform-div">
+                    <label htmlFor="firstname" className="rform-label">First Name</label>
+                    <input type="text" placeholder="Enter your first name" className="rform-input" name="firstname" id="firstname" onChange={onChange} value={credentials.firstname}/>
                 </div>
-                <div className="form">
-                    <label htmlFor="lastname">Last Name</label>
-                    <input type="text" name="lastname" id="lastname" onChange={onChange} value={credentials.lastname}/>
+                <div className="rform-div">
+                    <label htmlFor="lastname" className="rform-label">Last Name</label>
+                    <input type="text" placeholder="Enter your last name" className="rform-input" name="lastname" id="lastname" onChange={onChange} value={credentials.lastname}/>
                 </div>
-                <div className="form">
-                    <label htmlFor="city">City</label>
-                    <input type="text" name="city" id="city" onChange={onChange} value={credentials.city}/>
+                <div className="rform-div">
+                    <label htmlFor="city" className="rform-label">City</label>
+                    <input type="text" placeholder="Enter your city" className="rform-input" name="city" id="city" onChange={onChange} value={credentials.city}/>
                 </div>
                 <div className="form-button">
-                <button type="submit" className="submit-button">
+                <button type="submit" className="form-submit-btn">
                     Submit
                 </button>
                 </div>
             </form>
+            </div>
     </div>
   );
 };

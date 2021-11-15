@@ -50,11 +50,12 @@ export const QuestionCard = (props) => {
                         {userData.first + " " + userData.last}
                     </div>
                     <div className="card-date">
-                        {dateFormat(date, "dddd, mmmm dS, yyyy, h:MM:ss TT")}
+                        {dateFormat(date, "mmmm dS, yyyy, h:MM TT")}
                     </div>
                 </div>
                 <div className="answer-question">
-                    <button onClick={handleClick}className="qcard-btn">Answer this Question</button>
+                    <button onClick={handleClick}className="qcard-btn">ANSWER</button>
+                    <i className="fas fa-pen-square" onClick={handleClick}></i>
                 </div>
             </div>
             <div className="ques">

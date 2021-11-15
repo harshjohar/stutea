@@ -131,8 +131,13 @@ router.get(
         try {
             const questions = await Questions.find({
                 tags: req.params.tag,
+            }).limit(15);
+            const count = await Questions.find({ tags: req.params.tag, user: { $ne: req.user.id } }).count();
+
+            questions.sort(function (a, b) {
+                return new Date(b.timestamp) - new Date(a.timestamp);
             });
-            res.json(questions);
+            res.json({questions, count});
         } catch (error) {
             console.error(error.message);
             res.status(500).send("Internal Server Error");
@@ -143,7 +148,7 @@ router.get(
 // ROUTE 7 : Get all the tags GET "/api/questions/alltags"
 router.get('/alltags', fetchuser, async(req, res)=> {
     try {
-        const tags = await Questions.distinct('tags');
+        const tags = await Questions.find({user: { $ne: req.user.id }}).distinct('tags');
         res.json(tags);
     } catch (error) {
         console.error(error.message);

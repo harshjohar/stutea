@@ -35,33 +35,37 @@ const Login = () => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
     };
     return (
+        <div className="form-body">
         <div className="form-head">
-            <h2>Log in to the world of knowledge</h2>
-            <form onSubmit={handleSubmit}>
+            <h2 className="form-title">Log in to the world of knowledge</h2>
+            <form onSubmit={handleSubmit} className="form-body">
                 <div className="form">
-                    <label htmlFor="">Username</label>
+                    <label htmlFor="" className="form-label">Username</label>
                     <input
                         type="text"
                         placeholder="Enter your username"
                         name="username"
                         onChange={onChange}
                         value={credentials.username}
+                        className="form-input"
                     />
                 </div>
                 <div className="form">
-                    <label htmlFor="">Password</label>
+                    <label htmlFor="" className="form-label">Password</label>
                     <input
                         type="password"
                         placeholder="Enter your password"
                         name="password"
                         onChange={onChange}
                         value={credentials.password}
+                        className="form-input"
                     />
                 </div>
                 <div className="form-button">
-                <button type="submit">Login</button>
+                    <button type="submit" className="form-submit-btn">Login</button>
                 </div>
             </form>
+        </div>
         </div>
     );
 };

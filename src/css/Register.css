@@ -5,27 +5,65 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* border: 2px solid; */
-    /* background: url(../real-estate-education-800x533.jpg) center center/cover no-repeat; */
+    height: 95vh;
+   
 }
-
-.register-form h2{
+.rform-head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.4rem;
+    height: 100%;
+    width: 70%;
+}
+.register-form-head{
     padding-top: 1.5rem;
     text-align: center;
 }
 
-.register-form .form label{
-    margin:0rem;
+.rform-label{
+    
+    width: 30%;
+    
+    margin:0.7rem;
+    text-align: end;
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
-.register-form .form input{
-    width: 16rem;
+.rform-input{
+    
+    width: 70%;
+    height: 2.5rem;
+    padding-left: 0.5rem;
 }
 
-.register-form .form{
+.rform{
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    margin: 0.6rem;
+    
 }
 
+.rform-div{
+    display: flex;   
+    align-items: center;  
+    justify-content: center;
+    margin: 0.2rem;
+    width: 80%;
+}
+
+@media screen and (max-width:600px) {
+    .rform-div{
+        width: 100%;
+    }
+    .rform-label{
+        display: none;
+    }
+    .rform-head{
+        width: 100%;
+    }
+    .rform-input{
+        width: 80%;
+    }
+}

@@ -27,9 +27,11 @@ export const Questions = () => {
         const pgs = json.count;
         setPageCount(Math.ceil(pgs/15));
     };
+
+
     useEffect(() => {
         if (localStorage.getItem("token")) {
-            getQuestions(1);
+                getQuestions(1);
         } else {
             history.push("/login");
         }
@@ -44,9 +46,9 @@ export const Questions = () => {
     return (
         <div className="questions">
             <h2>Questions</h2>
-            {questions.map((question) => {
+            {pageCount?questions.map((question) => {
                 return <QuestionCard key={question._id} question={question} />;
-            })}
+            }):"No Questions"}
             {questions && <ReactPaginate
                 previousLabel={"prev"}
                 nextLabel={"next"}

@@ -33,7 +33,7 @@ export const Register = () => {
 
     const json = await response.json();
     if(json.success) {
-        history.push('/wait');
+        history.push(`/wait/${credentials.email}`);
     }
     else {
         alert("Invalid Credentials");

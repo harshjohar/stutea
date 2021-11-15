@@ -62,7 +62,7 @@ function App() {
           <Route exact path="/confirmation/:email/:token">
             <Confirmation/>
           </Route>
-          <Route exact path="/wait">
+          <Route exact path="/wait/:email">
             <Wait/>
           </Route>
         </Switch>

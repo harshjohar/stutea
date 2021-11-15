@@ -1,12 +1,13 @@
 const connectToMongo = require('./db');
 const express = require('express');
 var cors = require('cors');
-const { confirmEmail } = require('./routes/confirmation');
+const { confirmEmail, resendEmail } = require('./routes/confirmation');
 
 connectToMongo();
 const app = express();
 const port = 5000;
 
+// middlewares
 app.use(cors());
 app.use(express.json());
 
@@ -33,7 +34,9 @@ app.get("/", (req, res)=> {
     res.send("hello world!, stutea here!");
 })
 app.get('/confirmation/:email/:token', confirmEmail);
+app.post('/resend', resendEmail);
 
+// PORT
 app.listen(process.env.PORT || port, ()=> {
     console.log(`StuTea listening at http://localhost:5000/`);
 })

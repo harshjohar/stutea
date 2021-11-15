@@ -23,7 +23,7 @@ export const Tags = () => {
         // eslint-disable-next-line
     }, [])
     return (
-        <div>
+        <div className="all-tags-here-link">
             all tags here
             {tags.map((tag)=> {
                 return <Tag key={tag} value={tag}/>

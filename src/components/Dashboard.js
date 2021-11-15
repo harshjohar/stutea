@@ -22,7 +22,7 @@ const Dashboard = () => {
                     <button className="addQues">Ask your doubt</button>
                 </Link>
                 <div className="tags-prompt">
-                    <Link className="tag-link" to='/tags-all'>
+                    <Link className="all-tags-link" to='/tags-all'>
                         All tags &rarr;
                     </Link>
                 </div>

@@ -252,7 +252,7 @@
     display: none;
 }
 
-@media screen and (max-width:750px){
+@media screen and (max-width:768px){
     .dashboard-body{
         display: flex;
         flex-direction: column;
@@ -287,7 +287,9 @@
     .ques{
         width: 100%;
     }
-
+    .user-dp {
+        width: 20%;
+    }
     
 }
 @media screen and (max-width:400px) {

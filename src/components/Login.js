@@ -39,8 +39,9 @@ const Login = () => {
         <div className="form-head">
             <h2 className="form-title">Log in to the world of knowledge</h2>
             <form onSubmit={handleSubmit} className="form-body">
-                <div className="form">
+                <div className="login-form">
                     <label htmlFor="" className="form-label">Username</label>
+                    <div className="lform-input">
                     <input
                         type="text"
                         placeholder="Enter your username"
@@ -48,10 +49,11 @@ const Login = () => {
                         onChange={onChange}
                         value={credentials.username}
                         className="form-input"
-                    />
+                    /></div>
                 </div>
-                <div className="form">
+                <div className="login-form">
                     <label htmlFor="" className="form-label">Password</label>
+                    <div className="lform-input">
                     <input
                         type="password"
                         placeholder="Enter your password"
@@ -59,7 +61,7 @@ const Login = () => {
                         onChange={onChange}
                         value={credentials.password}
                         className="form-input"
-                    />
+                    /></div>
                 </div>
                 <div className="form-button">
                     <button type="submit" className="form-submit-btn">Login</button>

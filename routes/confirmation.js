@@ -113,7 +113,6 @@ exports.resendEmail = function (req, res, next) {
                     transporter.sendMail(mailOptions, function (err) {
                         if (err) {
                             return res.status(500).json({
-                                success,
                                 error: "Technical Issue!, Please click on resend for verify your Email.",
                             });
                         }

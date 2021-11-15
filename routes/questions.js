@@ -140,4 +140,15 @@ router.get(
     }
 );
 
+// ROUTE 7 : Get all the tags GET "/api/questions/alltags"
+router.get('/alltags', fetchuser, async(req, res)=> {
+    try {
+        const tags = await Questions.distinct('tags');
+        res.json(tags);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+})
+
 module.exports = router;

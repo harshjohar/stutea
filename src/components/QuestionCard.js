@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import dateFormat from "dateformat";
 import { useHistory } from "react-router-dom";
+import { Tag } from "./Tag";
 export const QuestionCard = (props) => {
     const { question } = props;
     const date = question.timestamp;
@@ -64,7 +65,7 @@ export const QuestionCard = (props) => {
             <div className="tag-footer">
             {question.tags.map((tag) => (
                 <div className="ques-card-tag" key={tag}>
-                    {tag}
+                    <Tag value={tag}/>
                 </div>
             ))}
             </div>

@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.intro-shop{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row; 
+    padding: 18px 210px;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+}
+
+.intro-shop::before {
+    content: '';
+    background: url("../Assets/tokenbg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    height: 600px;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.intro-shop h2{
+    margin-top: 60px;
+    font-size: 85px;
+    /* font-weight: bold; */
+}
+
+.product-content{
+    display: flex;
+    flex-direction: column;
+    padding: 70px 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 1000px;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: black;
+}
+
+.product {
+    margin-left: 10px;
+    width: 50%;
+    font-size: 20px;
+    text-align: center;
+}
+
+.product h1{
+    color: white;
+}
+.product-container h4{
+    color: white;
+}
+.product-container p{
+    color: white;
+}
+
+.product-img img{
+    height: 180px;
+    width: 250px;
+    margin-top: 20px;
+    margin-left: 0px;
+    transition: .5s ease;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.w3-card:hover .image {
+    opacity: 0.3;
+}
+  
+.w3-card:hover .middle {
+    opacity: 1;
+}
+
+/* i {
+    color: white;
+} */
+
+.fa-cart-plus{
+    color: white;
+}
+  

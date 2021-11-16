@@ -3,21 +3,21 @@
     padding: 0;
 }
 
-.intro-content{
+.intro-shop{
     margin-top: 5px;
     display: flex;
     flex-direction: row; 
     padding: 18px 210px;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    height: 350px;
     font-family: 'Ubuntu', sans-serif;
     text-align: center;
 }
 
-.intro-content::before {
+.intro-shop::before {
     content: '';
-    background: url("../Assets/bg1.jpg");
+    background: url("../Assets/tokenbg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -27,6 +27,12 @@
     left: 0px;
     opacity: 0.5;
     z-index: -1;
+}
+
+.intro-shop h2{
+    margin-top: 60px;
+    font-size: 85px;
+    /* font-weight: bold; */
 }
 
 .product-content{

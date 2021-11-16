@@ -7,7 +7,7 @@ import img2 from "../Assets/shop3.jpg";
 export const ShopHome = () => {
   return (
     <div>
-      <div className="intro-content">
+      <div className="intro-shop">
         <h2>Welcome To The StuTea Shop!</h2>
       </div>
 

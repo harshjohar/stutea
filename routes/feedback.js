@@ -6,11 +6,9 @@ const User = require('../models/User');
 const Answers = require('../models/Answers');
 
 // ROUTE: feedback : PUT "/api/feedback/rating". Login Required
-router.put('/rating', fetchuser, [
-    body('rating', 'Cannot be empty').exists(),
-    body('question', 'Cannot be empty').exists(),
-], async(req, res) => {
-    const {rating,question} = req.body;
+router.put('/rating', fetchuser,
+    async(req, res) => {
+    const {stars,question} = req.body;
 
     // If there are errors, return bad request and the errors
     const errors = validationResult(req);
@@ -18,22 +16,20 @@ router.put('/rating', fetchuser, [
         return res.status(400).json({errors: errors.array()});
     }
     try {
-        const query = await Answers.find(body.question);
+        const query = await Answers.findOneAndUpdate({question},{
+                        $set : {
+                            rating : stars
+                        }
+                    });
+
         if (query)
         {
-            const rate = await Answers.updateOne({query},{
-                $set : {
-                    rating: rating
-                }
-            })
-            
-            // const savedNote = await rate.save();
-            res.send("Thanks for the feedback");
+            res.send("Thanks for the feedback")
         }
 
         else
         {
-            res.send("question not found");
+            res.send("question not found")
         }
         
     } catch (error) {

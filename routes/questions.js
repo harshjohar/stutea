@@ -3,6 +3,9 @@ const router = express.Router();
 const { body, validationResult } = require("express-validator");
 var fetchuser = require("../middleware/fetchuser");
 const Questions = require("../models/Questions");
+const Credits = require("../models/Credits");
+const User = require("../models/User");
+
 
 // Route 1 : Add a new question : POST "/api/questions/add". Login Required.
 router.post(
@@ -27,7 +30,35 @@ router.post(
                 user: req.user.id,
             });
             const savedNote = await query.save();
-            res.json(savedNote);
+            const debitee = req.user.id;
+            const debit = await Credits.findOne({"user": debitee});
+            if (debit==null)
+            {
+                const initialiser = new Credits({
+                    user : req.user.id,
+                    credits : 1000
+                })
+                const saved  = await initialiser.save();
+                const debiti = await Credits.findOne({"user": debitee});
+                const item2 = debiti.credits - 50;
+                const less = await Credits.findOneAndUpdate({"user": debitee},{
+                    $set : {
+                        credits: item2
+                    }
+                })
+            }
+
+            else
+            {
+                const debiti = await Credits.findOne({"user": debitee});
+                const item2 = debiti.credits - 50;
+                const less = await Credits.findOneAndUpdate({"user": debitee},{
+                    $set : {
+                        credits: item2
+                    }
+                })
+            }
+                res.json(savedNote);
         } catch (error) {
             console.error(error.message);
             res.status(500).send("Internal Server Error");

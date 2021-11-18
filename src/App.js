@@ -17,11 +17,13 @@ import { Footer } from "./components/Footer";
 import { Confirmation } from "./components/Confirmation";
 import { Wait } from "./components/Wait";
 import { Tags } from "./components/Tags";
+import { CreditState } from "./Context/Credits/CreditState";
 
 function App() {
   return (
     <div>
       <Router>
+        <CreditState>
         <Navbar/>
         <Switch>
           <Route exact path="/">
@@ -78,6 +80,7 @@ function App() {
           </Route>
         </Switch>
         <Footer/>
+        </CreditState>
       </Router>
     </div>
   );

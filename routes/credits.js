@@ -92,5 +92,25 @@ router.post('/transaction', fetchuser,
     }
 })
 
+// ROUTE 2 : Get the credits of a user. GET "/api/credits/get". Login Required
+router.get('/get', fetchuser, async(req, res)=> {
+    try {
+        const userId = req.user.id;
+        const user = await Credits.findOne({user: userId});
+        if(user) {
+            return res.json(user.credits);
+        } else {
+            const credits = new Credits({
+                user: userId
+            })
+            await credits.save();
+            const newUser = await Credits.findOne({user: userId});
+            return res.json(newUser.credits);
+        }
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+})
 
 module.exports=router;

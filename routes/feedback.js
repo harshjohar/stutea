@@ -4,6 +4,7 @@ const {body, validationResult} = require("express-validator");
 var fetchuser = require('../middleware/fetchuser');
 const User = require('../models/User');
 const Answers = require('../models/Answers');
+const Questions = require("../models/Questions");
 
 // ROUTE: feedback : PUT "/api/feedback/rating". Login Required
 router.put('/rating', fetchuser,
@@ -16,14 +17,25 @@ router.put('/rating', fetchuser,
         return res.status(400).json({errors: errors.array()});
     }
     try {
-        const query = await Answers.findOneAndUpdate({question},{
+        const query = await Answers.findOneAndUpdate({"question": question},{
                         $set : {
                             rating : stars
                         }
                     });
 
+        
+
         if (query)
         {
+            
+            if (stars>2)
+            {
+                const correctanswer = await Questions.findOneAndUpdate({"_id": question},{
+                    $set : {
+                        answered : true
+                    }
+                })
+            }
             res.send("Thanks for the feedback")
         }
 

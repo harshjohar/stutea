@@ -8,7 +8,7 @@ const User = require('../models/User');
 
 // ROUTE 1 : transaction : POST "/api/credits/transaction". Login Required
 router.post('/transaction', fetchuser,
-     async(req, res)=> {
+    async(req, res)=> {
     const {question, answer, user}=req.body;
     const errors = validationResult(req);
     if(!errors.isEmpty()) {
@@ -16,7 +16,7 @@ router.post('/transaction', fetchuser,
     }
     try {
 
-        const answer = await Answers.findOne({question});
+        const answer = await Answers.findOne({"question" : question});
         const aaidee = answer.user;
         const credit = await Credits.findOne({"user" : aaidee});
         
@@ -39,7 +39,19 @@ router.post('/transaction', fetchuser,
                 })
 
             }
-            // res.json(savedNote);
+
+            else if (answer.rating<3)
+            {
+                const crediti = await Credits.findOne({"user" : aaidee});
+                const item = crediti.credits + 50;
+                const deduction = await Credits.findOneAndUpdate({"user" : aaidee},{
+                    $set : {
+                        credits : item
+                    }
+                })
+
+            }
+            
         }
 
         else
@@ -49,6 +61,18 @@ router.post('/transaction', fetchuser,
             {
                 const item = credit.credits + 100;
                 const deduction = await Credits.findOneAndUpdate({answer},{
+                    $set : {
+                        credits : item
+                    }
+                })
+
+            }
+
+            else if (answer.rating<3)
+            {
+                const crediti = await Credits.findOne({"user" : aaidee});
+                const item = crediti.credits + 50;
+                const deduction = await Credits.findOneAndUpdate({"user" : aaidee},{
                     $set : {
                         credits : item
                     }
@@ -65,27 +89,35 @@ router.post('/transaction', fetchuser,
                 credits : 1000
             })
             const saved  = await initialiser.save();
-            const debiti = await Credits.findOne({"user": debitee});
-            const item2 = debiti.credits - 100;
-            const less = await Credits.findOneAndUpdate({"user": debitee},{
-                $set : {
-                    credits: item2
-                }
-            })
+            if (answer.rating>2)
+            {
+
+                const debiti = await Credits.findOne({"user": debitee});
+                const item2 = debiti.credits - 50;
+                const less = await Credits.findOneAndUpdate({"user": debitee},{
+                    $set : {
+                        credits: item2
+                    }
+                })
+            }
         }
 
         else
         {
-            const debiti = await Credits.findOne({"user": debitee});
-            const item2 = debiti.credits - 100;
-            const less = await Credits.findOneAndUpdate({"user": debitee},{
-                $set : {
-                    credits: item2
-                }
-            })
-        }
+            if (answer.rating>2)
+            {
 
-        res.send("credits updated");
+                const debiti = await Credits.findOne({"user": debitee});
+                const item2 = debiti.credits - 50;
+                const less = await Credits.findOneAndUpdate({"user": debitee},{
+                    $set : {
+                        credits: item2
+                    }
+                })
+            }
+        }
+        const final = await Credits.findOne({"user": debitee});
+        res.json(final);
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Internal Server Error");

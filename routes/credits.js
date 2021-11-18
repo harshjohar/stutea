@@ -130,14 +130,14 @@ router.get('/get', fetchuser, async(req, res)=> {
         const userId = req.user.id;
         const user = await Credits.findOne({user: userId});
         if(user) {
-            return res.json(user.credits);
+            return res.json({credits: user.credits});
         } else {
             const credits = new Credits({
                 user: userId
             })
             await credits.save();
             const newUser = await Credits.findOne({user: userId});
-            return res.json(newUser.credits);
+            return res.json({credits: newUser.credits});
         }
     } catch (error) {
         console.error(error.message);

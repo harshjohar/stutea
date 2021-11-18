@@ -2,15 +2,18 @@ import React, {useContext, useEffect} from 'react'
 import userContext from '../Context/User/userContext'
 import {useHistory} from 'react-router-dom';
 import "../css/Dashboard.css"
+import creditContext from '../Context/Credits/creditContext';
 
 export const CreditUser = () => {
     let history = useHistory();
     const uContext = useContext(userContext);
+    const cContext = useContext(creditContext);
     const {user, getUserByAuthToken} = uContext;
-
+    const {credits, getCredits} = cContext;
     useEffect(() => {
         if(localStorage.getItem('token')) {
             getUserByAuthToken();
+            getCredits();
         } else {
             history.push('/login')
         }
@@ -30,7 +33,7 @@ export const CreditUser = () => {
                 </div>
                 {/* <br/> */}
                 <div className="user-credits">
-                Credits 0 
+                Credits {credits.credits} 
                 </div>
             </div>
         </div>

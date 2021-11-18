@@ -8,9 +8,21 @@ export const CreditState = (props) => {
     const [credits, setCredits] = useState(initial);
 
     // get credits by user id
+    const getCredits = async() => {
+        const response = await fetch(`${host}/api/credits/get`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem("token")
+            }
+        })
+        const credit = await response.json();
+        setCredits(credit);
+        console.log(credit);
+    }
     // transiction maybe
     return (
-        <creditContext.Provider value={{}}>
+        <creditContext.Provider value={{credits, getCredits}}>
             {props.children}
         </creditContext.Provider>
     )

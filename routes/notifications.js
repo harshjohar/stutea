@@ -7,7 +7,7 @@ const router = express.Router();
 router.get("/get", fetchuser, async(req, res)=> {
     try {
         const userId = req.user.id;
-        const user = await Notifications.findOne({
+        const user = await Notifications.find({
             user: userId
         })
         if(user) {

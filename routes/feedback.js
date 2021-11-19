@@ -36,12 +36,12 @@ router.put('/rating', fetchuser,
                     }
                 })
             }
-            res.send("Thanks for the feedback")
+            res.send({msg: "Thanks for the feedback"})
         }
 
         else
         {
-            res.send("question not found")
+            res.send({msg: "question not found"})
         }
         
     } catch (error) {

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useHistory, useParams } from 'react-router-dom'
+import { Feedback } from './Feedback';
 
 export const ViewAnswer = () => {
     const {quesid} = useParams();
@@ -64,12 +65,13 @@ export const ViewAnswer = () => {
             <h2>{question.question}</h2>
             {question.answered ? "yes": "no"}
             {question.tags.map((tag)=>
-                <div className="tag">
+                <div className="tag" key={tag}>
                     {tag}
                 </div>
             )}
             <h3>Answer</h3>
-            {answer.answer ? answer.answer : "No one answered"}
+            {answer.answer ? answer.answer : answer.error}
+            {answer.answer && <Feedback question={question}/> }
         </div>
     )
 }

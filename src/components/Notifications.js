@@ -21,7 +21,7 @@ export const Notifications = () => {
     }, [])
     return (
         <div>
-            Notifications
+            <h2>Notifications</h2>
             {notifications && notifications.notification ?  notifications.notification.map((notif)=> {
                 return <Notification value={notif} key={notif._id}/>
             }):"No notification"}

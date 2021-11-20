@@ -19,7 +19,7 @@ const QuestionSchema = new mongoose.Schema({
     tags: {
         type: [String] 
     },
-    accepted: {
+    responded: {
         type: Boolean,
         default: false
     }

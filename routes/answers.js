@@ -21,8 +21,12 @@ router.post('/add', fetchuser, [
             question,
             user: req.user.id
         });
-        // console.log(question)
         const ques = await Questions.findById(question);
+        await Questions.findByIdAndUpdate(question, {
+            $set: {
+                responded: true
+            }
+        })
         const user = ques.user;
         const notif = new Notifications({
             user: user,

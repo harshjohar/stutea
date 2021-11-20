@@ -15,6 +15,10 @@ const NotifSchema = new mongoose.Schema({
         //     answered,
         //     credits
         // }
+    },
+    timestamp: {
+        type: Date,
+        default: Date.now
     }
 })
 

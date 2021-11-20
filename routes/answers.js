@@ -23,7 +23,6 @@ router.post('/add', fetchuser, [
         });
         // console.log(question)
         const ques = await Questions.findById(question);
-        console.log(ques);
         const user = ques.user;
         const notif = new Notifications({
             user: user,

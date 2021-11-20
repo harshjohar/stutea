@@ -71,7 +71,7 @@ router.post("/fetch", fetchuser, async (req, res) => {
     try {
         const { page } = req.body;
 
-        const questions = await Questions.find({ user: { $ne: req.user.id } })
+        const questions = await Questions.find({ user: { $ne: req.user.id }, responded: {$ne: true} }).sort({timestamp:-1})
             .limit(15)
             .skip((page - 1) * 15);
 

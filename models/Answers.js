@@ -15,6 +15,10 @@ const AnswerSchema = new mongoose.Schema({
     rating: {
         type: Number,
         default: 0
+    },
+    timestamp: {
+        type: Date,
+        default: Date.now
     }
 })
 

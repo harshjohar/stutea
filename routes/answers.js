@@ -3,12 +3,14 @@ const router = express.Router();
 const {body, validationResult} = require("express-validator");
 var fetchuser=require('../middleware/fetchuser');
 const Answers=require('../models/Answers');
+const Notifications = require('../models/Notifications');
+const Questions = require('../models/Questions');
 
 // ROUTE 1 : Answer a question : POST '/api/answers/add'. Login Required
 router.post('/add', fetchuser, [
     body('answer', 'Cannot be empty').exists()
 ], async(req, res)=> {
-    const {question, answer, user}=req.body;
+    const {question, answer}=req.body;
     const errors = validationResult(req);
     if(!errors.isEmpty()) {
         return res.status(400).json({errors: errors.array()});
@@ -19,6 +21,15 @@ router.post('/add', fetchuser, [
             question,
             user: req.user.id
         });
+        // console.log(question)
+        const ques = await Questions.findById(question);
+        const user = ques.user;
+        const notif = new Notifications({
+            user: user,
+            recents: ques._id,
+            type: "answered"
+        })
+        await notif.save();
         const savedNote = await response.save();
         res.json(savedNote);
     } catch (error) {
@@ -36,7 +47,7 @@ router.post('/fetch', fetchuser, async(req, res)=> {
             res.json(answer);
         }
         else {
-            res.send("No One Answered!");
+            res.send({error: "No One Answered!"});
         }
     } catch (error) {
         console.error(error.message);

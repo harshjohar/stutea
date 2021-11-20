@@ -18,6 +18,10 @@ const QuestionSchema = new mongoose.Schema({
     },
     tags: {
         type: [String] 
+    },
+    accepted: {
+        type: Boolean,
+        default: false
     }
 });
 

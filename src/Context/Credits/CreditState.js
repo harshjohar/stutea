@@ -18,7 +18,6 @@ export const CreditState = (props) => {
         })
         const credit = await response.json();
         setCredits(credit);
-        console.log(credit);
     }
     // transiction maybe
     return (

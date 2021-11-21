@@ -1,6 +1,6 @@
 import React, {  useState } from 'react'
 import { useHistory } from 'react-router-dom';
-// import "../css/Dashboard.css"
+import "../css/Dashboard.css"
 
 export const AddQuestion = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
@@ -41,14 +41,23 @@ export const AddQuestion = () => {
         setTagString(e.target.value);
     }
     return (
-        <div>
-            <form>
-                <label htmlFor="question">Question</label>
-                <input type="text" name="question" id="question" className="question"value={question.question} onChange={onChange} />
-                <label htmlFor="tagString">Tags</label>
-                <input type="text" name="tagString" id="tagString" className="tagString" value={tagString} onChange={onChangeTags} />
-            </form>
-            <button type="submit" className="addQues" onClick={handleClick}>Upload</button>
+        <div className="upload-ques">
+                <h2 className="upload-ques-heading">Upload your question</h2>
+                <form className="upload-ques-form">
+                    <div className="ques-area">
+                        <label htmlFor="question" className="upload-ques-label">Question</label>
+                        <div className="ques-inputs">
+                            <textarea rows="4" name="question" id="question" className="question"value={question.question} onChange={onChange} />
+                        </div>
+                    </div>
+                    <div className="tags-area">
+                        <label htmlFor="tagString" className="upload-ques-tags">Tags</label>
+                        <div className="ques-inputs">
+                            <input type="text" name="tagString" id="tagString" className="tagString" value={tagString} onChange={onChangeTags} />
+                        </div>
+                    </div>
+                    <button type="submit" className="add-ques-btn" onClick={handleClick}>Upload</button>
+                </form>
         </div>
     )
 }

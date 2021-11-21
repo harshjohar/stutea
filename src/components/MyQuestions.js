@@ -38,8 +38,7 @@ export const MyQuestions = () => {
 
     const handlePageClick = async (data) => {
         let currPage = data.selected + 1;
-        const resServer = await getMyQuestions(currPage);
-        setQuestions(resServer);
+        await getMyQuestions(currPage);
     };
     return (
         <div className="my-questions">

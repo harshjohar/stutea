@@ -68,7 +68,6 @@ export const Answer = () => {
         <div>
             <h2>{question.question}</h2>
             {question.answered ? "yes" : "no"}
-            <Tag value="harsh"/>
             {question.tags.map((tag) => (
                 <div className="ques-card-tag" key={tag}>
                     <Tag value={tag}/>

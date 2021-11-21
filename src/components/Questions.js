@@ -40,8 +40,7 @@ export const Questions = () => {
 
     const handlePageClick = async (data) => {
         let currPage = data.selected + 1;
-        const resServer = await getQuestions(currPage);
-        setQuestions(resServer);
+        await getQuestions(currPage);
     };
     return (
         <div className="questions">
@@ -50,8 +49,8 @@ export const Questions = () => {
                 return <QuestionCard key={question._id} question={question} />;
             }):"No Questions"}
             {questions && <ReactPaginate
-                previousLabel={"prev"}
-                nextLabel={"next"}
+                previousLabel="prev"
+                nextLabel="next"
                 onPageChange={handlePageClick}
                 breakLabel={"...."}
                 pageCount={pageCount}

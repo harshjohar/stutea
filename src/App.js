@@ -24,7 +24,6 @@ function App() {
     <div>
       <Router>
         <CreditState>
-        <Navbar/>
         <Switch>
           <Route exact path="/">
             <UserState>

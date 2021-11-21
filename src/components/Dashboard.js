@@ -6,13 +6,11 @@ import { Questions } from './Questions';
 import { SidePane } from './SidePane';
 import { Route, Switch } from "react-router-dom";
 import { QuestionTag } from './QuestionTag';
-
+import {DashBoardNavbar} from './DashBoardNavbar'
 const Dashboard = () => {
     return (
         <div className="dashboard-body">
-            {/* <div className="dashboard-head">
-            <h2>DashBoard</h2>
-            </div> */}
+            <DashBoardNavbar/>
             <div className="dleft">
                 <SidePane/>
             </div>
@@ -26,7 +24,6 @@ const Dashboard = () => {
                         All tags &rarr;
                     </Link>
                 </div>
-                {/* </div> */}
                 <Switch>
                 <Route exact path='/'>
                     <Questions/>

@@ -65,28 +65,37 @@ export const Answer = () => {
     }, []);
 
     return (
-        <div>
-            <h2>{question.question}</h2>
+        <div className="answer-main">
+            <h2 className="q-to-ans">Question: {question.question}</h2>
+            <div className="answer-desc">
+            <form>
+            <label className="answer-status">Answered : </label>
             {question.answered ? "yes" : "no"}
+            {/* <Tag value="harsh"/> */}
+            <div className="tag-list-ans">
+            <label className="answer-status">Tags specified :</label>
             {question.tags.map((tag) => (
-                <div className="ques-card-tag" key={tag}>
+                <div className="tag-list-element" key={tag}>
                     <Tag value={tag}/>
                 </div>
-            ))}
-            <form>
-                <label htmlFor="answer">Write your answer here</label>
-                <input
-                    type="text"
+            ))}</div>
+            {/* <form> */}
+            <div className="answer-to-q">
+                <label htmlFor="answer" className="answer-status answer-label">Write your answer here</label>
+                <div className="answer-space">
+                <textarea rows="4"
                     name="answer"
                     id="answer"
                     className="answer"
                     value={answer.answer}
                     onChange={onChange}
-                />
+                /></div>
+            </div>
             </form>
             <button type="submit" className="addAnswer" onClick={handleSubmit}>
                 Submit
             </button>
+            </div>
         </div>
     );
 };

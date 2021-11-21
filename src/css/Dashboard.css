@@ -131,7 +131,7 @@
     width: 57%;
     width: 63%;
     width: 70%;
-    /* border: 2px solid black; */
+    /* border:2px solid red solid black; */
     height: 100%;
     padding-left: 0.5rem;
 }
@@ -171,7 +171,7 @@
 .qcard-btn:hover{
     background-color: #ffffff;
     color: black;
-    border: 2px solid black;
+    border:2px solid black;
 }
 
 .ques{
@@ -255,7 +255,7 @@
 }
 
 .see-all-btn:hover{
-    border-bottom: 2px solid black;
+    border-bottom:2px solid black;
 }
 .fa-pen-square,.fas,.fa{
     display: none;
@@ -333,5 +333,251 @@
 
     .qcard-btn{
         display: none;
+    }
+}
+
+
+/* addQues.js */
+.upload-ques{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    /* border:2px solid blue; */
+    
+}
+
+.upload-ques-form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    /* border:2px solid red; */
+    height: 70%;
+    padding: 0.5rem;
+    align-items: center;
+    
+
+}
+
+.upload-ques-heading{
+    padding: 1rem;
+    text-align: center;
+    font-family: 'Kumbh Sans', sans-serif;
+
+}
+
+.ques-area,.tags-area{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0.5rem;
+    /* height: 10rem; */
+    margin: 1rem;
+}
+
+
+.tags-area{
+    align-items: center;
+}
+
+.question{
+    width: 80%;
+    border: 1px solid black;
+    /* border-radius: 10px; */
+    outline: none;
+    padding:0.3rem;
+}
+
+.tagString{
+    width: 70%;
+    width: 80%;
+    border: 1px solid black;
+    /* border-radius: 10px; */
+    height: 2rem;
+    outline: none;
+    padding:0.3rem;
+
+}
+
+
+.upload-ques-label,.upload-ques-tags{
+    width: 20%;
+    font-size: 18px;
+    padding: 1rem;
+    padding: 0rem;
+    text-align: right;
+}
+
+.upload-ques-label{
+    justify-self: flex-start;
+}
+.ques-inputs{
+    width: 80%;
+    /* height: 100%; */
+    /* padding: 1rem 2rem; */
+    padding: 0rem 1rem;
+}
+
+
+.add-ques-btn{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 16px;
+    height: 33px;
+    outline: none;
+    border:none;
+    font-weight: 600;
+    width: 6rem;
+    margin: 0.5rem;
+    height: 2.4rem;
+}
+
+
+.add-ques-btn:hover{
+    background-color: #ffffff;
+    color: black;
+    border:2px solid black;
+}
+
+@media screen and (min-width:1449px) {
+    .upload-ques-form{
+        
+        height: 40%;
+        
+    }
+    .upload-ques{
+        padding: 2rem;
+        justify-content: flex-start;
+        height: 85vh;
+    }
+
+    .upload-ques-label,.upload-ques-tags{
+        font-size: 20px;
+    }
+    .add-ques-btn{
+        font-size: 22px;
+        width: 6.5rem;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .ques-area,.tags-area{
+        flex-direction: column;
+        margin: 0rem;
+    }
+    .upload-ques-label,.upload-ques-tags{
+        width: 100%;
+        text-align: left;
+    }
+    .ques-inputs{
+        width: 100%;
+        padding: 0.5rem 0rem;
+    }
+
+    .question,.tagString{
+        width: 100%;
+    }
+}
+
+/* answer.js */
+
+.answer-main{
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0rem;
+}
+
+.q-to-ans{
+    padding: 1rem;
+    text-align: center;
+}
+.answer-desc{
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    /* border: 2px solid red; */
+    /* background-color: rgb(224, 220, 220); */
+    /* box-shadow: 10px 10px 20px; */
+}
+.answer-status{
+    font-weight: 600;
+    padding: 0.3rem;
+}
+
+.tag-list-ans{
+    display: flex;
+}
+.tag-list-element{
+    padding: 0.3rem 0.4rem;
+}
+
+.answer-to-q{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.answer-label{
+    /* width: 20%; */
+}
+
+.answer-space{
+    /* width: 80%; */
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.3rem;
+}
+.answer{
+    width: 100%;
+    padding: 0.3rem;
+    outline: none;
+    border: 1px solid black;
+}
+
+.addAnswer{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 16px;
+    height: 33px;
+    outline: none;
+    border:none;
+    font-weight: 600;
+    width: 6rem;
+    margin: 1rem 0.3rem;
+    height: 2.4rem;
+    align-self: flex-end;
+}
+
+.addAnswer:hover{
+    background-color: #ffffff;
+    color: black;
+    border:2px solid black;
+}
+
+@media screen and (max-width:525px) {
+    .answer-desc{
+        width: 100%;
+        padding: 0rem 1rem;
+    }
+    .q-to-ans{
+        padding: 0rem;
+        /* text-align: center; */
+    }
+}
+
+@media screen and (min-width:1440px) {
+    .answer-main{
+        justify-content: flex-start;
+        height: 80vh;
     }
 }

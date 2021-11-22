@@ -44,7 +44,6 @@ export const Questions = () => {
     };
     return (
         <div className="questions">
-            <h2>Questions</h2>
             {pageCount?questions.map((question) => {
                 return <QuestionCard key={question._id} question={question} />;
             }):"No Questions"}

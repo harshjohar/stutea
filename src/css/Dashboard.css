@@ -1,5 +1,153 @@
 *{
     margin: 0px;
     padding: 0px;
+    font-family: 'Montserrat', sans-serif;
 }
 
+.dashboard-main {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-icons {
+    padding: 2rem 5rem 0 2rem;
+    /* border: 2px solid red; */
+    display: flex;
+    width: 100%;
+    align-items:center;
+    justify-content: flex-end;
+}
+
+.icon-top {
+    /* border: 2px solid blue; */
+    height: 30px;
+    margin: 1rem 0.5rem 0;
+}
+
+.heading-top {
+    /* border: 2px solid green; */
+    padding: 1rem 2rem 2rem 4rem;
+    display: flex;
+    width: 100%;
+}
+
+.heading {
+    width: 55%;
+}
+
+.add-button {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.add-ques {
+    color: #D9D9D9;
+    outline: none;
+    border: none;
+    background-color: #F2F2F2;
+    width: 100%;
+    height: 60%;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.line {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.big {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sub-heading {
+    display: flex;
+    width: 100%;
+}
+
+.sub-heading-text {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+}
+
+.heading-more {
+    font-size: 1.3rem;
+}
+
+.all-tags-link {
+    /* text-decoration: none; */
+    padding: 1rem;
+    color: black;
+
+}
+
+.buttons-next-prev {
+    width: 20%;
+    display: flex;
+    /* border: 2px solid red; */
+    align-items: center;
+    justify-content: center;
+}
+
+.prev-next-btn {
+    height: 40px;
+    margin: 0 0.5rem;
+}
+
+.grp-of-three {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ques-card {
+    background-color:#5D4CE6;
+    width: 25%;
+    margin: 1rem 0;
+    padding: 2rem 1rem 1rem 1rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.question-smol {
+    color: white;
+}
+
+.options {
+    display: flex;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tags-opt {
+    width: 65%;
+}
+
+.user-add-opt {
+    width: 35%;
+    display: flex;
+}
+
+.smol-opt {
+    height: 30px;
+    margin: 0.2rem;
+}

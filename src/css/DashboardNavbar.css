@@ -6,13 +6,18 @@
 
 
 .nav-main{
-    width: 15vw;
+    width: 20vw;
     height: 100vh;
     border-right: 1px solid;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    /* z-index: 2; */
+    /* overflow-x: hidden; */
+    /* top: 0;
+    left: 0; */
 }
 
 .nav-logo-wrapper{
@@ -24,7 +29,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 75%;
+    height: 70%;
     width: 100%;   
 }
 
@@ -53,7 +58,7 @@
 .icon{
     width: 15%;
     height: 15%;
-    margin-right: 0.6rem;
+    margin-right: 0.8rem;
 }
 .ll-item{
     text-decoration: none;
@@ -61,6 +66,10 @@
     cursor: pointer;
     color: #D9D9D9;
     width: 100%;
+
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
     
 }
 
@@ -69,9 +78,21 @@
     color: black;
     fill: black;
 }
+.nav-text{
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    width: 85%;
+    color: #D9D9D9;
+}
 
+.nav-text-active{
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    width: 85%;
+}
 .logout{
-    height: 10%;
+    height: 15%;
     width: 100%;
 }
 .logout-btn{
@@ -80,8 +101,56 @@
     background-color: white;
     cursor: pointer;
     width: 100%;
+    margin: 0.5rem 0rem;
+    text-align: start;
+    padding: 0rem 1rem 0rem 2rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 
 }
 .logout-btn:hover{
     cursor: pointer;
+}
+
+.btn-text{
+    color: black;
+}
+/* @media screen and (max-width:1300px) {
+    .logout-btn,.link-list-item{
+        padding: 0rem 1rem;
+    }
+    .icon{
+        margin-right: 0.3rem;
+    }
+} */
+
+@media screen and (max-width:900px) {
+    .icon{
+        margin-right: 0.3rem;
+    }
+    .logout-btn,.link-list-item{
+        padding: 0rem 1rem;
+    }
+    
+}
+
+@media screen and (max-width:768px) {
+    .nav-text,.nav-text-active{
+        display: none;
+    }
+    .icon{
+        width: 50%;
+        width: 60%;
+        height: 20%;
+    
+    }
+    .ll-item{
+        align-items: center;
+        justify-content: center;
+    }
+    .logout-btn{
+        justify-content: center;
+        align-items: center;
+    }
 }

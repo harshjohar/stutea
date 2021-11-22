@@ -6,6 +6,8 @@
     justify-content: center;
     flex-direction: column;
     height: 95vh;
+    width: 80vw;
+    margin-left: 20vw;
    
 }
 .rform-head{
@@ -53,7 +55,7 @@
     width: 80%;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:850px) {
     .rform-div{
         width: 100%;
     }

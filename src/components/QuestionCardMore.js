@@ -1,7 +1,7 @@
 import React from "react";
 import {ReactComponent as Tags} from "../Assets/Click/Tags.svg"
 import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
-import {ReactComponent as AddQuestion} from "../Assets/Click/answer_purple.svg"
+import {ReactComponent as AddAnswer} from "../Assets/Click/answer_purple.svg"
 export const QuestionCardMore = () => {
     return (
         <div className="ques-card">
@@ -14,7 +14,7 @@ export const QuestionCardMore = () => {
                 </div>
                 <div className="user-add-opt">
                     <ProfileIcon className="smol-opt" />
-                    <AddQuestion className="smol-opt" />
+                    <AddAnswer className="smol-opt" />
                 </div>
             </div>
         </div>

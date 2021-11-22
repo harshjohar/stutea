@@ -9,13 +9,12 @@ import { QuestionTag } from './QuestionTag';
 import {DashBoardNavbar} from './DashBoardNavbar'
 const Dashboard = () => {
     return (
-        <div className="dashboard-body">
-            <DashBoardNavbar/>
+        <>
+        {/* <div className="dashboard-body">
             <div className="dleft">
                 <SidePane/>
             </div>
             <div className="dmid">
-                {/* <div className="add-doubt"> */}
                 <Link className="add" to="/add">
                     <button className="addQues">Ask your doubt</button>
                 </Link>
@@ -36,7 +35,8 @@ const Dashboard = () => {
             <div className="dright">
             <MyQuestionDashboard/>
             </div>
-        </div>
+        </div> */}
+        </>
     )
 }
 

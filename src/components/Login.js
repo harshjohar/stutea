@@ -35,7 +35,7 @@ const Login = () => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
     };
     return (
-        <div className="form-body">
+        <div className="form-body-main">
         <div className="form-head">
             <h2 className="form-title">Log in to the world of knowledge</h2>
             <form onSubmit={handleSubmit} className="form-body">

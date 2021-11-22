@@ -2,17 +2,61 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+          
 }
 
+.active-nav{
+    color: black;
+}
 .nav-main{
     width: 15vw;
-    background-color: aqua;
     height: 100vh;
+    border-right: 1px solid;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
 }
 
+.nav-logo-wrapper{
+    height: 15%;
+    width: 100%;
+}
 .link-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 75%;
+    width: 100%;
     
+    
+}
+
+.links{
+    list-style: none;
+    padding-left: 0rem;
+    margin-bottom: 0rem;
+    /* width: 100%; */
+}
+
+.link-list-item{
+    margin:1rem;
+}
+
+.ll-item{
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+
+.logout{
+    height: 10%;
+}
+.logout-btn{
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    background-color: white;
+    cursor: pointer;
 }

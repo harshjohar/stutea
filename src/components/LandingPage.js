@@ -10,7 +10,7 @@ import { Navbar } from "./Navbar";
 const LandingPage = () => {
   return (
     <div>
-      <Navbar/>
+      {/* <Navbar/> */}
       <div className="intro-content">
         <h1>Hello folks</h1>
         <h2>Welcome To StuTea</h2>

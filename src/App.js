@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
-import { Navbar } from "./components/Navbar";
+
 import  { About } from "./components/About";
 import Contact from "./components/Contact";
 import QuestionState from "./Context/Questions/questionState";
@@ -19,11 +19,17 @@ import { Wait } from "./components/Wait";
 import { Tags } from "./components/Tags";
 import { CreditState } from "./Context/Credits/CreditState";
 
+import { Nav } from "./components/Nav";
+
 function App() {
   return (
     <div>
       <Router>
         <CreditState>
+          <div className="new-nav">
+            <Nav/>
+          </div>
+          
         <Switch>
           <Route exact path="/">
             <UserState>
@@ -78,7 +84,7 @@ function App() {
             </UserState>
           </Route>
         </Switch>
-        <Footer/>
+        {/* <Footer/> */}
         </CreditState>
       </Router>
     </div>

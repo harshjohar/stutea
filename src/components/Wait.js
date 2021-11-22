@@ -21,7 +21,7 @@ export const Wait = () => {
     }
     return (
         <div>
-            A link for verification is sent to your registered email. If you haven't recieved any link, click to resend link
+            A link for verification is sent to your registered email. If you haven't recieved any link, click to resend link.
             <button className="resendLink" onClick={reSend}>Re-send Email</button>
             {res?res.msg:""}
         </div>

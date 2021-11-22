@@ -44,6 +44,16 @@ export const Questions = () => {
         // eslint-disable-next-line
     }, []);
 
+    const nextClick = () => {
+        setCurrPage(currPage+1);
+        getQuestions(currPage);
+    }
+
+    const prevClick = () => {
+        setCurrPage(currPage-1);
+        getQuestions(currPage);
+    }
+
     return (
         <div className="questions">
             {!questions.length && <Spinner/>}
@@ -63,10 +73,10 @@ export const Questions = () => {
                         </div>
                     </div>
                     <div className="buttons-next-prev">
-                        {/* <Prev className="prev-next-btn"/> */}
-                        <PrevActive className="prev-next-btn"/>
-                        {/* <Next className="prev-next-btn"/> */}
-                        <NextActive className="prev-next-btn"/>
+                        {currPage===1 && <Prev className="prev-next-btn-disabled"/>}
+                        {currPage!==1 && <PrevActive className="prev-next-btn" onClick={prevClick}/>}
+                        {currPage===pageCount && <Next className="prev-next-btn-disabled"/>}
+                        {currPage!==pageCount && <NextActive className="prev-next-btn" onClick={nextClick}/>}
                     </div>
                 </div>
             {questions.length>2 && <div>hihi</div>}

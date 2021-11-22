@@ -111,6 +111,13 @@
 .prev-next-btn {
     height: 40px;
     margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+.prev-next-btn-disabled {
+    height: 40px;
+    margin: 0 0.5rem;
+    cursor: not-allowed;
 }
 
 .grp-of-three {

@@ -3,7 +3,6 @@ import dateFormat from "dateformat";
 import { useHistory, Link } from "react-router-dom";
 import {ReactComponent as AddQuesGreen} from "../Assets/Click/answer_green.svg"
 import {ReactComponent as AddQuesMagenta} from "../Assets/Click/answer_magenta.svg"
-import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
 import "../css/BigQuestionCard.css"
 export const BigQuestionCard = (props) => {
     const {color, content}=props
@@ -47,7 +46,7 @@ export const BigQuestionCard = (props) => {
                 {content.question}
             </div>
             <div className="tags">
-                {content.tags.map((tag)=><Link to={`/query?tag=${tag}`} className={`tag-${color}`}>{tag}</Link>)}
+                {content.tags.map((tag)=><Link key={tag} to={`/query?tag=${tag}`} className={`tag-${color}`}>{tag}</Link>)}
             </div>
             <div className="details">
                 <div className="user">

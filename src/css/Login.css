@@ -1,8 +1,10 @@
-.form-body{
+.form-body-main{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
+    width: 80vw;
+    margin-left: 20vw;
 }
 .form-head{
     display: flex;
@@ -59,7 +61,7 @@
     width: 90%;
     height: 100%;
     
-    width: 70%;
+    width: 100%;
 }
 
 .form-button{
@@ -90,7 +92,7 @@
     font-weight: 600;
 }
 
-@media screen and (max-width:660px) {
+@media screen and (max-width:850px) {
     .login-form{
         width: 100%;
     }

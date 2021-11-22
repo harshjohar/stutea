@@ -46,8 +46,8 @@ export const DashBoardNavbar = () => {
                     </li>
                 </ul>
             </div>
-            <div className="logout-btn">
-            <button className="login-btn" onClick={handleLogout}>Logout</button>
+            <div className="logout">
+            <button className="logout-btn" onClick={handleLogout}>Logout</button>
             </div>
         </div>
     )

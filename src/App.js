@@ -23,13 +23,10 @@ import { Nav } from "./components/Nav";
 
 function App() {
   return (
-    <div>
+    <>
       <Router>
         <CreditState>
-          <div className="new-nav">
-            <Nav/>
-          </div>
-          
+            <Nav/>   
         <Switch>
           <Route exact path="/">
             <UserState>
@@ -87,7 +84,7 @@ function App() {
         {/* <Footer/> */}
         </CreditState>
       </Router>
-    </div>
+    </>
   );
 }
 

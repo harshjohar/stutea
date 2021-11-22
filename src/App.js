@@ -19,14 +19,15 @@ import { Wait } from "./components/Wait";
 import { Tags } from "./components/Tags";
 import { CreditState } from "./Context/Credits/CreditState";
 
-import { Nav } from "./components/Nav";
+// import { Nav } from "./components/Nav";
+import { DashBoardNavbar } from "./components/DashBoardNavbar";
 
 function App() {
   return (
-    <>
+    <div className="App">
       <Router>
         <CreditState>
-            <Nav/>   
+            <DashBoardNavbar/> 
         <Switch>
           <Route exact path="/">
             <UserState>
@@ -81,10 +82,9 @@ function App() {
             </UserState>
           </Route>
         </Switch>
-        {/* <Footer/> */}
         </CreditState>
       </Router>
-    </>
+    </div>
   );
 }
 

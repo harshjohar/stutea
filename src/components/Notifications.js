@@ -22,10 +22,10 @@ export const Notifications = (props) => {
         // eslint-disable-next-line
     }, [])
     return (
-        // <div className={"dropdown-content"+ (show ? " show":" ")}>
-            {/* {notifications && notifications.notification ?  notifications.notification.map((notif)=> {
+        <div>
+            {notifications && notifications.notification ?  notifications.notification.map((notif)=> {
                 return <Notification value={notif} key={notif._id}/>
-            }):"No notification"} */}
-        // </div>
+            }):"No notification"}
+        </div>
     )
 }

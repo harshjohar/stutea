@@ -21,14 +21,17 @@ const Dashboard = () => {
                 <div className="top-icons">
                     {/* <NotifIconActive className='icon-top'/> */}
                     <NavItem icon={<NotifIcon/>}>
-                        <Dropdown></Dropdown>
+                        <Dropdown type="notif"></Dropdown>
                     </NavItem>
                     <NavItem icon={<CreditIcon/>}>
-                        <Dropdown></Dropdown>
+                        <Dropdown type="credits"></Dropdown>
                     </NavItem>
-                    <NavItem icon={<ProfileIcon/>}>
-                        <Dropdown></Dropdown>
-                    </NavItem>
+                    <Link to="/profile">
+                    <ProfileIcon className="icon-top"/>
+                    </Link>
+                    {/* <NavItem icon={<ProfileIcon/>}>
+                        <Dropdown type="profile"></Dropdown>
+                    </NavItem> */}
                 </div>
                 <div className="heading-top">
                     <div className="heading">

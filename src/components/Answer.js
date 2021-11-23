@@ -4,7 +4,7 @@ import { useHistory, Link } from "react-router-dom";
 import { Tag } from "./Tag";
 import  '../css/Answer.css'
 import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
-import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
+// import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
 import {ReactComponent as CreditIcon} from "../Assets/Click/Credits.svg"
 import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
 import { NavItem } from './Notifications/NavItem';

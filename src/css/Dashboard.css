@@ -184,6 +184,12 @@
     cursor: pointer;
 }
 
+.smol-tag-opt svg {
+    height: 30px;
+    margin: 0.2rem;
+    cursor: pointer;
+}
+
 .all-tags-here-link {
     margin-left: 20vw;
 }

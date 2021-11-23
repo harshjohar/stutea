@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import "../css/Dashboard.css"
-
+import "../css/NotificationBar.css"
 import { Questions } from './Questions';
 
 import { Route, Switch } from "react-router-dom";
@@ -10,16 +10,28 @@ import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
 import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
 import {ReactComponent as CreditIcon} from "../Assets/Click/Credits.svg"
 import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
-import { QuestionCardMore } from './QuestionCardMore';
+import { Notifications } from './Notifications';
+import { NavItem } from './Notifications/NavItem';
+import { Dropdown } from './Notifications/Dropdown';
+
 const Dashboard = () => {
     return (
         <>
             <div className="dashboard-main">
                 <div className="top-icons">
                     {/* <NotifIconActive className='icon-top'/> */}
-                    <NotifIcon className='icon-top'/>
-                    <CreditIcon className='icon-top'/>
-                    <ProfileIcon className='icon-top'/>
+                    <NavItem icon={<NotifIcon/>}>
+                        <Dropdown type="notif"></Dropdown>
+                    </NavItem>
+                    <NavItem icon={<CreditIcon/>}>
+                        <Dropdown type="credits"></Dropdown>
+                    </NavItem>
+                    <Link to="/profile">
+                    <ProfileIcon className="icon-top"/>
+                    </Link>
+                    {/* <NavItem icon={<ProfileIcon/>}>
+                        <Dropdown type="profile"></Dropdown>
+                    </NavItem> */}
                 </div>
                 <div className="heading-top">
                     <div className="heading">
@@ -33,13 +45,6 @@ const Dashboard = () => {
                     </div>
                 </div>
                 <Questions/>
-
-                {/* just for demo, real deal is question.js */}
-                <div className="grp-of-three">
-                    <QuestionCardMore/>
-                    <QuestionCardMore/>
-                    <QuestionCardMore/>
-                </div>
             </div>
         </>
     )

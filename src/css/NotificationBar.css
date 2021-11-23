@@ -90,8 +90,6 @@
     transform: translateX(0%);
     transition: all var(--speed) ease;
 }
-.menu-secondary-exit {
-}
 .menu-secondary-exit-active {
     transform: translateX(110%);
     transition: all var(--speed) ease;

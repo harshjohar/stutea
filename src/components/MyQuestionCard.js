@@ -1,6 +1,9 @@
 import React from 'react'
 import dateFormat from 'dateformat';
 import { useHistory } from 'react-router-dom';
+import { TagIcon } from "./Tags/TagIcon";
+import { TagDropdown } from "./Tags/TagDropdown";
+import {ReactComponent as TagsIcon} from "../Assets/Click/Tags.svg"
 export const MyQuestionCard = (props) => {
     const {question} = props;
     const date = question.timestamp;
@@ -31,11 +34,14 @@ export const MyQuestionCard = (props) => {
             </div>
             <div className="my-q-tags">
 
-            {question.tags.map((tag) => 
+            {/* {question.tags.map((tag) => 
                 <div className="tag" key={tag}>
                     {tag}
                 </div>
-            )}
+            )} */}
+            <TagIcon icon={<TagsIcon/>}>
+                <TagDropdown tags={question.tags}></TagDropdown>
+            </TagIcon>
             </div>
             
             {question.user && <div className="answer-question">

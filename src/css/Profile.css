@@ -18,12 +18,9 @@
 }
 
 .dp{
-    
+    border: 1px solid black;
     border-radius: 50%;
     height: 90%;
-    /* height: 70%; */
-
-    
 }
 
 .profile-info{
@@ -53,7 +50,6 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, auto);
-
 }
 
 .my-q-card{
@@ -96,12 +92,3 @@
     border: none;
     margin: 0.5rem;
 }
-/* 
-.fa-eye{
-    color: #F2F2F2;
-} */
-
-
-/* .fa-cog{
-    height: 20px;
-} */

@@ -4,6 +4,7 @@ import { BigQuestionCard } from "./BigQuestionCard";
 import { Spinner } from "./Spinner";
 import { QuestionCardMore } from './QuestionCardMore';
 import { Link } from 'react-router-dom';
+import ReactPaginate from "react-paginate";
 import {ReactComponent as Prev} from "../Assets/Rest/Left.svg"
 import {ReactComponent as Next} from "../Assets/Rest/Right.svg"
 import {ReactComponent as PrevActive} from "../Assets/Click/Left.svg"
@@ -13,8 +14,7 @@ export const Questions = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
     const [questions, setQuestions] = useState([]);
     const [pageCount, setPageCount] = useState(0);
-    const [currPage, setCurrPage] = useState(1);
-
+    
     let history = useHistory();
     // Get the questions
     const getQuestions = async (pg) => {
@@ -39,22 +39,17 @@ export const Questions = () => {
 
     useEffect(() => {
         if (localStorage.getItem("token")) {
-                getQuestions(currPage);
+                getQuestions(1);
         } else {
             history.push("/login");
         }
         // eslint-disable-next-line
     }, []);
 
-    const nextClick = () => {
-        setCurrPage(currPage+1);
-        getQuestions(currPage);
-    }
-
-    const prevClick = () => {
-        setCurrPage(currPage-1);
-        getQuestions(currPage);
-    }
+    const handlePageClick = async (data) => {
+        let currPage = data.selected + 1;
+        await getQuestions(currPage);
+    };
 
     return (
         <div className="questions">
@@ -63,7 +58,6 @@ export const Questions = () => {
                 {questions.length && <BigQuestionCard color='green' content={questions[0]}/>}
                 {questions.length>1 && <BigQuestionCard color='magenta' content={questions[1]}/>}
             </div>
-            <div className="sub-heading">
                     <div className="sub-heading-text">
                         <div className="heading-more">
                             More questions
@@ -74,20 +68,31 @@ export const Questions = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="buttons-next-prev">
-                        {currPage===1 && <Prev className="prev-next-btn-disabled"/>}
-                        {currPage!==1 && <PrevActive className="prev-next-btn" onClick={prevClick}/>}
-                        {currPage===pageCount && <Next className="prev-next-btn-disabled"/>}
-                        {currPage!==pageCount && <NextActive className="prev-next-btn" onClick={nextClick}/>}
-                    </div>
-                </div>
-            {questions.length>2 && <div>page number: {currPage}</div>}
-            Previous and next buttons are not working, please dont use
             <div className="grp-of-three">
                     {questions.length>2 && <QuestionCardMore content={questions[2]}/>}
                     {questions.length>3 && <QuestionCardMore content={questions[3]}/>}
                     {questions.length>4 && <QuestionCardMore content={questions[4]}/>}
-                </div>
+            </div>
+            {questions && <ReactPaginate
+                previousLabel={<PrevActive className='prev-next-btn'/>}
+                nextLabel={<NextActive className='prev-next-btn'/>}
+                onPageChange={handlePageClick}
+                breakLabel={"...."}
+                pageCount={pageCount}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={3}
+                containerClassName={"pagination justify-content-center"}
+                pageClassName={"page-item"}
+                pageLinkClassName={"page-link"}
+                previousClassName={"page-item"}
+                previousLinkClassName={"page-link"}
+                nextClassName={"page-item"}
+                nextLinkClassName={"page-link"}
+                breakClassName={"page-item"}
+                breakLinkClassName={"page-link"}
+                activeClassName={"active"}
+            />}
+
         </div>
     );
 };

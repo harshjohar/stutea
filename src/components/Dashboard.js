@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 import "../css/Dashboard.css"
 import "../css/NotificationBar.css"
@@ -10,7 +10,6 @@ import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
 import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
 import {ReactComponent as CreditIcon} from "../Assets/Click/Credits.svg"
 import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
-import { Notifications } from './Notifications';
 import { NavItem } from './Notifications/NavItem';
 import { Dropdown } from './Notifications/Dropdown';
 

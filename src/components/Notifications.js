@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import { Notification } from './Notification';
+import { Spinner } from './Spinner';
 // import "../css/Notifications.css"
 
-export const Notifications = (props) => {
+export const Notifications = () => {
     // const {show}=props
     const host = process.env.REACT_APP_BACKEND_URL;
     const [notifications, setNotifications] = useState([]);
@@ -23,9 +24,10 @@ export const Notifications = (props) => {
     }, [])
     return (
         <div>
+            {!notifications.notification && <Spinner/>}
             {notifications && notifications.notification ?  notifications.notification.map((notif)=> {
                 return <Notification value={notif} key={notif._id}/>
-            }):"No notification"}
+            }):""}
         </div>
     )
 }

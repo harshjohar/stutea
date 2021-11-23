@@ -40,7 +40,6 @@ export const Profile = () => {
 
             <div className="profile-head">
                 <div className="user-dp">
-
                     <img className="dp" src={user.dp} alt="dp" />
                 </div>
                 <div className="profile-info">

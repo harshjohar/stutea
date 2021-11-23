@@ -2,13 +2,23 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { MyQuestionCard } from "./MyQuestionCard";
 import ReactPaginate from "react-paginate";
+import { Spinner } from "./Spinner";
+import {ReactComponent as PrevActive} from "../Assets/Click/Left.svg"
+import {ReactComponent as NextActive} from "../Assets/Click/Right.svg"
 
 export const MyQuestions = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
     let history = useHistory();
     const [pageCount, setPageCount] = useState(0);
     const [questions, setQuestions] = useState([]);
-
+    const emptyQues = {
+        user: "",
+        question: "No Questions",
+        timestamp: "",
+        answered: false,
+        tags: [],
+        responded: false
+    }
     // Get Own Questions
     const getMyQuestions = async (pg) => {
         // api call
@@ -25,7 +35,10 @@ export const MyQuestions = () => {
         const json = await response.json();
         setQuestions(json.myQuestions);
         const pgs = json.count;
-        setPageCount(Math.ceil(pgs / 15));
+        setPageCount(Math.ceil(pgs / 6));
+        if(pgs===0) {
+            setQuestions([emptyQues])
+        }
     };
     useEffect(() => {
         if (localStorage.getItem("token")) {
@@ -42,15 +55,10 @@ export const MyQuestions = () => {
     };
     return (
         <div className="my-questions">
-            <h2 className="my-q-head">My Questions</h2>
-            <div className="own-ques">
-            {questions.map((question) => {
-                return <MyQuestionCard key={question._id} question={question} />;
-            })}
-            </div>
+            {!questions.length && <Spinner/>}
             {questions && <ReactPaginate
-                previousLabel={"prev"}
-                nextLabel={"next"}
+                previousLabel={<PrevActive className='prev-next-btn'/>}
+                nextLabel={<NextActive className='prev-next-btn'/>}
                 onPageChange={handlePageClick}
                 breakLabel={"...."}
                 pageCount={pageCount}
@@ -67,6 +75,12 @@ export const MyQuestions = () => {
                 breakLinkClassName={"page-link"}
                 activeClassName={"active"}
             />}
+            <h2 className="my-q-head">My Questions</h2>
+            <div className="own-ques">
+            {questions.map((question) => {
+                return <MyQuestionCard key={question._id} question={question} />;
+            })}
+            </div>
         </div>
     );
 };

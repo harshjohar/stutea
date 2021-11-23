@@ -5,8 +5,8 @@ import { Spinner } from "./Spinner";
 import { QuestionCardMore } from './QuestionCardMore';
 import { Link } from 'react-router-dom';
 import ReactPaginate from "react-paginate";
-import {ReactComponent as Prev} from "../Assets/Rest/Left.svg"
-import {ReactComponent as Next} from "../Assets/Rest/Right.svg"
+// import {ReactComponent as Prev} from "../Assets/Rest/Left.svg"
+// import {ReactComponent as Next} from "../Assets/Rest/Right.svg"
 import {ReactComponent as PrevActive} from "../Assets/Click/Left.svg"
 import {ReactComponent as NextActive} from "../Assets/Click/Right.svg"
 

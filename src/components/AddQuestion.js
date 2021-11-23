@@ -3,7 +3,7 @@ import { useHistory, Link } from 'react-router-dom';
 import "../css/Dashboard.css"
 import "../css/AddQuestion.css"
 import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
-import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
+// import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
 import {ReactComponent as CreditIcon} from "../Assets/Click/Credits.svg"
 import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
 import { NavItem } from './Notifications/NavItem';

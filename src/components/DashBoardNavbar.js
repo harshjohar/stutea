@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Link, useLocation, useHistory } from "react-router-dom";
 import "../css/DashboardNavbar.css"
 import about from "../Assets/Rest/About.svg" 
@@ -22,10 +22,10 @@ export const DashBoardNavbar = () => {
         localStorage.removeItem('token')
         history.push('/login')
     }
-    const [hamburger, setHamburger] = useState(false)
-    const toggle=()=>{
-        setHamburger(!hamburger)
-    }
+    // const [hamburger, setHamburger] = useState(false)
+    // const toggle=()=>{
+    //     setHamburger(!hamburger)
+    // }
     return (
         <div className="nav-main">
             <div className="nav-logo-wrapper">

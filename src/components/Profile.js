@@ -4,12 +4,12 @@ import { MyQuestions } from './MyQuestions';
 import { Link } from 'react-router-dom';
 import "../css/Profile.css"
 import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
-import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
+// import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
 import {ReactComponent as CreditIcon} from "../Assets/Click/Credits.svg"
 import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
 import { NavItem } from './Notifications/NavItem';
 import { Dropdown } from './Notifications/Dropdown';
-import Settings from '../Assets/Rest/Settings.svg'
+// import {ReactComponent as Settings} from '../Assets/Rest/Settings.svg'
 export const Profile = () => {
     const uContext = useContext(userContext);
     const {user, getUserByAuthToken} = uContext;
@@ -36,6 +36,7 @@ export const Profile = () => {
                     </Link>
                     {/* <img src={Settings} alt="" className="icon-top"/> */}
                     <i className="fas fa-cog icon-top"></i>
+                    {/* <Settings/> */}
             </div>
 
             <div className="profile-head">

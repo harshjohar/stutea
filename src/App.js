@@ -13,7 +13,7 @@ import { Answer } from "./components/Answer";
 import { ViewAnswer } from "./components/ViewAnswer";
 import { UserState } from "./Context/User/userState";
 import { Profile } from "./components/Profile";
-import { Footer } from "./components/Footer";
+// import { Footer } from "./components/Footer";
 import { Confirmation } from "./components/Confirmation";
 import { Wait } from "./components/Wait";
 import { Tags } from "./components/Tags";

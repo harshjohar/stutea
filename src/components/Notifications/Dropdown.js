@@ -4,7 +4,9 @@ import { CreditUser } from "../CreditUser";
 import { Notifications } from "../Notifications";
 
 export const Dropdown = (props) => {
+    // eslint-disable-next-line
     const [activeMenu, setActiveMenu] = useState("main");
+    // eslint-disable-next-line
     const [menuHeight, setMenuHeight] = useState(null);
     const dropdownRef = useRef(null);
     const {type}=props;

@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 export const QuestionTag = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
     const [questions, setQuestions] = useState([]);
-    const [pageCount, setPageCount] = useState(0);
+    // const [pageCount, setPageCount] = useState(0);
     // const [currPage, setCurrPage] = useState(1);
 
     const {search} = useLocation();
@@ -37,8 +37,8 @@ export const QuestionTag = () => {
         });
         const json = await response.json();
         setQuestions(json.questions);
-        const pgs = json.count;
-        setPageCount(Math.ceil(pgs/15));
+        // const pgs = json.count;
+        // setPageCount(Math.ceil(pgs/15));
     }
 
     useEffect(() => {

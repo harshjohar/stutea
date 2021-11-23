@@ -7,7 +7,7 @@ import { Questions } from './Questions';
 import { Route, Switch } from "react-router-dom";
 import { QuestionTag } from './QuestionTag';
 import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
-import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
+// import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
 import {ReactComponent as CreditIcon} from "../Assets/Click/Credits.svg"
 import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
 import { NavItem } from './Notifications/NavItem';

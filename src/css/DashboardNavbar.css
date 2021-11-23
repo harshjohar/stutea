@@ -14,6 +14,7 @@
     align-items: center;
     justify-content: center;
     position: fixed;
+    font-weight: 800;
     /* z-index: 2; */
     /* overflow-x: hidden; */
     /* top: 0;
@@ -117,6 +118,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
+    font-weight: 800;
 
 }
 .logout-btn:hover{

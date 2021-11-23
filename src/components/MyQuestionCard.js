@@ -27,8 +27,7 @@ export const MyQuestionCard = (props) => {
                 {question.question}
             </div>
             <div className="date-ques">
-
-                {dateFormat(date, "dddd, mmmm dS, yyyy")}
+                {question.user && dateFormat(date, "dddd, mmmm dS, yyyy")}
             </div>
             <div className="my-q-tags">
 
@@ -39,10 +38,10 @@ export const MyQuestionCard = (props) => {
             )}
             </div>
             
-            <div className="answer-question">
+            {question.user && <div className="answer-question">
                 <button className={`view-ans ${question.responded?"yellow-q":"magenta-q"} ${question.answered?"green-q":"magenta-q"}`} onClick={resolvedClick}><i class="fas fa-trash"></i></button>
                 <button className={`view-ans ${question.responded?"yellow-q":"magenta-q"} ${question.answered?"green-q":"magenta-q"}`} onClick={viewAnswerClick}><i className="fas fa-eye"></i></button>
-            </div>
+            </div>}
         </div>
     )
 }

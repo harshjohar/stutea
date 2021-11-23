@@ -179,6 +179,7 @@
 .smol-opt {
     height: 30px;
     margin: 0.2rem;
+    cursor: pointer;
 }
 
 .all-tags-here-link {

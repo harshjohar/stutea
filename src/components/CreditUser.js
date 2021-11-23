@@ -21,7 +21,7 @@ export const CreditUser = () => {
     }, [])
     return (
         <div className="credit-user">
-                {credits.credits} 
+                Credits {credits.credits} 
         </div>
     )
 }

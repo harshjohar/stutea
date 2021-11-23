@@ -96,3 +96,11 @@
     transform: translateX(110%);
     transition: all var(--speed) ease;
 }
+
+.notif-text {
+    color: white;
+}
+
+.notif-ques-link {
+    color: #474a4d;
+}

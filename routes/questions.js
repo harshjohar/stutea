@@ -72,11 +72,12 @@ router.post("/fetch", fetchuser, async (req, res) => {
         const { page } = req.body;
 
         const questions = await Questions.find({ user: { $ne: req.user.id }, responded: {$ne: true} }).sort({timestamp:-1})
-            .limit(15)
-            .skip((page - 1) * 15);
+            .limit(5)
+            .skip((page - 1) * 5);
 
         const count = await Questions.find({
             user: { $ne: req.user.id },
+            responded: {$ne: true}
         }).count();
 
         questions.sort(function (a, b) {

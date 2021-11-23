@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { Tag } from "./Tag";
+import  '../css/Answer.css'
+import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
+import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
+import {ReactComponent as CreditIcon} from "../Assets/Click/Credits.svg"
+import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
+import { NavItem } from './Notifications/NavItem';
+import { Dropdown } from './Notifications/Dropdown';
 export const Answer = () => {
     const { quesid } = useParams();
     const host = process.env.REACT_APP_BACKEND_URL;
@@ -66,11 +73,24 @@ export const Answer = () => {
 
     return (
         <div className="answer-main">
+            <div className="top-icons">
+                    {/* <NotifIconActive className='icon-top'/> */}
+                    <NavItem icon={<NotifIcon/>}>
+                        <Dropdown type="notif"></Dropdown>
+                    </NavItem>
+                    <NavItem icon={<CreditIcon/>}>
+                        <Dropdown type="credits"></Dropdown>
+                    </NavItem>
+                    <Link to="/profile">
+                    <ProfileIcon className="icon-top"/>
+                    </Link>
+                    {/* <img src={Settings} alt="" className="icon-top"/> */}
+                    <i className="fas fa-cog icon-top"></i>
+            </div>
             <h2 className="q-to-ans">Question: {question.question}</h2>
             <div className="answer-desc">
             <form>
-            <label className="answer-status">Answered : </label>
-            {question.answered ? "yes" : "no"}
+            
             {/* <Tag value="harsh"/> */}
             <div className="tag-list-ans">
             <label className="answer-status">Tags specified :</label>
@@ -79,22 +99,29 @@ export const Answer = () => {
                     <Tag value={tag}/>
                 </div>
             ))}</div>
-            {/* <form> */}
-            <div className="answer-to-q">
-                <label htmlFor="answer" className="answer-status answer-label">Write your answer here</label>
-                <div className="answer-space">
+
+            <div className="ques-area">
+                <label className="answer-status">Answered : </label>
+                {question.answered ? " Yes" : " No"}
+            </div>
+        
+            <div className="ques-area">
+                <label htmlFor="answer" className="upload-ques-label">Write your answer here</label>
+                <div className="ques-inputs">
                 <textarea rows="4"
                     name="answer"
                     id="answer"
-                    className="answer"
+                    className="question"
                     value={answer.answer}
                     onChange={onChange}
                 /></div>
             </div>
             </form>
-            <button type="submit" className="addAnswer" onClick={handleSubmit}>
+            <div className="submit-btn">
+            <button type="submit" className="add-ques-btn" onClick={handleSubmit}>
                 Submit
             </button>
+            </div>
             </div>
         </div>
     );

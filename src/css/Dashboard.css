@@ -180,3 +180,17 @@
     height: 30px;
     margin: 0.2rem;
 }
+
+.all-tags-here-link {
+    margin-left: 20vw;
+}
+
+.sub-heading-tags {
+    /* border: 2px solid red; */
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.tag-heading {
+    color: #5D4CE6;
+}

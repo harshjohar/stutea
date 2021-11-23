@@ -44,7 +44,14 @@ const Dashboard = () => {
                         </Link>
                     </div>
                 </div>
-                <Questions/>
+                <Switch>
+                <Route exact path='/'>
+                    <Questions/>
+                </Route>
+                <Route exact path='/query'>
+                    <QuestionTag/>
+                </Route>
+                </Switch>
             </div>
         </>
     )

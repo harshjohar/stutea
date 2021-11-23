@@ -97,9 +97,9 @@ router.post("/fetchuser", fetchuser, async (req, res) => {
     try {
         const { page } = req.body;
         const user = req.user.id;
-        const myQuestions = await Questions.find({ user })
-            .limit(15)
-            .skip((page - 1) * 15);
+        const myQuestions = await Questions.find({ user }).sort({timestamp:-1})
+            .limit(6)
+            .skip((page - 1) * 6);
         const count = await Questions.find({ user }).count();
 
         myQuestions.sort(function (a, b) {

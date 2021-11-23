@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import { Notification } from './Notification';
+// import "../css/Notifications.css"
 
-export const Notifications = () => {
+export const Notifications = (props) => {
+    // const {show}=props
     const host = process.env.REACT_APP_BACKEND_URL;
     const [notifications, setNotifications] = useState([]);
     const getNotifs = async () => {
@@ -20,11 +22,10 @@ export const Notifications = () => {
         // eslint-disable-next-line
     }, [])
     return (
-        <div>
-            <h2>Notifications</h2>
-            {notifications && notifications.notification ?  notifications.notification.map((notif)=> {
+        // <div className={"dropdown-content"+ (show ? " show":" ")}>
+            {/* {notifications && notifications.notification ?  notifications.notification.map((notif)=> {
                 return <Notification value={notif} key={notif._id}/>
-            }):"No notification"}
-        </div>
+            }):"No notification"} */}
+        // </div>
     )
 }

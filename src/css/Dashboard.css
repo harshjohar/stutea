@@ -14,6 +14,7 @@
 .top-icons {
     padding: 2rem 5rem 0 2rem;
     /* border: 2px solid red; */
+    height: 15vh;
     display: flex;
     width: 100%;
     align-items:center;
@@ -24,6 +25,26 @@
     /* border: 2px solid blue; */
     height: 30px;
     margin: 1rem 0.5rem 0;
+    cursor: pointer;
+}
+
+.icon-button {
+    transition: filter 300ms;
+}
+
+.icon-button:hover {
+    filter: brightness(0);
+}
+
+.icon-button svg {
+    height: 30px;
+    margin: 1rem 0.5rem 0;
+    cursor: pointer;
+}
+
+.dropdown-notif {
+    position: relative;
+    display: inline-block;
 }
 
 .heading-top {

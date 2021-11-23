@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { BigQuestionCard } from "./BigQuestionCard";
 import { Spinner } from "./Spinner";
+import { QuestionCardMore } from './QuestionCardMore';
 import { Link } from 'react-router-dom';
 import {ReactComponent as Prev} from "../Assets/Rest/Left.svg"
 import {ReactComponent as Next} from "../Assets/Rest/Right.svg"
@@ -31,13 +32,13 @@ export const Questions = () => {
         const json = await response.json();
         setQuestions(json.questions);
         const pgs = json.count;
-        setPageCount(Math.ceil(pgs/15));
+        setPageCount(Math.ceil(pgs/5));
     };
 
 
     useEffect(() => {
         if (localStorage.getItem("token")) {
-                getQuestions(1);
+                getQuestions(currPage);
         } else {
             history.push("/login");
         }
@@ -58,8 +59,8 @@ export const Questions = () => {
         <div className="questions">
             {!questions.length && <Spinner/>}
             <div className="big">
-                {questions.length ? <BigQuestionCard color='green' content={questions[0]}/>:""}
-                {questions.length>1 ? <BigQuestionCard color='magenta' content={questions[1]}/>:""}
+                {questions.length && <BigQuestionCard color='green' content={questions[0]}/>}
+                {questions.length>1 && <BigQuestionCard color='magenta' content={questions[1]}/>}
             </div>
             <div className="sub-heading">
                     <div className="sub-heading-text">
@@ -79,7 +80,12 @@ export const Questions = () => {
                         {currPage!==pageCount && <NextActive className="prev-next-btn" onClick={nextClick}/>}
                     </div>
                 </div>
-            {questions.length>2 && <div>hihi</div>}
+            {questions.length>2 && <div>hihi {currPage}</div>}
+            <div className="grp-of-three">
+                    {questions.length>2 && <QuestionCardMore content={questions[2]}/>}
+                    {questions.length>3 && <QuestionCardMore content={questions[3]}/>}
+                    {questions.length>4 && <QuestionCardMore content={questions[4]}/>}
+                </div>
         </div>
     );
 };

@@ -1,0 +1,68 @@
+.upload-ques{
+    width: 80vw;
+    margin-left: 20vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 0rem 1.2rem 1.2rem;
+}
+
+.upload-ques-heading{
+    font-weight: 600;
+}
+
+.upload-ques-form{
+    width: 100%;
+}
+
+.ques-area,.tags-area{
+    padding: 1rem;
+}
+
+.upload-ques-label,.upload-ques-tags{
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.question,.tagString{
+    width: 95%;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+}
+.question{
+    background-color: #FAEAF3;
+}
+
+.tagString{
+    background-color: #E8F7FE;
+}
+
+.submit-btn{
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.add-ques-btn{
+    font-weight: 500;
+    width: 5.5rem;
+    border-radius: 3rem;
+    height: 2.5rem;
+    color: black;
+    outline: none;
+    border: none;
+    color:#F2F2F2 ;
+    background-color: black;
+}
+
+.add-ques-btn:hover{
+    color: black;
+    background-color: #F2F2F2;
+    border: 1px solid black;
+}
+
+.instruction{
+    font-weight: 500;
+    font-size: 17px;
+}

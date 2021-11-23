@@ -22,17 +22,26 @@ export const MyQuestionCard = (props) => {
         history.push(`/view/${question._id}`)
     }
     return (
-        <div>
-            {question.question}
-            {dateFormat(date, "dddd, mmmm dS, yyyy, h:MM:ss TT")}
+        <div className={`my-q-card ${question.responded?"yellow-q":""} ${question.answered?"green-q":""}`}>
+            <div className="my-q">
+                {question.question}
+            </div>
+            <div className="date-ques">
+
+                {dateFormat(date, "dddd, mmmm dS, yyyy")}
+            </div>
+            <div className="my-q-tags">
+
             {question.tags.map((tag) => 
                 <div className="tag" key={tag}>
                     {tag}
                 </div>
             )}
+            </div>
+            
             <div className="answer-question">
-                <button onClick={resolvedClick}>Resolved</button>
-                <button onClick={viewAnswerClick}>View Answer</button>
+                <button className={`view-ans ${question.responded?"yellow-q":"magenta-q"} ${question.answered?"green-q":"magenta-q"}`} onClick={resolvedClick}><i class="fas fa-trash"></i></button>
+                <button className={`view-ans ${question.responded?"yellow-q":"magenta-q"} ${question.answered?"green-q":"magenta-q"}`} onClick={viewAnswerClick}><i className="fas fa-eye"></i></button>
             </div>
         </div>
     )

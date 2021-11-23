@@ -31,6 +31,7 @@ export const Questions = () => {
         });
         const json = await response.json();
         setQuestions(json.questions);
+        console.log(questions);
         const pgs = json.count;
         setPageCount(Math.ceil(pgs/5));
     };
@@ -80,7 +81,8 @@ export const Questions = () => {
                         {currPage!==pageCount && <NextActive className="prev-next-btn" onClick={nextClick}/>}
                     </div>
                 </div>
-            {questions.length>2 && <div>hihi {currPage}</div>}
+            {questions.length>2 && <div>page number: {currPage}</div>}
+            Previous and next buttons are not working, please dont use
             <div className="grp-of-three">
                     {questions.length>2 && <QuestionCardMore content={questions[2]}/>}
                     {questions.length>3 && <QuestionCardMore content={questions[3]}/>}

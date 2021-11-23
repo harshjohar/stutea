@@ -1,29 +1,50 @@
-.contact-cont{
-    /* border: 2px solid black; */
-    /* margin-top: 5px; */
-    padding-left: 30px;
-    height: 1000px;
-    background-color: white;
-    color: black;
+*{
+    margin: 0px;
+    padding: 0px;
+    /* font-family: 'Kumbh Sans', sans-serif; */
 }
 
-.contact-cont h1{
-    padding-top: 30px;
-    padding-left: 50px;
-    font-size: 50px;
+.parent-contact{
+    width: 80%;
+    margin-left: 350px;
+
 }
-.cont {
+
+.parent-contact h1 {
+    /* display: block; */
+    margin-left: 30rem;
+    margin-top: 2rem;
+    /* align-items: center; */
+}
+
+
+.sub-parent {
     margin: 34px;
     display: flex;
-    /* flex-direction: column; */
-    font-family: 'Ubuntu', sans-serif;
-    /* font-size: 50px; */
+    margin-bottom: 0rem;
+    padding-left: 0rem;
+
+}
+
+
+.other-cont {
+    width: 40%; 
+    font-size: 20px;
+    height: 650px;
     
 }
-.other-cont {
-    width: 45%;
-    font-size: 20px;
 
+.other-contact-upper{
+    background-color: rgb(207, 245, 245);
+    border-radius: 20px;
+    padding: 1.5rem 1.5rem;
+    /* height: 400px; */
+
+}
+
+.handles {
+    /* background-color: white; */
+    margin-left: 6rem;
 }
 
 .handles i {
@@ -35,47 +56,52 @@
 }
 
 .cont-form {
-    padding-left: 30px;
-    height: 525px;
-    width: 700px;
-    background-color: rgb(230, 220, 220);
+    margin-left: 4rem;
+    /* padding-left: 30px; */
+    padding: 1.5rem 1.5rem;
+    height: 550px;
+    width: 60%;
+    background-color: rgb(238, 184, 235);
+    border-radius: 20px;
 }
 
 .cont-form input {
-    padding: 2px 20px;
+    padding: 1rem 1rem;
+}
+
+.cont-form h2{
+    margin-left: 11rem;
 }
 
 .first-last {
     display: flex;
 }
 
-
-
-
 .forms input{
-    width: 650px;
-    height: 50px;
-    margin-top: 11px;
+    width: 38rem;
+    height: 3.8rem;
+    margin-top: 0.5rem;
+    border-radius: 1rem;
 }
 
 
 .first-last input{
-    width: 310px;
-    height: 50px;
+    width: 18rem;
+    height: 3.8rem;
     margin-top: 10px;
     margin-left: 5px;
 }
 
 .lastname input {
-    margin-left: 20px;
+    margin-left: 1.5rem;
 
 }
 .message input{
-    height: 100px;
+    height: 6rem;
 }
 
 
-@media screen and (max-width:1056px) and (min-width: 795px){
+/* @media screen and (max-width:1056px) and (min-width: 795px){
     .cont-form input {
         padding: 2px 20px;
     }
@@ -152,4 +178,4 @@
         height: 100px;
     }
     
-}
+} */

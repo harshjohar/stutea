@@ -5,6 +5,7 @@
 }
 
 .dashboard-main {
+    font-weight: 700;
     width: 80vw;
     display: flex;
     flex-direction: column;
@@ -75,7 +76,7 @@
 }
 
 .add-ques {
-    color: #D9D9D9;
+    color: #9b9b9b88;
     outline: none;
     border: none;
     background-color: #F2F2F2;
@@ -84,6 +85,7 @@
     border-radius: 1rem;
     font-size: 1.2rem;
     text-decoration: none;
+    font-weight: 600;
 }
 
 .line {

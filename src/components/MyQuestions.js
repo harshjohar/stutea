@@ -42,10 +42,12 @@ export const MyQuestions = () => {
     };
     return (
         <div className="my-questions">
-            <h2>My Questions</h2>
+            <h2 className="my-q-head">My Questions</h2>
+            <div className="own-ques">
             {questions.map((question) => {
                 return <MyQuestionCard key={question._id} question={question} />;
             })}
+            </div>
             {questions && <ReactPaginate
                 previousLabel={"prev"}
                 nextLabel={"next"}

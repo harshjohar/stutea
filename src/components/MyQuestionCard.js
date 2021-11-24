@@ -26,12 +26,14 @@ export const MyQuestionCard = (props) => {
     }
     return (
         <div className={`my-q-card ${question.responded?"yellow-q":""} ${question.answered?"green-q":""}`}>
-            <div className="my-q">
-                {question.question}
-            </div>
-            <div className="date-ques">
-                {question.user && dateFormat(date, "dddd, mmmm dS, yyyy")}
-            </div>
+            <div className="card-content">
+                <div className="my-q">
+                    {question.question}
+                </div>
+                <div className="date-ques">
+                    {question.user && dateFormat(date, "dddd, mmmm dS, yyyy")}
+                </div>
+                </div>
             <div className="my-q-tags">
 
             {/* {question.tags.map((tag) => 
@@ -39,15 +41,15 @@ export const MyQuestionCard = (props) => {
                     {tag}
                 </div>
             )} */}
-            <TagIcon icon={<TagsIcon/>}>
-                <TagDropdown tags={question.tags}></TagDropdown>
-            </TagIcon>
+                <TagIcon icon={<TagsIcon/>}>
+                    <TagDropdown tags={question.tags}></TagDropdown>
+                </TagIcon>
+                
+                {question.user && <div className="answer-question">
+                    <button className={`view-ans ${question.responded?"yellow-q":"magenta-q"} ${question.answered?"green-q":"magenta-q"}`} onClick={resolvedClick}><i class="fas fa-trash"></i></button>
+                    <button className={`view-ans ${question.responded?"yellow-q":"magenta-q"} ${question.answered?"green-q":"magenta-q"}`} onClick={viewAnswerClick}><i className="fas fa-eye"></i></button>
+                </div>}
             </div>
-            
-            {question.user && <div className="answer-question">
-                <button className={`view-ans ${question.responded?"yellow-q":"magenta-q"} ${question.answered?"green-q":"magenta-q"}`} onClick={resolvedClick}><i class="fas fa-trash"></i></button>
-                <button className={`view-ans ${question.responded?"yellow-q":"magenta-q"} ${question.answered?"green-q":"magenta-q"}`} onClick={viewAnswerClick}><i className="fas fa-eye"></i></button>
-            </div>}
         </div>
     )
 }

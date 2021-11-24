@@ -21,6 +21,7 @@ import { CreditState } from "./Context/Credits/CreditState";
 
 // import { Nav } from "./components/Nav";
 import { DashBoardNavbar } from "./components/DashBoardNavbar";
+import { Settings } from "./components/Settings";
 
 function App() {
   return (
@@ -73,6 +74,9 @@ function App() {
           </Route>
           <Route exact path="/tags-all">
             <Tags/>
+          </Route>
+          <Route exact path="/settings">
+            <Settings/>
           </Route>
           <Route exact path='/query'>
           <UserState>

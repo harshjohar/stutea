@@ -4,7 +4,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
 
-import  { About } from "./components/About";
+import { About } from "./components/About";
 import Contact from "./components/Contact";
 import QuestionState from "./Context/Questions/questionState";
 import { AddQuestion } from "./components/AddQuestion";
@@ -25,75 +25,75 @@ import { Settings } from "./components/Settings";
 import { BuyCredits } from "./components/BuyCredits";
 
 function App() {
-  return (
-    <div className="App">
-      <Router>
-        <CreditState>
-            <DashBoardNavbar/> 
-        <Switch>
-          <Route exact path="/">
-            <UserState>
-              <QuestionState>
-                <Home/>
-              </QuestionState>
-            </UserState>
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/register">
-            <Register />
-          </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
-          <Route exact path="/contact">
-            <Contact/>
-          </Route>
-          <Route exact path="/add">
-            <AddQuestion/>
-          </Route>
-          <Route exact path="/shop">
-            <ShopHome/>
-          </Route>
-          <Route exact path="/answer/:quesid">
-            <Answer/>
-          </Route>
-          <Route exact path="/view/:quesid">
-            <ViewAnswer/>
-          </Route>
-          <Route exact path="/profile">
-            <UserState>
-              <Profile/>
-            </UserState>
-          </Route>
-          <Route exact path="/confirmation/:email/:token">
-            <Confirmation/>
-          </Route>
-          <Route exact path="/wait/:email">
-            <Wait/>
-          </Route>
-          <Route exact path="/tags-all">
-            <Tags/>
-          </Route>
-          <Route exact path="/settings">
-            <Settings/>
-          </Route>
-          <Route exact path="/buycredits">
-            <BuyCredits/>
-          </Route>
-          <Route exact path='/query'>
-          <UserState>
-              <QuestionState>
-                <Home/>
-              </QuestionState>
-            </UserState>
-          </Route>
-        </Switch>
-        </CreditState>
-      </Router>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Router>
+                <CreditState>
+                    <DashBoardNavbar />
+                    <Switch>
+                        <Route exact path="/">
+                            <UserState>
+                                <QuestionState>
+                                    <Home />
+                                </QuestionState>
+                            </UserState>
+                        </Route>
+                        <Route exact path="/login">
+                            <Login />
+                        </Route>
+                        <Route exact path="/register">
+                            <Register />
+                        </Route>
+                        <Route exact path="/about">
+                            <About />
+                        </Route>
+                        <Route exact path="/contact">
+                            <Contact />
+                        </Route>
+                        <Route exact path="/add">
+                            <AddQuestion />
+                        </Route>
+                        <Route exact path="/shop">
+                            <ShopHome />
+                        </Route>
+                        <Route exact path="/answer/:quesid">
+                            <Answer />
+                        </Route>
+                        <Route exact path="/view/:quesid">
+                            <ViewAnswer />
+                        </Route>
+                        <UserState>
+                            <Route exact path="/profile">
+                                <Profile />
+                            </Route>
+                            <Route exact path="/settings">
+                                <Settings />
+                            </Route>
+                        </UserState>
+                        <Route exact path="/confirmation/:email/:token">
+                            <Confirmation />
+                        </Route>
+                        <Route exact path="/wait/:email">
+                            <Wait />
+                        </Route>
+                        <Route exact path="/tags-all">
+                            <Tags />
+                        </Route>
+                        <Route exact path="/buycredits">
+                            <BuyCredits />
+                        </Route>
+                        <Route exact path="/query">
+                            <UserState>
+                                <QuestionState>
+                                    <Home />
+                                </QuestionState>
+                            </UserState>
+                        </Route>
+                    </Switch>
+                </CreditState>
+            </Router>
+        </div>
+    );
 }
 
 export default App;

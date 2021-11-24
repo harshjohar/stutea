@@ -9,3 +9,17 @@
     border: 2px solid red;
     margin-left: 20vw;
 }
+
+.dp-selection {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+.dp-item-active {
+    border: 2px solid red;
+}
+
+.dp-item img {
+    height: 100px;
+    cursor: pointer;
+}

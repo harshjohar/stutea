@@ -30,7 +30,9 @@
 
 .fa-cog{
     padding-left: 1rem;
+    color: black;
 }
+
 
 .profile-info{
     display: flex;
@@ -165,4 +167,41 @@
 
 .active-own{
     background-color: black;
+}
+
+
+@media screen and (max-width:769px) {
+    .top-icons {
+        padding: 0.5rem 2rem 1rem 2rem;
+        height: 15vh;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    
+    .own-ques {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media screen and (max-width:426px) {
+    .own-ques{
+        grid-template-columns: repeat(1, auto);
+    }
+
+    .user-dp{
+        width: 30%;
+        justify-content: center;
+    }
+    .profile-info{
+        width: 70%;
+        justify-content: center;
+    }
+
+    .dp{
+        width: 90%;
+    }
 }

@@ -4,6 +4,9 @@ import { useHistory } from 'react-router-dom';
 import { TagIcon } from "./Tags/TagIcon";
 import { TagDropdown } from "./Tags/TagDropdown";
 import {ReactComponent as TagsIcon} from "../Assets/Click/Tags.svg"
+import {ReactComponent as Tyellow} from "../Assets/Click/TagsYellow.svg"
+import {ReactComponent as Tmag} from "../Assets/Click/TagsMagenta.svg"
+import {ReactComponent as Tgreen} from "../Assets/Click/TagsGreen.svg"
 export const MyQuestionCard = (props) => {
     const {question} = props;
     const date = question.timestamp;
@@ -41,7 +44,7 @@ export const MyQuestionCard = (props) => {
                     {tag}
                 </div>
             )} */}
-                <TagIcon icon={<TagsIcon/>}>
+                <TagIcon icon = {question.answered ? <Tgreen/> : (question.responded ? <Tyellow/> : <Tmag/>)}>
                     <TagDropdown tags={question.tags}></TagDropdown>
                 </TagIcon>
                 

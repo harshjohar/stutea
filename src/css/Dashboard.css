@@ -34,7 +34,7 @@
 }
 
 .icon-button:hover {
-    filter: brightness(0);
+    cursor: pointer;
 }
 
 .icon-button svg {
@@ -123,6 +123,10 @@
 
 }
 
+.all-tags-link:hover{
+    color:#652448
+}
+
 .buttons-next-prev {
     width: 20%;
     display: flex;
@@ -176,6 +180,7 @@
 .user-add-opt {
     width: 35%;
     display: flex;
+    justify-content: flex-end;
 }
 
 .smol-opt {
@@ -190,9 +195,7 @@
     cursor: pointer;
 }
 
-.all-tags-here-link {
-    margin-left: 20vw;
-}
+
 
 .sub-heading-tags {
     /* border: 2px solid red; */
@@ -202,4 +205,39 @@
 
 .tag-heading {
     color: #5D4CE6;
+}
+/* 1110px */
+@media screen and (max-width:1024px) {
+    .heading{
+        width: 100%;
+    }
+    .heading-top{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .add-button{
+        width: 100%;
+        height: 5rem;
+    }
+
+    .grp-of-three{
+        flex-direction: column;
+    }
+
+    .ques-card{
+        width: 90%;
+        margin: 1rem;
+    }
+
+    .big{
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (max-width:520px) {
+    .heading-top{
+        padding: 1rem;
+    }
 }

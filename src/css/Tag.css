@@ -1,0 +1,32 @@
+
+.all-tags-here-link {
+    margin-left: 20vw;
+    width: 80vw;
+    padding: 0rem 0rem 1.2rem 1.2rem;
+}
+
+.tag-link{
+    margin: 0.3rem;
+    font-size: 15px;
+    text-decoration: none;
+    color: #123E53;
+}
+
+.tag-link:hover{
+    text-decoration: underline;
+    color: #123E53;
+}
+
+.all-tags{
+    display: grid;
+    grid-template-columns: repeat(6,auto);
+}
+
+.badge{
+    background-color: #c9e2f0;
+    border: 2px solid #123E53;
+}
+
+#answer{
+    background-color: #E8F7FE;
+}

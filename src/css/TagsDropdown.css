@@ -1,5 +1,5 @@
 :root {
-    --bg: #5D4CE6;
+    --bg: #D9D9D9;
     --bg-accent: #484a4d;
     --text-color: #dadce1;
     --nav-size: 100px;
@@ -37,9 +37,49 @@
 
 .tag-link-drop {
     text-decoration: none;
-    color: red;
+    color: black;
 }
 
 .tag-link-drop:hover {
     color: black;
+}
+
+/* .credit-user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+.buy-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.curr-credits{
+    font-weight:500 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.credits{
+    font-weight: 600;
+    padding-left: 0.5rem;
+}
+.buy{
+    font-weight: 500;
+    width: 6.4rem;
+    border-radius: 3rem;
+    height: 2.5rem;
+    color: black;
+    outline: none;
+    border: none;
+    color: #F2F2F2;
+    background-color: black;
+    margin-top: 0.4rem;
+    align-self: center;
+}
+
+.buy:hover{
+    color: black;
+    border: 2px solid black;
+    background-color: white ;
 }

@@ -5,7 +5,7 @@ export const Tag = (props) => {
     const {value} = props;
     return (
         <div>
-            <Link to={`/query?tag=${value}`} className="tag-link">
+            <Link to={`/query?tag=${value}`} className="tag-link badge">
                 {value}
             </Link>
         </div>

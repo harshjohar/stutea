@@ -42,14 +42,16 @@ export const Profile = () => {
                 </div>
                 <div className="profile-info">
                     <div className="user-head">
-                    <h3 className="username">{user.username}</h3>
-                    <i className="fas fa-cog "></i>
+                        <h3 className="username">{user.username}</h3>
+                        <Link to="/settings" className="gear">
+                        <i className="fas fa-cog "></i>
+                        </Link>
                     </div>
                     <div className="name">
                         {user.first+ " "+user.last}
                     </div>
                     {/* <small>{user.city}</small> */}
-                    </div>
+                </div>
             </div>
             <MyQuestions/>
         </div>

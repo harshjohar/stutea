@@ -103,8 +103,8 @@ export const Answer = () => {
                 {question.answered ? " Yes" : " No"}
             </div>
         
-            <div className="ques-area">
-                <label htmlFor="answer" className="upload-ques-label">Write your answer here</label>
+            <div className="ques-area-status">
+                <label htmlFor="answer" className="upload-ques-label">Write your answer here :</label>
                 <div className="ques-inputs">
                 <textarea rows="4"
                     name="answer"

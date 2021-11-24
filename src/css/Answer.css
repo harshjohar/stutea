@@ -12,5 +12,11 @@
 }
 
 .ques-area-status{
-    padding: 0.5rem 1rem 0rem 1rem;
+    /* padding: 0.5rem 1rem 0rem 1rem; */
+}
+
+.tag-list-ans{
+    display: flex;
+    align-items: center;
+    /* padding: 0rem 1rem; */
 }

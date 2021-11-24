@@ -114,3 +114,35 @@
     height: 60px;
     cursor: pointer;
 }
+
+@media screen and (max-width:1180px) {
+    .tags{
+        padding: 0.5rem 0rem;
+    }
+    .big-ques-card-magenta,.big-ques-card-green{
+        padding: 1rem;
+        width: 80%;
+    }
+
+    
+
+    .question-green,.question-green{
+        overflow-y: visible;
+    }
+
+    
+}
+
+@media screen and (max-width:520px) {
+    .name-ques{
+        /* font-size: 0.8rem; */
+        display: none;
+    }
+    .profile-pic-ques{
+        height: 50px;
+    }
+
+    .big-ques-card-magenta,.big-ques-card-green{
+        height: auto;
+    }
+}

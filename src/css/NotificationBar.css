@@ -1,10 +1,10 @@
 /* Dropdown Menu */
 :root {
-    --bg: #5D4CE6;
+    --bg: #D9D9D9;
     --bg-accent: #484a4d;
     --text-color: #dadce1;
     --nav-size: 100px;
-    --border: 1px solid #474a4d;
+    --border: 1px solid #D9D9D9;
     --border-radius: 1rem;
     --speed: 500ms; 
   }
@@ -32,9 +32,11 @@
 
 .menu {
     width: 100%;
-    padding: 1rem;
+    padding: 0.3rem;
     max-height: 50vh;
     overflow-y: scroll;
+    background-color:#D9D9D9 ;
+    border: none;
 }
 
 .menu::-webkit-scrollbar {
@@ -101,4 +103,11 @@
 
 .notif-ques-link {
     color: #474a4d;
+}
+
+@media screen and (max-width:426px) {
+    .notif-drop {
+        width: 250px;
+        transform: translateX(-50%);
+    }
 }

@@ -25,7 +25,7 @@ export const Notifications = () => {
     return (
         <div>
             {!notifications.notification && <Spinner/>}
-            {notifications && notifications.notification ?  notifications.notification.map((notif)=> {
+            {notifications && notifications.notification ?  notifications.notification.slice(0,5).map((notif)=> {
                 return <Notification value={notif} key={notif._id}/>
             }):""}
         </div>

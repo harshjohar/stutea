@@ -3,7 +3,7 @@ import "../css/Settings.css"
 export const Settings = () => {
     return (
         <div className="settings-main">
-            Settings page
+            
         </div>
     )
 }

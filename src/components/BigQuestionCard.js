@@ -46,7 +46,7 @@ export const BigQuestionCard = (props) => {
                 {content.question}
             </div>
             <div className="tags">
-                {content.tags.map((tag)=><Link key={tag} to={`/query?tag=${tag}`} className={`tag-${color}`}>{tag}</Link>)}
+                {content.tags.slice(0,3).map((tag)=><Link key={tag} to={`/query?tag=${tag}`} className={`tag-${color}`}>{tag}</Link>)}
             </div>
             <div className="details">
                 <div className="user">

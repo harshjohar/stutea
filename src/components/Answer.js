@@ -85,7 +85,11 @@ export const Answer = () => {
                     <ProfileIcon className="icon-top"/>
                     </Link>
             </div>
-            <h2 className="q-to-ans">Question: {question.question}</h2>
+            <div className="q-to-ans">
+                <div className="q">Question: </div>
+                <div className="q-ques">{question.question}</div>
+            
+            </div>
             <div className="answer-desc">
             <form>
             
@@ -98,10 +102,7 @@ export const Answer = () => {
                 </div>
             ))}</div>
 
-            <div className="ques-area-status">
-                <label className="answer-status">Answered : </label>
-                {question.answered ? " Yes" : " No"}
-            </div>
+            
         
             <div className="ques-area-status">
                 <label htmlFor="answer" className="upload-ques-label">Write your answer here :</label>

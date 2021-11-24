@@ -11,12 +11,25 @@
     font-weight: 500;
 }
 
-.ques-area-status{
-    /* padding: 0.5rem 1rem 0rem 1rem; */
-}
 
 .tag-list-ans{
     display: flex;
     align-items: center;
     /* padding: 0rem 1rem; */
+}
+
+.q-to-ans{
+    display: flex;
+    font-size: 25px;
+}
+
+.q{
+    font-weight: 600;
+    color: #123E53;
+    text-decoration: underline;
+}
+
+.q-ques{
+    font-weight: 600;
+    margin-left: 1rem;
 }

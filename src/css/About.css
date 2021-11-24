@@ -1,22 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.parent-about {
+    width: 80%;
+    margin-left: 22rem;
+}
+
+.parent-about h1 {
+    margin-top: 3rem;
+    margin-left: 16rem;
+}
+
 .intro-img img {
-    height: 350px;
+    height: 15rem;
+    border-radius: 1.2rem;
+    width: 27rem;
 }
 
 .about-intro {
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
-    margin: 10px 20px;
+    margin: 3rem 2rem;
 }
 
 .intro-right {
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
-    font-size: 20px;
-    /* align-items: center;
-    justify-content: center; */
+    margin-left: 3rem;
+    font-size: 18px;
+    width: 50%;
+    align-items: center;
 }
 
 .founder-intro {
@@ -26,14 +42,20 @@
     display: flex;
     width: 100%;
 } */
+
+.founder-intro h2 {
+    margin-left: 2.8rem;
+}
+
+
 .founder-cards img {
-    height: 200px;
+    height: 150px;
 }
 
 .card {
-    width: 24rem;
-    margin: 20px 50px;
-    padding: 2px 50px;
+    width: 19rem;
+    margin: 1.5rem 1.5rem ;
+    padding: 0.4rem 2.5rem;
 }
 
 .handles-about i {

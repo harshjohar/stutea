@@ -3,9 +3,8 @@ import "../css/About.css";
 import imag from "../Assets/help.jpg";
 export const About = () => {
   return (
-    <div>
-      <br />
-      <br />
+    <div className="parent-about">
+      <h1>Learning and Teaching together</h1>
       <div className="about-intro">
         <div className="intro-left">
           <div className="intro-img">
@@ -13,11 +12,8 @@ export const About = () => {
           </div>
         </div>
         <div className="intro-right">
-          <h1>Learning and Teaching together</h1>
-          <br />
-          <h2>Our Motto</h2>
-          <p>At stutea we believe in making every learner a teacher.</p>
-          <p>That is exactly what our name signifies! Stu-dent + te-acher.</p>
+          <p>At stutea we believe in making every learner a teacher.
+          That is exactly what our name signifies! Stu-dent + te-acher.</p>
           <p>
             We a group of college students came up with the idea of providing
             students with a platform wherein they can post their doubts and
@@ -27,13 +23,10 @@ export const About = () => {
           </p>
         </div>
       </div>
-      <br />
-      <br />
       <div className="founder-intro">
         <h2>More about Stu-Tea developers</h2>
-        <br />
         <div className="founder-cards d-flex flex-wrap justify-content-between">
-          <div className="card">
+          <div className="card bg-secondary">
             <div>
               <img src={imag} alt="StuTea" />
             </div>
@@ -60,7 +53,7 @@ export const About = () => {
               </div>
             </div>
           </div>
-          <div className="card">
+          <div className="card bg-info text-dark">
             <div>
               <img src={imag} alt="StuTea" />
             </div>
@@ -87,7 +80,7 @@ export const About = () => {
               </div>
             </div>
           </div>
-          <div className="card">
+          <div className="card bg-light mb-3">
             <div>
               <img src={imag} alt="StuTea" />
             </div>
@@ -114,7 +107,7 @@ export const About = () => {
               </div>
             </div>
           </div>
-          <div className="card">
+          <div className="card bg-success">
             <div>
               <img src={imag} alt="StuTea" />
             </div>
@@ -141,7 +134,7 @@ export const About = () => {
               </div>
             </div>
           </div>
-          <div className="card">
+          <div className="card bg-warning text-dark">
             <div>
               <img src={imag} alt="StuTea" />
             </div>

@@ -24,6 +24,14 @@
     width: 50%;
 }
 
+.user-head{
+    display: flex;
+}
+
+.fa-cog{
+    padding-left: 1rem;
+}
+
 .profile-info{
     display: flex;
     flex-direction: column;
@@ -57,7 +65,7 @@
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: space-between;
     width: 95%;
     margin: 1rem 0rem;
     padding: 1rem;
@@ -92,4 +100,69 @@
     outline: none;
     border: none;
     margin: 0.5rem;
+}
+
+.my-q-tags{
+    display: flex;
+    justify-content: space-between;
+}
+/* .page-item{
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #5D4CE6;
+    border-color: #5D4CE6;
+} */
+
+.page-item-own{
+    background-color: #fff;
+}
+
+.page-link-own{
+    height: 3rem;
+    
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.page-item-no{
+    background-color: #5D4CE6;
+    width: 2rem;
+    border-radius: 50%;
+    height: 2rem;
+    display: flex;
+    margin: 0rem 0.2rem;
+}
+
+.page-link-no{
+    background: none;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* .page-item-no:hover{
+
+} */
+.page-link-no:hover{
+    text-decoration: underline;
+    color: #fff;
+    text-decoration-color: #fff;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #5D4CE6;
+    border-color: #5D4CE6;
+    border: none;
+    
+}
+
+.active-own{
+    background-color: black;
 }

@@ -1,6 +1,13 @@
 import React, {useState, useEffect} from 'react'
-import { useHistory, useParams } from 'react-router-dom'
+import { useHistory, useParams, Link } from 'react-router-dom'
 import { Feedback } from './Feedback';
+import '../css/ViewAns.css'
+import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
+// import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
+import {ReactComponent as CreditIcon} from "../Assets/Click/Credits.svg"
+import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
+import { NavItem } from './Notifications/NavItem';
+import { Dropdown } from './Notifications/Dropdown';
 
 export const ViewAnswer = () => {
     const {quesid} = useParams();
@@ -61,7 +68,19 @@ export const ViewAnswer = () => {
         // eslint-disable-next-line
     }, [])
     return (
-        <div>
+        <div className="view-ans-main">
+            <div className="top-icons">
+                    {/* <NotifIconActive className='icon-top'/> */}
+                    <NavItem icon={<NotifIcon/>}>
+                        <Dropdown type="notif"></Dropdown>
+                    </NavItem>
+                    <NavItem icon={<CreditIcon/>}>
+                        <Dropdown type="credits"></Dropdown>
+                    </NavItem>
+                    <Link to="/profile">
+                    <ProfileIcon className="icon-top"/>
+                    </Link>
+            </div>
             <h2>{question.question}</h2>
             {question.answered ? "yes": "no"}
             {question.tags.map((tag)=>

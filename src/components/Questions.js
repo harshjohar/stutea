@@ -81,16 +81,16 @@ export const Questions = () => {
                 pageCount={pageCount}
                 marginPagesDisplayed={2}
                 pageRangeDisplayed={3}
-                containerClassName={"pagination justify-content-center"}
-                pageClassName={"page-item"}
-                pageLinkClassName={"page-link"}
-                previousClassName={"page-item"}
-                previousLinkClassName={"page-link"}
-                nextClassName={"page-item"}
-                nextLinkClassName={"page-link"}
+                containerClassName={"pagination justify-content-center align-items-center"}
+                pageClassName={"page-item-no justify-content-center align-items-center"}
+                pageLinkClassName={"page-link-no"}
+                previousClassName={"page-item-own"}
+                previousLinkClassName={"page-link-own"}
+                nextClassName={"page-item-own"}
+                nextLinkClassName={"page-link-own"}
                 breakClassName={"page-item"}
                 breakLinkClassName={"page-link"}
-                activeClassName={"active"}
+                activeClassName={"active-own"}
             />}
 
         </div>

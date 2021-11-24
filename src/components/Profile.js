@@ -34,9 +34,6 @@ export const Profile = () => {
                     <Link to="/profile">
                     <ProfileIcon className="icon-top"/>
                     </Link>
-                    {/* <img src={Settings} alt="" className="icon-top"/> */}
-                    <i className="fas fa-cog icon-top"></i>
-                    {/* <Settings/> */}
             </div>
 
             <div className="profile-head">
@@ -44,7 +41,10 @@ export const Profile = () => {
                     <img className="dp" src={user.dp} alt="dp" />
                 </div>
                 <div className="profile-info">
+                    <div className="user-head">
                     <h3 className="username">{user.username}</h3>
+                    <i className="fas fa-cog "></i>
+                    </div>
                     <div className="name">
                         {user.first+ " "+user.last}
                     </div>

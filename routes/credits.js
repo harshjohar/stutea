@@ -5,6 +5,7 @@ var fetchuser=require('../middleware/fetchuser');
 const Answers=require('../models/Answers');
 const Credits = require('../models/Credits');
 const User = require('../models/User');
+const Questions = require('../models/Questions');
 
 // ROUTE 1 : transaction : POST "/api/credits/transaction". Login Required
 router.post('/transaction', fetchuser,
@@ -117,6 +118,15 @@ router.post('/transaction', fetchuser,
             }
         }
         const final = await Credits.findOne({"user": debitee});
+        if (answer.rating<=2)
+        {
+            const answernotaccepted = await Questions.findOneAndUpdate({"_id": question},{
+                $set : {
+                    responded : false
+                }
+            })
+            const deleteanswer = await Answers.deleteOne({"question" : question});
+        }
         res.json(final);
     } catch (error) {
         console.error(error.message);

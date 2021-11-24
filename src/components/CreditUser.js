@@ -24,8 +24,12 @@ export const CreditUser = () => {
     }
     return (
         <div className="credit-user">
-                Credits {credits.credits} 
+            <div className="curr-credits">
+                Credits:<div className="credits"> {credits.credits}</div>
+            </div> 
+            <div className="buy-btn">
                 <button className="buy" onClick={handleClick}>Buy Credits</button>
+            </div>
         </div>
     )
 }

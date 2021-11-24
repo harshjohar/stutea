@@ -19,10 +19,13 @@ export const CreditUser = () => {
         }
         // eslint-disable-next-line
     }, [])
+    const handleClick=()=>{
+        history.push('/buycredits')
+    }
     return (
         <div className="credit-user">
                 Credits {credits.credits} 
-                <button className="buy">Buy Credits</button>
+                <button className="buy" onClick={handleClick}>Buy Credits</button>
         </div>
     )
 }

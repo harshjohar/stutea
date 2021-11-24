@@ -102,3 +102,10 @@
 .notif-ques-link {
     color: #474a4d;
 }
+
+@media screen and (max-width:426px) {
+    .notif-drop {
+        width: 250px;
+        transform: translateX(-50%);
+    }
+}

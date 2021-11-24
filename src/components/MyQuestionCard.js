@@ -49,7 +49,7 @@ export const MyQuestionCard = (props) => {
                 </TagIcon>
                 
                 {question.user && <div className="answer-question">
-                    <button className={`view-ans ${question.responded?"yellow-q":"magenta-q"} ${question.answered?"green-q":"magenta-q"}`} onClick={resolvedClick}><i class="fas fa-trash"></i></button>
+                    <button className={`view-ans ${question.responded?"yellow-q":"magenta-q"} ${question.answered?"green-q":"magenta-q"}`} onClick={resolvedClick}><i className="fas fa-trash"></i></button>
                     <button className={`view-ans ${question.responded?"yellow-q":"magenta-q"} ${question.answered?"green-q":"magenta-q"}`} onClick={viewAnswerClick}><i className="fas fa-eye"></i></button>
                 </div>}
             </div>

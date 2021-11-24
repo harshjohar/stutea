@@ -33,7 +33,7 @@ export const Tags = () => {
     return (
         <>
 
-        <div className="all-tags-here-link container">
+        <div className="all-tags-here-link">
         <div className="top-icons">
                     {/* <NotifIconActive className='icon-top'/> */}
                     <NavItem icon={<NotifIcon/>}>
@@ -49,12 +49,11 @@ export const Tags = () => {
 
 
             <h2 className="tags-head">All tags here</h2>
-            <div className="row">
-            <div className="all-tags col-md-6">
+            <div className="all-tags">
             {tags.map((tag)=> {
                 return <Tag key={tag} value={tag}/>
             })}
-            </div></div>
+            </div>
         </div>
         </>
     )

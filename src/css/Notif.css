@@ -1,0 +1,4 @@
+.notif{
+    display: flex;
+    flex-direction: column;
+}

@@ -13,7 +13,7 @@ export const About = () => {
         </div>
         <div className="intro-right">
           <p>At stutea we believe in making every learner a teacher.
-          That is exactly what our name signifies! Stu-dent + te-acher.</p>
+          That is exactly what our name signifies! Stu-dent + tea-cher.</p>
           <p>
             We a group of college students came up with the idea of providing
             students with a platform wherein they can post their doubts and

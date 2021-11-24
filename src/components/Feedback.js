@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import '../css/ViewAns.css'
 
 export const Feedback = (props) => {
     const host = process.env.REACT_APP_BACKEND_URL;
@@ -6,6 +7,7 @@ export const Feedback = (props) => {
     const ans = props.answer;
     const [res, setRes] = useState("");
     const [trans, setTrans] = useState({})
+    const [activeStars, setactiveStars] = useState(0)
     const transaction = async ()=> {
         const response = await fetch(`${host}/api/credits/transaction`, {
             method: "POST",
@@ -23,6 +25,7 @@ export const Feedback = (props) => {
         setTrans(res);
     }
     const giveFeedback = async (star) => {
+        setactiveStars(star)
         const response = await fetch(`${host}/api/feedback/rating`, {
             method: "PUT",
             headers: {
@@ -39,18 +42,27 @@ export const Feedback = (props) => {
         setRes(res.msg);
         // transaction
         await transaction();
+
+        
     }
+
+    
 
     return (
         <div>
-            <button className="feedback-option" onClick={()=>giveFeedback(1)}>1 star</button>
-            <button className="feedback-option" onClick={()=>giveFeedback(2)}>2 star</button>
-            <button className="feedback-option" onClick={()=>giveFeedback(3)}>3 star</button>
-            <button className="feedback-option" onClick={()=>giveFeedback(4)}>4 star</button>
-            <button className="feedback-option" onClick={()=>giveFeedback(5)}>5 star</button>
+            <button className="feedback-option" onClick={()=>giveFeedback(1)}><i className={`${(activeStars>=1)?'fas star-border':'far'} fa-star`}></i></button>
+            <button className="feedback-option" onClick={()=>giveFeedback(2)}><i className={`${(activeStars>=2)?'fas star-border':'far'} fa-star`}></i></button>
+            <button className="feedback-option" onClick={()=>giveFeedback(3)}><i className={`${(activeStars>=3)?'fas star-border':'far'} fa-star`}></i></button>
+            <button className="feedback-option" onClick={()=>giveFeedback(4)}><i className={`${(activeStars>=4)?'fas star-border':'far'} fa-star`}></i></button>
+            <button className="feedback-option" onClick={()=>giveFeedback(5)}><i className={`${(activeStars>=5)?'fas star-border':'far'} fa-star`}></i></button>
             {res}
-            <div className="treansiction-success">
-                {trans?trans.credits: "lulz"}
+
+            
+
+            <div className="transaction-success">
+                {trans? <div className="transaction-status">
+                    Transaction Successful. You are left with {" "+trans.credits+" "} credits. </div>
+                : "lulz"}
             </div>
         </div>
     )

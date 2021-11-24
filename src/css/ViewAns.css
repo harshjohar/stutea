@@ -5,3 +5,14 @@
     flex-direction: column;
     padding: 0rem 0rem 1.2rem 1.2rem;
 }
+
+.feedback-option{
+    background: none;
+    border: none;
+    outline: none;
+    
+}
+
+.star-border{
+    color: yellow;
+}

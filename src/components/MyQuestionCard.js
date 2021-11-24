@@ -28,12 +28,12 @@ export const MyQuestionCard = (props) => {
         history.push(`/view/${question._id}`)
     }
     return (
-        <div className={`my-q-card ${question.responded?"yellow-q":""} ${question.answered?"green-q":""}`}>
+        <div className={`my-q-card ${question.responded?"yellow-q":""} ${question.answered?"green-q":""}`}> 
             <div className="card-content">
                 <div className="my-q">
                     {question.question}
                 </div>
-                <div className="date-ques">
+                <div className={`date-ques ${(question.responded && !(question.answered))?"yellow-date":""}`}>
                     {question.user && dateFormat(date, "dddd, mmmm dS, yyyy")}
                 </div>
                 </div>

@@ -163,7 +163,8 @@ router.get(
         try {
             const questions = await Questions.find({
                 tags: req.params.tag,
-            }).limit(15);
+                user: { $ne: req.user.id }
+            }).limit(5);
             const count = await Questions.find({ tags: req.params.tag, user: { $ne: req.user.id } }).count();
 
             questions.sort(function (a, b) {
@@ -181,7 +182,19 @@ router.get(
 router.get('/alltags', fetchuser, async(req, res)=> {
     try {
         const tags = await Questions.find({user: { $ne: req.user.id }}).distinct('tags');
-        res.json(tags);
+        const dictionary = {};
+        tags.sort();
+        for (let i = 0; i < tags.length; i++) {
+            const element = tags[i];
+            const key=element[0]
+            if(dictionary[key]) {
+                dictionary[key].push(element);
+            }
+            else {
+                dictionary[key]=[element];
+            }
+        }
+        res.json(dictionary);
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Internal Server Error");

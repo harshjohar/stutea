@@ -84,8 +84,6 @@ export const Answer = () => {
                     <Link to="/profile">
                     <ProfileIcon className="icon-top"/>
                     </Link>
-                    {/* <img src={Settings} alt="" className="icon-top"/> */}
-                    <i className="fas fa-cog icon-top"></i>
             </div>
             <h2 className="q-to-ans">Question: {question.question}</h2>
             <div className="answer-desc">
@@ -100,7 +98,7 @@ export const Answer = () => {
                 </div>
             ))}</div>
 
-            <div className="ques-area">
+            <div className="ques-area-status">
                 <label className="answer-status">Answered : </label>
                 {question.answered ? " Yes" : " No"}
             </div>

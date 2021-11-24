@@ -22,6 +22,7 @@ export const CreditUser = () => {
     return (
         <div className="credit-user">
                 Credits {credits.credits} 
+                <button className="buy">Buy Credits</button>
         </div>
     )
 }

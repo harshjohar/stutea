@@ -1,16 +1,7 @@
-.answer-main{
+.view-ans-main{
     width: 80vw;
     margin-left: 20vw;
     display: flex;
     flex-direction: column;
     padding: 0rem 0rem 1.2rem 1.2rem;
-}
-
-
-.answer-status{
-    font-weight: 500;
-}
-
-.ques-area-status{
-    padding: 0.5rem 1rem 0rem 1rem;
 }

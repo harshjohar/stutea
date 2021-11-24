@@ -60,8 +60,6 @@ export const AddQuestion = () => {
                     <Link to="/profile">
                     <ProfileIcon className="icon-top"/>
                     </Link>
-                    {/* <img src={Settings} alt="" className="icon-top"/> */}
-                    <i className="fas fa-cog icon-top"></i>
             </div>
                 <h2 className="upload-ques-heading">Upload your question</h2>
                 <form className="upload-ques-form">

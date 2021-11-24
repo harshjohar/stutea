@@ -31,7 +31,6 @@ export const Questions = () => {
         });
         const json = await response.json();
         setQuestions(json.questions);
-        console.log(questions);
         const pgs = json.count;
         setPageCount(Math.ceil(pgs/5));
     };

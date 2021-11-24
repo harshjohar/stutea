@@ -92,10 +92,10 @@ export const QuestionTag = () => {
                 </div>
             {/* {questions.length>2 && <div>page number: {currPage}</div>} */}
             <div className="grp-of-three">
-                    {questions.length>2 && <QuestionCardMore content={questions[2]}/>}
-                    {questions.length>3 && <QuestionCardMore content={questions[3]}/>}
-                    {questions.length>4 && <QuestionCardMore content={questions[4]}/>}
-                </div>
+                {questions.length>2 && <QuestionCardMore content={questions[2]}/>}
+                {questions.length>3 && <QuestionCardMore content={questions[3]}/>}
+                {questions.length>4 && <QuestionCardMore content={questions[4]}/>}
+            </div>
         </div>
     )
 }

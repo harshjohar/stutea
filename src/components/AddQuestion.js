@@ -17,9 +17,16 @@ export const AddQuestion = () => {
     let history=useHistory();
     const [question, setQuestion] = useState(init);
     const [tagString, setTagString] = useState("");
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
     const addQuestion = async () => {
         // api call
-        let arr =  tagString.split(',');
+        let arr =  tagString.split(/[ ,]+/);
+        let newArr=[];
+        for (let i = 0; i < arr.length; i++) {
+            newArr.push(capitalizeFirstLetter(arr[i]))
+        }
         const response = await fetch(`${host}/api/questions/add`, {
             method: "POST",
             headers: {
@@ -28,7 +35,7 @@ export const AddQuestion = () => {
             },
             body: JSON.stringify({
                 "question": question.question, 
-                "tags": arr
+                "tags": newArr
             })
         });
         response.json();

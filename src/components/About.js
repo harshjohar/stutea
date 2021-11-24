@@ -26,7 +26,7 @@ export const About = () => {
       <div className="founder-intro">
         <h2>More about Stu-Tea developers</h2>
         <div className="founder-cards d-flex flex-wrap justify-content-between">
-          <div className="card bg-secondary">
+          <div className="card">
             <div>
               <img src={imag} alt="StuTea" />
             </div>
@@ -53,7 +53,7 @@ export const About = () => {
               </div>
             </div>
           </div>
-          <div className="card bg-info text-dark">
+          <div className="card">
             <div>
               <img src={imag} alt="StuTea" />
             </div>
@@ -80,7 +80,7 @@ export const About = () => {
               </div>
             </div>
           </div>
-          <div className="card bg-light mb-3">
+          <div className="card">
             <div>
               <img src={imag} alt="StuTea" />
             </div>
@@ -107,7 +107,7 @@ export const About = () => {
               </div>
             </div>
           </div>
-          <div className="card bg-success">
+          <div className="card">
             <div>
               <img src={imag} alt="StuTea" />
             </div>
@@ -134,7 +134,7 @@ export const About = () => {
               </div>
             </div>
           </div>
-          <div className="card bg-warning text-dark">
+          <div className="card">
             <div>
               <img src={imag} alt="StuTea" />
             </div>

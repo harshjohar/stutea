@@ -71,7 +71,7 @@ export const ViewAnswer = () => {
             )}
             <h3>Answer</h3>
             {answer.answer ? answer.answer : answer.error}
-            {answer.answer && !(answer.rating) && <Feedback question={question}/> }
+            {answer.answer && !(answer.rating) && <Feedback question={question} answer={answer}/> }
             {answer.rating!==0 && <div>stars: {answer.rating}</div>}
         </div>
     )

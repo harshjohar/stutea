@@ -60,7 +60,7 @@ router.post('/transaction', fetchuser,
             if (answer.rating>2)
             {
                 const item = credit.credits + 100;
-                const deduction = await Credits.findOneAndUpdate({answer},{
+                const deduction = await Credits.findOneAndUpdate({"user": aaidee},{
                     $set : {
                         credits : item
                     }

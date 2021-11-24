@@ -3,52 +3,46 @@ import "../css/Shop.css";
 import img from "../Assets/shop1.jpg";
 import img1 from "../Assets/shop2.jpg";
 import img2 from "../Assets/shop3.jpg";
-
 export const ShopHome = () => {
   return (
-    <div>
-      <div className="intro-shop">
-        <h2>Welcome To The StuTea Shop!</h2>
-      </div>
-
+    <div className="parent-shop">
+      <h1>Welcome To The StuTea Shop!</h1>
       <div className="product-content">
-        <div className="product">
-          <h1>SHOP NEW MERCHANDISE!</h1>
-        </div>
-        <div className="product-img class-img">
-          <div className="w3-card">
-            <img src={img} alt="img" className="image" />
-            <div className="middle"></div>
-            <div className="product-container">
-            
-              <h4>
-                <b>StuTea Hoodie</b>
-              </h4>
-              <p>40 Credits</p>
-              <i class="fas fa-cart-plus"></i>
+        <div className="product-cards d-flex">
+          <div className="card">
+            <img src={img} className="card-img-top" alt="img"/>
+            <div className="card-body">
+              <h5 className="card-title">StuTea Hoodie</h5>
+              <p className="card-text">
+                Credits: 500
+              </p>
+              <a href="/" className="btn btn-primary">
+                Buy
+              </a>
             </div>
           </div>
-          <div className="w3-card">
-            <img src={img1} alt="img" className="image" />
-            <div className="middle"></div>
-            <div className="product-container">
-              <h4>
-                <b>StuTea Mug</b>
-              </h4>
-              <p>25 Credits </p>
-              <i class="fas fa-cart-plus"></i>
-              
+          <div className="card">
+            <img src={img1} className="card-img-top" alt="img"/>
+            <div className="card-body">
+              <h5 className="card-title">StuTea Mug</h5>
+              <p className="card-text">
+                Credits: 300
+              </p>
+              <a href="/" className="btn btn-primary">
+                Buy
+              </a>
             </div>
           </div>
-          <div className="w3-card">
-            <img src={img2} alt="img" className="image" />
-            <div className="middle"></div>
-            <div className="product-container">
-              <h4>
-                <b>StuTea BackPack</b>
-              </h4>
-              <p>35 Credits</p>
-              <i class="fas fa-cart-plus"></i>
+          <div className="card">
+            <img src={img2} className="card-img-top" alt="img"/>
+            <div className="card-body">
+              <h5 className="card-title">StuTea Backpack</h5>
+              <p className="card-text">
+                Credits: 1000
+              </p>
+              <a href="/" className="btn btn-primary">
+                Buy
+              </a>
             </div>
           </div>
         </div>

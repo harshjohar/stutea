@@ -35,7 +35,7 @@
 }
 
 .other-contact-upper{
-    background-color: rgb(207, 245, 245);
+    background-color: #E8F7FE;
     border-radius: 20px;
     padding: 1.5rem 1.5rem;
     /* height: 400px; */
@@ -61,7 +61,7 @@
     padding: 1.5rem 1.5rem;
     height: 550px;
     width: 60%;
-    background-color: rgb(238, 184, 235);
+    background-color: #FAEAF3;
     border-radius: 20px;
 }
 

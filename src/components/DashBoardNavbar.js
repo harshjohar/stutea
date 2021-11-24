@@ -14,6 +14,7 @@ import cartActive from "../Assets/Click/Cart.svg"
 import logout from "../Assets/Click/Logout.svg"
 import login from "../Assets/Click/Login.svg"
 import register from "../Assets/Click/Register.svg"
+// import {ReactComponent as Logo} from "../logo.svg"
 
 export const DashBoardNavbar = () => {
     let location = useLocation();
@@ -30,6 +31,7 @@ export const DashBoardNavbar = () => {
         <div className="nav-main">
             <div className="nav-logo-wrapper">
                 img-here
+                {/* <Logo className="logo"/> */}
             </div>
             <div className="link-list">
                 <ul className="links">

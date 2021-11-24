@@ -16,3 +16,19 @@
 .star-border{
     color: yellow;
 }
+
+.ans-to-q{
+    background-color: #E8F7FE;
+    width: 95%;
+    padding: 0.5rem;
+    display: flex;
+}
+
+.feedback-rating{
+    padding-top: 1rem;
+    display: flex;
+}
+
+.rating-given{
+    padding-left: 0.8rem;
+}

@@ -8,6 +8,7 @@ import {ReactComponent as CreditIcon} from "../Assets/Click/Credits.svg"
 import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
 import { NavItem } from './Notifications/NavItem';
 import { Dropdown } from './Notifications/Dropdown';
+import { Tag } from "./Tag";
 
 export const ViewAnswer = () => {
     const {quesid} = useParams();
@@ -81,17 +82,34 @@ export const ViewAnswer = () => {
                     <ProfileIcon className="icon-top"/>
                     </Link>
             </div>
-            <h2>{question.question}</h2>
-            {question.answered ? "yes": "no"}
-            {question.tags.map((tag)=>
-                <div className="tag" key={tag}>
-                    {tag}
+            <div className="q-to-ans">
+                <div className="q">Question: </div>
+                <div className="q-ques">{question.question}</div>
+            
+            </div>
+            {/* {question.answered ? "yes": "no"} */}
+            
+
+            <div className="tag-list-ans">
+            <label className="answer-status">Tags specified :</label>
+            {question.tags.map((tag) => (
+                <div className="tag-list-element" key={tag}>
+                    <Tag value={tag}/>
                 </div>
-            )}
-            <h3>Answer</h3>
-            {answer.answer ? answer.answer : answer.error}
-            {answer.answer && !(answer.rating) && <Feedback question={question} answer={answer}/> }
-            {answer.rating!==0 && <div>stars: {answer.rating}</div>}
+            ))}</div>
+
+
+            <div className="ques-area-status">
+                <label className="upload-ques-label">Answer:</label>
+
+                <div className="ans-to-q">
+                {answer.answer ? answer.answer : answer.error}
+                </div>
+
+
+                {answer.answer && !(answer.rating) && <Feedback question={question} answer={answer}/> }
+                {answer.rating!==0 && <div className="feedback-rating"><label className="upload-ques-label"> Rating :</label>{(answer.rating>0)?<div className="rating-given">{" "+answer.rating+"★"}</div>: " Unrated"}</div>}
+            </div>
         </div>
     )
 }

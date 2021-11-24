@@ -36,8 +36,9 @@ export const Feedback = (props) => {
         })
 
         const res = await response.json(); 
-        setTrans(res.msg);
+        setRes(res.msg);
         // transaction
+        await transaction();
     }
 
     return (

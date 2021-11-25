@@ -44,7 +44,7 @@ export const QuestionCard = (props) => {
         <div className="question-card">
             <div className="card-head">
                 <div className="user-pp">
-                    <img src={userData.dp} alt="dp" className="pp"/>
+                    {userData.dp&&<img src={userData.dp} alt="dp" className="pp"/>}
                 </div>
                 <div className="card-user">
                     <div className="card-username">

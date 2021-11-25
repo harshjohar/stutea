@@ -6,6 +6,11 @@
     width: 80vw;
     margin-left: 20vw;
     height: 100vh;
+    /* background: url(../StuTea-Login.svg); */
+}
+.image{
+    width: 40%;
+
 }
 .form-head{
     display: flex;
@@ -14,8 +19,8 @@
     justify-content: center;
     padding: 2rem;
     height: 70%;
-    width: 80%;
-    background-color: #FAEAF3;
+    width: 60%;
+    /* background-color: #FAEAF3; */
     border-radius: 3rem;
 }
 
@@ -23,6 +28,7 @@
     padding: 1rem;
     text-align: center;
     font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 700;
 }
 .form-body {
     width: 100%;
@@ -67,6 +73,8 @@
     width: 100%;
     border: none;
     border-bottom: 1px solid black;
+    outline: none;
+    
 }
 
 .form-button{
@@ -82,7 +90,7 @@
     border: none;
     outline: none;
     font-weight: 500;
-    background-color: black;
+    background-color: #C65447;
     width:5rem;
     color: white;
     cursor: pointer;
@@ -90,9 +98,9 @@
 }
 
 .form-submit-btn:hover{
-    border:1.7px solid #b2b2b2;
-    background-color: #b2b2b2;
-    color: black;
+    border:1.7px solid #C65447;
+    background-color: #fff;
+    color: #C65447;
     box-shadow: 6px 6px 10px #e8ebfa;
     font-weight: 600;
 }
@@ -109,9 +117,34 @@
     }
     .lform-input{
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .form-input{
-        width: 100%;
+        width: 95%;
     }
+
+  
 }
 
+@media screen and (max-width:769px) {
+    .form-body-main{
+        flex-direction: column;
+    }
+    .image{
+        align-items: center;
+        justify-content: center;
+        padding-top: 2.5rem;
+        height: 40%;
+        display: flex;
+    }
+    
+}
+
+@media screen and (max-width:426px){
+    .form-head{
+        height: 60%;
+        padding: 1rem;
+    }
+}

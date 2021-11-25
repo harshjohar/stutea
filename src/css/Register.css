@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    /* flex-direction: column; */
     height: 100vh;
     width: 80vw;
     margin-left: 20vw;
@@ -17,13 +17,15 @@
     justify-content: center;
     padding: 1.4rem;
     height: 90%;
-    width: 70%;
-    background-color: #FAEAF3;
+    width: 60%;
+    /* background-color: #FAEAF3; */
     border-radius: 3rem;
 }
 .register-form-head{
     padding-top: 1.5rem;
     text-align: center;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 700;
 }
 
 .rform-label{
@@ -42,6 +44,10 @@
     padding-left: 0.5rem;
     border: none;
     border-bottom: 1px solid black;
+    /* background-color: #233862; */
+    /* color: white; */
+    outline: none;
+    /* border-radius: 10px; */
 }
 
 .rform{
@@ -72,4 +78,25 @@
     .rform-input{
         width: 80%;
     }
+}
+
+@media screen and (max-width:769px) {
+    .register-form{
+        flex-direction: column;
+    }
+    .image{
+        align-items: center;
+        justify-content: center;
+        padding-top: 2.5rem;
+        height: 40%;
+        display: flex;
+    }
+    .rform-head{
+        padding: 1rem;
+    }
+
+    .register-form-head{
+        padding-top: 1rem;
+    }
+    
 }

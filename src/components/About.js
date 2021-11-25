@@ -6,14 +6,14 @@ export const About = () => {
     <div className="parent-about">
       <h1>Learning and Teaching together</h1>
       <div className="about-intro">
-        <div className="intro-left">
-          <div className="intro-img">
-            <img src={imag} alt="StuTea" />
-          </div>
+        <div className="intro-img">
+          <img src={imag} alt="StuTea" />
         </div>
         <div className="intro-right">
-          <p>At stutea we believe in making every learner a teacher.
-          That is exactly what our name signifies! Stu-dent + tea-cher.</p>
+          <p>
+            At stutea we believe in making every learner a teacher. That is
+            exactly what our name signifies! Stu-dent + tea-cher.
+          </p>
           <p>
             We a group of college students came up with the idea of providing
             students with a platform wherein they can post their doubts and
@@ -58,7 +58,7 @@ export const About = () => {
               <img src={imag} alt="StuTea" />
             </div>
             <div className="card-body">
-              <h5 className="card-title">Harshpreet Johar</h5>
+              <h5 className="card-title">Kanika Kaur</h5>
               <p className="card-text">
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
@@ -85,7 +85,7 @@ export const About = () => {
               <img src={imag} alt="StuTea" />
             </div>
             <div className="card-body">
-              <h5 className="card-title">Harshpreet Johar</h5>
+              <h5 className="card-title">Dhruv Bansal</h5>
               <p className="card-text">
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
@@ -112,7 +112,7 @@ export const About = () => {
               <img src={imag} alt="StuTea" />
             </div>
             <div className="card-body">
-              <h5 className="card-title">Harshpreet Johar</h5>
+              <h5 className="card-title">Simran Gupta</h5>
               <p className="card-text">
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
@@ -139,7 +139,7 @@ export const About = () => {
               <img src={imag} alt="StuTea" />
             </div>
             <div className="card-body">
-              <h5 className="card-title">Harshpreet Johar</h5>
+              <h5 className="card-title">Jaagrit</h5>
               <p className="card-text">
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.

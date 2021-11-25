@@ -4,6 +4,7 @@ const { body, validationResult } = require("express-validator");
 var fetchuser = require("../middleware/fetchuser");
 const Questions = require("../models/Questions");
 const Credits = require("../models/Credits");
+const Favourites = require("../models/Favourites");
 // const User = require("../models/User");
 
 
@@ -170,7 +171,7 @@ router.get(
                 tags: req.params.tag,
                 user: { $ne: req.user.id }
             }).limit(5);
-            const count = await Questions.find({ tags: req.params.tag, user: { $ne: req.user.id } }).count();
+            const count = await Questions.find({ tags: req.params.tag, user: { $ne: req.user.id }, responded: {$ne: true} }).count();
 
             questions.sort(function (a, b) {
                 return new Date(b.timestamp) - new Date(a.timestamp);
@@ -200,6 +201,28 @@ router.get('/alltags', fetchuser, async(req, res)=> {
             }
         }
         res.json(dictionary);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+})
+
+// ROUTE 8 : Get my favourite questions POST '/api/questions/favs'. Login Required
+router.post('/favs', fetchuser, async(req, res)=> {
+    try {
+        const { page } = req.body;
+        const myTags = await Favourites.findOne({
+            user: req.user.id
+        })
+
+        const questions = await Questions.find({user: { $ne: req.user.id }, tags:{$in: myTags.tags}, responded: {$ne: true}}).limit(5).skip((page - 1) * 5);
+        questions.sort(function (a, b) {
+            // Turn your strings into dates, and then subtract them
+            // to get a value that is either negative, positive, or zero.
+            return new Date(b.timestamp) - new Date(a.timestamp);
+        });
+        const count = questions.length;
+        res.json({count, questions});
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Internal Server Error");

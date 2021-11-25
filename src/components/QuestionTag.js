@@ -53,19 +53,45 @@ export const QuestionTag = () => {
         }
         // eslint-disable-next-line
     }, [])
-    // const nextClick = () => {
-    //     setCurrPage(currPage+1);
-    //     getQuestionsTag(currPage);
-    // }
-
-    // const prevClick = () => {
-    //     setCurrPage(currPage-1);
-    //     getQuestionsTag(currPage);
-    // }
+    const [checked, setChecked] = useState(false);
+    const addToFavs = async () => {
+        const response = await fetch(`${host}/api/tags/add`,{
+            method: "POST", 
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem("token"),
+            },
+            body: JSON.stringify({
+                tag: reqTag
+            })
+        })
+        await response.json();
+    }
+    const remFrmFav = async() => {
+        const response = await fetch(`${host}/api/tags/remove`,{
+            method: "POST", 
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem("token"),
+            },
+            body: JSON.stringify({
+                tag: reqTag
+            })
+        })
+        await response.json();
+    }
+    const handleCheck = ()=> {
+        if(!checked) {
+            addToFavs();
+        } else {
+            remFrmFav();
+        }   
+        setChecked(!checked);
+    }
     return (
         <div className="questions">
             <div className="sub-heading-tags">
-                Questions with tag <span className='tag-heading'>{reqTag}</span>
+                Questions with tag <span className='tag-heading'>{reqTag}</span> <i className={`${checked?"fas":"far"} fa-bookmark`} onClick={handleCheck}>{`${!checked?"Add to favourites":""}`}</i>
             </div>
             {!questions.length && <Spinner/>}
             <div className="big">

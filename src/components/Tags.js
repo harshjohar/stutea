@@ -48,7 +48,7 @@ export const Tags = () => {
             <h2 className="tags-head">All tags here</h2>
             <div className="all-tags">
                 {Object.entries(tags).map(([key, value])=> {
-                    return <TagBlock heading={key} list={value}/>
+                    return (key!=="undefined" && <TagBlock heading={key} list={value}/>)
                 })}
             </div>
         </div>

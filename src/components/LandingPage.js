@@ -5,12 +5,11 @@ import img from "../Assets/help.jpg";
 import img1 from "../Assets/happyStudents.jpg";
 import img2 from "../Assets/1.jpg";
 import img3 from "../Assets/token.jpg";
-// import { Navbar } from "./Navbar"; 
+// import { Navbar } from "./Navbar";
 // import img1 from "../Assets/png.png";
 const LandingPage = () => {
   return (
-    <div>
-      {/* <Navbar/> */}
+    <div className="parent-landing">
       <div className="intro-content">
         <h1>Hello folks</h1>
         <h2>Welcome To StuTea</h2>
@@ -85,17 +84,15 @@ const LandingPage = () => {
       </div>
       <div className="impact-content">
         <div className="impact">
-          <div>
-          <h2>High Impact Learning</h2>
+          <h1>High Impact Learning</h1>
           <p>
             StuTea helps you in enriching your concepts with varied question
             ranging in all the topics known. This enables student to get access
             of the high quality learning and development among the peers.
           </p>
-          </div>
-          <div className="impact-img class-img">
-            <img src={img2} alt="img" />
-          </div>
+        </div>
+        <div className="impact-img class-img">
+          <img src={img2} alt="img" />
         </div>
       </div>
       <div className="credit-content">
@@ -103,10 +100,11 @@ const LandingPage = () => {
           <img src={img3} alt="img" />
         </div>
         <div className="credit">
-          <h2>Hello!</h2>
+          <h1>Hello!</h1>
           <p>
-            Browse your credits exchange store and choose from hundreds of offers
-            and schemes to redeem and purchase credits from our online store
+            Browse your credits exchange store and choose from hundreds of
+            offers and schemes to redeem and purchase credits from our online
+            store
           </p>
         </div>
       </div>

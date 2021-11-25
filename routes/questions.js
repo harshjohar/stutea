@@ -58,7 +58,18 @@ router.post(
                     }
                 })
             }
-                res.json(savedNote);
+            const incrementer = await User.findOne({"_id" : req.user.id});
+            const incre = incrementer.QuestionsPosted + 1
+            const increment = await User.findOneAndUpdate({"_id": req.user.id},
+            {
+                $set : {
+                    QuestionsPosted : incre
+                }
+            })
+            // console.log(incrementer.QuestionsPosted);
+            // console.log(req.user.id);
+            // console.log(User.findOne({"user" : req.user.id}));
+            res.json(savedNote);
         } catch (error) {
             console.error(error.message);
             res.status(500).send("Internal Server Error");

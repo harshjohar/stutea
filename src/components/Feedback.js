@@ -49,21 +49,28 @@ export const Feedback = (props) => {
     
 
     return (
-        <div>
+        <>
+        <div className="star-layout">
+
+            <div className="review">
+        <label className="upload-ques-label">Kindly give your feedback :</label>
+        <div className="stars">
             <button className="feedback-option" onClick={()=>giveFeedback(1)}><i className={`${(activeStars>=1)?'fas star-border':'far'} fa-star`}></i></button>
             <button className="feedback-option" onClick={()=>giveFeedback(2)}><i className={`${(activeStars>=2)?'fas star-border':'far'} fa-star`}></i></button>
             <button className="feedback-option" onClick={()=>giveFeedback(3)}><i className={`${(activeStars>=3)?'fas star-border':'far'} fa-star`}></i></button>
             <button className="feedback-option" onClick={()=>giveFeedback(4)}><i className={`${(activeStars>=4)?'fas star-border':'far'} fa-star`}></i></button>
             <button className="feedback-option" onClick={()=>giveFeedback(5)}><i className={`${(activeStars>=5)?'fas star-border':'far'} fa-star`}></i></button>
-            {res}
-
             
 
-            <div className="transaction-success">
-                {trans? <div className="transaction-status">
-                    Transaction Successful. You are left with {" "+trans.credits+" "} credits. </div>
-                : "lulz"}
             </div>
+            </div>
+            <div className="thanks">{res}</div>
+            {trans.credits&&<div className="transaction-success">
+                {(activeStars>0)? <div className="transaction-status">
+                    Transaction Successful. You are left with <div className="credits-left">{" "+trans.credits+" "}</div> credits. </div>
+                : ""}
+            </div>}
         </div>
+        </>
     )
 }

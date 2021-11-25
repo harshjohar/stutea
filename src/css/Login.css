@@ -5,15 +5,18 @@
     width: 100%;
     width: 80vw;
     margin-left: 20vw;
+    height: 100vh;
 }
 .form-head{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 2rem;
-    height: 100vh;
+    height: 70%;
     width: 80%;
+    background-color: #FAEAF3;
+    border-radius: 3rem;
 }
 
 .form-title{
@@ -62,6 +65,8 @@
     height: 100%;
     
     width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
 }
 
 .form-button{
@@ -77,7 +82,7 @@
     border: none;
     outline: none;
     font-weight: 500;
-    background-color: #0d7d46;
+    background-color: black;
     width:5rem;
     color: white;
     cursor: pointer;
@@ -85,9 +90,9 @@
 }
 
 .form-submit-btn:hover{
-    border:1.7px solid #0d7d46;
-    background-color: #ffffff;
-    color: #0d7d46;
+    border:1.7px solid #b2b2b2;
+    background-color: #b2b2b2;
+    color: black;
     box-shadow: 6px 6px 10px #e8ebfa;
     font-weight: 600;
 }

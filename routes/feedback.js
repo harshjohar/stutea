@@ -35,6 +35,13 @@ router.put('/rating', fetchuser,
                         answered : true
                     }
                 })
+                const incre = await User.findOne({"_id": query.user});
+                const increm = incre.AnswersAccepted+1
+                const answerincrement = await User.findOneAndUpdate({"_id": query.user},{
+                    $set : {
+                        AnswersAccepted : increm
+                    }
+                })
             }
             res.send({msg: "Thanks for the feedback"})
         }

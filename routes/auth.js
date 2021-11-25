@@ -66,6 +66,8 @@ router.post(
                 first: req.body.firstname,
                 last: req.body.lastname,
                 city: req.body.city,
+                QuestionsPosted : 0,
+                AnswersAccepted : 0
             });
 
             user.save(function (err) {

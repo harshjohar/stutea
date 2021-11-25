@@ -32,3 +32,33 @@
 .rating-given{
     padding-left: 0.8rem;
 }
+
+.review{
+    display: flex;
+}
+
+.star-layout{
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.stars{
+    padding-left: 0.5rem;
+}
+
+.transaction-success{
+    display: flex;
+}
+
+.credits-left{
+    font-weight: 600;
+    padding: 0rem 0.5rem;
+}
+.transaction-status{
+    display:flex;
+}
+
+.bg-mag{
+    background-color: #652448;
+    color: white;
+}

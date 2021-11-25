@@ -100,15 +100,20 @@ export const ViewAnswer = () => {
 
 
             <div className="ques-area-status">
-                <label className="upload-ques-label">Answer:</label>
+                <label className="upload-ques-label">Answer :</label>
 
-                <div className="ans-to-q">
+                <div className={`ans-to-q ${!answer.answer?' bg-mag':''}`}>
                 {answer.answer ? answer.answer : answer.error}
                 </div>
 
 
                 {answer.answer && !(answer.rating) && <Feedback question={question} answer={answer}/> }
-                {answer.rating!==0 && <div className="feedback-rating"><label className="upload-ques-label"> Rating :</label>{(answer.rating>0)?<div className="rating-given">{" "+answer.rating+"★"}</div>: " Unrated"}</div>}
+
+                {/* {answer.rating!==0 && <div className="feedback-rating"><label className="upload-ques-label"> Rating :</label>{(answer.rating>0)?<div className="rating-given">{" "+answer.rating+"★"}</div>: " Unrated"}</div>} */}
+                <div className="feedback-rating">
+                    
+                    {(answer.rating>0)?<div><label className="upload-ques-label"> Rating</label><div className="rating-given">{" "+answer.rating+"★"}</div></div>: ""}
+                </div>
             </div>
         </div>
     )

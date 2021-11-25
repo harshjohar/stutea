@@ -8,7 +8,7 @@
 .nav-main{
     width: 20vw;
     height: 100vh;
-    border-right: 1px solid;
+    /* border-right: 1px solid; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,15 +22,22 @@
 }
 
 .nav-logo-wrapper{
-    height: 10%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+}
+
+.logo{
+    width: 50%;
 }
 .link-list{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 70%;
+    height: 60%;
     width: 100%;   
 }
 
@@ -46,7 +53,7 @@
 }
 
 .link-list-item{
-    margin:0.8rem 0rem;
+    margin-top:0.8rem ;
     width: 100%;
     /* padding: 0rem 1rem 0rem 2rem; */
     display: flex;
@@ -137,15 +144,6 @@
     }
 } */
 
-@media screen and (max-width:900px) {
-    .icon{
-        /* margin-right: 0.3rem; */
-    }
-    .logout-btn,.link-list-item{
-        /* padding: 0rem 1rem; */
-    }
-    
-}
 
 @media screen and (max-width:768px) {
     .nav-text,.nav-text-active{
@@ -167,6 +165,7 @@
     .logout-btn{
         justify-content: center;
         align-items: center;
+        display: flex;
     }
 }
 

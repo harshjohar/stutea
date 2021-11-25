@@ -44,7 +44,7 @@ export const Settings = () => {
     }
     return (
         <div className="settings-main">
-            <h2 className="register-form-head">settings</h2>
+            <h2 className="register-form-head">Settings</h2>
             <form className="rform">
             <div className="rform-div">
                 <label htmlFor="first" className="rform-label">First Name</label>
@@ -60,6 +60,8 @@ export const Settings = () => {
             </div>
             </form>
 
+            <div className="rform-div mcol">
+            <label htmlFor="city" className="rform-label choose-dp">Choose your profile picture</label>
             <div className="dp-selection">
                 <div className={`dp-item ${dp==="https://res.cloudinary.com/stutea/image/upload/v1637785561/pp2_mgz6at.jpg" ? "dp-selected":""}`}>
                     <img src="https://res.cloudinary.com/stutea/image/upload/v1637785561/pp2_mgz6at.jpg" alt="" onClick={()=>setDp("https://res.cloudinary.com/stutea/image/upload/v1637785561/pp2_mgz6at.jpg")}/>
@@ -84,6 +86,7 @@ export const Settings = () => {
                 </div>
                 <div className={`dp-item ${dp==="https://res.cloudinary.com/stutea/image/upload/v1636875706/sample_nw8mlw.png" ? "dp-selected":""}`}>
                     <img src="https://res.cloudinary.com/stutea/image/upload/v1636875706/sample_nw8mlw.png" alt="" onClick={()=>setDp("https://res.cloudinary.com/stutea/image/upload/v1636875706/sample_nw8mlw.png")}/>
+                </div>
                 </div>
             </div>
             <div className="form-button">

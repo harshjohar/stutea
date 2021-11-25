@@ -19,6 +19,9 @@ const Dashboard = () => {
             <div className="dashboard-main">
                 <div className="top-icons">
                     {/* <NotifIconActive className='icon-top'/> */}
+                    <Link to="/favs">
+                        <i className="fas fa-bookmark icon-top"></i>
+                    </Link>
                     <NavItem icon={<NotifIcon/>}>
                         <Dropdown type="notif"></Dropdown>
                     </NavItem>

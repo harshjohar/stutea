@@ -23,6 +23,7 @@ import { CreditState } from "./Context/Credits/CreditState";
 import { DashBoardNavbar } from "./components/DashBoardNavbar";
 import { Settings } from "./components/Settings";
 import { BuyCredits } from "./components/BuyCredits";
+import { FavTagQues } from "./components/FavTagQues";
 
 function App() {
   return (
@@ -90,6 +91,9 @@ function App() {
                 <Home/>
               </QuestionState>
             </UserState>
+          </Route>
+          <Route exact path="/favs">
+            <FavTagQues/>
           </Route>
         </Switch>
         </CreditState>

@@ -31,7 +31,7 @@ export const DashBoardNavbar = () => {
         <div className="nav-main">
             <div className="nav-logo-wrapper">
                 {/* img-here */}
-                <Logo className="logo"/>
+                <Logo className="logo" onClick={()=>{history.push("/")}}/>
             </div>
             <div className="link-list">
                 <ul className="links">

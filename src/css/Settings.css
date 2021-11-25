@@ -13,13 +13,17 @@
 .dp-selection {
     display: grid;
     grid-template-columns: repeat(3, auto);
+    margin: 1rem;
 }
-
-.dp-item-active {
-    border: 2px solid red;
+.dp-item {
+    padding: 1rem;
 }
 
 .dp-item img {
     height: 100px;
     cursor: pointer;
+}
+
+.dp-selected {
+    border: 2px solid red;
 }

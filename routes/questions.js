@@ -4,7 +4,7 @@ const { body, validationResult } = require("express-validator");
 var fetchuser = require("../middleware/fetchuser");
 const Questions = require("../models/Questions");
 const Credits = require("../models/Credits");
-const User = require("../models/User");
+// const User = require("../models/User");
 
 
 // Route 1 : Add a new question : POST "/api/questions/add". Login Required.
@@ -12,8 +12,8 @@ router.post(
     "/add",
     fetchuser,
     [
-        body("tags", "Cannot be empty").exists(),
-        body("question", "Cannot be empty").exists(),
+        body("tags", "Cannot be empty").isLength({min: 1}),
+        body("question", "Write Something atleast").isLength({min: 5}),
     ],
     async (req, res) => {
         const { question, tags } = req.body;
@@ -24,9 +24,14 @@ router.post(
             return res.status(400).json({ errors: errors.array() });
         }
         try {
+            const unique = (value, index, self) => {
+                return self.indexOf(value) === index
+            }
+
+            const uniqueTags = tags.filter(unique);
             const query = new Questions({
                 question,
-                tags,
+                tags: uniqueTags,
                 user: req.user.id,
             });
             const savedNote = await query.save();

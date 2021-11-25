@@ -33,6 +33,9 @@ app.use('/api/credits', require('./routes/credits'), (req, res)=> {
 app.use('/api/notifications', require('./routes/notifications'), (req, res)=> {
     res.send("notifications endpoint ready")
 })
+app.use('/api/tags', require("./routes/tags"), (req, res)=> {
+    res.send("Tags endpoint ready!")
+})
 app.get("/", (req, res)=> {
     res.send("hello world!, stutea here!");
 })

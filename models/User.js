@@ -31,6 +31,14 @@ const UserSchema = new mongoose.Schema({
     verified: {
         type: Boolean,
         default: false
+    },
+    QuestionsPosted : {
+        type: Number,
+        default: 0
+    },
+    AnswersAccepted : {
+        type: Number,
+        default: 0
     }
 })
 

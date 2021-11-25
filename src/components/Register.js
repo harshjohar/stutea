@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { useHistory } from 'react-router-dom'
 import "../css/Register.css"
+import image from '../StuTea-Login.svg'
 
 export const Register = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
@@ -45,6 +46,9 @@ const onChange = (e)=> {
 }
   return (
     <div className="register-form">
+        <div className="image">
+                <img src={image} alt="" />
+            </div>
         <div className="rform-head">
       <h2 className="register-form-head">Come Join StuTea</h2>
       <form onSubmit={handleSubmit} className="rform">

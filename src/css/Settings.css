@@ -6,7 +6,7 @@
 
 .settings-main {
     width: 80vw;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     margin-left: 20vw;
 }
 
@@ -44,5 +44,5 @@
 }
 
 .dp-selected {
-    border: 2px solid red;
+    border: 2px solid black;
 }

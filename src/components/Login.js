@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "../css/Login.css"
+import image from '../StuTea-Login.svg'
 const Login = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
     let history = useHistory();
@@ -36,8 +37,13 @@ const Login = () => {
     };
     return (
         <div className="form-body-main">
+
+
+            <div className="image">
+                <img src={image} alt="" />
+            </div>
         <div className="form-head">
-            <h2 className="form-title">Log in to the world of knowledge</h2>
+            <h2 className="form-title">Welcome to StuTea</h2>
             <form onSubmit={handleSubmit} className="form-body">
                 <div className="login-form">
                     <label htmlFor="" className="form-label">Username</label>

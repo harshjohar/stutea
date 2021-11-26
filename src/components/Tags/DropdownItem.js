@@ -2,12 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 export const DropdownItem = (props) => {
-    const {value} = props;
+    const {value, disabled} = props;
     return (
         <div className="tag-item-drop">
-            <Link to={`/query?tag=${value}`} className="tag-link-drop">
+            {!disabled ? <Link to={`/query?tag=${value}`} className="tag-link-drop">
                 {value}
-            </Link>
+            </Link>:<div className='tag-link-drop'>{value}</div>}
         </div>
     )
 }

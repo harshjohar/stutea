@@ -45,7 +45,7 @@ export const MyQuestionCard = (props) => {
                 </div>
             )} */}
                 <TagIcon icon = {question.answered ? <Tgreen/> : (question.responded ? <Tyellow/> : <Tmag/>)}>
-                    <TagDropdown tags={question.tags}></TagDropdown>
+                    <TagDropdown tags={question.tags} disabled={true}></TagDropdown>
                 </TagIcon>
                 
                 {question.user && <div className="answer-question">

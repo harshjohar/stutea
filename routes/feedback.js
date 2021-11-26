@@ -42,6 +42,13 @@ router.put('/rating', fetchuser,
                         AnswersAccepted : increm
                     }
                 })
+
+                const avg = ((incre.AverageRating)*(increm - 1) + stars)/increm;
+                const avgrating = await User.findOneAndUpdate({"_id": query.user},{
+                    $set : {
+                        AverageRating : avg
+                    }
+                })
             }
             res.send({msg: "Thanks for the feedback"})
         }

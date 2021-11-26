@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import userContext from '../Context/User/userContext'
 import { MyQuestions } from './MyQuestions';
 import { Link } from 'react-router-dom';
@@ -9,13 +9,30 @@ import {ReactComponent as CreditIcon} from "../Assets/Click/Credits.svg"
 import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
 import { NavItem } from './Notifications/NavItem';
 import { Dropdown } from './Notifications/Dropdown';
+import { Tag } from './Tag';
 // import {ReactComponent as Settings} from '../Assets/Rest/Settings.svg'
 export const Profile = () => {
+    const host = process.env.REACT_APP_BACKEND_URL;
     const uContext = useContext(userContext);
     const {user, getUserByAuthToken} = uContext;
 
+    const [favTags, setFavTags] = useState([])
+    const getFavs = async() => {
+        const response = await fetch(`${host}/api/tags/get`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem('token')
+            }
+        })
+        const json = await response.json();
+        setFavTags(json.tags);
+
+    }
+
     useEffect(() => {
         getUserByAuthToken();
+        getFavs();
         return () => {
             
         }
@@ -51,6 +68,23 @@ export const Profile = () => {
                         {user.first+ " "+user.last}
                     </div>
                     {/* <small>{user.city}</small> */}
+                </div>
+                <div className="analytics">
+                    <div className="profile-an-item">
+                        Number of Answers accepted: {user.AnswersAccepted}
+                    </div>
+                    <div className="profile-an-item">
+                        Number of Questions posted: {user.QuestionsPosted}
+                    </div>
+                    <div className="profile-an-item">
+                        Average feedback stars: {user.Stars}
+                    </div>
+                </div>
+                <div className="favourite-tags">
+                    My Favourites: {favTags.map((tag)=>{
+                        return <Tag value={tag}/>
+                    })}
+                    {/* overflowX: hidden */}
                 </div>
             </div>
             <MyQuestions/>

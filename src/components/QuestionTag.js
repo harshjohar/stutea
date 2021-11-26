@@ -40,10 +40,23 @@ export const QuestionTag = () => {
         // const pgs = json.count;
         // setPageCount(Math.ceil(pgs/15));
     }
+    const [favTags, setFavTags] = useState([])
+    const getFavs = async() => {
+        const response = await fetch(`${host}/api/tags/get`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem('token')
+            }
+        })
+        const json = await response.json();
+        setFavTags(json.tags);
 
+    }
     useEffect(() => {
         if (localStorage.getItem("token")) {
             getQuestionsTag();
+            getFavs();
     } else {
         history.push("/login");
     }
@@ -53,7 +66,8 @@ export const QuestionTag = () => {
         }
         // eslint-disable-next-line
     }, [])
-    const [checked, setChecked] = useState(false);
+    const alreadyIn = (favTags.indexOf(reqTag));
+    const [checked, setChecked] = useState((alreadyIn!==-1)?true:false);
     const addToFavs = async () => {
         const response = await fetch(`${host}/api/tags/add`,{
             method: "POST", 
@@ -98,6 +112,7 @@ export const QuestionTag = () => {
                 {questions.length && <BigQuestionCard color='green' content={questions[0]}/>}
                 {questions.length>1 && <BigQuestionCard color='magenta' content={questions[1]}/>}
             </div>
+            {/* {alreadyIn} */}
             <div className="sub-heading">
                     <div className="sub-heading-text">
                         <div className="heading-more">

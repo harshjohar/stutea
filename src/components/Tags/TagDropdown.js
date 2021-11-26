@@ -3,7 +3,7 @@ import { CSSTransition } from "react-transition-group";
 import "../../css/TagsDropdown.css"
 import { DropdownItem } from "./DropdownItem";
 export const TagDropdown = (props) => {
-    const {tags} = props;
+    const {tags, disabled} = props;
     // eslint-disable-next-line
     const [activeMenu, setActiveMenu] = useState("main");
     // eslint-disable-next-line
@@ -34,7 +34,7 @@ export const TagDropdown = (props) => {
                         harsh ko maaf kro
                     </DropdownItem> */}
                     {tags.map((tag)=> {
-                        return <DropdownItem key={tag} value={tag}/>
+                        return <DropdownItem key={tag} value={tag} disabled={disabled}/>
                     })}
                     {/* <DropdownItem value={tags}/> */}
                 </div>

@@ -46,7 +46,11 @@ router.get("/get", fetchuser, async (req, res) => {
         const tags = await Favourites.findOne({
             user: userId,
         });
-        res.json(tags);
+        if(tags) {
+            res.json(tags);
+        } else {
+            res.json({tags: []})
+        }
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Internal Server Error");

@@ -69,7 +69,7 @@ export const MyQuestions = () => {
                 breakLabel={"...."}
                 pageCount={pageCount}
                 marginPagesDisplayed={2}
-                pageRangeDisplayed={3}
+                pageRangeDisplayed={2}
                 containerClassName={"pagination justify-content-center align-items-center"}
                 pageClassName={"page-item-no justify-content-center align-items-center"}
                 pageLinkClassName={"page-link-no"}

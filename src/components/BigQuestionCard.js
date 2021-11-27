@@ -3,6 +3,7 @@ import dateFormat from "dateformat";
 import { useHistory, Link } from "react-router-dom";
 import {ReactComponent as AddQuesGreen} from "../Assets/Click/answer_green.svg"
 import {ReactComponent as AddQuesMagenta} from "../Assets/Click/answer_magenta.svg"
+import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
 import "../css/BigQuestionCard.css"
 export const BigQuestionCard = (props) => {
     const {color, content}=props
@@ -29,6 +30,7 @@ export const BigQuestionCard = (props) => {
         setUserData(json);
     };
     useEffect(() => {
+        if(content.user)
         getUserData(content.user)
         return () => {
             
@@ -51,7 +53,7 @@ export const BigQuestionCard = (props) => {
             <div className="details">
                 <div className="user">
                     <div className="user-dp-ques">
-                        <img src={userData.dp} alt="dp" className="profile-pic-ques"/>
+                        {userData.dp?<img src={userData.dp} alt="dp" className="profile-pic-ques"/>:<ProfileIcon className="profile-pic-ques"/>}
                         {/* <ProfileIcon className="profile-pic-ques"/> */}
                     </div>
                     <div className="user-name-ques">
@@ -59,13 +61,13 @@ export const BigQuestionCard = (props) => {
                             {userData.first + " " + userData.last}
                         </div>
                         <div className="date-ques">
-                        {dateFormat(date, "mmmm dS, yyyy, h:MM TT")}
+                        {date?dateFormat(date, "mmmm dS, yyyy, h:MM TT"):""}
                         </div>
                     </div>
                 </div>
-                <div className="answer-button-big">
+                {userData.dp?<div className="answer-button-big">
                     {color==='green' ? <AddQuesGreen className="btn-add" onClick={handleClick}/>: <AddQuesMagenta className='btn-add' onClick={handleClick}/>}
-                </div>
+                </div>:""}
             </div>
         </div>
     )

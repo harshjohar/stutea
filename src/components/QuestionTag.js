@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 export const QuestionTag = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
     const [questions, setQuestions] = useState([]);
+    const [favTags, setFavTags] = useState([]);
     // const [pageCount, setPageCount] = useState(0);
     // const [currPage, setCurrPage] = useState(1);
 
@@ -40,7 +41,6 @@ export const QuestionTag = () => {
         // const pgs = json.count;
         // setPageCount(Math.ceil(pgs/15));
     }
-    const [favTags, setFavTags] = useState([])
     const getFavs = async() => {
         const response = await fetch(`${host}/api/tags/get`, {
             method: "GET",
@@ -51,7 +51,6 @@ export const QuestionTag = () => {
         })
         const json = await response.json();
         setFavTags(json.tags);
-
     }
     useEffect(() => {
         if (localStorage.getItem("token")) {
@@ -66,8 +65,6 @@ export const QuestionTag = () => {
         }
         // eslint-disable-next-line
     }, [])
-    const alreadyIn = (favTags.indexOf(reqTag));
-    const [checked, setChecked] = useState((alreadyIn!==-1)?true:false);
     const addToFavs = async () => {
         const response = await fetch(`${host}/api/tags/add`,{
             method: "POST", 
@@ -94,25 +91,25 @@ export const QuestionTag = () => {
         })
         await response.json();
     }
-    const handleCheck = ()=> {
-        if(!checked) {
-            addToFavs();
+    const handleCheck = async ()=> {
+        if(!favTags.includes(reqTag)) {
+            await addToFavs();
+            await getFavs();
         } else {
-            remFrmFav();
+            await remFrmFav();
+            await getFavs();
         }   
-        setChecked(!checked);
     }
     return (
         <div className="questions">
             <div className="sub-heading-tags">
-                Questions with tag <span className='tag-heading'>{reqTag}</span> <i className={`${checked?"fas":"far"} fa-bookmark`} onClick={handleCheck}>{`${!checked?"Add to favourites":""}`}</i>
+                Questions with tag <span className='tag-heading'>{reqTag}</span> <i className={`${favTags.includes(reqTag)?"fas":"far"} fa-bookmark`} onClick={handleCheck}>{`${!favTags.includes(reqTag)?"Add to favourites":"Remove from favs"}`}</i>
             </div>
             {!questions.length && <Spinner/>}
             <div className="big">
                 {questions.length && <BigQuestionCard color='green' content={questions[0]}/>}
                 {questions.length>1 && <BigQuestionCard color='magenta' content={questions[1]}/>}
             </div>
-            {/* {alreadyIn} */}
             <div className="sub-heading">
                     <div className="sub-heading-text">
                         <div className="heading-more">
@@ -124,14 +121,7 @@ export const QuestionTag = () => {
                             </Link>
                         </div>
                     </div>
-                    {/* <div className="buttons-next-prev">
-                        {currPage===1 && <Prev className="prev-next-btn-disabled"/>}
-                        {currPage!==1 && <PrevActive className="prev-next-btn" onClick={prevClick}/>}
-                        {currPage===pageCount && <Next className="prev-next-btn-disabled"/>}
-                        {currPage!==pageCount && <NextActive className="prev-next-btn" onClick={nextClick}/>}
-                    </div> */}
                 </div>
-            {/* {questions.length>2 && <div>page number: {currPage}</div>} */}
             <div className="grp-of-three">
                 {questions.length>2 && <QuestionCardMore content={questions[2]}/>}
                 {questions.length>3 && <QuestionCardMore content={questions[3]}/>}

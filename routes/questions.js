@@ -118,12 +118,26 @@ router.post("/fetchuser", fetchuser, async (req, res) => {
             .limit(6)
             .skip((page - 1) * 6);
         const count = await Questions.find({ user }).count();
-
-        myQuestions.sort(function (a, b) {
-            return new Date(b.timestamp) - new Date(a.timestamp);
-        });
-
-        res.json({ myQuestions, count });
+        const emptyRes = {
+            user: "",
+            question: "No questions asked by you!",
+            timestamp: "",
+            answered: false,
+            tags: [],
+            responded: false
+        }
+        if(count===0) {
+            res.json({
+                myQuestions: [emptyRes],
+                count: 1
+            })
+        } else {
+            myQuestions.sort(function (a, b) {
+                return new Date(b.timestamp) - new Date(a.timestamp);
+            });
+            
+            res.json({ myQuestions, count });
+        }
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Internal Server Error");
@@ -144,7 +158,19 @@ router.post(
         try {
             const { quesid } = req.body;
             const question = await Questions.findById(quesid);
-            res.json(question);
+            if(question) {
+                res.json(question);
+            } else {
+                const emptyQues = {
+                    user: "",
+                    question: "This question was deleted!",
+                    timestamp: "",
+                    answered: false,
+                    tags: [],
+                    responded: false
+                }
+                res.json(emptyQues);
+            }
         } catch (error) {
             console.error(error.message);
             res.status(500).send("Internal Server Error");
@@ -184,10 +210,26 @@ router.get(
             }).limit(5);
             const count = await Questions.find({ tags: req.params.tag, user: { $ne: req.user.id }, responded: {$ne: true} }).count();
 
-            questions.sort(function (a, b) {
-                return new Date(b.timestamp) - new Date(a.timestamp);
-            });
-            res.json({questions, count});
+            const emptyRes = {
+                user: "",
+                question: "No recent questions asked on this tag by any other user!",
+                timestamp: "",
+                answered: false,
+                tags: [],
+                responded: false
+            }
+            if(count===0) {
+                res.json({
+                    questions: [emptyRes],
+                    count: 1
+                })
+            } else {
+
+                questions.sort(function (a, b) {
+                    return new Date(b.timestamp) - new Date(a.timestamp);
+                });
+                res.json({questions, count});
+            }
         } catch (error) {
             console.error(error.message);
             res.status(500).send("Internal Server Error");
@@ -225,15 +267,44 @@ router.post('/favs', fetchuser, async(req, res)=> {
         const myTags = await Favourites.findOne({
             user: req.user.id
         })
-
+        if(myTags===null) {
+            const emptyRes = {
+                user: "",
+                question: "No favourite tags",
+                timestamp: "",
+                answered: false,
+                tags: [],
+                responded: false
+            }
+            return res.json({
+                questions: [emptyRes],
+                count: 1
+            })
+        }
+        
         const questions = await Questions.find({user: { $ne: req.user.id }, tags:{$in: myTags.tags}, responded: {$ne: true}}).limit(5).skip((page - 1) * 5);
-        questions.sort(function (a, b) {
-            // Turn your strings into dates, and then subtract them
-            // to get a value that is either negative, positive, or zero.
-            return new Date(b.timestamp) - new Date(a.timestamp);
-        });
-        const count = questions.length;
-        res.json({count, questions});
+        const count = await Questions.find({user: { $ne: req.user.id }, tags:{$in: myTags.tags}, responded: {$ne: true}}).limit(5).skip((page - 1) * 5).count();
+        const emptyRes = {
+            user: "",
+            question: "No recent questions asked on this tag by any other user!",
+            timestamp: "",
+            answered: false,
+            tags: [],
+            responded: false
+        }
+        if(count===0) {
+            res.json({
+                questions: [emptyRes],
+                count: 1
+            })
+        } else {
+            questions.sort(function (a, b) {
+                // Turn your strings into dates, and then subtract them
+                // to get a value that is either negative, positive, or zero.
+                return new Date(b.timestamp) - new Date(a.timestamp);
+            });
+            res.json({count, questions});
+        }
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Internal Server Error");

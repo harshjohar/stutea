@@ -3,8 +3,8 @@ import userContext from '../Context/User/userContext'
 import { MyQuestions } from './MyQuestions';
 import { Link } from 'react-router-dom';
 import "../css/Profile.css"
-import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
-// import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
+// import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
+import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
 import {ReactComponent as CreditIcon} from "../Assets/Click/Credits.svg"
 import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
 import { NavItem } from './Notifications/NavItem';
@@ -42,7 +42,7 @@ export const Profile = () => {
         <div className="profile-main">
             <div className="top-icons">
                     {/* <NotifIconActive className='icon-top'/> */}
-                    <NavItem icon={<NotifIcon/>}>
+                    <NavItem icon={<NotifIconActive/>}>
                         <Dropdown type="notif"></Dropdown>
                     </NavItem>
                     <NavItem icon={<CreditIcon/>}>
@@ -67,7 +67,6 @@ export const Profile = () => {
                     <div className="name">
                         {user.first+ " "+user.last}
                     </div>
-                    {/* <small>{user.city}</small> */}
                 </div>
                 <div className="analytics">
                     <div className="profile-an-item">
@@ -82,7 +81,7 @@ export const Profile = () => {
                 </div>
                 <div className="favourite-tags">
                     My Favourites: {favTags.map((tag)=>{
-                        return <Tag value={tag}/>
+                        return <Tag value={tag} key={tag}/>
                     })}
                     {/* overflowX: hidden */}
                 </div>

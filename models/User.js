@@ -39,6 +39,10 @@ const UserSchema = new mongoose.Schema({
     AnswersAccepted : {
         type: Number,
         default: 0
+    },
+    AverageRating : {
+        type: Number,
+        default : 0.0
     }
 })
 

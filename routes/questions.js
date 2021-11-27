@@ -5,7 +5,7 @@ var fetchuser = require("../middleware/fetchuser");
 const Questions = require("../models/Questions");
 const Credits = require("../models/Credits");
 const Favourites = require("../models/Favourites");
-// const User = require("../models/User");
+const User = require("../models/User");
 
 
 // Route 1 : Add a new question : POST "/api/questions/add". Login Required.
@@ -76,6 +76,7 @@ router.post(
             // console.log(req.user.id);
             // console.log(User.findOne({"user" : req.user.id}));
             res.json(savedNote);
+            // res.send("thanks")
         } catch (error) {
             console.error(error.message);
             res.status(500).send("Internal Server Error");

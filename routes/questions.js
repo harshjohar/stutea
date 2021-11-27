@@ -6,6 +6,7 @@ const Questions = require("../models/Questions");
 const Credits = require("../models/Credits");
 const Favourites = require("../models/Favourites");
 const User = require("../models/User");
+const Answers = require("../models/Answers");
 
 
 // Route 1 : Add a new question : POST "/api/questions/add". Login Required.
@@ -25,17 +26,17 @@ router.post(
             return res.status(400).json({ errors: errors.array() });
         }
         try {
-            const unique = (value, index, self) => {
-                return self.indexOf(value) === index
-            }
+            // const unique = (value, index, self) => {
+            //     return self.indexOf(value) === index
+            // }
 
-            const uniqueTags = tags.filter(unique);
-            const query = new Questions({
-                question,
-                tags: uniqueTags,
-                user: req.user.id,
-            });
-            const savedNote = await query.save();
+            // const uniqueTags = tags.filter(unique);
+            // const query = new Questions({
+            //     question,
+            //     tags: uniqueTags,
+            //     user: req.user.id,
+            // });
+            // const savedNote = await query.save();
             const debitee = req.user.id;
             const debit = await Credits.findOne({"user": debitee});
             if (debit==null)
@@ -52,31 +53,72 @@ router.post(
                         credits: item2
                     }
                 })
+
+                //posting question 1st time
+                const unique = (value, index, self) => {
+                    return self.indexOf(value) === index
+                }
+    
+                const uniqueTags = tags.filter(unique);
+                const query = new Questions({
+                    question,
+                    tags: uniqueTags,
+                    user: req.user.id,
+                });
+                const savedNote = await query.save();
+                res.json(savedNote);
+
+                const incrementer = await User.findOne({"_id" : req.user.id});
+                const incre = incrementer.QuestionsPosted + 1
+                const increment = await User.findOneAndUpdate({"_id": req.user.id},
+                {
+                    $set : {
+                        QuestionsPosted : incre
+                    }
+                })
             }
 
             else
             {
                 const debiti = await Credits.findOne({"user": debitee});
-                const item2 = debiti.credits - 50;
-                const less = await Credits.findOneAndUpdate({"user": debitee},{
-                    $set : {
-                        credits: item2
+                if (debiti.credits>=100)
+                {
+
+                    const item2 = debiti.credits - 50;
+                    const less = await Credits.findOneAndUpdate({"user": debitee},{
+                        $set : {
+                            credits: item2
+                        }
+                    })
+
+                    const unique = (value, index, self) => {
+                        return self.indexOf(value) === index
                     }
-                })
-            }
-            const incrementer = await User.findOne({"_id" : req.user.id});
-            const incre = incrementer.QuestionsPosted + 1
-            const increment = await User.findOneAndUpdate({"_id": req.user.id},
-            {
-                $set : {
-                    QuestionsPosted : incre
+        
+                    const uniqueTags = tags.filter(unique);
+                    const query = new Questions({
+                        question,
+                        tags: uniqueTags,
+                        user: req.user.id,
+                    });
+                    const savedNote = await query.save();
+                    res.json(savedNote);
+                    const incrementer = await User.findOne({"_id" : req.user.id});
+                    const incre = incrementer.QuestionsPosted + 1
+                    const increment = await User.findOneAndUpdate({"_id": req.user.id},
+                    {
+                        $set : {
+                            QuestionsPosted : incre
+                        }
+                    })
                 }
-            })
-            // console.log(incrementer.QuestionsPosted);
-            // console.log(req.user.id);
-            // console.log(User.findOne({"user" : req.user.id}));
-            res.json(savedNote);
-            // res.send("thanks")
+                else
+                {
+                    res.send("Credits Insufficient, Buy Now!");
+                }
+            }
+            
+            
         } catch (error) {
             console.error(error.message);
             res.status(500).send("Internal Server Error");
@@ -192,6 +234,7 @@ router.delete("/deleteques/:id", fetchuser, async (req, res) => {
         }
 
         await Questions.findByIdAndDelete(req.params.id);
+        await Answers.findOneAndDelete({"question" : req.params.id });
         res.json("DELETED!");
     } catch (error) {
         console.error(error.message);

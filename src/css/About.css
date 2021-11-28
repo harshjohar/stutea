@@ -15,6 +15,7 @@
 }
 
 .about-heading {
+    font-weight: 800;
     height: 10vh;
     /* border: 2px solid red; */
     display: flex;
@@ -73,6 +74,7 @@
     display: flex;
     width: 100%;
     margin: 1rem;
+    font-weight: 600;
 }
 
 .developer-card {

@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/About.css";
-// import AboutImage from "../Assets/face.jpg";
+import AboutImage from "../Assets/face.jpg";
 import AboutImageTop from "../Assets/help.jpg";
 import Jaagrit from "../Assets/developers/jaagrit.jpg"
 import HarshJohar from "../Assets/developers/harshjohar.jpg"
@@ -59,14 +59,14 @@ export const About = () => {
                 </div>
                 <div className="developer-card">
                     <div className="photo-dev">
-                        <img src={Simran} alt="" className="image-about" />
+                        <img src={AboutImage} alt="" className="image-about" />
                     </div>
                     <div className="name-dev">Simran Gupta</div>
                     <div className="work">Lorem, ipsum dolor.</div>
                 </div>
                 <div className="developer-card">
                     <div className="photo-dev">
-                        <img src={Dhruv} alt="" className="image-about" />
+                        <img src={AboutImage} alt="" className="image-about" />
                     </div>
                     <div className="name-dev">Dhruv Bansal</div>
                     <div className="work">Lorem, ipsum dolor.</div>

@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.parent-contact {
+    margin-left: 20vw;
+    width: 80vw;
+    /* background-color: red; */
+    /* border: 2px solid black; */
+    /* height: 100vh; */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading-contact {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    height: 10%;
+    padding: 1rem;
+    /* border: 2px solid red; */
+}
+
+.main-contact {
+    display: flex;
+    width: 100%;
+    /* height: 90%; */
+    /* align-items: center; */
+    justify-content: space-between;
+    /* border: 2px solid blue; */
+    padding: 3rem 4rem;
+    padding-bottom: 0;
+
+}
+
+.address-box {
+    width: 45%;
+    /* border: 2px solid green; */
+    background-color: #E8F7FE;
+    border-radius: 2rem;
+}
+
+.address-heading {
+    width: 100%;
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.details-address {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* border: 2px solid red; */
+    justify-content: center;
+    padding: 1rem;
+}
+
+.address-detail {
+    display: flex;
+    /* border: 2px solid black; */
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.icon-contact {
+    margin: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7%;
+    /* border: 2px solid red; */
+}
+
+.desc-contact {
+    font-weight: 600;
+}
+
+.officers {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* border: 2px solid green; */
+    padding: 1rem;
+}
+
+.detail-owner {
+    display: flex;
+    padding: 0.5rem;
+    /* border: 2px solid blue; */
+}
+
+.detail-owner-heading {
+    font-weight: 700;
+    padding: 0 0.5rem;
+    /* border: 2px solid red; */
+}
+
+.detail-owner-value {
+    font-weight: 500;
+}
+
+.general-box {
+    width: 45%;
+    /* border: 2px solid blue; */
+    border-radius: 2rem;
+    background-color: #FAEAF3;
+}
+
+.general-box-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+}
+
+.contact-form {
+    /* border: 2px solid green; */
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    width: 100%;
+    /* border: 2px solid green; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.form-input-contact {
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 1rem;
+    padding: 0 1rem;
+}
+
+.first, .last {
+    width: 45%;
+}
+
+.first {
+    margin-right: 5%;
+}
+
+.last {
+    margin-left: 5%;
+}
+.message {
+    height: 5rem;
+}
+
+.submit-btn-contact {
+    width: 100%;
+    /* border: 2px solid red; */
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-submit-btn {
+    border: 2px solid black;
+    height: 2.5rem;
+    width: 40%;
+    outline: none;
+    background: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+
+.contact-submit-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.follow-us {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.heading-follow-us {
+    font-size: 1.5rem;
+}
+
+.icons-contact-pg {
+    /* border: 2px solid red; */
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1100px) {
+    .general-box-heading {
+        font-size: 1.5rem;
+    }
+
+    .form-input-contact {
+        font-size: 0.7rem;
+    }
+}   
+
+@media screen and (max-width: 900px) {
+    .main-contact {
+        flex-direction: column;
+    }
+
+    .address-box {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .general-box {
+        width: 100%;
+        margin: 1rem 0;
+    }
+    .form-input-contact {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form-input-contact {
+        font-size: 0.7rem;
+    }
+    .address-detail {
+        padding: 0;
+    }
+    .detail-owner {
+        padding: 0;
+    }
+
+    .detail-owner-value {
+        font-size: 0.9rem;
+    }
+
+    .form-group {
+        flex-direction: column;
+    }
+
+    .first, .last {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .parent-contact {
+        padding: 0;
+    }
+    .main-contact {
+        padding: 1rem 0.8rem;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .heading-contact {
+        font-size: 2rem;
+    }
+}

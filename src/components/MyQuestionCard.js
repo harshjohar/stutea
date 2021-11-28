@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import dateFormat from 'dateformat';
 import { useHistory } from 'react-router-dom';
 import { TagIcon } from "./Tags/TagIcon";
@@ -7,10 +7,13 @@ import { TagDropdown } from "./Tags/TagDropdown";
 import {ReactComponent as Tyellow} from "../Assets/Click/TagsYellow.svg"
 import {ReactComponent as Tmag} from "../Assets/Click/TagsMagenta.svg"
 import {ReactComponent as Tgreen} from "../Assets/Click/TagsGreen.svg"
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 export const MyQuestionCard = (props) => {
     const {question} = props;
     const date = question.timestamp;
     let history = useHistory();
+    const [deleted, setDeleted] = useState(false)
     const host = process.env.REACT_APP_BACKEND_URL;
     const resolvedClick = async () => {
         const response = await fetch(`${host}/api/questions/deleteques/${question._id}`, {
@@ -20,16 +23,32 @@ export const MyQuestionCard = (props) => {
                 "auth-token": localStorage.getItem('token')
             }
         })
-        const res = await response.json();
-        alert(res);
-        history.push('/')
-    }
 
+        await response.json();
+        setDeleted(true);
+    }
+    const confirmationDelete = () =>{
+        confirmAlert({
+            title: 'Wrong Credentials',
+            message: 'Please check your username/password',
+            buttons: [
+              {
+                label: 'Yes',
+                onClick: () => resolvedClick()
+              }, 
+              {
+                  label: 'No',
+                  onClick: ()=> history.push('/profile')
+              }
+            ]
+          });
+
+    }
     const viewAnswerClick = async () => {
         history.push(`/view/${question._id}`)
     }
     return (
-        <div className={`my-q-card ${question.responded?"yellow-q":""} ${question.answered?"green-q":""}`}> 
+        <div className={`my-q-card ${question.responded?"yellow-q":""} ${question.answered?"green-q":""}`} style={deleted?{display:'none'}:{}}> 
             <div className="card-content">
                 <div className="my-q">
                     {question.question}
@@ -39,18 +58,12 @@ export const MyQuestionCard = (props) => {
                 </div>
                 </div>
             <div className="my-q-tags">
-
-            {/* {question.tags.map((tag) => 
-                <div className="tag" key={tag}>
-                    {tag}
-                </div>
-            )} */}
                 <TagIcon icon = {question.answered ? <Tgreen/> : (question.responded ? <Tyellow/> : <Tmag/>)}>
                     <TagDropdown tags={question.tags} disabled={true}></TagDropdown>
                 </TagIcon>
                 
                 {question.user && <div className="answer-question">
-                    <button className={`view-ans ${question.responded?"yellow-q":"magenta-q"} ${question.answered?"green-q":"magenta-q"}`} onClick={resolvedClick}><i className="fas fa-trash"></i></button>
+                    <button className={`view-ans ${question.responded?"yellow-q":"magenta-q"} ${question.answered?"green-q":"magenta-q"}`} onClick={confirmationDelete}><i className="fas fa-trash"></i></button>
                     <button className={`view-ans ${question.responded?"yellow-q":"magenta-q"} ${question.answered?"green-q":"magenta-q"}`} onClick={viewAnswerClick}><i className="fas fa-eye"></i></button>
                 </div>}
             </div>

@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { useHistory } from 'react-router-dom'
 import "../css/Register.css"
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import image from '../StuTea-Login.svg'
 
 export const Register = () => {
@@ -14,6 +16,8 @@ export const Register = () => {
       lastname: "",
       city: ""
   })
+  const [errors, setErrors] = useState([]);
+  const [match, setMatch] = useState("");
 
   const handleSubmit = async (e)=> {
     e.preventDefault();
@@ -33,13 +37,30 @@ export const Register = () => {
     });
 
     const json = await response.json();
+    console.log(json)
+    setErrors(json.errors);
+    if(json.error) {
+        setMatch(json.error);
+    }
     if(json.success) {
         history.push(`/wait/${credentials.email}`);
     }
     else {
-        alert("Invalid Credentials");
+        incorrectCredentialsAlert();
     }
 }
+
+const incorrectCredentialsAlert = () => {
+    confirmAlert({
+      message: match?(match.length?match:""):(errors.length?errors[0].msg:""),
+      buttons: [
+        {
+          label: 'Close',
+          onClick: () => history.push('/register')
+        }
+      ]
+    });
+  };
 
 const onChange = (e)=> {
   setCredentials({...credentials, [e.target.name]: e.target.value})

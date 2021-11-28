@@ -1,15 +1,31 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import "../css/Login.css"
 import image from '../StuTea-Login.svg'
 const Login = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
     let history = useHistory();
-
-    const [credentials, setCredentials] = useState({
+    const init = {
         username: "",
-        password: "",
-    });
+        password: ""
+    }
+    const [credentials, setCredentials] = useState(init);
+
+    const incorrectCredentialsAlert = () => {
+        confirmAlert({
+          title: 'Wrong Credentials',
+          message: 'Please check your username/password',
+          buttons: [
+            {
+              label: 'Close',
+              onClick: () => history.push('/login')
+            }
+          ]
+        });
+      };
+    
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -28,7 +44,8 @@ const Login = () => {
             localStorage.setItem("token", json.authtoken);
             history.push("/");
         } else {
-            alert("Enter valid credentials");
+            // alert("Enter valid credentials");
+            incorrectCredentialsAlert();
         }
     };
 

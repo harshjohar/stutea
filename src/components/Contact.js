@@ -27,7 +27,7 @@ const Contact = () => {
                                 <i className="fas fa-envelope-open-text"></i>
                             </div>
                             <div className="desc-contact">
-                                Mail Us info@gmail.com
+                                Mail Us stutea.app@gmail.com
                             </div>
                         </div>
                         <div className="call-us address-detail">

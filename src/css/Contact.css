@@ -44,6 +44,7 @@
     /* border: 2px solid green; */
     background-color: #E8F7FE;
     border-radius: 2rem;
+    padding:0.5rem;
 }
 
 .address-heading {
@@ -115,6 +116,7 @@
     /* border: 2px solid blue; */
     border-radius: 2rem;
     background-color: #FAEAF3;
+    padding: 0.5rem;
 }
 
 .general-box-heading {
@@ -180,22 +182,25 @@
 }
 
 .contact-submit-btn {
-    border: 2px solid black;
+    border: none;
     height: 2.5rem;
     width: 40%;
     outline: none;
-    background: none;
-    font-size: 1.2rem;
+    background-color: black;
+    font-size: 1rem;
     cursor: pointer;
     border-radius: 2rem;
+    color: white;
 }
 
 .contact-submit-btn:hover {
     background-color: white;
     color: black;
+    font-weight: 600;
 }
 
 .follow-us {
+    padding-top: 1.5rem;
     width: 100%;
     display: flex;
     align-items: center;
@@ -217,7 +222,7 @@
 }
 
 @media screen and (max-width: 1100px) {
-    .general-box-heading {
+    .general-box-heading,.address-heading {
         font-size: 1.5rem;
     }
 

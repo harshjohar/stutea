@@ -78,7 +78,7 @@ export const Profile = () => {
                         <label className="profile-stats"><div className="part-1">Number of</div> <div className="part-2"> Questions posted:</div></label> {user.QuestionsPosted}
                     </div>
                     <div className="profile-an-item">
-                        <label className="profile-stats">Average feedback stars:</label> {user.Stars}
+                        <label className="profile-stats">Average feedback stars:</label> {user.AverageRating}
                     </div>
                 </div>
             </div>

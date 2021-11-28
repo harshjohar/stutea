@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react'
 import { useHistory, useParams, Link } from 'react-router-dom'
 import { Feedback } from './Feedback';
 import '../css/ViewAns.css'
-import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
-// import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
+// import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
+import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
 import {ReactComponent as CreditIcon} from "../Assets/Click/Credits.svg"
 import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
 import { NavItem } from './Notifications/NavItem';
@@ -72,7 +72,7 @@ export const ViewAnswer = () => {
         <div className="view-ans-main">
             <div className="top-icons">
                     {/* <NotifIconActive className='icon-top'/> */}
-                    <NavItem icon={<NotifIcon/>}>
+                    <NavItem icon={<NotifIconActive/>}>
                         <Dropdown type="notif"></Dropdown>
                     </NavItem>
                     <NavItem icon={<CreditIcon/>}>

@@ -4,8 +4,8 @@ import { useHistory, Link } from "react-router-dom";
 import dateFormat from "dateformat";
 import { Tag } from "./Tag";
 import  '../css/Answer.css'
-import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
-// import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
+// import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
+import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
 import {ReactComponent as CreditIcon} from "../Assets/Click/Credits.svg"
 import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
 import { NavItem } from './Notifications/NavItem';
@@ -23,18 +23,18 @@ export const Answer = () => {
         question: "",
         tags: [],
     };
-    const initU = {
-        first: "",
-        last: "",
-        username: "",
-        email: "",
-        dp: "",
-        city: "",
-    }
+    // const initU = {
+    //     first: "",
+    //     last: "",
+    //     username: "",
+    //     email: "",
+    //     dp: "",
+    //     city: "",
+    // }
     const [date, setdate] = useState('');
     const [answer, setAnswer] = useState(init);
     const [question, setQuestion] = useState(initQ);
-    const [user, setUser] = useState(initU);
+    // const [user, setUser] = useState(initU);
     const getQuestionDetails = async () => {
         const response = await fetch(`${host}/api/questions/getquestion`, {
             method: "POST",
@@ -51,17 +51,17 @@ export const Answer = () => {
         setdate(json.timestamp);
     };
 
-    const getUserDetails = async()=>{
-        const response = await fetch(`${host}/api/user/id/${question.user}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "auth-token": localStorage.getItem("token"),
-            }
-        });
-        const json=await response.json();
-        setUser(json);
-    }
+    // const getUserDetails = async()=>{
+    //     const response = await fetch(`${host}/api/user/id/${question.user}`, {
+    //         method: "GET",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //             "auth-token": localStorage.getItem("token"),
+    //         }
+    //     });
+    //     const json=await response.json();
+    //     setUser(json);
+    // }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -103,7 +103,7 @@ export const Answer = () => {
         <div className="answer-main">
             <div className="top-icons">
                     {/* <NotifIconActive className='icon-top'/> */}
-                    <NavItem icon={<NotifIcon/>}>
+                    <NavItem icon={<NotifIconActive/>}>
                         <Dropdown type="notif"></Dropdown>
                     </NavItem>
                     <NavItem icon={<CreditIcon/>}>

@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.parent-landing {
+    margin-left: 20vw;
+    width: 80vw;
+    background-color: aquamarine;
+    height: 100vh;
+}

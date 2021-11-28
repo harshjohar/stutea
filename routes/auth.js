@@ -19,8 +19,8 @@ router.post(
         body("email", "Enter a valid email").isEmail(),
 
         // Checks TODO
-        body("username", "Valid username").isLength({ min: 5, max: 20 }),
-        body("password", "Valid password").isLength({ min: 5 }),
+        body("username", "Username must be between 5-20 characters long").isLength({ min: 5, max: 20 }),
+        body("password", "Password must be 5-20 characters long").isLength({ min: 5 }),
     ],
     async (req, res) => {
         let success = false;

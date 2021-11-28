@@ -75,9 +75,7 @@ export const Settings = () => {
                 <div className={`dp-item ${dp==="https://res.cloudinary.com/stutea/image/upload/v1637785363/daniel-bernard-b56KbmGkfWg-unsplash_uofcgp.jpg" ? "dp-selected":""}`}>
                     <img src="https://res.cloudinary.com/stutea/image/upload/v1637785363/daniel-bernard-b56KbmGkfWg-unsplash_uofcgp.jpg" alt="" onClick={()=>setDp("https://res.cloudinary.com/stutea/image/upload/v1637785363/daniel-bernard-b56KbmGkfWg-unsplash_uofcgp.jpg")}/>
                 </div>
-                <div className={`dp-item ${dp==="https://res.cloudinary.com/stutea/image/upload/v1637785354/cdd20-c6QH1SXGS8M-unsplash_txu97p.jpg" ? "dp-selected":""}`}>
-                    <img src="https://res.cloudinary.com/stutea/image/upload/v1637785354/cdd20-c6QH1SXGS8M-unsplash_txu97p.jpg" alt="" onClick={()=>setDp("https://res.cloudinary.com/stutea/image/upload/v1637785354/cdd20-c6QH1SXGS8M-unsplash_txu97p.jpg")}/>
-                </div>
+                
                 <div className={`dp-item ${dp==="https://res.cloudinary.com/stutea/image/upload/v1637703190/60111_ak19ro.jpg" ? "dp-selected":""}`}>
                     <img src="https://res.cloudinary.com/stutea/image/upload/v1637703190/60111_ak19ro.jpg" alt="" onClick={()=>setDp("https://res.cloudinary.com/stutea/image/upload/v1637703190/60111_ak19ro.jpg")}/>
                 </div>

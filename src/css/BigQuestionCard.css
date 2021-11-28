@@ -115,6 +115,10 @@
     cursor: pointer;
 }
 
+.tag-dropdown{
+    display: none;
+}
+
 @media screen and (max-width:1180px) {
     .tags{
         padding: 0.5rem 0rem;
@@ -131,6 +135,15 @@
     }
 
     
+}
+
+@media screen and (max-width:769px) {
+    .tags{
+        display: none;
+    }
+    .tag-dropdown{
+        display: block;
+    }
 }
 
 @media screen and (max-width:520px) {

@@ -1,0 +1,12 @@
+.fav-main{
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 0rem 1.2rem 1.2rem;
+    font-weight: 600;
+}
+
+.fav-head{
+    padding-left: 1rem;
+    font-weight: 600;
+}

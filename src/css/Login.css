@@ -124,11 +124,14 @@
     .form-input{
         width: 95%;
     }
-
-  
+    
+    
 }
 
 @media screen and (max-width:769px) {
+    .login-pic{
+        width: 55%;
+    }
     .form-body-main{
         flex-direction: column;
     }
@@ -138,6 +141,7 @@
         padding-top: 2.5rem;
         height: 40%;
         display: flex;
+        width: 100%;
     }
     
 }

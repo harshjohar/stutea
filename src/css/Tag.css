@@ -34,3 +34,15 @@
 .tags-head{
     font-weight: 700;
 }
+
+@media screen and (max-width:426px) {
+    .all-tags{
+        grid-template-columns: repeat(2,auto);
+    }
+}
+
+@media screen and (max-width:769px) {
+    .all-tags{
+        grid-template-columns: repeat(4,auto);
+    }
+}

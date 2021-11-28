@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useHistory, Link } from "react-router-dom";
+import dateFormat from "dateformat";
 import { Tag } from "./Tag";
 import  '../css/Answer.css'
 import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
@@ -22,8 +23,18 @@ export const Answer = () => {
         question: "",
         tags: [],
     };
+    const initU = {
+        first: "",
+        last: "",
+        username: "",
+        email: "",
+        dp: "",
+        city: "",
+    }
+    const [date, setdate] = useState('');
     const [answer, setAnswer] = useState(init);
     const [question, setQuestion] = useState(initQ);
+    const [user, setUser] = useState(initU);
     const getQuestionDetails = async () => {
         const response = await fetch(`${host}/api/questions/getquestion`, {
             method: "POST",
@@ -37,7 +48,20 @@ export const Answer = () => {
         });
         const json = await response.json();
         setQuestion(json);
+        setdate(json.timestamp);
     };
+
+    const getUserDetails = async()=>{
+        const response = await fetch(`${host}/api/user/id/${question.user}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem("token"),
+            }
+        });
+        const json=await response.json();
+        setUser(json);
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -63,8 +87,12 @@ export const Answer = () => {
     };
 
     useEffect(() => {
+        const getDetails = async()=>{
+            await getQuestionDetails();
+            // await getUserDetails();
+        }
         if (localStorage.getItem("token")) {
-            getQuestionDetails();
+            getDetails();
         } else {
             history.push("/login");
         }
@@ -89,6 +117,15 @@ export const Answer = () => {
                 <div className="q">Question: </div>
                 <div className="q-ques">{question.question}</div>
             
+            </div>
+            <div className="user-deets">
+                {/* <div className="name">
+
+                {user.first+' '+user.last}
+                </div> */}
+                <div className="date-ques asked">
+                    {date?dateFormat(date, "mmmm dS, yyyy, h:MM TT"):""}
+                </div>
             </div>
             <div className="answer-desc">
             <form>

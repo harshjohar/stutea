@@ -4,6 +4,9 @@ import { useHistory, Link } from "react-router-dom";
 import {ReactComponent as AddQuesGreen} from "../Assets/Click/answer_green.svg"
 import {ReactComponent as AddQuesMagenta} from "../Assets/Click/answer_magenta.svg"
 import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
+import {ReactComponent as TagsIcon} from "../Assets/Click/Tags.svg"
+import { TagIcon } from "./Tags/TagIcon";
+import { TagDropdown } from "./Tags/TagDropdown";
 import "../css/BigQuestionCard.css"
 export const BigQuestionCard = (props) => {
     const {color, content}=props
@@ -46,6 +49,11 @@ export const BigQuestionCard = (props) => {
         <div className={`big-ques-card-${color}`}>
             <div className={`question-${color}`}>
                 {content.question}
+            </div>
+            <div className="tag-dropdown">
+                <TagIcon icon={<TagsIcon/>}>
+                    <TagDropdown tags={content.tags}></TagDropdown>
+                </TagIcon>
             </div>
             <div className="tags">
                 {content.tags.slice(0,3).map((tag)=><Link key={tag} to={`/query?tag=${tag}`} className={`tag-${color}`}>{tag}</Link>)}

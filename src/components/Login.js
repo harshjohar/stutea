@@ -40,7 +40,7 @@ const Login = () => {
 
 
             <div className="image">
-                <img src={image} alt="" />
+                <img className="login-pic" src={image} alt="" />
             </div>
         <div className="form-head">
             <h2 className="form-title">Welcome to StuTea</h2>

@@ -54,38 +54,40 @@ export const Profile = () => {
             </div>
 
             <div className="profile-head">
-                <div className="user-dp">
-                    {user.dp&&<img className="dp" src={user.dp} alt="dp" />}
-                </div>
-                <div className="profile-info">
-                    <div className="user-head">
-                        <h3 className="username">{user.username}</h3>
-                        <Link to="/settings" className="gear">
-                        <i className="fas fa-cog "></i>
-                        </Link>
+                <div className="dp-info">
+                    <div className="user-dp">
+                        {user.dp&&<img className="dp" src={user.dp} alt="dp" />}
                     </div>
-                    <div className="name">
-                        {user.first+ " "+user.last}
+                    <div className="profile-info">
+                        <div className="user-head">
+                            <h3 className="username">{user.username}</h3>
+                            <Link to="/settings" className="gear">
+                            <i className="fas fa-cog "></i>
+                            </Link>
+                        </div>
+                        <div className="name">
+                            {user.first+ " "+user.last}
+                        </div>
                     </div>
                 </div>
                 <div className="analytics">
                     <div className="profile-an-item">
-                        Number of Answers accepted: {user.AnswersAccepted}
+                        <label className="profile-stats"><div className="part-1">Number of</div><div className="part-2"> Answers accepted:</div> </label> {user.AnswersAccepted}
                     </div>
                     <div className="profile-an-item">
-                        Number of Questions posted: {user.QuestionsPosted}
+                        <label className="profile-stats"><div className="part-1">Number of</div> <div className="part-2"> Questions posted:</div></label> {user.QuestionsPosted}
                     </div>
                     <div className="profile-an-item">
-                        Average feedback stars: {user.Stars}
+                        <label className="profile-stats">Average feedback stars:</label> {user.Stars}
                     </div>
                 </div>
+            </div>
                 <div className="favourite-tags">
-                    My Favourites: {favTags.map((tag)=>{
+                <h2 className="profile-stats">My Favourites</h2> {favTags.map((tag)=>{
                         return <Tag value={tag} key={tag}/>
                     })}
                     {/* overflowX: hidden */}
                 </div>
-            </div>
             <MyQuestions/>
         </div>
     )

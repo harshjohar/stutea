@@ -26,7 +26,7 @@ export const Profile = () => {
             }
         })
         const json = await response.json();
-        setFavTags(json.tags);
+        if(json)setFavTags(json.tags);
 
     }
 

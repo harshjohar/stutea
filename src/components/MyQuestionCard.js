@@ -22,6 +22,7 @@ export const MyQuestionCard = (props) => {
         })
         const res = await response.json();
         alert(res);
+        history.push('/')
     }
 
     const viewAnswerClick = async () => {

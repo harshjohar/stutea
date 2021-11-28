@@ -23,6 +23,7 @@ export const MyQuestionCard = (props) => {
                 "auth-token": localStorage.getItem('token')
             }
         })
+
         await response.json();
         setDeleted(true);
     }
@@ -41,6 +42,7 @@ export const MyQuestionCard = (props) => {
               }
             ]
           });
+
     }
     const viewAnswerClick = async () => {
         history.push(`/view/${question._id}`)

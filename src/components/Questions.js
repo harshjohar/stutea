@@ -87,8 +87,8 @@ export const Questions = () => {
                 previousLinkClassName={"page-link-own"}
                 nextClassName={"page-item-own"}
                 nextLinkClassName={"page-link-own"}
-                breakClassName={"page-item"}
-                breakLinkClassName={"page-link"}
+                breakClassName={"page-item-2"}
+                breakLinkClassName={"page-link-own page-item-2"}
                 activeClassName={"active-own"}
             />}
 

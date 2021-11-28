@@ -68,7 +68,7 @@ const onChange = (e)=> {
   return (
     <div className="register-form">
         <div className="image">
-                <img src={image} alt="" />
+                <img className="login-pic-reg" src={image} alt="" />
             </div>
         <div className="rform-head">
       <h2 className="register-form-head">Come Join StuTea</h2>

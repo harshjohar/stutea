@@ -81,6 +81,9 @@
 }
 
 @media screen and (max-width:769px) {
+    .login-pic-reg{
+        width: 40%;
+    }
     .register-form{
         flex-direction: column;
     }
@@ -90,13 +93,17 @@
         padding-top: 2.5rem;
         height: 40%;
         display: flex;
+        width: 100%;
     }
     .rform-head{
-        padding: 1rem;
+        height: 60%;
+        padding: 0.5rem 1rem 1rem 1rem;
     }
 
     .register-form-head{
         padding-top: 1rem;
     }
-    
+    .rform-input{
+        height: 2rem;
+    }
 }

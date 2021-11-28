@@ -9,6 +9,12 @@ import ReactPaginate from "react-paginate";
 // import {ReactComponent as Next} from "../Assets/Rest/Right.svg"
 import {ReactComponent as PrevActive} from "../Assets/Click/Left.svg"
 import {ReactComponent as NextActive} from "../Assets/Click/Right.svg"
+import "../css/FavTagQues.css"
+import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
+import {ReactComponent as CreditIcon} from "../Assets/Click/Credits.svg"
+import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
+import { NavItem } from './Notifications/NavItem';
+import { Dropdown } from './Notifications/Dropdown';
 
 export const FavTagQues = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
@@ -52,6 +58,19 @@ export const FavTagQues = () => {
 
     return (
         <div className="fav-main" style={{"marginLeft": "20vw"}}>
+            <div className="top-icons">
+                    {/* <NotifIconActive className='icon-top'/> */}
+                    <NavItem icon={<NotifIconActive/>}>
+                        <Dropdown type="notif"></Dropdown>
+                    </NavItem>
+                    <NavItem icon={<CreditIcon/>}>
+                        <Dropdown type="credits"></Dropdown>
+                    </NavItem>
+                    <Link to="/profile">
+                    <ProfileIcon className="icon-top"/>
+                    </Link>
+            </div>
+            <h2 className="fav-head">Questions based on favorite tags</h2>
         <div className="questions">
             {!questions.length && <Spinner/>}
             <div className="big">

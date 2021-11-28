@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 // import {ReactComponent as Next} from "../Assets/Rest/Right.svg"
 // import {ReactComponent as PrevActive} from "../Assets/Click/Left.svg"
 // import {ReactComponent as NextActive} from "../Assets/Click/Right.svg"
+import "../css/QuestionTag.css"
 
 export const QuestionTag = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
@@ -103,7 +104,11 @@ export const QuestionTag = () => {
     return (
         <div className="questions">
             <div className="sub-heading-tags">
-                Questions with tag <span className='tag-heading'>{reqTag}</span> <i className={`${favTags.includes(reqTag)?"fas":"far"} fa-bookmark`} onClick={handleCheck}>{`${!favTags.includes(reqTag)?"Add to favourites":"Remove from favs"}`}</i>
+                Questions with tag <span className='tag-heading'>{reqTag}</span> 
+                <div className="add-to-fav">
+                <i className={`${favTags.includes(reqTag)?"fas":"far"} fa-bookmark`} onClick={handleCheck}>
+                    <div className="fav">{`${!favTags.includes(reqTag)?"Add to favorites":"Remove from favorites"}`}</div>
+                    </i></div>
             </div>
             {!questions.length && <Spinner/>}
             <div className="big">

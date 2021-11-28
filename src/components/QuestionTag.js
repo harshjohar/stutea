@@ -106,9 +106,10 @@ export const QuestionTag = () => {
             <div className="sub-heading-tags">
                 Questions with tag <span className='tag-heading'>{reqTag}</span> 
                 <div className="add-to-fav">
-                <i className={`${favTags.includes(reqTag)?"fas":"far"} fa-bookmark`} onClick={handleCheck}>
+                    <div className="fav-icon">
+                    <i className={`${favTags.includes(reqTag)?"fas":"far"} fa-bookmark favpg`} onClick={handleCheck}></i></div>
                     <div className="fav">{`${!favTags.includes(reqTag)?"Add to favorites":"Remove from favorites"}`}</div>
-                    </i></div>
+                    </div>
             </div>
             {!questions.length && <Spinner/>}
             <div className="big">

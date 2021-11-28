@@ -1,12 +1,17 @@
 .add-to-fav{
     font-family: 'Montserrat', sans-serif;
     display: flex;
+    align-items: center;
 }
 
-.fa-bookmark{
-    font-family: 'Montserrat', sans-serif;
+.favpg{
+    font-size:20px;
+    
 }
 
 .fav{
     font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    padding-left: 0.5rem;
 }

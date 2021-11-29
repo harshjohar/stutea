@@ -13,7 +13,7 @@ exports.confirmEmail = function (req, res, next) {
             // maybe token got expired
             if (!token) {
                 res.status(400).send({
-                    msg: "Your verification link may have expired, please click on resend for verify your Email.",
+                    msg: "Your verification link may have expired. Please click the Resend Link button.",
                 });
             }
             // if token is found, then check valid
@@ -27,13 +27,13 @@ exports.confirmEmail = function (req, res, next) {
                         // not valid user
                         if (!user) {
                             return res.status(401).send({
-                                msg: "We were unable to find a user for this verification. Please SignUp!",
+                                msg: "We were unable to find a user with that email address. Kindly register with valid credentials.",
                             });
                         }
                         // user already verified
                         else if (user.verified) {
                             return res.status(200).send({
-                                msg: "User has already been verified. Please Login to continue",
+                                msg: "User has already been verified. Please login to continue.",
                             });
                         }
                         // verify user
@@ -47,7 +47,7 @@ exports.confirmEmail = function (req, res, next) {
                                 // account verification successful
                                 else {
                                     return res.status(200).send({
-                                        msg: "Your account is successfully verified, you may now close this tab.",
+                                        msg: "Your email address has been successfully verified. You may now close this tab and head to the Login page.",
                                     });
                                 }
                             });
@@ -67,11 +67,11 @@ exports.resendEmail = function (req, res, next) {
         function (err, user) {
             if (!user) {
                 return res.status(400).send({
-                    msg: "We are unable to find a user with that email. Make sure the email is correct",
+                    msg: "We were unable to find a user with that email address. Make sure the email address you entered is correct.",
                 });
             } else if (user.verified) {
                 return res.status(200).send({
-                    msg: "This account has been already verified. Please log in.",
+                    msg: "This account has already been verified. Please log in to continue.",
                 });
             } else {
                 var token = new Token({
@@ -113,7 +113,7 @@ exports.resendEmail = function (req, res, next) {
                     transporter.sendMail(mailOptions, function (err) {
                         if (err) {
                             return res.status(500).json({
-                                error: "Technical Issue!, Please click on resend for verify your Email.",
+                                error: "Technical Issue! Please click the Resend Link button.",
                             });
                         }
                         return res
@@ -123,7 +123,7 @@ exports.resendEmail = function (req, res, next) {
                                 message:
                                     "A verification email has been sent to " +
                                     user.email +
-                                    ". It will be expire after one day. If you not get verification Email click on resend token.",
+                                    ". It will expire after 24 hours. If you did not receive a verification email, please click the Resend Link button",
                             });
                     });
                 });

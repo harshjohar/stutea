@@ -29,8 +29,8 @@ export const MyQuestionCard = (props) => {
     }
     const confirmationDelete = () =>{
         confirmAlert({
-            title: 'Wrong Credentials',
-            message: 'Please check your username/password',
+            title: 'Confirm Delete',
+            message: 'Are you sure you want to delete this question',
             buttons: [
               {
                 label: 'Yes',

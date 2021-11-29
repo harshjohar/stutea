@@ -11,6 +11,9 @@ const LandingPage = () => {
 	const redirectRegister = ()=> {
 		history.push('/register')
 	}
+    const redirectLogin = ()=>{
+        history.push('/login')
+    }
     return (
         <div className="parent-landing">
             <div className="banner">
@@ -24,6 +27,7 @@ const LandingPage = () => {
                     </div>
                     <div className="register-btn-banner">
                         <button className="register-button-lp" onClick={redirectRegister}>Register</button>
+                        <button className="register-button-lp" onClick={redirectLogin}>Login</button>
                     </div>
                 </div>
                 <div className="banner-img">

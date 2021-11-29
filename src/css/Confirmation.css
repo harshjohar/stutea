@@ -1,0 +1,38 @@
+.confirm-main{
+    margin-left: 20vw;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.confirm-head{
+    font-weight: 600;
+}
+
+.resend{
+    display: flex;
+    /* flex-direction: column; */
+    padding: 1rem 0rem;
+    align-items: center;
+}
+
+.resendLink{
+    border: none;
+    height: 2rem;
+    width: 7rem;
+    outline: none;
+    background-color: black;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 2rem;
+    color: white;
+    margin: 0rem 1rem;
+}
+
+.resendLink:hover {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    font-weight: 600;
+}

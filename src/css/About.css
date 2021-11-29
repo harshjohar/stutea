@@ -110,6 +110,13 @@
     font-size: 1.2rem;
 }
 
+.sm-icons{
+    margin: 0rem 0.5rem;
+}
+
+.fa-github,.fa-linkedin-in{
+    font-size: 20px;
+}
 
 @media screen and (max-width: 1050px) {
     .text-about {

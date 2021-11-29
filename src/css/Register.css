@@ -107,3 +107,15 @@
         height: 2rem;
     }
 }
+
+@media screen and (max-width:426px) {
+    .image{
+        display: none;
+    }
+    .rform-div{
+        margin: 0.2rem;
+    }
+    .rform-head{
+        height: 100%;
+    }
+}

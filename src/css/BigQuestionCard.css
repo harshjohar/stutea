@@ -126,6 +126,7 @@
     .big-ques-card-magenta,.big-ques-card-green{
         padding: 1rem;
         width: 80%;
+        height: auto;
     }
 
     

@@ -19,7 +19,7 @@
 
 .all-tags{
     display: grid;
-    grid-template-columns: repeat(6,auto);
+    grid-template-columns: repeat(5,auto);
 }
 
 .badge{
@@ -35,14 +35,14 @@
     font-weight: 700;
 }
 
-@media screen and (max-width:426px) {
-    .all-tags{
-        grid-template-columns: repeat(2,auto);
-    }
-}
 
 @media screen and (max-width:769px) {
     .all-tags{
-        grid-template-columns: repeat(4,auto);
+        grid-template-columns: repeat(3,auto);
+    }
+}
+@media screen and (max-width:426px) {
+    .all-tags{
+        grid-template-columns: repeat(2,auto);
     }
 }

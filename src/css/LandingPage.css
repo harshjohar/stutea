@@ -55,6 +55,7 @@
     background-color: var(--yellow-color);
     border: none;
     outline: none;
+    margin: 0rem 0.5rem;
 
 }
 
@@ -201,15 +202,85 @@
     }
     .about-content-lp {
         width: 100%;
+        padding-top: 1rem;
     }
 
-    .about-img {
-
+    .about-text-lp{
+        text-align: center;
+        width: 70%;
     }
 }
 
 @media screen and (max-width: 650px) {
+    .banner{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .heading-banner{
+        width: 100%;
+    }
+
+    .big-heading{
+        width: 100%;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .smol-text{
+        text-align: center;
+        padding: 1.3rem 0.5rem;
+    }
+
+    .register-btn-banner{
+        justify-content: center;
+    }
+
     .cards-lp {
-        grid-template-columns: repeat(1, auto);
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .card-lp{
+        width: 90%;
+    }
+
+    .about-lp{
+        padding: 1rem;
+    }
+    .about-text-lp{
+        width: 90%;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:426px) {
+    .card-lp{
+        width: 100%;
+    }
+    .cards-lp{
+        width: 100%;
+    }
+    /* .big-heading{
+        font-size: 1.8rem;
+    } */
+    .banner{
+        margin: 2rem 1rem;
+    }
+    .features{
+        margin: 1rem;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .register-btn-banner{
+        display: flex;
+        flex-direction: column-reverse;
+        
+    }
+    .register-button-lp{
+        margin: 0.5rem;
     }
 }

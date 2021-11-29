@@ -86,7 +86,7 @@ export const DashBoardNavbar = () => {
                     <div className="nav-icon">
                     <img src={logout} alt="" className="icon"/></div>
                     <div className="nav-text-active">Logout</div></button>
-            </div> : <div className="logout">
+            </div> : <div className={`logout${location.pathname==='/'?"-hide":""}`}>
                 <Link className="ll-item"  to="/login" style={location.pathname==='/login'?{display: "none"}:{display: "inline"}}>
                     <button className="logout-btn">
                     <div className="nav-icon">

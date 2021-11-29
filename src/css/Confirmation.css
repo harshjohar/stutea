@@ -4,28 +4,37 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .confirm-head{
     font-weight: 600;
 }
 
+.mail-img{
+    margin: 1rem;
+    height: 4rem;
+}
+
 .resend{
     display: flex;
     /* flex-direction: column; */
     padding: 1rem 0rem;
-    align-items: center;
+    /* align-items: center; */
+    font-weight: 600;
 }
 
 .resendLink{
     border: none;
     height: 2rem;
-    width: 7rem;
+    width: 8rem;
     outline: none;
     background-color: black;
     font-size: 1rem;
     cursor: pointer;
-    border-radius: 2rem;
+    border-radius: 10px;
     color: white;
     margin: 0rem 1rem;
 }

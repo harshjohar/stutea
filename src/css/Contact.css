@@ -285,6 +285,12 @@
     }
 }
 
+@media screen and (max-width:426px) {
+    .icon-contact{
+        margin: 0rem 0.7rem;
+    }
+}
+
 @media screen and (max-width: 350px){
     .heading-contact {
         font-size: 2rem;

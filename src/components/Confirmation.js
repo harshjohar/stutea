@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom';
 import '../css/Confirmation.css'
+import mail from '../Assets/Click/Verify.svg'
+
 export const Confirmation = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
     const {email, token} = useParams();
@@ -29,11 +31,14 @@ export const Confirmation = () => {
     }, [])
     return (
         <div className="confirm-main">
+            <div className="confirm-img">
+                <img src={mail} className="email-img" alt="" />
+            </div>
             <h2 className="confirm-head">Confirmation</h2>
             <div className="resend">
                 {success}
-            </div>
-            <div className="resend">
+            {/* </div>
+            <div className="resend"> */}
                 {text}
             </div>
         </div>

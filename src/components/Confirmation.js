@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom';
-
+import '../css/Confirmation.css'
 export const Confirmation = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
     const {email, token} = useParams();
@@ -28,10 +28,14 @@ export const Confirmation = () => {
         // eslint-disable-next-line
     }, [])
     return (
-        <div>
-            confirmation
-            {success}
-            {text}
+        <div className="confirm-main">
+            <h2 className="confirm-head">Confirmation</h2>
+            <div className="resend">
+                {success}
+            </div>
+            <div className="resend">
+                {text}
+            </div>
         </div>
     )
 }

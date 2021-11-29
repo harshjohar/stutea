@@ -40,14 +40,14 @@ export const About = () => {
                         <img src={HarshJohar} alt="" className="image-about" />
                     </div>
                     <div className="name-dev">Harshpreet Singh Johar</div>
-                    <div className="work">Lorem, ipsum dolor.</div>
+                    {/* <div className="work">Lorem, ipsum dolor.</div> */}
                 </div>
                 <div className="developer-card">
                     <div className="photo-dev">
                         <img src={Kanika} alt="" className="image-about" />
                     </div>
                     <div className="name-dev">Kanika Kaur</div>
-                    <div className="work">Lorem, ipsum dolor.</div>
+                    {/* <div className="work">Lorem, ipsum dolor.</div> */}
                     <div className="contact-dev"></div>
                 </div>
                 <div className="developer-card">
@@ -55,21 +55,21 @@ export const About = () => {
                         <img src={Jaagrit} alt="" className="image-about" />
                     </div>
                     <div className="name-dev">Jaagrit Arora</div>
-                    <div className="work">Lorem, ipsum dolor.</div>
+                    {/* <div className="work">Lorem, ipsum dolor.</div> */}
                 </div>
                 <div className="developer-card">
                     <div className="photo-dev">
                         <img src={AboutImage} alt="" className="image-about" />
                     </div>
                     <div className="name-dev">Simran Gupta</div>
-                    <div className="work">Lorem, ipsum dolor.</div>
+                    {/* <div className="work">Lorem, ipsum dolor.</div> */}
                 </div>
                 <div className="developer-card">
                     <div className="photo-dev">
                         <img src={AboutImage} alt="" className="image-about" />
                     </div>
                     <div className="name-dev">Dhruv Bansal</div>
-                    <div className="work">Lorem, ipsum dolor.</div>
+                    {/* <div className="work">Lorem, ipsum dolor.</div> */}
                 </div>
             </div>
         </div>

@@ -1,12 +1,12 @@
 import React from "react";
 import "../css/About.css";
-import AboutImage from "../Assets/face.jpg";
+// import AboutImage from "../Assets/face.jpg";
 import AboutImageTop from "../Assets/help.jpg";
 import Jaagrit from "../Assets/developers/jaagrit.jpg"
 import HarshJohar from "../Assets/developers/harshjohar.jpg"
 import Kanika from "../Assets/developers/kanika.jpg"
-import Simran from "../Assets/developers/harshjohar.jpg"
-import Dhruv from "../Assets/developers/harshjohar.jpg"
+import Simran from "../Assets/developers/simran.jpeg"
+import Dhruv from "../Assets/developers/dhruv.jpeg"
 export const About = () => {
     return (
         <div className="parent-about">
@@ -40,14 +40,14 @@ export const About = () => {
                         <img src={HarshJohar} alt="" className="image-about" />
                     </div>
                     <div className="name-dev">Harshpreet Singh Johar</div>
-                    <div className="work">Lorem, ipsum dolor.</div>
+                    <div className="work"><i class="fab fa-github sm-icons"></i><i class="fab fa-linkedin-in sm-icons"></i></div>
                 </div>
                 <div className="developer-card">
                     <div className="photo-dev">
                         <img src={Kanika} alt="" className="image-about" />
                     </div>
                     <div className="name-dev">Kanika Kaur</div>
-                    <div className="work">Lorem, ipsum dolor.</div>
+                    <div className="work"><i class="fab fa-github sm-icons"></i><i class="fab fa-linkedin-in sm-icons"></i></div>
                     <div className="contact-dev"></div>
                 </div>
                 <div className="developer-card">
@@ -55,21 +55,21 @@ export const About = () => {
                         <img src={Jaagrit} alt="" className="image-about" />
                     </div>
                     <div className="name-dev">Jaagrit Arora</div>
-                    <div className="work">Lorem, ipsum dolor.</div>
+                    <div className="work"><i class="fab fa-github sm-icons"></i><i class="fab fa-linkedin-in sm-icons"></i></div>
                 </div>
                 <div className="developer-card">
                     <div className="photo-dev">
-                        <img src={AboutImage} alt="" className="image-about" />
+                        <img src={Simran} alt="" className="image-about" />
                     </div>
                     <div className="name-dev">Simran Gupta</div>
-                    <div className="work">Lorem, ipsum dolor.</div>
+                    <div className="work"><i class="fab fa-github sm-icons"></i><i class="fab fa-linkedin-in sm-icons"></i></div>
                 </div>
                 <div className="developer-card">
                     <div className="photo-dev">
-                        <img src={AboutImage} alt="" className="image-about" />
+                        <img src={Dhruv} alt="" className="image-about" />
                     </div>
                     <div className="name-dev">Dhruv Bansal</div>
-                    <div className="work">Lorem, ipsum dolor.</div>
+                    <div className="work"><i class="fab fa-github sm-icons"></i><i class="fab fa-linkedin-in sm-icons"></i></div>
                 </div>
             </div>
         </div>

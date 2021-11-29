@@ -127,6 +127,24 @@
     
     
 }
+@media screen and (max-width:426px){
+    .image{
+        height: 30%;
+        display: flex;
+        justify-content: flex-end;
+        display: none;
+    }
+    .form-head{
+        height: 60%;
+        padding: 1rem;
+        height: 70%;
+    }
+    .lform-input{
+    
+        justify-content: flex-start;
+    }
+
+}
 
 @media screen and (max-width:769px) {
     .login-pic{
@@ -144,11 +162,4 @@
         width: 100%;
     }
     
-}
-
-@media screen and (max-width:426px){
-    .form-head{
-        height: 60%;
-        padding: 1rem;
-    }
 }

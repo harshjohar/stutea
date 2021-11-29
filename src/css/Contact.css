@@ -197,6 +197,7 @@
     background-color: white;
     color: black;
     font-weight: 600;
+    border: 2px solid black;
 }
 
 .follow-us {
@@ -281,6 +282,12 @@
     }
     .main-contact {
         padding: 1rem 0.8rem;
+    }
+}
+
+@media screen and (max-width:426px) {
+    .icon-contact{
+        margin: 0rem 0.7rem;
     }
 }
 

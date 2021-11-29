@@ -17,6 +17,14 @@ export const Questions = () => {
     
     let history = useHistory();
     // Get the questions
+    const emptyQues = {
+        user: "",
+        question: "No Questions",
+        timestamp: "",
+        answered: false,
+        tags: [],
+        responded: false
+    }
     const getQuestions = async (pg) => {
         // api call
         const response = await fetch(`${host}/api/questions/fetch`, {
@@ -33,6 +41,9 @@ export const Questions = () => {
         setQuestions(json.questions);
         const pgs = json.count;
         setPageCount(Math.ceil(pgs/5));
+        if(pgs===0) {
+            setQuestions([emptyQues])
+        }
     };
 
 

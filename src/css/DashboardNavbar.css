@@ -114,6 +114,9 @@
     height: 20%;
     width: 100%;
 }
+.logout-hide{
+    display: none;
+}
 .logout-btn{
     font-family: 'Montserrat', sans-serif;
     border: none;

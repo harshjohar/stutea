@@ -45,3 +45,10 @@
     color: black;
     font-weight: 600;
 }
+
+@media screen and (max-width:610px) {
+    .confirm-main{
+        align-items: center;
+        justify-content: center;
+    }
+}

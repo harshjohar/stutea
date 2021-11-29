@@ -36,7 +36,9 @@
 .review{
     display: flex;
 }
-
+.rating{
+    display: flex;
+}
 .star-layout{
     padding-top: 1rem;
     display: flex;

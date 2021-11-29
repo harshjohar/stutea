@@ -10,6 +10,7 @@ import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
 import { NavItem } from './Notifications/NavItem';
 import { Dropdown } from './Notifications/Dropdown';
 import { Tag } from './Tag';
+import { MyAnswers } from './MyAnswers';
 // import {ReactComponent as Settings} from '../Assets/Rest/Settings.svg'
 export const Profile = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
@@ -89,6 +90,7 @@ export const Profile = () => {
                     {/* overflowX: hidden */}
                 </div>
             <MyQuestions/>
+            <MyAnswers/>
         </div>
     )
 }

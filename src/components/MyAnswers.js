@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { MyAnsCard } from "./MyAnsCard";
+import ReactPaginate from "react-paginate";
+import { Spinner } from "./Spinner";
+import {ReactComponent as PrevActive} from "../Assets/Click/Left.svg"
+import {ReactComponent as NextActive} from "../Assets/Click/Right.svg"
 
 export const MyAnswers = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
     let history = useHistory();
     const [answers, setAnswers] = useState([]);
-    const [pgCountAns, setPgCountAns] = useState(0);
     const [pageCount, setPageCount] = useState(0);
-    const [questions, setQuestions] = useState([]);
     const emptyQues = {
         user: "",
         question: "No Questions",
@@ -32,7 +34,7 @@ export const MyAnswers = () => {
         console.log(json)
         setAnswers(json.answers);
         const pgs = json.count;
-        setPgCountAns(Math.ceil(pgs / 6));
+        setPageCount(Math.ceil(pgs / 6));
         
     }
     useEffect(() => {
@@ -46,6 +48,10 @@ export const MyAnswers = () => {
             setAnswers([])
         }
     }, [])
+    const handlePageClick = async (data) => {
+        let currPage = data.selected + 1;
+        await getMyAnswers(currPage);
+    };
     return (
         <div className="my-questions">
             <h2 className="my-q-head">My Answers</h2>
@@ -54,6 +60,25 @@ export const MyAnswers = () => {
                 return <MyAnsCard key={answer._id} answer={answer} />;
             })}
             </div>
+            {answers && <ReactPaginate
+                previousLabel={<PrevActive className='prev-next-btn'/>}
+                nextLabel={<NextActive className='prev-next-btn'/>}
+                onPageChange={handlePageClick}
+                breakLabel={"...."}
+                pageCount={pageCount}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={2}
+                containerClassName={"pagination justify-content-center align-items-center"}
+                pageClassName={"page-item-no justify-content-center align-items-center"}
+                pageLinkClassName={"page-link-no"}
+                previousClassName={"page-item-own"}
+                previousLinkClassName={"page-link-own"}
+                nextClassName={"page-item-own"}
+                nextLinkClassName={"page-link-own"}
+                breakClassName={"page-item"}
+                breakLinkClassName={"page-link"}
+                activeClassName={"active-own"}
+            />}
         </div>
     )
 }

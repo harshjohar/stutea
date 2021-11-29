@@ -58,4 +58,20 @@ router.post('/fetch', fetchuser, async(req, res)=> {
         res.status(500).send("Internal Server Error");
     }
 })
+
+// ROUTE 3 : Fetch Answers of a particular user. POST '/api/answers/user'. Login Required
+router.post('/user', fetchuser, async(req, res)=> {
+    try {
+        const userid = req.user.id;
+        const page = req.body.page;
+        const answers = await Answers.find({user:userid}).sort({$natural:-1}).limit(6).skip((page-1)*6);
+        const count = answers.length;
+        res.json({answers,count});
+
+        
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+})
 module.exports = router;

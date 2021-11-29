@@ -235,6 +235,14 @@ router.delete("/deleteques/:id", fetchuser, async (req, res) => {
 
         await Questions.findByIdAndDelete(req.params.id);
         await Answers.findOneAndDelete({"question" : req.params.id });
+        const incrementer = await User.findOne({"_id" : req.user.id});
+                const incre = incrementer.QuestionsPosted - 1
+                const increment = await User.findOneAndUpdate({"_id": req.user.id},
+                {
+                    $set : {
+                        QuestionsPosted : incre
+                    }
+                })
         res.json("DELETED!");
     } catch (error) {
         console.error(error.message);

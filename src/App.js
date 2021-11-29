@@ -24,6 +24,7 @@ import { DashBoardNavbar } from "./components/DashBoardNavbar";
 import { Settings } from "./components/Settings";
 import { BuyCredits } from "./components/BuyCredits";
 import { FavTagQues } from "./components/FavTagQues";
+import { ViewMyAns } from "./components/ViewMyAns";
 
 function App() {
   return (
@@ -62,6 +63,9 @@ function App() {
           </Route>
           <Route exact path="/view/:quesid">
             <ViewAnswer/>
+          </Route>
+          <Route exact path="/viewmyans/:quesid">
+            <ViewMyAns/>
           </Route>
           <Route exact path="/profile">
             <UserState>

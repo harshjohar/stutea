@@ -10,7 +10,7 @@ import { NavItem } from './Notifications/NavItem';
 import { Dropdown } from './Notifications/Dropdown';
 import { Tag } from "./Tag";
 
-export const ViewAnswer = () => {
+export const ViewMyAns = () => {
     const {quesid} = useParams();
     let history = useHistory();
     const host = process.env.REACT_APP_BACKEND_URL;
@@ -68,9 +68,11 @@ export const ViewAnswer = () => {
         }
         // eslint-disable-next-line
     }, [])
+
+
     return (
         <div className="view-ans-main">
-            <div className="top-icons">
+        <div className="top-icons">
                     {/* <NotifIconActive className='icon-top'/> */}
                     <NavItem icon={<NotifIconActive/>}>
                         <Dropdown type="notif"></Dropdown>
@@ -107,12 +109,12 @@ export const ViewAnswer = () => {
                 </div>
 
 
-                {answer.answer && !(answer.rating) && <Feedback question={question} answer={answer}/> }
+                {/* {answer.answer && !(answer.rating) && <Feedback question={question} answer={answer}/> } */}
 
                 {/* {answer.rating!==0 && <div className="feedback-rating"><label className="upload-ques-label"> Rating :</label>{(answer.rating>0)?<div className="rating-given">{" "+answer.rating+"★"}</div>: " Unrated"}</div>} */}
                 <div className="feedback-rating">
                     
-                    {(answer.rating>0)?<div><label className="upload-ques-label"> Rating :</label><div className="rating-given">{" "+answer.rating+"★"}</div></div>: ""}
+                    {(answer.rating>0)?<div className="rating"><label className="upload-ques-label"> Rating :</label><div className="rating-given">{" "+answer.rating+"★"}</div></div>: ""}
                 </div>
             </div>
         </div>

@@ -29,13 +29,8 @@ export const MyQuestionCard = (props) => {
     }
     const confirmationDelete = () =>{
         confirmAlert({
-<<<<<<< HEAD
-            title: 'Confirm Delete',
-            message: 'Are you sure you want to delete this question',
-=======
-            title: 'Confirmation',
-            message: 'Are you sure you want to delete this?',
->>>>>>> 84ca93b0a714157b430c92468c15542092de4977
+            title : 'Confirm Deletion',
+            message : 'Are you sure you want to delete this question?',
             buttons: [
               {
                 label: 'Yes',

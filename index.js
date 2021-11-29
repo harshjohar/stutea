@@ -30,6 +30,9 @@ app.use('/api/feedback', require('./routes/feedback'), (req, res)=> {
 app.use('/api/credits', require('./routes/credits'), (req, res)=> {
     res.send("credits endpoint ready")
 });
+app.use('/api/shop', require('./routes/shop'), (req, res)=> {
+    res.send("shop endpoint ready")
+});
 app.use('/api/notifications', require('./routes/notifications'), (req, res)=> {
     res.send("notifications endpoint ready")
 })

@@ -112,6 +112,12 @@
 
 .sm-icons{
     margin: 0rem 0.5rem;
+    color: black;
+}
+
+.sm-icons:hover{
+    color: black;
+
 }
 
 .fa-github,.fa-linkedin-in{

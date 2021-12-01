@@ -7,6 +7,7 @@ import HarshJohar from "../Assets/developers/harshjohar.jpg"
 import Kanika from "../Assets/developers/kanika.jpg"
 import Simran from "../Assets/developers/simran.jpeg"
 import Dhruv from "../Assets/developers/dhruv.jpeg"
+import { Link } from "react-router-dom";
 export const About = () => {
     return (
         <div className="parent-about">
@@ -40,14 +41,29 @@ export const About = () => {
                         <img src={HarshJohar} alt="" className="image-about" />
                     </div>
                     <div className="name-dev">Harshpreet Singh Johar</div>
-                    <div className="work"><i class="fab fa-github sm-icons"></i><i class="fab fa-linkedin-in sm-icons"></i></div>
+                    <div className="work">
+                        <Link to="https://github.com/harshjohar">
+                        <i class="fab fa-github sm-icons">
+                        </i>
+                        </Link>
+                        <Link to="https://www.linkedin.com/in/harshpreet-singh-johar-4a362a202/">
+                        <i class="fab fa-linkedin-in sm-icons"></i>
+                        </Link>
+                    </div>
                 </div>
                 <div className="developer-card">
                     <div className="photo-dev">
                         <img src={Kanika} alt="" className="image-about" />
                     </div>
                     <div className="name-dev">Kanika Kaur</div>
-                    <div className="work"><i class="fab fa-github sm-icons"></i><i class="fab fa-linkedin-in sm-icons"></i></div>
+                    <div className="work">
+                        <Link to="https://github.com/kanikakaur27">
+                        <i class="fab fa-github sm-icons"></i>
+                        </Link>
+                        <Link to="https://www.linkedin.com/in/kanika-kaur-412914202/">
+                        <i class="fab fa-linkedin-in sm-icons"></i>
+                        </Link>
+                    </div>
                     <div className="contact-dev"></div>
                 </div>
                 <div className="developer-card">
@@ -55,21 +71,42 @@ export const About = () => {
                         <img src={Jaagrit} alt="" className="image-about" />
                     </div>
                     <div className="name-dev">Jaagrit Arora</div>
-                    <div className="work"><i class="fab fa-github sm-icons"></i><i class="fab fa-linkedin-in sm-icons"></i></div>
+                    <div className="work">
+                        <Link to="https://github.com/jaagrit10">
+                        <i class="fab fa-github sm-icons"></i>
+                        </Link>
+                        <Link to="https://www.linkedin.com/in/jaagrit-arora-71a11a201/">
+                        <i class="fab fa-linkedin-in sm-icons"></i>
+                        </Link>
+                    </div>
                 </div>
                 <div className="developer-card">
                     <div className="photo-dev">
                         <img src={Simran} alt="" className="image-about" />
                     </div>
                     <div className="name-dev">Simran Gupta</div>
-                    <div className="work"><i class="fab fa-github sm-icons"></i><i class="fab fa-linkedin-in sm-icons"></i></div>
+                    <div className="work">
+                        <Link to="https://github.com/Simrang19">
+                        <i class="fab fa-github sm-icons"></i>
+                        </Link>
+                        <Link to="https://www.linkedin.com/in/simran-gupta-9a5b06201/">
+                        <i class="fab fa-linkedin-in sm-icons"></i>
+                        </Link>
+                        </div>
                 </div>
                 <div className="developer-card">
                     <div className="photo-dev">
                         <img src={Dhruv} alt="" className="image-about" />
                     </div>
                     <div className="name-dev">Dhruv Bansal</div>
-                    <div className="work"><i class="fab fa-github sm-icons"></i><i class="fab fa-linkedin-in sm-icons"></i></div>
+                    <div className="work">
+                        <Link to="https://github.com/Dhruv-bansal15">
+                        <i class="fab fa-github sm-icons"></i>
+                        </Link>
+                        <Link to="https://www.linkedin.com/in/dhruv-bansal-ba2241201/">
+                        <i class="fab fa-linkedin-in sm-icons"></i>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>

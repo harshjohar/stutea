@@ -14,7 +14,7 @@ export const ShopHome = () => {
             <div className="card-body">
               <h5 className="card-title">StuTea Hoodie</h5>
               <p className="card-text">
-                Credits: 500
+                Credits: 3000
               </p>
               <a href="/" className="btn btn-primary">
                 Buy
@@ -26,7 +26,7 @@ export const ShopHome = () => {
             <div className="card-body">
               <h5 className="card-title">StuTea Mug</h5>
               <p className="card-text">
-                Credits: 300
+                Credits: 3500
               </p>
               <a href="/" className="btn btn-primary">
                 Buy
@@ -38,7 +38,7 @@ export const ShopHome = () => {
             <div className="card-body">
               <h5 className="card-title">StuTea Backpack</h5>
               <p className="card-text">
-                Credits: 1000
+                Credits: 5000
               </p>
               <a href="/" className="btn btn-primary">
                 Buy

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { MyAnsCard } from "./MyAnsCard";
 import ReactPaginate from "react-paginate";
-import { Spinner } from "./Spinner";
 import {ReactComponent as PrevActive} from "../Assets/Click/Left.svg"
 import {ReactComponent as NextActive} from "../Assets/Click/Right.svg"
 
@@ -11,14 +10,6 @@ export const MyAnswers = () => {
     let history = useHistory();
     const [answers, setAnswers] = useState([]);
     const [pageCount, setPageCount] = useState(0);
-    const emptyQues = {
-        user: "",
-        question: "No Questions",
-        timestamp: "",
-        answered: false,
-        tags: [],
-        responded: false
-    }
     const getMyAnswers = async(pg) =>{
         const response = await fetch(`${host}/api/answers/user`,{
             method: "POST" ,
@@ -47,6 +38,7 @@ export const MyAnswers = () => {
         return () => {
             setAnswers([])
         }
+        // eslint-disable-next-line
     }, [])
     const handlePageClick = async (data) => {
         let currPage = data.selected + 1;

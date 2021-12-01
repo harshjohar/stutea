@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import { useHistory, useParams, Link } from 'react-router-dom'
-import { Feedback } from './Feedback';
 import '../css/ViewAns.css'
 // import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
 import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"

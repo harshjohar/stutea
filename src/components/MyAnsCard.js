@@ -37,6 +37,7 @@ export const MyAnsCard = (props) => {
         return () => {
             setQuestion({})
         }
+        // eslint-disable-next-line
     }, [])
     const viewAnswerClick = async () => {
         history.push(`/viewmyans/${question._id}`)

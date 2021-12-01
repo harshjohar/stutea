@@ -7,7 +7,7 @@ import HarshJohar from "../Assets/developers/harshjohar.jpg"
 import Kanika from "../Assets/developers/kanika.jpg"
 import Simran from "../Assets/developers/simran.jpeg"
 import Dhruv from "../Assets/developers/dhruv.jpeg"
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 export const About = () => {
     return (
         <div className="parent-about">
@@ -42,13 +42,13 @@ export const About = () => {
                     </div>
                     <div className="name-dev">Harshpreet Singh Johar</div>
                     <div className="work">
-                        <Link to="https://github.com/harshjohar">
+                        <a href="https://github.com/harshjohar" target="_blank" rel="noreferrer">
                         <i class="fab fa-github sm-icons">
                         </i>
-                        </Link>
-                        <Link to="https://www.linkedin.com/in/harshpreet-singh-johar-4a362a202/">
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/in/harshpreet-singh-johar-4a362a202/" rel="noreferrer">
                         <i class="fab fa-linkedin-in sm-icons"></i>
-                        </Link>
+                        </a>
                     </div>
                 </div>
                 <div className="developer-card">
@@ -57,12 +57,12 @@ export const About = () => {
                     </div>
                     <div className="name-dev">Kanika Kaur</div>
                     <div className="work">
-                        <Link to="https://github.com/kanikakaur27">
+                        <a target="_blank"href="https://github.com/kanikakaur27" rel="noreferrer">
                         <i class="fab fa-github sm-icons"></i>
-                        </Link>
-                        <Link to="https://www.linkedin.com/in/kanika-kaur-412914202/">
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/in/kanika-kaur-412914202/" rel="noreferrer">
                         <i class="fab fa-linkedin-in sm-icons"></i>
-                        </Link>
+                        </a>
                     </div>
                     <div className="contact-dev"></div>
                 </div>
@@ -72,12 +72,12 @@ export const About = () => {
                     </div>
                     <div className="name-dev">Jaagrit Arora</div>
                     <div className="work">
-                        <Link to="https://github.com/jaagrit10">
+                        <a target="_blank" href="https://github.com/jaagrit10" rel="noreferrer">
                         <i class="fab fa-github sm-icons"></i>
-                        </Link>
-                        <Link to="https://www.linkedin.com/in/jaagrit-arora-71a11a201/">
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/in/jaagrit-arora-71a11a201/" rel="noreferrer">
                         <i class="fab fa-linkedin-in sm-icons"></i>
-                        </Link>
+                        </a>
                     </div>
                 </div>
                 <div className="developer-card">
@@ -86,12 +86,12 @@ export const About = () => {
                     </div>
                     <div className="name-dev">Simran Gupta</div>
                     <div className="work">
-                        <Link to="https://github.com/Simrang19">
+                        <a target="_blank" href="https://github.com/Simrang19" rel="noreferrer">
                         <i class="fab fa-github sm-icons"></i>
-                        </Link>
-                        <Link to="https://www.linkedin.com/in/simran-gupta-9a5b06201/">
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/in/simran-gupta-9a5b06201/" rel="noreferrer">
                         <i class="fab fa-linkedin-in sm-icons"></i>
-                        </Link>
+                        </a>
                         </div>
                 </div>
                 <div className="developer-card">
@@ -100,12 +100,12 @@ export const About = () => {
                     </div>
                     <div className="name-dev">Dhruv Bansal</div>
                     <div className="work">
-                        <Link to="https://github.com/Dhruv-bansal15">
+                        <a target="_blank" href="https://github.com/Dhruv-bansal15" rel="noreferrer">
                         <i class="fab fa-github sm-icons"></i>
-                        </Link>
-                        <Link to="https://www.linkedin.com/in/dhruv-bansal-ba2241201/">
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/in/dhruv-bansal-ba2241201/" rel="noreferrer">
                         <i class="fab fa-linkedin-in sm-icons"></i>
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>

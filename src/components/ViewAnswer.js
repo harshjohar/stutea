@@ -98,6 +98,9 @@ export const ViewAnswer = () => {
                 </div>
             ))}</div>
 
+            <div className="ques-img">
+                {question.image&&<img src={question.image} alt="hehe" className="ques-img-image" />}
+            </div>
 
             <div className="ques-area-status">
                 <label className="upload-ques-label">Answer :</label>

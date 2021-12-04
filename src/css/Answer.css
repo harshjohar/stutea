@@ -38,3 +38,8 @@
 .asked{
     font-weight: 500;
 }
+
+.btn-hidden {
+    border: none;
+    background: none;
+}

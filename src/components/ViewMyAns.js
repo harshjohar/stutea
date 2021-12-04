@@ -24,8 +24,14 @@ export const ViewMyAns = () => {
         "tags": []
     }
 
+    const [hidden, setHidden] = useState(true);
+
     const [question, setQuestion] = useState(initQ);
     const [answer, setAnswer] = useState(init);
+
+    const handleClickHidden = () => {
+        setHidden(!hidden);
+    }
 
     const getQuestionDetails = async () => {
         const response = await fetch(`${host}/api/questions/getquestion`, {
@@ -99,8 +105,15 @@ export const ViewMyAns = () => {
                 </div>
             ))}</div>
 
+            <button className={"btn-hidden"} onClick={handleClickHidden}><i className="fas fa-eye"></i></button>
             <div className="ques-img">
-                {question.image&&<img src={question.image} alt="hehe" className="ques-img-image" />}
+                {question.image && !hidden && (
+                    <img
+                        src={question.image}
+                        alt="hehe"
+                        className="ques-img-image"
+                    />
+                )}
             </div>
 
             <div className="ques-area-status">

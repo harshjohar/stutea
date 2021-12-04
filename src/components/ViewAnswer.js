@@ -24,6 +24,7 @@ export const ViewAnswer = () => {
         "question": "",
         "tags": []
     }
+    const [hidden, setHidden] = useState(true);
 
     const [question, setQuestion] = useState(initQ);
     const [answer, setAnswer] = useState(init);
@@ -68,6 +69,9 @@ export const ViewAnswer = () => {
         }
         // eslint-disable-next-line
     }, [])
+    const handleClickHidden = () => {
+        setHidden(!hidden);
+    }
     return (
         <div className="view-ans-main">
             <div className="top-icons">
@@ -97,9 +101,9 @@ export const ViewAnswer = () => {
                     <Tag value={tag}/>
                 </div>
             ))}</div>
-
+            <button className={"btn-hidden"} onClick={handleClickHidden}><i className="fas fa-eye"></i></button>
             <div className="ques-img">
-                {question.image&&<img src={question.image} alt="hehe" className="ques-img-image" />}
+                {question.image&& !hidden &&<img src={question.image} alt="hehe" className="ques-img-image" />}
             </div>
 
             <div className="ques-area-status">

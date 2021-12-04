@@ -18,7 +18,7 @@ router.post(
         body("question", "Write Something atleast").isLength({min: 5}),
     ],
     async (req, res) => {
-        const { question, tags } = req.body;
+        const { question, tags, image } = req.body;
 
         // If there are errors, return bad request and the errors
         const errors = validationResult(req);
@@ -64,6 +64,7 @@ router.post(
                     question,
                     tags: uniqueTags,
                     user: req.user.id,
+                    image: image
                 });
                 const savedNote = await query.save();
                 res.json(savedNote);

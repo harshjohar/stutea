@@ -22,6 +22,9 @@ const QuestionSchema = new mongoose.Schema({
     responded: {
         type: Boolean,
         default: false
+    }, 
+    image: {
+        type: String,
     }
 });
 

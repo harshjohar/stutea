@@ -19,6 +19,9 @@ const AnswerSchema = new mongoose.Schema({
     timestamp: {
         type: Date,
         default: Date.now
+    },
+    image: {
+        type: String
     }
 })
 

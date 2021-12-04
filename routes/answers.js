@@ -10,7 +10,7 @@ const Questions = require('../models/Questions');
 router.post('/add', fetchuser, [
     body('answer', 'Cannot be empty').exists()
 ], async(req, res)=> {
-    const {question, answer}=req.body;
+    const {question, answer, image}=req.body;
     const errors = validationResult(req);
     if(!errors.isEmpty()) {
         return res.status(400).json({errors: errors.array()});
@@ -19,7 +19,8 @@ router.post('/add', fetchuser, [
         const response = new Answers({
             answer,
             question,
-            user: req.user.id
+            user: req.user.id,
+            image
         });
         const ques = await Questions.findById(question);
         await Questions.findByIdAndUpdate(question, {

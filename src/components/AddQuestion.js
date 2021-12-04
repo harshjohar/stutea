@@ -126,11 +126,11 @@ export const AddQuestion = () => {
                     </div>
                 </div>
                 <div className="img-upload-area">
-                    <div className="ques-inputs">
+                    <div className="ques-inputs-not">
                         <input
                             type="file"
                             id="imgString"
-                            className="tagString"
+                            className="tagString-not"
                             onChange={(e) => {
                                 setimageFile(e.target.files);
                             }}

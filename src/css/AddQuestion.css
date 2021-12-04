@@ -59,10 +59,45 @@
 .add-ques-btn:hover{
     color: black;
     background-color: #F2F2F2;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 .instruction{
     font-weight: 500;
     font-size: 17px;
+}
+
+.img-upload-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.tagString-not{
+    border: 1px solid black;
+    background-color: #fff;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.btn-upload-img{
+    border: 1px solid black;
+    outline: none;
+    padding: 0.5rem;
+    background-color: black;
+    color:#F2F2F2 ;
+    border-radius: 5px;
+    margin:0rem 1rem;
+}
+
+.btn-upload-img:hover{
+    color: black;
+    font-weight: 500;
+    background-color: #F2F2F2;
+    border: 2px solid black;
+}
+
+.ques-inputs-not{
+    width: 25%;
 }

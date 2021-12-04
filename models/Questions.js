@@ -24,7 +24,7 @@ const QuestionSchema = new mongoose.Schema({
         default: false
     }, 
     image: {
-        type: String,
+        type: String
     }
 });
 

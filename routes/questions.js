@@ -16,27 +16,17 @@ router.post(
     [
         body("tags", "Cannot be empty").isLength({min: 1}),
         body("question", "Write Something atleast").isLength({min: 5}),
+        // body("image", "not required but ok").exists()
     ],
     async (req, res) => {
         const { question, tags, image } = req.body;
-
+        console.log(image);
         // If there are errors, return bad request and the errors
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
         try {
-            // const unique = (value, index, self) => {
-            //     return self.indexOf(value) === index
-            // }
-
-            // const uniqueTags = tags.filter(unique);
-            // const query = new Questions({
-            //     question,
-            //     tags: uniqueTags,
-            //     user: req.user.id,
-            // });
-            // const savedNote = await query.save();
             const debitee = req.user.id;
             const debit = await Credits.findOne({"user": debitee});
             if (debit==null)
@@ -63,8 +53,8 @@ router.post(
                 const query = new Questions({
                     question,
                     tags: uniqueTags,
+                    image,
                     user: req.user.id,
-                    image: image
                 });
                 const savedNote = await query.save();
                 res.json(savedNote);
@@ -101,6 +91,7 @@ router.post(
                         question,
                         tags: uniqueTags,
                         user: req.user.id,
+                        image
                     });
                     const savedNote = await query.save();
                     res.json(savedNote);

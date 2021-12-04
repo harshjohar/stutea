@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react'
+import Axios from "axios";
 import userContext from '../Context/User/userContext'
 import { useHistory } from 'react-router-dom'
 import "../css/Settings.css"
@@ -16,15 +17,30 @@ export const Settings = () => {
         // eslint-disable-next-line
     }, [])
     const [dp, setDp] = useState(user.dp);
+    const [imageFile, setimageFile] = useState(null);
+    const [uploaded, setUploaded] = useState(false);
     const [userData, setUserData] = useState({
         first: user.first,
         last: user.last,
         city: user.city
     })
     const onChange = (e) => {
-        console.log("change");
+        // console.log("change");
         setUserData({...userData, [e.target.name]: e.target.value})
     }
+    const uploadImage = () => {
+        const formData = new FormData();
+        formData.append("file", imageFile[0]);
+        formData.append("upload_preset", "project-stutea");
+        Axios.post(
+            "https://api.cloudinary.com/v1_1/stutea/image/upload",
+            formData
+        ).then((res) => {
+            // console.log(res);
+            setDp(res.data.url);
+            setUploaded(true);
+        });
+    };
     const handleSubmit = async() => {
         const response = await fetch(`${host}/api/user/settings`, {
             method: "PUT",
@@ -61,8 +77,8 @@ export const Settings = () => {
             </form>
 
             <div className="rform-div mcol">
-            <label htmlFor="city" className="rform-label choose-dp">Choose your profile picture</label>
-            <div className="dp-selection">
+                <label htmlFor="city" className="rform-label choose-dp">Choose your profile picture</label>
+                <div className="dp-selection">
                 <div className={`dp-item ${dp==="https://res.cloudinary.com/stutea/image/upload/v1637785561/pp2_mgz6at.jpg" ? "dp-selected":""}`}>
                     <img src="https://res.cloudinary.com/stutea/image/upload/v1637785561/pp2_mgz6at.jpg" alt="" onClick={()=>setDp("https://res.cloudinary.com/stutea/image/upload/v1637785561/pp2_mgz6at.jpg")}/>
                 </div>
@@ -85,6 +101,30 @@ export const Settings = () => {
                 <div className={`dp-item ${dp==="https://res.cloudinary.com/stutea/image/upload/v1636875706/sample_nw8mlw.png" ? "dp-selected":""}`}>
                     <img src="https://res.cloudinary.com/stutea/image/upload/v1636875706/sample_nw8mlw.png" alt="" onClick={()=>setDp("https://res.cloudinary.com/stutea/image/upload/v1636875706/sample_nw8mlw.png")}/>
                 </div>
+                </div>
+                <div className="img-upload-area">
+                    Or upload your own..
+                    <div className="ques-inputs">
+                        <input
+                            type="file"
+                            id="imgString"
+                            className="tagString"
+                            placeholder="hehe"
+                            onChange={(e) => {
+                                setimageFile(e.target.files);
+                            }}
+                        />
+                    </div>
+                    <div className="btn-upload">
+                        <button
+                            type="button"
+                            className="btn-upload-img"
+                            onClick={uploadImage}
+                        >
+                            Upload Image
+                        </button>
+                        {uploaded ? "Image Uploaded" : ""}
+                    </div>
                 </div>
             </div>
             <div className="form-button">

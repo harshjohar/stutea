@@ -22,7 +22,7 @@ export const MyAnswers = () => {
             }),
         });
         const json = await response.json();
-        console.log(json)
+        // console.log(json)
         setAnswers(json.answers);
         const pgs = json.count;
         setPageCount(Math.ceil(pgs / 6));

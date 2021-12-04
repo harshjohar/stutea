@@ -38,6 +38,7 @@ export const Answer = () => {
     const [imageFile, setimageFile] = useState(null);
     const [imgString, setImgString] = useState("");
     const [uploaded, setUploaded] = useState(false);
+    const [hidden, setHidden] = useState(true);
 
     const uploadImage = () => {
         const formData = new FormData();
@@ -117,6 +118,9 @@ export const Answer = () => {
         }
         // eslint-disable-next-line
     }, []);
+    const handleClickHidden = () => {
+        setHidden(!hidden);
+    }
 
     return (
         <div className="answer-main">
@@ -145,8 +149,15 @@ export const Answer = () => {
                     {date ? dateFormat(date, "mmmm dS, yyyy, h:MM TT") : ""}
                 </div>
             </div>
+            <button className={"btn-hidden"} onClick={handleClickHidden}><i className="fas fa-eye"></i></button>
             <div className="ques-img">
-                {question.image&&<img src={question.image} alt="hehe" className="ques-img-image" />}
+                {question.image && !hidden && (
+                    <img
+                        src={question.image}
+                        alt="hehe"
+                        className="ques-img-image"
+                    />
+                )}
             </div>
             <div className="answer-desc">
                 <form>

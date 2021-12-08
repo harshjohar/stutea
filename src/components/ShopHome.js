@@ -8,7 +8,7 @@ export const ShopHome = () => {
     <div className="parent-shop">
       <h1>Welcome To The StuTea Shop!</h1>
       <div className="product-content">
-        <div className="product-cards d-flex">
+        <div className="product-cards">
           <div className="card">
             <img src={img} className="card-img-top" alt="img"/>
             <div className="card-body">

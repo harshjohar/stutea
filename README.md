@@ -9,7 +9,7 @@
 [![mongodb](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)](https://expressjs.com/)
 [![node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/)
-
+[![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white)](https://yarnpkg.com/)
 
 ## Inspiration
 
@@ -142,19 +142,21 @@ To contribute, fork this repository to your own github account.
 Go to the project directory
 
 ```bash
-  cd stutea
+  cd stutea/frontend
+  OR
+  cd stutea/backend
 ```
 
-### 3. Install dependencies
+### 3. Install dependencies for both frontend and backend
 
 ```bash
-  npm i
+  yarn install
 ```
 
-### 4. Start the dev environment
+### 4. Start the dev environment for frontend and backend separately
 
 ```bash
-  npm start
+  yarn start
 ```
 
 ### 5. Start Coding

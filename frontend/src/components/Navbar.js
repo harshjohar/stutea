@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Link, useLocation, useHistory } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../logo.svg"
 import "../css/Navbar.css"
 import {FaBars,FaTimes} from "react-icons/fa"
@@ -7,10 +7,10 @@ import {FaBars,FaTimes} from "react-icons/fa"
 
 export const Navbar = () => {
     let location = useLocation();
-  let history = useHistory();
+  let history = useNavigate();
   const handleLogout = ()=> {
     localStorage.removeItem('token')
-    history.push('/login')
+    history('/login')
   }
 
   const [hamburger, setHamburger] = useState(false)

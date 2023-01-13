@@ -1,18 +1,18 @@
 import React from "react";
 import "../css/LandingPage.css";
-import {useHistory} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import {ReactComponent as Doubt} from "../Assets/LANDING PAGE/Doubt.svg"
 import {ReactComponent as Concept} from "../Assets/LANDING PAGE/Concept.svg"
 import {ReactComponent as Credits} from "../Assets/LANDING PAGE/Credit.svg"
 import {ReactComponent as TagIt} from "../Assets/LANDING PAGE/TagIt.svg"
 import { ReactComponent as AboutImg } from "../Assets/LANDING PAGE/AboutLanding.svg";
 const LandingPage = () => {
-	let history = useHistory();
+	let history = useNavigate();
 	const redirectRegister = ()=> {
-		history.push('/register')
+		history('/register')
 	}
     const redirectLogin = ()=>{
-        history.push('/login')
+        history('/login')
     }
     return (
         <div className="parent-landing">

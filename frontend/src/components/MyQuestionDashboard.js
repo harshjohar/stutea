@@ -1,10 +1,10 @@
 import React, {  useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { MyQuesCardDash } from './MyQuesCardDash';
 
 export const MyQuestionDashboard = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
-    let history = useHistory(); 
+    let history = useNavigate(); 
     const [questions, setQuestions] = useState([]);
     // Get Own Questions
     const getMyQuestions = async (pg) => {
@@ -27,13 +27,13 @@ export const MyQuestionDashboard = () => {
             getMyQuestions(1);
         }
         else {
-            history.push('/login');
+            history('/login');
         }
         // eslint-disable-next-line
     }, [])
 
     const handleClick = () => {
-        history.push("/profile");
+        history("/profile");
     }
     return (
         <div>

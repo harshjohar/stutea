@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import dateFormat from "dateformat";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Tag } from "./Tag";
 export const QuestionCard = (props) => {
     const { question } = props;
     const date = question.timestamp;
-    let history = useHistory();
+    let history = useNavigate();
     const id = question._id;
     const handleClick = () => {
-        history.push(`/answer/${id}`);
+        history(`/answer/${id}`);
     };
 
     const host = process.env.REACT_APP_BACKEND_URL;

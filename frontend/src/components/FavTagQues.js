@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { BigQuestionCard } from "./BigQuestionCard";
 import { Spinner } from "./Spinner";
 import { QuestionCardMore } from './QuestionCardMore';
@@ -21,7 +21,7 @@ export const FavTagQues = () => {
     const [questions, setQuestions] = useState([]);
     const [pageCount, setPageCount] = useState(0);
     
-    let history = useHistory();
+    let history = useNavigate();
     // Get the questions
     const getQuestions = async (pg) => {
         // api call
@@ -46,7 +46,7 @@ export const FavTagQues = () => {
         if (localStorage.getItem("token")) {
                 getQuestions(1);
         } else {
-            history.push("/login");
+            history("/login");
         }
         // eslint-disable-next-line
     }, []);

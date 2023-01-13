@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import dateFormat from 'dateformat';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { TagIcon } from "./Tags/TagIcon";
 import { TagDropdown } from "./Tags/TagDropdown";
 // import {ReactComponent as TagsIcon} from "../Assets/Click/Tags.svg"
@@ -12,7 +12,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 export const MyQuestionCard = (props) => {
     const {question} = props;
     const date = question.timestamp;
-    let history = useHistory();
+    let history = useNavigate();
     const [deleted, setDeleted] = useState(false)
     const host = process.env.REACT_APP_BACKEND_URL;
     const resolvedClick = async () => {
@@ -38,14 +38,14 @@ export const MyQuestionCard = (props) => {
               }, 
               {
                   label: 'No',
-                  onClick: ()=> history.push('/profile')
+                  onClick: ()=> history('/profile')
               }
             ]
           });
 
     }
     const viewAnswerClick = async () => {
-        history.push(`/view/${question._id}`)
+        history(`/view/${question._id}`)
     }
     return (
         <div className={`my-q-card ${question.responded?"yellow-q":""} ${question.answered?"green-q":""}`} style={deleted?{display:'none'}:{}}> 

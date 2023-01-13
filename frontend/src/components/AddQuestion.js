@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "../css/Dashboard.css";
 import "../css/AddQuestion.css";
 import Axios from "axios";
@@ -15,7 +15,7 @@ export const AddQuestion = () => {
     const init = {
         question: "",
     };
-    let history = useHistory();
+    let history = useNavigate();
     const [question, setQuestion] = useState(init);
     const [tagString, setTagString] = useState("");
     const [imageFile, setimageFile] = useState(null);
@@ -65,7 +65,7 @@ export const AddQuestion = () => {
         e.preventDefault();
         addQuestion();
         setQuestion(init);
-        history.push("/");
+        history("/");
     };
     const onChange = (e) => {
         setQuestion({ ...question, [e.target.name]: e.target.value });

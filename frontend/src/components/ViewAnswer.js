@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { useHistory, useParams, Link } from 'react-router-dom'
+import { useNavigate, useParams, Link } from 'react-router-dom'
 import { Feedback } from './Feedback';
 import '../css/ViewAns.css'
 // import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
@@ -12,7 +12,7 @@ import { Tag } from "./Tag";
 
 export const ViewAnswer = () => {
     const {quesid} = useParams();
-    let history = useHistory();
+    let history = useNavigate();
     const host = process.env.REACT_APP_BACKEND_URL;
     const init = {
         "answer": "",
@@ -65,7 +65,7 @@ export const ViewAnswer = () => {
             getQuestionDetails();
         }
         else {
-            history.push('/login');
+            history('/login');
         }
         // eslint-disable-next-line
     }, [])

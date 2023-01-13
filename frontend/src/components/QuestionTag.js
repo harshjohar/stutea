@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { BigQuestionCard } from "./BigQuestionCard";
 import { Spinner } from "./Spinner";
 import { QuestionCardMore } from './QuestionCardMore';
@@ -26,7 +26,7 @@ export const QuestionTag = () => {
     const query = useQuery();
     const reqTag = query.get("tag");
 
-    let history = useHistory();
+    let history = useNavigate();
     // Get the questions related to one tag only
     const getQuestionsTag = async () => {
         // api call
@@ -58,7 +58,7 @@ export const QuestionTag = () => {
             getQuestionsTag();
             getFavs();
     } else {
-        history.push("/login");
+        history("/login");
     }
         
         return () => {

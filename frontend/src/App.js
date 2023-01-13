@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
@@ -32,7 +32,7 @@ function App() {
       <Router>
         <CreditState>
             <DashBoardNavbar/> 
-        <Switch>
+        <Routes>
           <Route exact path="/">
             <UserState>
               <QuestionState>
@@ -99,7 +99,7 @@ function App() {
           <Route exact path="/favs">
             <FavTagQues/>
           </Route>
-        </Switch>
+        </Routes>
         </CreditState>
       </Router>
     </div>

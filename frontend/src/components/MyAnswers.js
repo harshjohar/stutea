@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { MyAnsCard } from "./MyAnsCard";
 import ReactPaginate from "react-paginate";
 import {ReactComponent as PrevActive} from "../Assets/Click/Left.svg"
@@ -7,7 +7,7 @@ import {ReactComponent as NextActive} from "../Assets/Click/Right.svg"
 
 export const MyAnswers = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
-    let history = useHistory();
+    let history = useNavigate();
     const [answers, setAnswers] = useState([]);
     const [pageCount, setPageCount] = useState(0);
     const getMyAnswers = async(pg) =>{
@@ -33,7 +33,7 @@ export const MyAnswers = () => {
             getMyAnswers(1)
         }
         else {
-            history.push('/login');
+            history('/login');
         }
         return () => {
             setAnswers([])

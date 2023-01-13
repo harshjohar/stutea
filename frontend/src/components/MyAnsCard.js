@@ -1,6 +1,6 @@
 import React, {useState , useEffect} from 'react'
 import dateFormat from 'dateformat';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { TagIcon } from "./Tags/TagIcon";
 import { TagDropdown } from "./Tags/TagDropdown";
 // import {ReactComponent as TagsIcon} from "../Assets/Click/Tags.svg"
@@ -11,7 +11,7 @@ import {ReactComponent as Tgreen} from "../Assets/Click/TagsGreen.svg"
 export const MyAnsCard = (props) => {
     const {answer}=props;
     const host = process.env.REACT_APP_BACKEND_URL;
-    let history = useHistory();
+    let history = useNavigate();
     const [question, setQuestion] = useState({});
     const getQuestion = async()=>{
         const response = await fetch(`${host}/api/questions/getquestion`,{
@@ -32,7 +32,7 @@ export const MyAnsCard = (props) => {
             getQuestion()
         }
         else {
-            history.push('/login');
+            history('/login');
         }
         return () => {
             setQuestion({})
@@ -40,7 +40,7 @@ export const MyAnsCard = (props) => {
         // eslint-disable-next-line
     }, [])
     const viewAnswerClick = async () => {
-        history.push(`/viewmyans/${question._id}`)
+        history(`/viewmyans/${question._id}`)
     }
     return (
         <div className={`my-q-card ${question.responded?"yellow-q":""} ${question.answered?"green-q":""}`}> 

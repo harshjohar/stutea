@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import dateFormat from "dateformat";
-import { useHistory, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {ReactComponent as AddQuesGreen} from "../Assets/Click/answer_green.svg"
 import {ReactComponent as AddQuesMagenta} from "../Assets/Click/answer_magenta.svg"
 import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
@@ -42,10 +42,10 @@ export const BigQuestionCard = (props) => {
         }
         // eslint-disable-next-line
     }, [])
-    let history = useHistory();
+    let history = useNavigate();
     const id = content._id;
     const handleClick = () => {
-        history.push(`/answer/${id}`);
+        history(`/answer/${id}`);
     };
     return (
         <div className={`big-ques-card-${color}`}>

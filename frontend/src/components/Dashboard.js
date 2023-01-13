@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, Routes } from 'react-router-dom';
 import "../css/Dashboard.css"
 import "../css/NotificationBar.css"
 import { Questions } from './Questions';
 
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { QuestionTag } from './QuestionTag';
 // import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
 import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
@@ -46,14 +46,14 @@ const Dashboard = () => {
                         </Link>
                     </div>
                 </div>
-                <Switch>
+                <Routes>
                 <Route exact path='/'>
                     <Questions/>
                 </Route>
                 <Route exact path='/query'>
                     <QuestionTag/>
                 </Route>
-                </Switch>
+                </Routes>
             </div>
         </>
     )

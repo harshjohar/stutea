@@ -1,5 +1,6 @@
 <h1 align="center">
-    <b>StuTea</b>
+    <img src="./frontend/public/readme_logo.png" style="background-color:white" width="100px">
+    <b> StuTea</b>
 </h1>
 
 <h3>Built using</h3>

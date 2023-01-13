@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -33,6 +33,14 @@
       "react-app/jest"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshjohar/stutea.git"
+  },
+  "bugs": {
+    "url": "https://github.com/harshjohar/stutea/issues"
+  },
+  "homepage": "https://github.com/harshjohar/stutea#readme",
   "browserslist": {
     "production": [
       ">0.2%",

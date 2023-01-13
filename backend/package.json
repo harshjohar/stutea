@@ -1,23 +1,23 @@
 {
-  "name": "stutea",
+  "name": "backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "serve": "nodemon index.js"
+    "start": "nodemon index.js",
+    "serve": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/harshjohar/stutea-backend.git"
+    "url": "git+https://github.com/harshjohar/stutea.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/harshjohar/stutea-backend/issues"
+    "url": "https://github.com/harshjohar/stutea/issues"
   },
-  "homepage": "https://github.com/harshjohar/stutea-backend#readme",
+  "homepage": "https://github.com/harshjohar/stutea#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",

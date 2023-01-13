@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useHistory, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import dateFormat from "dateformat";
 import { Tag } from "./Tag";
 import Axios from "axios";
@@ -14,7 +14,7 @@ import { Dropdown } from "./Notifications/Dropdown";
 export const Answer = () => {
     const { quesid } = useParams();
     const host = process.env.REACT_APP_BACKEND_URL;
-    let history = useHistory();
+    let history = useNavigate();
     const init = {
         answer: "",
     };
@@ -99,7 +99,7 @@ export const Answer = () => {
         });
         response.json();
         setAnswer(init);
-        history.push("/");
+        history("/");
     };
 
     const onChange = (e) => {
@@ -114,7 +114,7 @@ export const Answer = () => {
         if (localStorage.getItem("token")) {
             getDetails();
         } else {
-            history.push("/login");
+            history("/login");
         }
         // eslint-disable-next-line
     }, []);

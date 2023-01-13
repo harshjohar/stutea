@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { MyQuestionCard } from "./MyQuestionCard";
 import ReactPaginate from "react-paginate";
 import { Spinner } from "./Spinner";
@@ -8,7 +8,7 @@ import {ReactComponent as NextActive} from "../Assets/Click/Right.svg"
 
 export const MyQuestions = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
-    let history = useHistory();
+    let history = useNavigate();
     const [pageCount, setPageCount] = useState(0);
     const [questions, setQuestions] = useState([]);
     const emptyQues = {
@@ -44,7 +44,7 @@ export const MyQuestions = () => {
         if (localStorage.getItem("token")) {
             getMyQuestions(1);
         } else {
-            history.push("/login");
+            history("/login");
         }
         // eslint-disable-next-line
     }, []);

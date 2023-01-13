@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useLocation, useHistory } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../css/DashboardNavbar.css"
 import about from "../Assets/Rest/About.svg" 
 import aboutActive from "../Assets/Click/About.svg" 
@@ -18,10 +18,10 @@ import {ReactComponent as Logo} from "../logo.svg"
 
 export const DashBoardNavbar = () => {
     let location = useLocation();
-    let history = useHistory();
+    let history = useNavigate();
     const handleLogout = ()=> {
         localStorage.removeItem('token')
-        history.push('/login')
+        history('/login')
     }
     // const [hamburger, setHamburger] = useState(false)
     // const toggle=()=>{
@@ -31,7 +31,7 @@ export const DashBoardNavbar = () => {
         <div className="nav-main">
             <div className="nav-logo-wrapper">
                 {/* img-here */}
-                <Logo className="logo" onClick={()=>{history.push("/")}}/>
+                <Logo className="logo" onClick={()=>{history("/")}}/>
             </div>
             <div className="link-list">
                 <ul className="links">

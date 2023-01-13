@@ -1,16 +1,16 @@
 import React from "react";
 import {ReactComponent as TagsIcon} from "../Assets/Click/Tags.svg"
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
 import {ReactComponent as AddAnswer} from "../Assets/Click/answer_purple.svg"
 import { TagIcon } from "./Tags/TagIcon";
 import { TagDropdown } from "./Tags/TagDropdown";
 export const QuestionCardMore = (props) => {
     const {content} = props;
-    let history = useHistory();
+    let history = useNavigate();
     const id = content._id;
     const handleClick = () => {
-        history.push(`/answer/${id}`);
+        history(`/answer/${id}`);
     };
     return (
         <div className="ques-card">

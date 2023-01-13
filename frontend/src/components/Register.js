@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import "../css/Register.css"
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
@@ -7,7 +7,7 @@ import image from '../StuTea-Login.svg'
 
 export const Register = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
-  let history = useHistory();
+  let history = useNavigate();
   const [credentials, setCredentials] = useState({
       username : "",
       email: "",
@@ -43,7 +43,7 @@ export const Register = () => {
         setMatch(json.error);
     }
     if(json.success) {
-        history.push(`/wait/${credentials.email}`);
+        history(`/wait/${credentials.email}`);
     }
     else {
         incorrectCredentialsAlert();
@@ -56,7 +56,7 @@ const incorrectCredentialsAlert = () => {
       buttons: [
         {
           label: 'Close',
-          onClick: () => history.push('/register')
+          onClick: () => history('/register')
         }
       ]
     });

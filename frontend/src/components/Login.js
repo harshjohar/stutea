@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import "../css/Login.css"
 import image from '../StuTea-Login.svg'
 const Login = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
-    let history = useHistory();
+    let history = useNavigate();
     const init = {
         username: "",
         password: ""
@@ -20,7 +20,7 @@ const Login = () => {
           buttons: [
             {
               label: 'Close',
-              onClick: () => history.push('/login')
+              onClick: () => history('/login')
             }
           ]
         });
@@ -42,7 +42,7 @@ const Login = () => {
         const json = await response.json();
         if (json.success) {
             localStorage.setItem("token", json.authtoken);
-            history.push("/");
+            history("/");
         } else {
             // alert("Enter valid credentials");
             incorrectCredentialsAlert();

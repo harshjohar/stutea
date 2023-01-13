@@ -1,18 +1,18 @@
 import React, {useContext, useEffect} from 'react'
 // import userContext from '../Context/User/userContext'
-import {useHistory} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import "../css/Dashboard.css"
 import creditContext from '../Context/Credits/creditContext';
 
 export const CreditUser = () => {
-    let history = useHistory();
+    let history = useNavigate();
     const cContext = useContext(creditContext);
     const {credits, getCredits} = cContext;
     useEffect(() => {
         if(localStorage.getItem('token')) {
             getCredits();
         } else {
-            history.push('/login')
+            history('/login')
         }
         return () => {
             
@@ -20,7 +20,7 @@ export const CreditUser = () => {
         // eslint-disable-next-line
     }, [])
     const handleClick=()=>{
-        history.push('/buycredits')
+        history('/buycredits')
     }
     return (
         <div className="credit-user">

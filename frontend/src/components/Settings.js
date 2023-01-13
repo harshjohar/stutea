@@ -1,14 +1,14 @@
 import React, { useState, useContext, useEffect } from 'react'
 import Axios from "axios";
 import userContext from '../Context/User/userContext'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import "../css/Settings.css"
 
 export const Settings = () => {
     const uContext = useContext(userContext);
     const {user, getUserByAuthToken} = uContext;
     const host = process.env.REACT_APP_BACKEND_URL;
-    let history = useHistory();
+    let history = useNavigate();
     useEffect(() => {
         getUserByAuthToken();
         return () => {
@@ -56,7 +56,7 @@ export const Settings = () => {
             })
         })
         response.json();
-        history.push('/profile')
+        history('/profile')
     }
     return (
         <div className="settings-main">

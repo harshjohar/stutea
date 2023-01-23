@@ -40,7 +40,6 @@
   "bugs": {
     "url": "https://github.com/harshjohar/stutea/issues"
   },
-  "homepage": "https://github.com/harshjohar/stutea#readme",
   "browserslist": {
     "production": [
       ">0.2%",

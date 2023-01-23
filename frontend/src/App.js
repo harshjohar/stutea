@@ -4,7 +4,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
 
-import  { About } from "./components/About";
+import { About } from "./components/About";
 import Contact from "./components/Contact";
 import QuestionState from "./Context/Questions/questionState";
 import { AddQuestion } from "./components/AddQuestion";
@@ -27,83 +27,107 @@ import { FavTagQues } from "./components/FavTagQues";
 import { ViewMyAns } from "./components/ViewMyAns";
 
 function App() {
-  return (
-    <div className="App">
-      <Router>
-        <CreditState>
-            <DashBoardNavbar/> 
-        <Routes>
-          <Route exact path="/">
-            <UserState>
-              <QuestionState>
-                <Home/>
-              </QuestionState>
-            </UserState>
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/register">
-            <Register />
-          </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
-          <Route exact path="/contact">
-            <Contact/>
-          </Route>
-          <Route exact path="/add">
-            <AddQuestion/>
-          </Route>
-          <Route exact path="/shop">
-            <ShopHome/>
-          </Route>
-          <Route exact path="/answer/:quesid">
-            <Answer/>
-          </Route>
-          <Route exact path="/view/:quesid">
-            <ViewAnswer/>
-          </Route>
-          <Route exact path="/viewmyans/:quesid">
-            <ViewMyAns/>
-          </Route>
-          <Route exact path="/profile">
-            <UserState>
-              <Profile/>
-            </UserState>
-          </Route>
-          <Route exact path="/confirmation/:email/:token">
-            <Confirmation/>
-          </Route>
-          <Route exact path="/wait/:email">
-            <Wait/>
-          </Route>
-          <Route exact path="/tags-all">
-            <Tags/>
-          </Route>
-          <Route exact path="/settings">
-            <UserState>
-            <Settings/>
-            </UserState>
-          </Route>
-          <Route exact path="/buycredits">
-            <BuyCredits/>
-          </Route>
-          <Route exact path='/query'>
-          <UserState>
-              <QuestionState>
-                <Home/>
-              </QuestionState>
-            </UserState>
-          </Route>
-          <Route exact path="/favs">
-            <FavTagQues/>
-          </Route>
-        </Routes>
-        </CreditState>
-      </Router>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Router>
+                <CreditState>
+                    <DashBoardNavbar />
+                    <Routes>
+                        <Route
+                            exact
+                            path="/"
+                            element={
+                                <UserState>
+                                    <QuestionState>
+                                        <Home />
+                                    </QuestionState>
+                                </UserState>
+                            }
+                        />
+                        <Route exact path="/login" element={<Login />} />
+
+                        <Route exact path="/register" element={<Register />} />
+
+                        <Route exact path="/about" element={<About />} />
+
+                        <Route exact path="/contact" element={<Contact />} />
+
+                        <Route exact path="/add" element={<AddQuestion />} />
+
+                        <Route exact path="/shop" element={<ShopHome />} />
+
+                        <Route
+                            exact
+                            path="/answer/:quesid"
+                            element={<Answer />}
+                        />
+
+                        <Route
+                            exact
+                            path="/view/:quesid"
+                            element={<ViewAnswer />}
+                        />
+
+                        <Route
+                            exact
+                            path="/viewmyans/:quesid"
+                            element={<ViewMyAns />}
+                        />
+
+                        <Route
+                            exact
+                            path="/profile"
+                            element={
+                                <UserState>
+                                    <Profile />
+                                </UserState>
+                            }
+                        />
+
+                        <Route
+                            exact
+                            path="/confirmation/:email/:token"
+                            element={<Confirmation />}
+                        />
+
+                        <Route exact path="/wait/:email" element={<Wait />} />
+
+                        <Route exact path="/tags-all" element={<Tags />} />
+
+                        <Route
+                            exact
+                            path="/settings"
+                            element={
+                                <UserState>
+                                    <Settings />
+                                </UserState>
+                            }
+                        />
+
+                        <Route
+                            exact
+                            path="/buycredits"
+                            element={<BuyCredits />}
+                        />
+
+                        <Route
+                            exact
+                            path="/query"
+                            element={
+                                <UserState>
+                                    <QuestionState>
+                                        <Home />
+                                    </QuestionState>
+                                </UserState>
+                            }
+                        />
+
+                        <Route exact path="/favs" element={<FavTagQues />} />
+                    </Routes>
+                </CreditState>
+            </Router>
+        </div>
+    );
 }
 
 export default App;

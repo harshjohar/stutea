@@ -1,17 +1,17 @@
-import React from 'react'
-import { Link, Routes } from 'react-router-dom';
-import "../css/Dashboard.css"
-import "../css/NotificationBar.css"
-import { Questions } from './Questions';
+import React from "react";
+import { Link, Routes } from "react-router-dom";
+import "../css/Dashboard.css";
+import "../css/NotificationBar.css";
+import { Questions } from "./Questions";
 
 import { Route } from "react-router-dom";
-import { QuestionTag } from './QuestionTag';
+import { QuestionTag } from "./QuestionTag";
 // import {ReactComponent as NotifIcon} from "../Assets/Rest/Notification.svg"
-import {ReactComponent as NotifIconActive} from "../Assets/Click/Notification.svg"
-import {ReactComponent as CreditIcon} from "../Assets/Click/Credits.svg"
-import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
-import { NavItem } from './Notifications/NavItem';
-import { Dropdown } from './Notifications/Dropdown';
+import { ReactComponent as NotifIconActive } from "../Assets/Click/Notification.svg";
+import { ReactComponent as CreditIcon } from "../Assets/Click/Credits.svg";
+import { ReactComponent as ProfileIcon } from "../Assets/Click/Profile.svg";
+import { NavItem } from "./Notifications/NavItem";
+import { Dropdown } from "./Notifications/Dropdown";
 
 const Dashboard = () => {
     return (
@@ -22,14 +22,14 @@ const Dashboard = () => {
                     <Link to="/favs">
                         <i className="fas fa-bookmark icon-top"></i>
                     </Link>
-                    <NavItem icon={<NotifIconActive/>}>
+                    <NavItem icon={<NotifIconActive />}>
                         <Dropdown type="notif"></Dropdown>
                     </NavItem>
-                    <NavItem icon={<CreditIcon/>}>
+                    <NavItem icon={<CreditIcon />}>
                         <Dropdown type="credits"></Dropdown>
                     </NavItem>
                     <Link to="/profile">
-                    <ProfileIcon className="icon-top"/>
+                        <ProfileIcon className="icon-top" />
                     </Link>
                     {/* <NavItem icon={<ProfileIcon/>}>
                         <Dropdown type="profile"></Dropdown>
@@ -37,26 +37,25 @@ const Dashboard = () => {
                 </div>
                 <div className="heading-top">
                     <div className="heading">
-                        <p className='line'>The one place for all</p>
-                        <p className='line'>your questions</p>
+                        <p className="line">The one place for all</p>
+                        <p className="line">your questions</p>
                     </div>
                     <div className="add-button">
                         <Link className="add-link" to="/add">
-                            <button className="add-ques">Ask your Question</button>
+                            <button className="add-ques">
+                                Ask your Question
+                            </button>
                         </Link>
                     </div>
                 </div>
                 <Routes>
-                <Route exact path='/'>
-                    <Questions/>
-                </Route>
-                <Route exact path='/query'>
-                    <QuestionTag/>
-                </Route>
+                    <Route exact path="/" element={<Questions />} />
+
+                    <Route exact path="/query" element={<QuestionTag />} />
                 </Routes>
             </div>
         </>
-    )
-}
+    );
+};
 
 export default Dashboard;

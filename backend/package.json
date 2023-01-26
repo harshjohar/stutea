@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/harshjohar/stutea#readme",
   "dependencies": {
-    "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",

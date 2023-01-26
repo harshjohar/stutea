@@ -91,31 +91,33 @@ router.post(
                         });
                     }
 
+                    return res.status(200).json({success: true,message: 'User is created. Welcome to Stutea.'});
+
                     // send email
-                    const transporter = nodemailer.createTransport(
-                        sendgridTransport({
-                            auth: {
-                                api_key: process.env.AUTH_API_KEY,
-                            },
-                        })
-                    );
+                    // const transporter = nodemailer.createTransport(
+                    //     sendgridTransport({
+                    //         auth: {
+                    //             api_key: process.env.AUTH_API_KEY,
+                    //         },
+                    //     })
+                    // );
 
-                    var mailOptions = {
-                        from: 'stutea.app@gmail.com',
-                        to: user.email,
-                        subject: 'Account Verification Link',
-                        text: 'Hello ' + req.body.username + ',\n\n'+'Please verify your account by clicking the link: \nhttp:\/\/'+'stutea-app.web.app'+'\/confirmation\/'+user.email+'\/'+token.token+'\n\nThank You!\n'
-                    };
+                    // var mailOptions = {
+                    //     from: 'stutea.app@gmail.com',
+                    //     to: user.email,
+                    //     subject: 'Account Verification Link',
+                    //     text: 'Hello ' + req.body.username + ',\n\n'+'Please verify your account by clicking the link: \nhttp:\/\/'+'stutea-app.web.app'+'\/confirmation\/'+user.email+'\/'+token.token+'\n\nThank You!\n'
+                    // };
 
-                    transporter.sendMail(mailOptions, function(err) {
-                        if(err) {
-                            return res.status(500).json({
-                                success,
-                                error: 'Technical Issue!, Please click on resend for verify your Email.'
-                            })
-                        }
-                        return res.status(200).json({success: true,message: 'A verification email has been sent to ' + user.email + '. It will be expire after one day. If you not get verification Email click on resend token.'});
-                    })
+                    // transporter.sendMail(mailOptions, function(err) {
+                    //     if(err) {
+                    //         return res.status(500).json({
+                    //             success,
+                    //             error: 'Technical Issue!, Please click on resend for verify your Email.'
+                    //         })
+                    //     }
+                    //     return res.status(200).json({success: true,message: 'A verification email has been sent to ' + user.email + '. It will be expire after one day. If you not get verification Email click on resend token.'});
+                    // })
                 });
             });
         } catch (error) {

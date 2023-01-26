@@ -62,5 +62,5 @@ app.get("/test", (req, res) => {
 
 // PORT
 app.listen(process.env.PORT || port, () => {
-    console.log(`StuTea listening at http://localhost:5000/`);
+    console.log(`StuTea listening at http://localhost:${port}/`);
 });

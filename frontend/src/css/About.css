@@ -5,8 +5,8 @@
 }
 
 .parent-about {
-    margin-left: 20vw;
-    width: 80vw;
+    margin-left: 15vw;
+    width: 85vw;
     /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
@@ -73,8 +73,9 @@
     font-size: 1.5rem;
     display: flex;
     width: 100%;
-    margin: 1rem;
+    margin: 1rem 1rem 1rem 0;
     font-weight: 600;
+    text-align: center;
 }
 
 .developer-card {
@@ -108,6 +109,7 @@
     font-weight: 800;
     margin: 1rem;
     font-size: 1.2rem;
+    text-align: center;
 }
 
 .sm-icons{

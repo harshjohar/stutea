@@ -61,6 +61,12 @@
     align-items: center;
     justify-content: center;
 }
+
+.link-list-item:hover{
+    width: 150%;
+    transition: 0.25s all ease;
+}
+
 .nav-icon{
     height: 100%;
     /* display: flex;
@@ -92,11 +98,6 @@
     
 }
 
-
-.ll-item:hover,.active-nav{
-    color: black;
-    fill: black;
-}
 .nav-text{
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;

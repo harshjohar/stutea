@@ -39,6 +39,7 @@ exports.confirmEmail = function (req, res, next) {
                         // verify user
                         else {
                             // change verified to true
+                            
                             user.verified = true;
                             user.save(function (err) {
                                 if (err) {
@@ -87,14 +88,16 @@ exports.resendEmail = function (req, res, next) {
                     }
 
                     const transporter = nodemailer.createTransport(
-                        sendgridTransport({
-                            auth: {
-                                api_key: process.env.API_KEY,
-                            },
-                        })
-                    );
-                    var mailOptions = {
-                        from: "stutea.app@gmail.com",
+                        {
+                         service: 'gmail',
+                         auth: {
+                           user: process.env.GMAIL_ID,
+                           pass: process.env.GMAIL_GENPWD
+                         }
+                        }
+                     );
+                     mailOptions = {
+                        from: "",
                         to: user.email,
                         subject: "Account Verification Link",
                         text:
@@ -102,7 +105,7 @@ exports.resendEmail = function (req, res, next) {
                             req.body.username +
                             ",\n\n" +
                             "Please verify your account by clicking the link: \nhttp://" +
-                            "stutea-app.web.app" +
+                            "http://localhost:8000" +
                             "/confirmation/" +
                             user.email +
                             "/" +

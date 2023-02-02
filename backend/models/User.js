@@ -30,7 +30,7 @@ const UserSchema = new mongoose.Schema({
     },
     verified: {
         type: Boolean,
-        default: true
+        default: false
     },
     QuestionsPosted : {
         type: Number,

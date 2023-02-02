@@ -2,113 +2,119 @@ import React from "react";
 import "../css/About.css";
 // import AboutImage from "../Assets/face.jpg";
 import AboutImageTop from "../Assets/help.jpg";
-import Jaagrit from "../Assets/developers/jaagrit.jpg"
-import HarshJohar from "../Assets/developers/harshjohar.jpg"
-import Kanika from "../Assets/developers/kanika.jpg"
-import Simran from "../Assets/developers/simran.jpeg"
-import Dhruv from "../Assets/developers/dhruv.jpeg"
-// import { Link } from "react-router-dom";
+
 export const About = () => {
-    return (
-        <div className="parent-about">
-            <div className="about-heading">Learning and Teaching together</div>
-            <div className="about-desc">
-                <div className="image-about-parent">
-                    <img src={AboutImageTop} alt="" className="image-about-top" />
-                </div>
-                <div className="text-about">
-                    <p>
-                        At stutea we believe in making every learner a teacher.
-                        That is exactly what our name signifies! Stu-dent +
-                        tea-cher.
-                    </p>
-                    <p>
-                        We a group of college students came up with the idea of
-                        providing students with a platform wherein they can post
-                        their doubts and solve other students’ doubts. This
-                        concept would result in quicker doubt resolution along
-                        with simple solutions because the student solving doubts
-                        will be having similar knowledge and resources!
-                    </p>
-                </div>
-            </div>
-            <div className="developers-heading">
-              More about STUTEA developers
-            </div>
-            <div className="developers">
-                <div className="developer-card">
-                    <div className="photo-dev">
-                        <img src={HarshJohar} alt="" className="image-about" />
-                    </div>
-                    <div className="name-dev">Harshpreet Singh Johar</div>
-                    <div className="work">
-                        <a href="https://github.com/harshjohar" target="_blank" rel="noreferrer">
-                        <i class="fab fa-github sm-icons">
-                        </i>
-                        </a>
-                        <a target="_blank" href="https://www.linkedin.com/in/harshpreet-singh-johar-4a362a202/" rel="noreferrer">
-                        <i class="fab fa-linkedin-in sm-icons"></i>
-                        </a>
-                    </div>
-                </div>
-                <div className="developer-card">
-                    <div className="photo-dev">
-                        <img src={Kanika} alt="" className="image-about" />
-                    </div>
-                    <div className="name-dev">Kanika Kaur</div>
-                    <div className="work">
-                        <a target="_blank"href="https://github.com/kanikakaur27" rel="noreferrer">
-                        <i class="fab fa-github sm-icons"></i>
-                        </a>
-                        <a target="_blank" href="https://www.linkedin.com/in/kanika-kaur-412914202/" rel="noreferrer">
-                        <i class="fab fa-linkedin-in sm-icons"></i>
-                        </a>
-                    </div>
-                    <div className="contact-dev"></div>
-                </div>
-                <div className="developer-card">
-                    <div className="photo-dev">
-                        <img src={Jaagrit} alt="" className="image-about" />
-                    </div>
-                    <div className="name-dev">Jaagrit Arora</div>
-                    <div className="work">
-                        <a target="_blank" href="https://github.com/jaagrit10" rel="noreferrer">
-                        <i class="fab fa-github sm-icons"></i>
-                        </a>
-                        <a target="_blank" href="https://www.linkedin.com/in/jaagrit-arora-71a11a201/" rel="noreferrer">
-                        <i class="fab fa-linkedin-in sm-icons"></i>
-                        </a>
-                    </div>
-                </div>
-                <div className="developer-card">
-                    <div className="photo-dev">
-                        <img src={Simran} alt="" className="image-about" />
-                    </div>
-                    <div className="name-dev">Simran Gupta</div>
-                    <div className="work">
-                        <a target="_blank" href="https://github.com/Simrang19" rel="noreferrer">
-                        <i class="fab fa-github sm-icons"></i>
-                        </a>
-                        <a target="_blank" href="https://www.linkedin.com/in/simran-gupta-9a5b06201/" rel="noreferrer">
-                        <i class="fab fa-linkedin-in sm-icons"></i>
-                        </a>
-                        </div>
-                </div>
-                <div className="developer-card">
-                    <div className="photo-dev">
-                        <img src={Dhruv} alt="" className="image-about" />
-                    </div>
-                    <div className="name-dev">Dhruv Bansal</div>
-                    <div className="work">
-                        <a target="_blank" href="https://github.com/Dhruv-bansal15" rel="noreferrer">
-                        <i class="fab fa-github sm-icons"></i>
-                        </a>
-                        <a target="_blank" href="https://www.linkedin.com/in/dhruv-bansal-ba2241201/" rel="noreferrer">
-                        <i class="fab fa-linkedin-in sm-icons"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+  return (
+    <div className="parent-about">
+      <div className="about-heading">Learning and Teaching together</div>
+      <div className="about-desc">
+        <div className="image-about-parent">
+          <img src={AboutImageTop} alt="" className="image-about-top" />
         </div>
-    );
+        <div className="text-about">
+          <p>
+            At stutea we believe in making every learner a teacher. That is
+            exactly what our name signifies! Stu-dent + tea-cher.
+          </p>
+          <p>
+            We a group of college students came up with the idea of providing
+            students with a platform wherein they can post their doubts and
+            solve other students’ doubts. This concept would result in quicker
+            doubt resolution along with simple solutions because the student
+            solving doubts will be having similar knowledge and resources!
+          </p>
+        </div>
+      </div>
+      <div className="about-heading">More about StuTea </div>
+      <div
+        className="about-features feautures_containers"
+        style={{ background: "#ddddff" }}
+      >
+        <div className="developers-heading">What it does? </div>
+        <div className="features_content ">
+          <div className="image-about-parent">
+            <img
+              src={AboutImageTop}
+              alt=""
+              className="image-about-top"
+              style={{ borderRadius: "15rem" }}
+            />
+          </div>
+          <div className="text-about">
+            <p>
+              StuTea is a one stop solution to getting your doubts solved on a
+              number of topics. Users can register and have an initial score of
+              1000 credits that they can redeem when their doubts get
+              successfully resolved. This would transfer credits to the account
+              of the person solving doubts. This provides an incentive to the
+              one solving doubts.
+            </p>
+
+            <p>
+              The questions will be sorted using tags. The tags will help the
+              one solving doubt to anchor his areas of expertise and solve
+              doubts effectively.
+            </p>
+
+            <p>
+              Once the doubt is resolved the user will get a notification
+              through which they can check the answer and rate the person who
+              solved it. This would help in keeping a track of good doubt
+              solvers and eliminate the ones who don’t provide quality answers.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="about-features feautures_containers"
+        style={{ background: "rgb(247,238,214,1)" }}
+      >
+        <div className="developers-heading">What's next for StuTea </div>
+        <div className="features_content ">
+          <div className="text-about">
+            <p>
+              As software engineers, we're never fully satisfied with the work.
+              There are always more ways to make the product better, faster,
+              more secure, accessible, etc. Here are some product features that
+              we would love to implement in the future:
+            </p>
+            <p>
+              <ul>
+                <li>
+                  Use of voice medium and A/V recordings to answer doubts.
+                </li>
+                <li>
+                  Involvement of real time monetary transactions to buy/sell
+                  credits.
+                </li>
+                <li>
+                  A more equipped shop to induce business into the product.
+                </li>
+                <li>
+                  Extending our existing one-to-one answering product to
+                  one-to-many version.
+                </li>
+                <li>
+                  An efficient search mechanism which will include search by
+                  tags/question and many more.
+                </li>
+                <li>
+                  We also aim to create an efficient feedback system to
+                  authentify the credit/decredit system.
+                </li>
+              </ul>
+            </p>
+          </div>
+          <div className="image-about-parent">
+            <img
+              src={AboutImageTop}
+              alt=""
+              className="image-about-top"
+              style={{ borderRadius: "15rem" }}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };

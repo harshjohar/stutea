@@ -96,8 +96,8 @@ exports.resendEmail = function (req, res, next) {
                          }
                         }
                      );
-                     mailOptions = {
-                        from: "",
+                     var mailOptions = {
+                        from: process.env.GMAIL_ID,
                         to: user.email,
                         subject: "Account Verification Link",
                         text:
@@ -105,7 +105,7 @@ exports.resendEmail = function (req, res, next) {
                             req.body.username +
                             ",\n\n" +
                             "Please verify your account by clicking the link: \nhttp://" +
-                            "http://localhost:8000" +
+                            "stutea-app.web.app" +
                             "/confirmation/" +
                             user.email +
                             "/" +

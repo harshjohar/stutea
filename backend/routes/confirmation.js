@@ -104,8 +104,8 @@ exports.resendEmail = function (req, res, next) {
                             "Hello " +
                             req.body.username +
                             ",\n\n" +
-                            "Please verify your account by clicking the link: \nhttp://" +
-                            "stutea-app.web.app" +
+                            "Please verify your account by clicking the link: \nhttps://" +
+                            "stutea.vercel.app" +
                             "/confirmation/" +
                             user.email +
                             "/" +

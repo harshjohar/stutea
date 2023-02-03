@@ -59,7 +59,7 @@ const Login = () => {
       </div>
       <div className="form-head">
         <h2 className="form-title">Welcome to StuTea</h2>
-        <form  className="form-body">
+        <form onSubmit={handleSubmit} className="form-body">
           <div className="login-form">
             <label htmlFor="" className="form-label">
               Username
@@ -91,7 +91,7 @@ const Login = () => {
             </div>
           </div>
           <div className="form-button">
-            <button type="submit" onClick={(e)=>{handleSubmit(e)}} className="form-submit-btn">
+            <button type="submit"  className="form-submit-btn">
               Login
             </button>
           </div>

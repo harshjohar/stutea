@@ -107,7 +107,7 @@ router.post(
                         from: process.env.GMAIL_ID,
                         to: user.email,
                         subject: 'Account Verification Link',
-                        text: 'Hello ' + req.body.username + ',\n\n'+'Please verify your account by clicking the link: \nhttp:\/\/'+'stutea-app.web.app'+'\/confirmation\/'+user.email+'\/'+token.token+'\n\nThank You!\n'
+                        text: 'Hello ' + req.body.username + ',\n\n'+'Please verify your account by clicking the link: \nhttps:\/\/'+'stutea.vercel.app'+'\/confirmation\/'+user.email+'\/'+token.token+'\n\nThank You!\n'
                     };
                     transporter.sendMail(mailOptions, function(err,info) {
                         if(err) {

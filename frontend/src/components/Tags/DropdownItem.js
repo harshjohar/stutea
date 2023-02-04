@@ -5,9 +5,9 @@ export const DropdownItem = (props) => {
     const {value, disabled} = props;
     return (
         <div className="tag-item-drop">
-            {!disabled ? <Link to={`/query?tag=${value}`} className="tag-link-drop">
+            {!disabled ? <a href={`/query?tag=${value}`} className="tag-link-drop">
                 {value}
-            </Link>:<div className='tag-link-drop'>{value}</div>}
+            </a>:<div className='tag-link-drop'>{value}</div>}
         </div>
     )
 }

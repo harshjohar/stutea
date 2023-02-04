@@ -8,7 +8,9 @@ const app = express();
 const port = 8000;
 
 // middlewares
-app.use(cors());
+app.use(cors({
+    origin:'*'
+}));
 app.use(express.json());
 
 // Routes

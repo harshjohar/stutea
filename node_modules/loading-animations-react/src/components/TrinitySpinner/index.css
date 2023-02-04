@@ -1,0 +1,50 @@
+.trinitySpinnerWrapper {
+  box-sizing: border-box;
+}
+
+.trinitySpinnerWrapper *,
+.trinitySpinnerWrapper *:before,
+.trinitySpinnerWrapper *:after {
+  box-sizing: inherit;
+}
+
+.trinitySpinner {
+  width: 100%;
+  padding: 50% 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.trinitySpinner .spinner {
+  position: absolute;
+}
+
+.trinitySpinner .circle {
+  transform-origin: center;
+  animation-name: animation;
+  animation-duration: 1.2s;
+  animation-timing-function: cubic-bezier;
+  animation-iteration-count: infinite;
+}
+
+.trinitySpinner .trinitySpinnerText {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+@keyframes animation {
+  0% {
+    stroke-dasharray: 1 98;
+    stroke-dashoffset: -105;
+  }
+  50% {
+    stroke-dasharray: 80 10;
+    stroke-dashoffset: -160;
+  }
+  100% {
+    stroke-dasharray: 1 98;
+    stroke-dashoffset: -300;
+  }
+}

@@ -1,0 +1,46 @@
+.progressBarWrapper {
+  box-sizing: border-box;
+}
+.progressBarWrapper *,
+.progressBarWrapper *:before,
+.progressBarWrapper *:after {
+  box-sizing: inherit;
+}
+
+.progressBar {
+  width: 100%;
+  padding: 5%;
+  border-radius: 15px;
+}
+
+.sliderBackground {
+  background-color: #000;
+  border-radius: 15px;
+}
+
+.slider {
+  padding-top: 5%;
+  border-radius: 15px;
+  animation: progres 4s infinite linear;
+}
+.progressBarText {
+  width: 100%;
+  text-align: center;
+}
+@keyframes progres {
+  0% {
+    width: 0%;
+  }
+  25% {
+    width: 50%;
+  }
+  50% {
+    width: 75%;
+  }
+  75% {
+    width: 85%;
+  }
+  100% {
+    width: 100%;
+  }
+} ;

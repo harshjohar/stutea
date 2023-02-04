@@ -10,6 +10,7 @@
     "bootstrap": "^5.1.3",
     "dateformat": "^5.0.2",
     "firebase": "^9.4.1",
+    "loading-animations-react": "^1.3.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.0.2",
     "react-confirm-alert": "^3.0.6",

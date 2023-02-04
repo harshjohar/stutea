@@ -8,7 +8,7 @@ var jwt = require("jsonwebtoken");
 const fetchuser = require("../middleware/fetchuser");
 const nodemailer = require("nodemailer");
 const crypto = require('crypto');
-const sendgridTransport = require('nodemailer-sendgrid-transport');
+const sendgridTransport = require("nodemailer-sendgrid-transport");
 // to be added in a .env file
 const JWT_SECRET = process.env.JWT_SECRET;
 
@@ -91,33 +91,35 @@ router.post(
                         });
                     }
 
-                    return res.status(200).json({success: true,message: 'User is created. Welcome to Stutea.'});
+                    // return res.status(200).json({success: true,message: 'User is created. Welcome to Stutea.'});
 
-                    // send email
-                    // const transporter = nodemailer.createTransport(
-                    //     sendgridTransport({
-                    //         auth: {
-                    //             api_key: process.env.AUTH_API_KEY,
-                    //         },
-                    //     })
-                    // );
-
-                    // var mailOptions = {
-                    //     from: 'stutea.app@gmail.com',
-                    //     to: user.email,
-                    //     subject: 'Account Verification Link',
-                    //     text: 'Hello ' + req.body.username + ',\n\n'+'Please verify your account by clicking the link: \nhttp:\/\/'+'stutea-app.web.app'+'\/confirmation\/'+user.email+'\/'+token.token+'\n\nThank You!\n'
-                    // };
-
-                    // transporter.sendMail(mailOptions, function(err) {
-                    //     if(err) {
-                    //         return res.status(500).json({
-                    //             success,
-                    //             error: 'Technical Issue!, Please click on resend for verify your Email.'
-                    //         })
-                    //     }
-                    //     return res.status(200).json({success: true,message: 'A verification email has been sent to ' + user.email + '. It will be expire after one day. If you not get verification Email click on resend token.'});
-                    // })
+                    //send email
+                    const transporter = nodemailer.createTransport(
+                       {
+                        service: 'gmail',
+                        auth: {
+                            user: process.env.GMAIL_ID,
+                            pass: process.env.GMAIL_GENPWD
+                        }
+                       }
+                    );
+                    var mailOptions = {
+                        from: process.env.GMAIL_ID,
+                        to: user.email,
+                        subject: 'Account Verification Link',
+                        text: 'Hello ' + req.body.username + ',\n\n'+'Please verify your account by clicking the link: \nhttps:\/\/'+'stutea.vercel.app'+'\/confirmation\/'+user.email+'\/'+token.token+'\n\nThank You!\n'
+                    };
+                    transporter.sendMail(mailOptions, function(err,info) {
+                        if(err) {
+                            console.log(err);
+                            return res.status(500).json({
+                                success,
+                                error: 'Technical Issue!, Please click on resend for verify your Email.'
+                            })
+                        }
+                        console.log(info);
+                        return res.status(200).json({success: true,message: 'A verification email has been sent to ' + user.email + '. It will be expire after one day. If you not get verification Email click on resend token.'});
+                    })
                 });
             });
         } catch (error) {

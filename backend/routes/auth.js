@@ -124,7 +124,7 @@ router.post(
             });
         } catch (error) {
             console.error(error.message);
-            res.status(500).send("Internal Server Error");
+            res.status(500).send({ errors : [{msg: 'Internal Server Error'}]});
         }
     }
 );
@@ -187,7 +187,7 @@ router.post(
             });
         } catch (error) {
             console.error(error.message);
-            res.status(500).send("Internal Server Error");
+            res.status(500).send({ error : 'Internal Server Error'});
         }
     }
 );
@@ -200,7 +200,7 @@ router.post("/getuser", fetchuser, async (req, res) => {
         res.send(user);
     } catch (error) {
         console.error(error.message);
-        res.status(500).send("Internal Server Error");
+        res.status(500).send({ error : 'Internal Server Error'});
     }
 });
 

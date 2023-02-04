@@ -39,7 +39,7 @@ function App() {
                             element={
                                 <UserState>
                                     <QuestionState>
-                                        <Home />
+                                        <Home flag={false} />
                                     </QuestionState>
                                 </UserState>
                             }
@@ -116,7 +116,7 @@ function App() {
                             element={
                                 <UserState>
                                     <QuestionState>
-                                        <Home />
+                                        <Home flag={true} />
                                     </QuestionState>
                                 </UserState>
                             }

@@ -13,7 +13,8 @@ import { ReactComponent as ProfileIcon } from "../Assets/Click/Profile.svg";
 import { NavItem } from "./Notifications/NavItem";
 import { Dropdown } from "./Notifications/Dropdown";
 
-const Dashboard = () => {
+const Dashboard = (props) => {
+    console.log(props);
     return (
         <>
             <div className="dashboard-main">
@@ -48,11 +49,12 @@ const Dashboard = () => {
                         </Link>
                     </div>
                 </div>
-                <Routes>
+                {/* <Routes>
                     <Route exact path="/" element={<Questions />} />
 
-                    <Route exact path="/query" element={<QuestionTag />} />
-                </Routes>
+                    <Route exact path="/queryTag" element={<QuestionTag />} />
+                </Routes> */}
+                {props.flag?<QuestionTag/>:<Questions/>}
             </div>
         </>
     );

@@ -1,9 +1,11 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import "../css/Register.css"
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import image from '../StuTea-Login.svg'
+
+
 
 export const Register = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
@@ -15,11 +17,27 @@ export const Register = () => {
       firstname: "",
       lastname: "",
       city: ""
-  })
+  });
+
   const [errors, setErrors] = useState([]);
-  const [match, setMatch] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  useEffect(()=>{
+    if (errors.length !== 0) {
+        confirmAlert({
+            message: errors[0].msg,
+            buttons: [
+              {
+                label: 'Close',
+                onClick: () => history('/register')
+              }
+            ]
+          });
+    }
+  }, [errors]);
 
   const handleSubmit = async (e)=> {
+    setLoading(true);
     e.preventDefault();
     const response = await fetch(`${host}/api/auth/register`, {
         method: "POST",
@@ -37,29 +55,19 @@ export const Register = () => {
     });
 
     const json = await response.json();
-    setErrors(json.errors);
-    if(json.error) {
-        setMatch(json.error);
+    if(json.errors) {
+        setErrors(json.errors);
+        setLoading(false);
     }
     if(json.success) {
         history(`/wait/${credentials.email}`);
+        setLoading(false);
     }
     else {
-        incorrectCredentialsAlert();
+        setLoading(false);
     }
 }
 
-const incorrectCredentialsAlert = () => {
-    confirmAlert({
-      message: match?(match.length?match:""):(errors.length?errors[0].msg:""),
-      buttons: [
-        {
-          label: 'Close',
-          onClick: () => history('/register')
-        }
-      ]
-    });
-  };
 
 const onChange = (e)=> {
   setCredentials({...credentials, [e.target.name]: e.target.value})
@@ -97,9 +105,12 @@ const onChange = (e)=> {
                     <input type="text" placeholder="Enter your city" className="rform-input" name="city" id="city" onChange={onChange} value={credentials.city}/>
                 </div>
                 <div className="form-button">
-                <button type="submit" className="form-submit-btn">
-                    Submit
-                </button>
+
+                
+                {loading ? <div class="spinner-border text-danger" role="status">
+                <span class="sr-only">Loading...</span>
+                </div>: <button type="submit" className="form-submit-btn">Submit</button> }
+                
                 </div>
             </form>
             </div>

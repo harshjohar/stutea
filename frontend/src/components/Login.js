@@ -5,7 +5,12 @@ import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 import "../css/Login.css";
 import image from "../StuTea-Login.svg";
 
+
+
 const Login = () => {
+  
+  const [loading, setLoading] = useState(false);
+
   const host = process.env.REACT_APP_BACKEND_URL;
   let history = useNavigate();
   const init = {
@@ -28,6 +33,7 @@ const Login = () => {
   };
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
     const response = await fetch(`${host}/api/auth/login`, {
       method: "POST",
@@ -41,10 +47,12 @@ const Login = () => {
     });
     const json = await response.json();
     if (json.success) {
+      setLoading(false);
       localStorage.setItem("token", json.authtoken);
       history("/");
     } else {
       // alert("Enter valid credentials");
+      setLoading(false);
       incorrectCredentialsAlert();
     }
   };
@@ -91,9 +99,9 @@ const Login = () => {
             </div>
           </div>
           <div className="form-button">
-            <button type="submit"  className="form-submit-btn">
-              Login
-            </button>
+          {loading ? <div class="spinner-border text-danger" role="status">
+          <span class="sr-only">Loading...</span>
+                </div>: <button type="submit" className="form-submit-btn">Submit</button> }
           </div>
         </form>
       </div>

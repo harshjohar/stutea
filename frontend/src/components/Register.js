@@ -37,7 +37,6 @@ export const Register = () => {
     });
 
     const json = await response.json();
-    console.log(json)
     setErrors(json.errors);
     if(json.error) {
         setMatch(json.error);

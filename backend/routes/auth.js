@@ -117,7 +117,7 @@ router.post(
                                 error: 'Technical Issue!, Please click on resend for verify your Email.'
                             })
                         }
-                        console.log(info);
+                        // console.log(info);
                         return res.status(200).json({success: true,message: 'A verification email has been sent to ' + user.email + '. It will be expire after one day. If you not get verification Email click on resend token.'});
                     })
                 });

@@ -4,7 +4,7 @@ import '../css/Confirmation.css'
 import mail from '../Assets/Click/Email.svg'
 export const Wait = () => {
     const {email}=useParams()
-    console.log(email);
+    // console.log(email);
     const host = process.env.REACT_APP_BACKEND_URL;
     const [res, setRes] = useState({})
     const reSend = async () => {

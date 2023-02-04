@@ -27,7 +27,7 @@ export const Tags = () => {
     }
     useEffect(() => {
         getTags();
-        console.log(tags);
+        // console.log(tags);
         // eslint-disable-next-line
     }, [])
     return (

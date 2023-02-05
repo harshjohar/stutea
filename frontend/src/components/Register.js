@@ -4,6 +4,7 @@ import "../css/Register.css"
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import image from '../StuTea-Login.svg'
+import Loader from './LoadingBox'
 
 export const Register = () => {
     const host = process.env.REACT_APP_BACKEND_URL;
@@ -18,8 +19,10 @@ export const Register = () => {
   })
   const [errors, setErrors] = useState([]);
   const [match, setMatch] = useState("");
+  const [isLoading, setLoading] = useState(false);
 
   const handleSubmit = async (e)=> {
+    setLoading(true)
     e.preventDefault();
     const response = await fetch(`${host}/api/auth/register`, {
         method: "POST",
@@ -40,13 +43,18 @@ export const Register = () => {
     setErrors(json.errors);
     if(json.error) {
         setMatch(json.error);
+        setLoading(false);
+
     }
     if(json.success) {
         history(`/wait/${credentials.email}`);
+        setLoading(false);
     }
     else {
         incorrectCredentialsAlert();
+        setLoading(false);
     }
+    setLoading(false);
 }
 
 const incorrectCredentialsAlert = () => {
@@ -59,6 +67,7 @@ const incorrectCredentialsAlert = () => {
         }
       ]
     });
+        setLoading(false);
   };
 
 const onChange = (e)=> {
@@ -96,11 +105,17 @@ const onChange = (e)=> {
                     <label htmlFor="city" className="rform-label">City</label>
                     <input type="text" placeholder="Enter your city" className="rform-input" name="city" id="city" onChange={onChange} value={credentials.city}/>
                 </div>
-                <div className="form-button">
-                <button type="submit" className="form-submit-btn">
-                    Submit
-                </button>
-                </div>
+                {isLoading? (
+                    <div className="form-button">
+                     <Loader/> 
+                    </div>
+                 ):(
+                     <div className="form-button">
+                        <button type="submit" className="form-submit-btn">
+                        Submit
+                        </button>
+                     </div>
+                )}
             </form>
             </div>
     </div>

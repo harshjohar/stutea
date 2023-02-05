@@ -4,6 +4,7 @@ import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 import "../css/Login.css";
 import image from "../StuTea-Login.svg";
+import Loader from './LoadingBox'
 
 const Login = () => {
   const host = process.env.REACT_APP_BACKEND_URL;
@@ -13,6 +14,7 @@ const Login = () => {
     password: "",
   };
   const [credentials, setCredentials] = useState(init);
+  const [isLoading, setLoading] = useState(false);
 
   const incorrectCredentialsAlert = () => {
     confirmAlert({
@@ -28,6 +30,7 @@ const Login = () => {
   };
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
     const response = await fetch(`${host}/api/auth/login`, {
       method: "POST",
@@ -43,9 +46,11 @@ const Login = () => {
     if (json.success) {
       localStorage.setItem("token", json.authtoken);
       history("/");
+      setLoading(false);
     } else {
       // alert("Enter valid credentials");
       incorrectCredentialsAlert();
+      setLoading(false);
     }
   };
 
@@ -90,11 +95,17 @@ const Login = () => {
               />
             </div>
           </div>
+          {isLoading? (
+                    <div className="form-button">
+                     <Loader/> 
+                    </div>
+                 ):(
           <div className="form-button">
             <button type="submit"  className="form-submit-btn">
               Login
             </button>
           </div>
+                 )}
         </form>
       </div>
     </div>

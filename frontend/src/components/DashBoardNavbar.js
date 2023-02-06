@@ -20,8 +20,13 @@ export const DashBoardNavbar = () => {
     let location = useLocation();
     let history = useNavigate();
     const handleLogout = ()=> {
-        localStorage.removeItem('token')
-        history('/login')
+        var answer = window.confirm("Are you sure you want to Logout?")
+        if (answer){
+            localStorage.removeItem('token')
+            history('/login')
+        }else{
+            console.log("account was not logged out")
+        }
     }
     // const [hamburger, setHamburger] = useState(false)
     // const toggle=()=>{

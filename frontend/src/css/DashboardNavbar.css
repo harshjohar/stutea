@@ -105,7 +105,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
 }
 .nav-text:hover{
     font-size: 1.3rem;
@@ -134,7 +134,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    font-size:1.5rem;
+    font-size:1.3rem;
 }
 .text{
     color: black;

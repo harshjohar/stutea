@@ -33,7 +33,7 @@ export const DashBoardNavbar = () => {
                 label: "Logout",
                 onClick: () =>(
                 localStorage.removeItem('token'),
-                history("/login")
+                history("/")
                 ),
               },
             ],

@@ -21,7 +21,7 @@ export const Navbar = () => {
             label: "Logout",
             onClick: () =>(
             localStorage.removeItem('token'),
-            history("/login")
+            history("/")
             ),
           },
         ],

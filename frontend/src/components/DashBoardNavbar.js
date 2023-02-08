@@ -37,7 +37,7 @@ export const DashBoardNavbar = () => {
             <div className="link-list" >
                 <ul className="links">
                     <li className="link-list-item" >
-                        <Link  className={`ll-item ${location.pathname === '/' ? "active-nav" : ""}`} to="/">
+                        <Link className={`ll-item ${location.pathname === '/' ? "active-nav" : ""}`} to="/">
                             <div className="nav-icon">
                                 {location.pathname === '/' ? <img src={homeActive} alt="" className="icon-lar" /> : <img src={home} alt="" className="icon" />}
                             </div>
@@ -58,7 +58,6 @@ export const DashBoardNavbar = () => {
                                 {location.pathname === '/about' ? <img src={aboutActive} alt="" className='icon-lar' /> : <img src={about} alt="" className="icon" />}
                             </div>
                             <div className={`nav-text${location.pathname === '/about' ? "-active" : ""}`}>About</div>
-
                         </Link>
                     </li>
                     <li className="link-list-item">
@@ -77,28 +76,47 @@ export const DashBoardNavbar = () => {
                             <div className={`nav-text${location.pathname === '/shop' ? "-active" : ""}`}>Shop</div>
                         </Link>
                     </li>}
+
+                    {localStorage.getItem('token') ? 
+
+                    <div>
+                    <li className="link-list-item">
+                        <div className="logout">
+                            <button className="logout-btn" onClick={handleLogout}>
+                                <div className="nav-icon">
+                                    <img src={logout} alt="" className="icon" /></div>
+                                <div className={`nav-text${location.pathname === '/shop' ? "-active" : "text"}`}>Logout</div>
+                            </button>
+                        </div> 
+                    </li>
+                    </div>
+                    :
+                    <div>
+                    <li className="link-list-item">
+                        <Link className="ll-item" to="/register" style={location.pathname === '/register' ? { display: "none" } : { display: "inline" }}>
+                            <button className="logout-btn">
+                                <div className="nav-icon">
+                                    <img src={register} alt="" className="icon" />
+                                </div>
+                                <div className={`nav-text${location.pathname === '/login' ? "-active" : ""}`}>Register</div>
+                            </button>
+                        </Link>
+                    </li>
+                    <li className="link-list-item" style={location.pathname === '/login' ? { display: "none"} : { display: "inline" }}>
+                        <Link className="ll-item" to="/login" >
+                            <button className="logout-btn" >
+                                <div className="nav-icon" >
+                                    <img src={login} alt="" className="icon" />
+                                </div>
+                                <div className={`nav-text${location.pathname === '/register' ? "-active" : ""}`}>Login</div>
+                            </button>
+                        </Link>
+                    </li>
+                    </div>}
                 </ul>
 
             </div>
-            {localStorage.getItem('token') ? <div className="logout">
-                <button className="logout-btn" onClick={handleLogout}>
-                    <div className="nav-icon">
-                        <img src={logout} alt="" className="icon" /></div>
-                    <div className={`nav-text${location.pathname === '/shop' ? "-active" : "text"}`}>Logout</div></button>
-            </div> : <div className={`logout${location.pathname === '/' ? "-hide nav-text-active" : ""}`}>
-                <Link className="ll-item" to="/login" style={location.pathname === '/login' ? { display: "none" } : { display: "inline" }}>
-                    <button className="logout-btn">
-                        <div className="nav-icon">
-                            <img src={login} alt="" className="icon" /></div>
-                        <div className={`nav-text${location.pathname === '/login' ? "-active" : " text"}`}>Login</div></button>
-                </Link>
-                <Link className="ll-item" to="/register" style={location.pathname === '/register' ? { display: "none" } : { display: "inline" }}>
-                    <button className="logout-btn">
-                        <div className="nav-icon">
-                            <img src={register} alt="" className="icon" /></div>
-                        <div className={`nav-text${location.pathname === '/register' ? "-active" : " text"}`}>Register</div></button>
-                </Link>
-            </div>}
+
         </div>
     )
 }

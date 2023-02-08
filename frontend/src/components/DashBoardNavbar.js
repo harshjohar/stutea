@@ -15,14 +15,30 @@ import logout from "../Assets/Click/Logout.svg"
 import login from "../Assets/Click/Login.svg"
 import register from "../Assets/Click/Register.svg"
 import {ReactComponent as Logo} from "../logo.svg"
+import { confirmAlert } from "react-confirm-alert"; // Import
+import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
 export const DashBoardNavbar = () => {
     let location = useLocation();
     let history = useNavigate();
     const handleLogout = ()=> {
-        localStorage.removeItem('token')
-        history('/login')
-    }
+        confirmAlert({
+            title: "Confirmation",
+            message: "Are you sure, you want to logout?",
+            buttons: [
+              {
+                label: "Cancel",
+              },
+              {
+                label: "Logout",
+                onClick: () =>(
+                localStorage.removeItem('token'),
+                history("/login")
+                ),
+              },
+            ],
+          }); 
+      }
     // const [hamburger, setHamburger] = useState(false)
     // const toggle=()=>{
     //     setHamburger(!hamburger)

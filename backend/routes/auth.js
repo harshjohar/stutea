@@ -123,8 +123,7 @@ router.post(
                 });
             });
         } catch (error) {
-            console.error(error.message);
-            res.status(500).send({ errors : [{msg: 'Internal Server Error'}]});
+            res.status(500).send({ error : [{msg: 'Internal Server Error'}]});
         }
     }
 );
@@ -186,7 +185,6 @@ router.post(
                 authtoken,
             });
         } catch (error) {
-            console.error(error.message);
             res.status(500).send({ error : 'Internal Server Error'});
         }
     }
@@ -199,7 +197,6 @@ router.post("/getuser", fetchuser, async (req, res) => {
         const user = await User.findById(userId).select("-password");
         res.send(user);
     } catch (error) {
-        console.error(error.message);
         res.status(500).send({ error : 'Internal Server Error'});
     }
 });

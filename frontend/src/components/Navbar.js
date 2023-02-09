@@ -3,14 +3,29 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../logo.svg"
 import "../css/Navbar.css"
 import {FaBars,FaTimes} from "react-icons/fa"
-
+import { confirmAlert } from "react-confirm-alert"; // Import
+import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
 export const Navbar = () => {
     let location = useLocation();
   let history = useNavigate();
   const handleLogout = ()=> {
-    localStorage.removeItem('token')
-    history('/login')
+    confirmAlert({
+        title: "Confirmation",
+        message: "Are you sure, you want to logout?",
+        buttons: [
+          {
+            label: "Cancel",
+          },
+          {
+            label: "Logout",
+            onClick: () =>(
+            localStorage.removeItem('token'),
+            history("/")
+            ),
+          },
+        ],
+      }); 
   }
 
   const [hamburger, setHamburger] = useState(false)

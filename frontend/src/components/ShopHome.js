@@ -3,51 +3,16 @@ import "../css/Shop.css";
 import img from "../Assets/shop1.jpg";
 import img1 from "../Assets/shop2.jpg";
 import img2 from "../Assets/shop3.jpg";
+import { ShopCard } from "./ShopCard";
 export const ShopHome = () => {
   return (
     <div className="parent-shop">
       <h1>Welcome To The StuTea Shop!</h1>
       <div className="product-content">
         <div className="product-cards">
-          <div className="card">
-            <img src={img} className="card-img-top" alt="img"/>
-            <div className="card-body">
-              <h5 className="card-title">StuTea Hoodie</h5>
-              <p className="card-text">
-                Credits: 3000
-              </p>
-              <a href="/" className="btn btn-primary">
-                <img src="/iconmonstr-shopping-cart-thin.svg" class="w-5 mx-2" alt=""/>
-                Buy
-              </a>
-            </div>
-          </div>
-          <div className="card">
-            <img src={img1} className="card-img-top" alt="img"/>
-            <div className="card-body">
-              <h5 className="card-title">StuTea Mug</h5>
-              <p className="card-text">
-                Credits: 3500
-              </p>
-              <a href="/" className="btn btn-primary">
-                <img src="/iconmonstr-shopping-cart-thin.svg" class="w-5 mx-2" alt=""/>
-                Buy
-              </a>
-            </div>
-          </div>
-          <div className="card">
-            <img src={img2} className="card-img-top" alt="img"/>
-            <div className="card-body">
-              <h5 className="card-title">StuTea Backpack</h5>
-              <p className="card-text">
-                Credits: 5000
-              </p>
-              <a href="/" className="btn btn-primary">
-                <img src="/iconmonstr-shopping-cart-thin.svg" class="w-5 mx-2" alt=""/>
-                Buy
-              </a>
-            </div>
-          </div>
+          <ShopCard imageUrl={img} product={"StuTea Hoodie"} credits={"3000"} color={"purple"} />
+          <ShopCard imageUrl={img1} product={"StuTea Mug"} credits={"3500"} color={"blue"} />
+          <ShopCard imageUrl={img2} product={"StuTea Backpack"} credits={"5000"} color={"yellow"} />
         </div>
       </div>
     </div>

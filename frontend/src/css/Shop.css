@@ -38,15 +38,36 @@
     transform: scale(1.1);
 }
 
+.innerCard{
+    border-radius: 46px;
+    background: #ffffff63;
+    padding: 21px;
+    margin-bottom: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.purple{
+    background-color: lavender;
+}
+
+.blue{
+    background-color: #daf1ff;
+}
+
+.yellow{
+    background-color: antiquewhite;
+}
 
 .card {
+    height: fit-content;
     transition: transform .2s;
     width: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1.5rem 1rem;
-    background-color: #E8F7FE;
     font-size: 1rem;
     margin: 1rem;
     height: 65vh;

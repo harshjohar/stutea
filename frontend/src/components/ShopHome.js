@@ -17,6 +17,7 @@ export const ShopHome = () => {
                 Credits: 3000
               </p>
               <a href="/" className="btn btn-primary">
+                <img src="/iconmonstr-shopping-cart-thin.svg" class="w-5 mx-2" alt=""/>
                 Buy
               </a>
             </div>
@@ -29,6 +30,7 @@ export const ShopHome = () => {
                 Credits: 3500
               </p>
               <a href="/" className="btn btn-primary">
+                <img src="/iconmonstr-shopping-cart-thin.svg" class="w-5 mx-2" alt=""/>
                 Buy
               </a>
             </div>
@@ -41,6 +43,7 @@ export const ShopHome = () => {
                 Credits: 5000
               </p>
               <a href="/" className="btn btn-primary">
+                <img src="/iconmonstr-shopping-cart-thin.svg" class="w-5 mx-2" alt=""/>
                 Buy
               </a>
             </div>

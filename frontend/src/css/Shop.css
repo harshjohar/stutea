@@ -41,7 +41,7 @@
 .innerCard{
     border-radius: 46px;
     background: #ffffff63;
-    padding: 21px;
+    padding: 10px;
     margin-bottom: 20px;
     align-items: center;
     display: flex;
@@ -86,7 +86,7 @@
 
 @media screen and (max-width:1024px){
     .card{
-        width: 50%;
+        width: 65%;
     }
     .card:hover{
         transform: none;
@@ -102,21 +102,19 @@
         text-align: center;
     }
 }
-@media screen and (max-width:820px) {
-    .product-cards{
-        width: 105vw;
-    }
-}
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:820px) {
     .card{
-        width: 70%;
+        width: 80%;
     }
 }
 
 @media screen and (max-width:500px) {
     .card{
-        width: 95%;
+        width: 100%;
+    }
+    .innerCard{
+        height: 42vh;
     }
 }
 
@@ -126,5 +124,6 @@
     }
     .card{
         width: 100%;
+        padding: 1rem;
     }
 }

@@ -104,7 +104,7 @@
 }
 @media screen and (max-width:820px) {
     .product-cards{
-        width: max-content;
+        width: 105vw;
     }
 }
 

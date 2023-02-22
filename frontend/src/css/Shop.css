@@ -112,9 +112,22 @@
 @media screen and (max-width:500px) {
     .card{
         width: 100%;
+        padding: 13px;
     }
     .innerCard{
         height: 42vh;
+    }
+    .innerCard img{
+        border-radius: 40%;
+    }
+    .card-body{
+        padding: 10px 0 0 0;
+    }
+    .btn{
+        margin-top: -7px;
+    }
+    .card-title{
+        margin-bottom: 0.25rem;
     }
 }
 

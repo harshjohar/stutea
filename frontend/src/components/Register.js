@@ -107,8 +107,8 @@ const onChange = (e)=> {
                 <div className="form-button">
 
                 
-                {loading ? <div className="spinner-border text-danger" role="status">
-                <span className="sr-only">Loading...</span>
+                {loading ? <div class="spinner-border text-danger" role="status">
+                <span class="sr-only">Loading...</span>
                 </div>: <button type="submit" className="form-submit-btn">Submit</button> }
                 
                 </div>

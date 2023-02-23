@@ -29,25 +29,23 @@
 }
 
 .card-img-top{
-    height: 150px;
-    width: auto;
+    height: 35vh;
+    width: 90%;
     border-radius: 50%;
 }
 
 .card:hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .innerCard{
-    border-radius: 2rem;
+    border-radius: 46px;
     background: #ffffff63;
     padding: 10px;
     margin-bottom: 20px;
     align-items: center;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
+    flex-direction: column;
 }
 
 .purple{
@@ -69,7 +67,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 1.5rem 1rem;
     font-size: 1rem;
     margin: 1rem;
     border-radius: 2rem;
@@ -84,7 +82,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    text-align: center;
 }
 
 @media screen and (max-width:1024px){
@@ -104,10 +101,6 @@
     .card-title{
         text-align: center;
     }
-
-    .card-img-top {
-        height: 100px;
-    }
 }
 
 @media screen and (max-width:820px) {
@@ -122,7 +115,7 @@
         padding: 13px;
     }
     .innerCard{
-        min-height: 120px;
+        height: 42vh;
     }
     .innerCard img{
         border-radius: 40%;

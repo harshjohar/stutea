@@ -97,7 +97,7 @@ export const DashBoardNavbar = () => {
                             <button className="logout-btn" onClick={handleLogout}>
                                 <div className="nav-icon">
                                     <img src={logout} alt="" className="icon" /></div>
-                                <div className={`nav-text${location.pathname === '/shop' ? "-active" : "text"}`}>Logout</div>
+                                <div className={`nav-text${location.pathname === '/logout' ? "-active" : ""}`}>Logout</div>
                             </button>
                         </div> 
                     </li>

@@ -12,6 +12,7 @@ import { ReactComponent as CreditIcon } from "../Assets/Click/Credits.svg";
 import { ReactComponent as ProfileIcon } from "../Assets/Click/Profile.svg";
 import { NavItem } from "./Notifications/NavItem";
 import { Dropdown } from "./Notifications/Dropdown";
+import { Tooltip } from '@mui/material';
 
 const Dashboard = (props) => {
     console.log(props);
@@ -20,18 +21,22 @@ const Dashboard = (props) => {
             <div className="dashboard-main">
                 <div className="top-icons">
                     {/* <NotifIconActive className='icon-top'/> */}
-                    <Link to="/favs">
-                        <i className="fas fa-bookmark icon-top"></i>
-                    </Link>
-                    <NavItem icon={<NotifIconActive />}>
-                        <Dropdown type="notif"></Dropdown>
-                    </NavItem>
-                    <NavItem icon={<CreditIcon />}>
-                        <Dropdown type="credits"></Dropdown>
-                    </NavItem>
-                    <Link to="/profile">
-                        <ProfileIcon className="icon-top" />
-                    </Link>
+                    <Tooltip title="Bookmark">
+                        <Link to="/favs">
+                            <i className="fas fa-bookmark icon-top"></i>
+                        </Link>
+                    </Tooltip>                   
+                        <NavItem icon={<Tooltip title="Notification"><NotifIconActive /></Tooltip>}>
+                            <Dropdown type="notif"></Dropdown>
+                        </NavItem>
+                        <NavItem icon={<Tooltip title="Credits"><CreditIcon /></Tooltip>}>
+                            <Dropdown type="credits"></Dropdown>
+                        </NavItem>
+                    <Tooltip title="Profile">
+                        <Link to="/profile">
+                            <ProfileIcon className="icon-top" />
+                        </Link>
+                    </Tooltip>
                     {/* <NavItem icon={<ProfileIcon/>}>
                         <Dropdown type="profile"></Dropdown>
                     </NavItem> */}

@@ -203,10 +203,16 @@
         align-items: center;
         display: flex;
     }
+    .icon-lar{
+        width: 90%;
+    }
 }
 
 @media screen and (max-width:520px) {
     .nav-icon{
         width: 50%;
+    }
+    .icon-lar{
+        width: 90%;
     }
 }

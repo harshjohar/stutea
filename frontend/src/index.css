@@ -7,6 +7,67 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#dark{
+  background-color: rgb(49, 49, 49);
+}
+
+#dark .dark-text{
+  color: white;
+}
+
+#dark .about-card-1{
+  background-color: #290318;
+}
+
+#dark .about-card-2{
+  background-color: #0d0d29;
+}
+
+#dark .about-card-3{
+  background-color: rgba(46, 36, 10, 1);
+}
+
+#dark .address-box{
+  background-color: #0d2834;
+}
+
+#dark .general-box{
+  background-color: #330e23;
+}
+
+#dark .contact-submit-btn{
+  background-color: white;
+  color: #290318;
+}
+
+#dark .purple{
+  background-color: #07072e;
+}
+
+#dark .blue{
+  background-color: #041f2f;
+}
+
+#dark .yellow{
+  background-color: #332008;
+}
+
+#dark .nav-text-active{
+  color: white;
+}
+
+#dark .page-link-own{
+  background-color: rgb(49, 49, 49);
+}
+
+#dark .logout-btn{
+  background-color: rgb(49, 49, 49);;
+}
+
+#dark .add-ques{
+  background-color: black;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

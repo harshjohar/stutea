@@ -25,13 +25,23 @@ import { Settings } from "./components/Settings";
 import { BuyCredits } from "./components/BuyCredits";
 import { FavTagQues } from "./components/FavTagQues";
 import { ViewMyAns } from "./components/ViewMyAns";
+import { createContext, useState } from "react";
+import Dashboard from "./components/Dashboard";
+export const ThemeContext = createContext(null);
 
 function App() {
+
+    const [theme, setTheme] = useState("light");
+    const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"));
+        };
+
     return (
-        <div className="App">
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <div className="App" id={theme}>
             <Router>
                 <CreditState>
-                    <DashBoardNavbar />
+                  <DashBoardNavbar/>
                     <Routes>
                         <Route
                             exact
@@ -39,7 +49,7 @@ function App() {
                             element={
                                 <UserState>
                                     <QuestionState>
-                                        <Home flag={false} />
+                                        <Home theme={theme} toggleTheme={toggleTheme} flag={false} />
                                     </QuestionState>
                                 </UserState>
                             }
@@ -127,6 +137,7 @@ function App() {
                 </CreditState>
             </Router>
         </div>
+        </ThemeContext.Provider>
     );
 }
 

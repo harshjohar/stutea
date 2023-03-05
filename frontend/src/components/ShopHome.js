@@ -6,7 +6,7 @@ import img2 from "../Assets/shop3.jpg";
 import { ShopCard } from "./ShopCard";
 export const ShopHome = () => {
   return (
-    <div className="parent-shop">
+    <div className="parent-shop dark-text">
       <h1>Welcome To The StuTea Shop!</h1>
       <div className="product-content">
         <div className="product-cards">

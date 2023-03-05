@@ -13,20 +13,23 @@ import { ReactComponent as ProfileIcon } from "../Assets/Click/Profile.svg";
 import { NavItem } from "./Notifications/NavItem";
 import { Dropdown } from "./Notifications/Dropdown";
 import { Tooltip } from '@mui/material';
+import PropTypes from 'prop-types';
+import { Switch } from "@mui/material";
 
 const Dashboard = (props) => {
+  
     console.log(props);
     return (
         <>
-            <div className="dashboard-main">
+            <div className="dashboard-main dark-text">
                 <div className="top-icons">
                     {/* <NotifIconActive className='icon-top'/> */}
                     <Tooltip title="Bookmark">
                         <Link to="/favs">
-                            <i className="fas fa-bookmark icon-top"></i>
+                            <i className="fas fa-bookmark icon-top" style={{color:"gray"}}></i>
                         </Link>
                     </Tooltip>                   
-                        <NavItem icon={<Tooltip title="Notification"><NotifIconActive /></Tooltip>}>
+                        <NavItem className="dark-text" icon={<Tooltip title="Notification"><NotifIconActive className="dark-text"/></Tooltip>}>
                             <Dropdown type="notif"></Dropdown>
                         </NavItem>
                         <NavItem icon={<Tooltip title="Credits"><CreditIcon /></Tooltip>}>
@@ -34,9 +37,12 @@ const Dashboard = (props) => {
                         </NavItem>
                     <Tooltip title="Profile">
                         <Link to="/profile">
-                            <ProfileIcon className="icon-top" />
+                            <ProfileIcon className="icon-top dark-text" />
                         </Link>
                     </Tooltip>
+                    <div style={{marginTop:"13px"}}>
+                    <Switch onChange={props.toggleTheme} checked={props.theme === "dark"} className="m-[10px] sm:m-0 mt-[13px]" />
+                    </div>
                     {/* <NavItem icon={<ProfileIcon/>}>
                         <Dropdown type="profile"></Dropdown>
                     </NavItem> */}

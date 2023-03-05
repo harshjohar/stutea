@@ -41,10 +41,10 @@ export const DashBoardNavbar = () => {
       }
 
     return (
-        <div className="nav-main">
+        <div className="nav-main dark-text">
             <div className="nav-logo-wrapper">
                 {/* img-here */}
-                <Logo className="logo" onClick={() => { history("/") }} />
+                <Logo className="logo dark-text" onClick={() => { history("/") }} />
             </div>
             <div className="link-list" >
                 <ul className="links">

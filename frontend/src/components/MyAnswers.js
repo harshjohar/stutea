@@ -45,8 +45,8 @@ export const MyAnswers = () => {
         await getMyAnswers(currPage);
     };
     return (
-        <div className="my-questions">
-            <h2 className="my-q-head">My Answers</h2>
+        <div className="my-questions dark-text">
+            <h2 className="my-q-head dark-text">My Answers</h2>
             <div className="own-ques">
             {answers.map((answer) => {
                 return <MyAnsCard key={answer._id} answer={answer} />;

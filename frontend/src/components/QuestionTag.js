@@ -102,7 +102,7 @@ export const QuestionTag = () => {
         }   
     }
     return (
-        <div className="questions">
+        <div className="questions dark-text">
             <div className="sub-heading-tags">
                 Questions with tag <span className='tag-heading'>{reqTag}</span> 
                 <div className="add-to-fav">

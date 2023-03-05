@@ -54,7 +54,7 @@ export const Profile = () => {
                     </Link>
             </div>
 
-            <div className="profile-head">
+            <div className="profile-head dark-text">
                 <div className="dp-info">
                     <div className="user-dp">
                         {user.dp&&<img className="dp" src={user.dp} alt="dp" />}
@@ -63,7 +63,7 @@ export const Profile = () => {
                         <div className="user-head">
                             <h3 className="username">{user.username}</h3>
                             <Link to="/settings" className="gear">
-                            <i className="fas fa-cog "></i>
+                            <i className="fas fa-cog dark-text"></i>
                             </Link>
                         </div>
                         <div className="name">
@@ -84,7 +84,7 @@ export const Profile = () => {
                 </div>
             </div>
                 <div className="favourite-tags">
-                <h2 className="profile-stats">My Favourites</h2> {favTags.map((tag)=>{
+                <h2 className="profile-stats dark-text">My Favourites</h2> {favTags.map((tag)=>{
                         return <Tag value={tag} key={tag}/>
                     })}
                     {/* overflowX: hidden */}

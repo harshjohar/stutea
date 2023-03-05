@@ -54,9 +54,9 @@ export const MyQuestions = () => {
         await getMyQuestions(currPage);
     };
     return (
-        <div className="my-questions">
+        <div className="my-questions dark-text">
             {!questions.length && <Spinner/>}
-            <h2 className="my-q-head">My Questions</h2>
+            <h2 className="my-q-head dark-text">My Questions</h2>
             <div className="own-ques">
             {questions.map((question) => {
                 return <MyQuestionCard key={question._id} question={question} />;

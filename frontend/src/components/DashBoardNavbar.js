@@ -15,10 +15,13 @@ import logout from "../Assets/Click/Logout.svg"
 import login from "../Assets/Click/Login.svg"
 import register from "../Assets/Click/Register.svg"
 import {ReactComponent as Logo} from "../logo.svg"
+import PropTypes from 'prop-types';
+import { Switch } from "@mui/material";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
-export const DashBoardNavbar = () => {
+export const DashBoardNavbar = (props) => {
+    console.log(props);
     let location = useLocation();
     let history = useNavigate();
     const handleLogout = ()=> {
@@ -123,6 +126,9 @@ export const DashBoardNavbar = () => {
                                 <div className={`nav-text${location.pathname === '/register' ? "-active" : ""}`}>Login</div>
                             </button>
                         </Link>
+                        <div style={{marginTop:"13px"}}>
+                    <Switch onChange={props.toggleTheme} defaultValue = {"light"} checked={props.theme === "dark"} className="m-[10px] sm:m-0" />
+                    </div>
                     </li>
                     </div>}
                 </ul>

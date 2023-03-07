@@ -65,7 +65,24 @@ body {
 }
 
 #dark .add-ques{
-  background-color: black;
+  background-color: rgb(176, 176, 176);
+  color: white;
+}
+
+#dark .tagString-not{
+  background-color: rgb(49, 49, 49);
+}
+
+#dark .tagString{
+  background-color: #012333;
+}
+
+#dark ::placeholder{
+  color: rgb(188, 188, 188);
+}
+
+#dark .question{
+  background-color: #34021e;
 }
 
 code {

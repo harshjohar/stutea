@@ -4,7 +4,7 @@ import { Navbar } from "./Navbar";
 export const Nav = () => {
     return (
         <>
-            {localStorage.getItem('token')&&<DashBoardNavbar/>}
+            {localStorage.getItem('token')&&<DashBoardNavbar />}
             {/* <Navbar/> */}
         </>
     )

@@ -74,7 +74,7 @@ export const AddQuestion = () => {
         setTagString(e.target.value);
     };
     return (
-        <div className="upload-ques">
+        <div className="upload-ques dark-text">
             <div className="top-icons">
                 {/* <NotifIconActive className='icon-top'/> */}
                 <NavItem icon={<NotifIconActive />}>

@@ -41,7 +41,7 @@ const Dashboard = (props) => {
                         </Link>
                     </Tooltip>
                     <div style={{marginTop:"13px"}}>
-                    <Switch onChange={props.toggleTheme} checked={props.theme === "dark"} className="m-[10px] sm:m-0 mt-[13px]" />
+                    <Switch onChange={props.toggleTheme} checked={props.theme === "dark"} className="m-[10px] sm:m-0" />
                     </div>
                     {/* <NavItem icon={<ProfileIcon/>}>
                         <Dropdown type="profile"></Dropdown>

@@ -65,7 +65,7 @@ body {
 }
 
 #dark .add-ques{
-  background-color: rgb(176, 176, 176);
+  background-color: rgb(91, 91, 91);
   color: white;
 }
 
@@ -83,6 +83,22 @@ body {
 
 #dark .question{
   background-color: #34021e;
+}
+
+#dark .dark-icon{
+  filter: invert(1);
+}
+
+#dark .card-lp{
+  background-color: #494949;
+}
+
+#dark .register-button-lp{
+  background-color: #bb8714;
+}
+
+#dark .ques-card{
+  background-color: #1d1650;
 }
 
 code {

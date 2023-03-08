@@ -111,7 +111,7 @@ export const DashBoardNavbar = (props) => {
                         <Link className="ll-item" to="/register" style={location.pathname === '/register' ? { display: "none" } : { display: "inline" }}>
                             <button className="logout-btn">
                                 <div className="nav-icon">
-                                    <img src={register} alt="" className="icon" />
+                                    <img src={register} alt="" className="icon dark-icon" />
                                 </div>
                                 <div className={`nav-text${location.pathname === '/login' ? "-active" : ""}`}>Register</div>
                             </button>
@@ -121,12 +121,12 @@ export const DashBoardNavbar = (props) => {
                         <Link className="ll-item" to="/login" >
                             <button className="logout-btn" >
                                 <div className="nav-icon" >
-                                    <img src={login} alt="" className="icon" />
+                                    <img src={login} alt="" className="icon dark-icon" />
                                 </div>
                                 <div className={`nav-text${location.pathname === '/register' ? "-active" : ""}`}>Login</div>
                             </button>
                         </Link>
-                        <div style={{marginTop:"13px"}}>
+                        <div style={{width:"80%", textAlign:"center"}}>
                     <Switch onChange={props.toggleTheme} defaultValue = {"light"} checked={props.theme === "dark"} className="m-[10px] sm:m-0" />
                     </div>
                     </li>

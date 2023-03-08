@@ -29,7 +29,7 @@ import { createContext, useState } from "react";
 import Dashboard from "./components/Dashboard";
 export const ThemeContext = createContext(null);
 
-function App(props) {
+function App() {
 
     const [theme, setTheme] = useState("light");
     const toggleTheme = () => {
@@ -41,7 +41,7 @@ function App(props) {
         <div className="App" id={theme}>
             <Router>
                 <CreditState>
-                  <DashBoardNavbar theme={props.theme} toggleTheme={props.toggleTheme}/>
+                  <DashBoardNavbar theme={theme} toggleTheme={toggleTheme}/>
                     <Routes>
                         <Route
                             exact

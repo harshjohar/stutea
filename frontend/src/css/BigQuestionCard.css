@@ -10,6 +10,14 @@
     height: 43vh;
 }
 
+#dark .big-ques-card-green {
+    background-color: #103352;
+}
+
+#dark .big-ques-card-magenta {
+    background-color: #561256;
+}
+
 .big-ques-card-magenta {
     display: flex;
     flex-direction: column;
@@ -29,11 +37,19 @@
     overflow-y: hidden;
 }
 
+#dark .question-green{
+    color: white;
+}
+
 .question-magenta {
     color: #652448;
     font-size: 1.2rem;
     height: 20vh;
     overflow-y: hidden;
+}
+
+#dark .question-magenta{
+    color: white;
 }
 
 .tags {
@@ -92,6 +108,10 @@
     color: #123E53;
     font-size: 1.1rem;
 }
+
+#dark .name-ques {
+    color: white
+};
 
 .date-ques {
     color: #A6BDC9;

@@ -101,6 +101,23 @@ body {
   background-color: #1d1650;
 }
 
+#dark .q-dark{
+  color: lightblue;
+}
+
+#dark .btn-hidden{
+  filter: invert();
+}
+
+#dark .btn-dark{
+  background-color: whitesmoke;
+  color: black;
+}
+
+#dark .question{
+  color: white;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

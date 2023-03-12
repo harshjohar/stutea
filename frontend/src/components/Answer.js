@@ -123,7 +123,7 @@ export const Answer = () => {
     }
 
     return (
-        <div className="answer-main">
+        <div className="answer-main dark-text">
             <div className="top-icons">
                 {/* <NotifIconActive className='icon-top'/> */}
                 <NavItem icon={<NotifIconActive />}>
@@ -137,7 +137,7 @@ export const Answer = () => {
                 </Link>
             </div>
             <div className="q-to-ans">
-                <div className="q">Question: </div>
+                <div className="q q-dark">Question: </div>
                 <div className="q-ques">{question.question}</div>
             </div>
             <div className="user-deets">
@@ -202,7 +202,7 @@ export const Answer = () => {
                         <div className="btn-upload">
                             <button
                                 type="button"
-                                className="btn-upload-img"
+                                className="btn-upload-img btn-dark"
                                 onClick={uploadImage}
                             >
                                 Upload Image
@@ -214,7 +214,7 @@ export const Answer = () => {
                 <div className="submit-btn">
                     <button
                         type="submit"
-                        className="add-ques-btn"
+                        className="add-ques-btn btn-dark"
                         onClick={handleSubmit}
                     >
                         Submit

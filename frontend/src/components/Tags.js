@@ -45,8 +45,8 @@ export const Tags = () => {
                     <ProfileIcon className="icon-top"/>
                     </Link>
             </div>
-            <h2 className="tags-head">All tags here</h2>
-            <div className="all-tags">
+            <h2 className="tags-head dark-text">All tags here</h2>
+            <div className="all-tags dark-text">
                 {Object.entries(tags).map(([key, value])=> {
                     return (key!=="undefined" && <TagBlock heading={key} list={value}/>)
                 })}

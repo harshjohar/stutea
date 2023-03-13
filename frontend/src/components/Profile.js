@@ -11,8 +11,10 @@ import { NavItem } from './Notifications/NavItem';
 import { Dropdown } from './Notifications/Dropdown';
 import { Tag } from './Tag';
 import { MyAnswers } from './MyAnswers';
+import PropTypes from 'prop-types';
+import { Switch } from "@mui/material";
 // import {ReactComponent as Settings} from '../Assets/Rest/Settings.svg'
-export const Profile = () => {
+export const Profile = (props) => {
     const host = process.env.REACT_APP_BACKEND_URL;
     const uContext = useContext(userContext);
     const {user, getUserByAuthToken} = uContext;
@@ -52,6 +54,9 @@ export const Profile = () => {
                     <Link to="/profile">
                     <ProfileIcon className="icon-top"/>
                     </Link>
+                    <div style={{marginTop:"15px"}}>
+                    <Switch onChange={props.toggleTheme} defaultValue = {"light"} checked={props.theme === "dark"} className="m-[10px] sm:m-0" />
+                    </div>
             </div>
 
             <div className="profile-head dark-text">

@@ -69,7 +69,7 @@ function App() {
                         <Route
                             exact
                             path="/answer/:quesid"
-                            element={<Answer />}
+                            element={<Answer theme={theme} toggleTheme={toggleTheme} flag={false}/>}
                         />
 
                         <Route
@@ -89,7 +89,7 @@ function App() {
                             path="/profile"
                             element={
                                 <UserState>
-                                    <Profile />
+                                    <Profile theme={theme} toggleTheme={toggleTheme} flag={false}/>
                                 </UserState>
                             }
                         />
@@ -102,7 +102,7 @@ function App() {
 
                         <Route exact path="/wait/:email" element={<Wait />} />
 
-                        <Route exact path="/tags-all" element={<Tags />} />
+                        <Route exact path="/tags-all" element={<Tags theme={theme} toggleTheme={toggleTheme} flag={false}/>} />
 
                         <Route
                             exact

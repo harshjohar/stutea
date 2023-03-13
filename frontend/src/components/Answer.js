@@ -11,7 +11,9 @@ import { ReactComponent as CreditIcon } from "../Assets/Click/Credits.svg";
 import { ReactComponent as ProfileIcon } from "../Assets/Click/Profile.svg";
 import { NavItem } from "./Notifications/NavItem";
 import { Dropdown } from "./Notifications/Dropdown";
-export const Answer = () => {
+import PropTypes from 'prop-types';
+import { Switch } from "@mui/material";
+export const Answer = (props) => {
     const { quesid } = useParams();
     const host = process.env.REACT_APP_BACKEND_URL;
     let history = useNavigate();
@@ -135,6 +137,9 @@ export const Answer = () => {
                 <Link to="/profile">
                     <ProfileIcon className="icon-top" />
                 </Link>
+                <div style={{marginTop:"15px"}}>
+                    <Switch onChange={props.toggleTheme} defaultValue = {"light"} checked={props.theme === "dark"} className="m-[10px] sm:m-0" />
+                </div>
             </div>
             <div className="q-to-ans">
                 <div className="q q-dark">Question: </div>

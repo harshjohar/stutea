@@ -9,7 +9,7 @@ import {ReactComponent as Ttur} from "../Assets/Click/TagsTurqoise.svg"
 import {ReactComponent as Tmag} from "../Assets/Click/TagsMagenta.svg"
 import { TagIcon } from "./Tags/TagIcon";
 import { TagDropdown } from "./Tags/TagDropdown";
-import "../css/BigQuestionCard.css"
+import "../css/BigQuestionCard.css";
 export const BigQuestionCard = (props) => {
     const {color, content}=props
     const host = process.env.REACT_APP_BACKEND_URL;
@@ -66,6 +66,7 @@ export const BigQuestionCard = (props) => {
                         {userData.dp?<img src={userData.dp} alt="dp" className="profile-pic-ques"/>:<ProfileIcon className="profile-pic-ques"/>}
                         {/* <ProfileIcon className="profile-pic-ques"/> */}
                     </div>
+
                     <div className="user-name-ques">
                         <div className="name-ques">
                             {userData.first + " " + userData.last}

@@ -8,8 +8,10 @@ import {ReactComponent as CreditIcon} from "../Assets/Click/Credits.svg"
 import {ReactComponent as ProfileIcon} from "../Assets/Click/Profile.svg"
 import { NavItem } from './Notifications/NavItem';
 import { Dropdown } from './Notifications/Dropdown';
+import PropTypes from 'prop-types';
+import { Switch } from "@mui/material";
 
-export const Tags = () => {
+export const Tags = (props) => {
     const host = process.env.REACT_APP_BACKEND_URL;
     const [tags, setTags] = useState({});
     // api call for tag
@@ -44,6 +46,9 @@ export const Tags = () => {
                     <Link to="/profile">
                     <ProfileIcon className="icon-top"/>
                     </Link>
+                    <div style={{marginTop:"15px"}}>
+                    <Switch onChange={props.toggleTheme} defaultValue = {"light"} checked={props.theme === "dark"} className="m-[10px] sm:m-0" />
+                    </div>
             </div>
             <h2 className="tags-head dark-text">All tags here</h2>
             <div className="all-tags dark-text">

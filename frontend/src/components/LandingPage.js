@@ -43,7 +43,7 @@ const LandingPage = () => {
 						</div>
                         <div className="heading-card-lp">Concept</div>
                         <div className="text-card-lp">
-                            Get your doubts answered ans strengthen your concepts
+                            Get your doubts answered and strengthen your concepts
                         </div>
                     </div>
                     <div className="card-lp">

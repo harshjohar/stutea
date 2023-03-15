@@ -11,7 +11,9 @@ import { ReactComponent as CreditIcon } from "../Assets/Click/Credits.svg";
 import { ReactComponent as ProfileIcon } from "../Assets/Click/Profile.svg";
 import { NavItem } from "./Notifications/NavItem";
 import { Dropdown } from "./Notifications/Dropdown";
-export const Answer = () => {
+import PropTypes from 'prop-types';
+import { Switch } from "@mui/material";
+export const Answer = (props) => {
     const { quesid } = useParams();
     const host = process.env.REACT_APP_BACKEND_URL;
     let history = useNavigate();
@@ -123,7 +125,7 @@ export const Answer = () => {
     }
 
     return (
-        <div className="answer-main">
+        <div className="answer-main dark-text">
             <div className="top-icons">
                 {/* <NotifIconActive className='icon-top'/> */}
                 <NavItem icon={<NotifIconActive />}>
@@ -135,9 +137,12 @@ export const Answer = () => {
                 <Link to="/profile">
                     <ProfileIcon className="icon-top" />
                 </Link>
+                <div style={{marginTop:"15px"}}>
+                    <Switch onChange={props.toggleTheme} defaultValue = {"light"} checked={props.theme === "dark"} className="m-[10px] sm:m-0" />
+                </div>
             </div>
             <div className="q-to-ans">
-                <div className="q">Question: </div>
+                <div className="q q-dark">Question: </div>
                 <div className="q-ques">{question.question}</div>
             </div>
             <div className="user-deets">
@@ -202,7 +207,7 @@ export const Answer = () => {
                         <div className="btn-upload">
                             <button
                                 type="button"
-                                className="btn-upload-img"
+                                className="btn-upload-img btn-dark"
                                 onClick={uploadImage}
                             >
                                 Upload Image
@@ -214,7 +219,7 @@ export const Answer = () => {
                 <div className="submit-btn">
                     <button
                         type="submit"
-                        className="add-ques-btn"
+                        className="add-ques-btn btn-dark"
                         onClick={handleSubmit}
                     >
                         Submit

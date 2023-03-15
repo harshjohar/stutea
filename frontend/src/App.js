@@ -25,13 +25,23 @@ import { Settings } from "./components/Settings";
 import { BuyCredits } from "./components/BuyCredits";
 import { FavTagQues } from "./components/FavTagQues";
 import { ViewMyAns } from "./components/ViewMyAns";
+import { createContext, useState } from "react";
+import Dashboard from "./components/Dashboard";
+export const ThemeContext = createContext(null);
 
 function App() {
+
+    const [theme, setTheme] = useState("light");
+    const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"));
+        };
+
     return (
-        <div className="App">
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <div className="App" id={theme}>
             <Router>
                 <CreditState>
-                    <DashBoardNavbar />
+                  <DashBoardNavbar theme={theme} toggleTheme={toggleTheme}/>
                     <Routes>
                         <Route
                             exact
@@ -39,7 +49,7 @@ function App() {
                             element={
                                 <UserState>
                                     <QuestionState>
-                                        <Home flag={false} />
+                                        <Home theme={theme} toggleTheme={toggleTheme} flag={false} />
                                     </QuestionState>
                                 </UserState>
                             }
@@ -59,7 +69,7 @@ function App() {
                         <Route
                             exact
                             path="/answer/:quesid"
-                            element={<Answer />}
+                            element={<Answer theme={theme} toggleTheme={toggleTheme} flag={false}/>}
                         />
 
                         <Route
@@ -79,7 +89,7 @@ function App() {
                             path="/profile"
                             element={
                                 <UserState>
-                                    <Profile />
+                                    <Profile theme={theme} toggleTheme={toggleTheme} flag={false}/>
                                 </UserState>
                             }
                         />
@@ -92,7 +102,7 @@ function App() {
 
                         <Route exact path="/wait/:email" element={<Wait />} />
 
-                        <Route exact path="/tags-all" element={<Tags />} />
+                        <Route exact path="/tags-all" element={<Tags theme={theme} toggleTheme={toggleTheme} flag={false}/>} />
 
                         <Route
                             exact
@@ -127,6 +137,7 @@ function App() {
                 </CreditState>
             </Router>
         </div>
+        </ThemeContext.Provider>
     );
 }
 

@@ -1,4 +1,5 @@
 .answer-main{
+    height: 100vh;
     width: 80vw;
     margin-left: 20vw;
     display: flex;

@@ -61,7 +61,7 @@ const Login = () => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
-    <div className="form-body-main">
+    <div className="form-body-main dark-text">
       <div className="image">
         <img className="login-pic" src={image} alt="" />
       </div>

@@ -15,10 +15,13 @@ import logout from "../Assets/Click/Logout.svg"
 import login from "../Assets/Click/Login.svg"
 import register from "../Assets/Click/Register.svg"
 import {ReactComponent as Logo} from "../logo.svg"
+import PropTypes from 'prop-types';
+import { Switch } from "@mui/material";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
-export const DashBoardNavbar = () => {
+export const DashBoardNavbar = (props) => {
+    console.log(props);
     let location = useLocation();
     let history = useNavigate();
     const handleLogout = ()=> {
@@ -41,10 +44,10 @@ export const DashBoardNavbar = () => {
       }
 
     return (
-        <div className="nav-main">
+        <div className="nav-main dark-text">
             <div className="nav-logo-wrapper">
                 {/* img-here */}
-                <Logo className="logo" onClick={() => { history("/") }} />
+                <Logo className="logo dark-text" onClick={() => { history("/") }} />
             </div>
             <div className="link-list" >
                 <ul className="links">
@@ -108,7 +111,7 @@ export const DashBoardNavbar = () => {
                         <Link className="ll-item" to="/register" style={location.pathname === '/register' ? { display: "none" } : { display: "inline" }}>
                             <button className="logout-btn">
                                 <div className="nav-icon">
-                                    <img src={register} alt="" className="icon" />
+                                    <img src={register} alt="" className="icon dark-icon" />
                                 </div>
                                 <div className={`nav-text${location.pathname === '/login' ? "-active" : ""}`}>Register</div>
                             </button>
@@ -118,11 +121,14 @@ export const DashBoardNavbar = () => {
                         <Link className="ll-item" to="/login" >
                             <button className="logout-btn" >
                                 <div className="nav-icon" >
-                                    <img src={login} alt="" className="icon" />
+                                    <img src={login} alt="" className="icon dark-icon" />
                                 </div>
                                 <div className={`nav-text${location.pathname === '/register' ? "-active" : ""}`}>Login</div>
                             </button>
                         </Link>
+                        <div style={{width:"80%", textAlign:"center"}}>
+                    <Switch onChange={props.toggleTheme} defaultValue = {"light"} checked={props.theme === "dark"} className="m-[10px] sm:m-0" />
+                    </div>
                     </li>
                     </div>}
                 </ul>

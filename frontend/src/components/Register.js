@@ -73,7 +73,7 @@ const onChange = (e)=> {
   setCredentials({...credentials, [e.target.name]: e.target.value})
 }
   return (
-    <div className="register-form">
+    <div className="register-form dark-text">
         <div className="image">
                 <img className="login-pic-reg" src={image} alt="" />
             </div>

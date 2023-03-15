@@ -17,9 +17,7 @@
 
 .product-content {
     width: 100%;
-    height: 80vh;
 }
-
 
 .product-cards {
     display: flex;
@@ -87,7 +85,16 @@
     text-align: center;
 }
 
+@media screen and (max-width:2500px){
+    .parent-shop{
+        height: 100vh;
+    }
+}
+
 @media screen and (max-width:1024px){
+    .parent-shop{
+        height: auto;
+    }
     .card{
         width: 65%;
     }

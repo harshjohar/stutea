@@ -5,9 +5,9 @@ import AboutImageTop from "../Assets/help.jpg";
 
 export const About = () => {
   return (
-    <div className="parent-about">
+    <div className="parent-about dark-text">
       <div className="about-heading">Learning and Teaching together</div>
-      <div className="about-desc">
+      <div className="about-desc about-card-1">
         <div className="image-about-parent">
           <img src={AboutImageTop} alt="" className="image-about-top" />
         </div>
@@ -27,11 +27,10 @@ export const About = () => {
       </div>
       <div className="about-heading">More about StuTea </div>
       <div
-        className="about-features feautures_containers"
-        style={{ background: "#ddddff" }}
+        className="about-features feautures_containers about-card-2"
       >
         <div className="developers-heading">What it does? </div>
-        <div className="features_content ">
+        <div className="features_content">
           <div className="image-about-parent">
             <img
               src={AboutImageTop}
@@ -66,11 +65,11 @@ export const About = () => {
         </div>
       </div>
       <div
-        className="about-features feautures_containers"
-        style={{ background: "rgb(247,238,214,1)" }}
+        className="about-features-2 feautures_containers about-card-3"
+        style={{ background: "" }}
       >
         <div className="developers-heading">What's next for StuTea </div>
-        <div className="features_content ">
+        <div className="features_content">
           <div className="text-about">
             <p>
               As software engineers, we're never fully satisfied with the work.

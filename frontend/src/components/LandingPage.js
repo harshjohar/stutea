@@ -15,10 +15,10 @@ const LandingPage = () => {
         history('/login')
     }
     return (
-        <div className="parent-landing">
+        <div className="parent-landing dark-text">
             <div className="banner">
                 <div className="heading-banner">
-                    <div className="big-heading">
+                    <div className="big-heading dark-text">
                         The best doubt<br/> management<br/> tool
                     </div>
                     <div className="smol-text">
